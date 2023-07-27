@@ -1,0 +1,27 @@
+{
+  "name": "proyecto-la-letra-dorada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZairDinahet/grupo_8_LaLetraDorada.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZairDinahet/grupo_8_LaLetraDorada/issues"
+  },
+  "homepage": "https://github.com/ZairDinahet/grupo_8_LaLetraDorada#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
