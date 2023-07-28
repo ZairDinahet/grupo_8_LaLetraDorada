@@ -16,5 +16,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT, () =>{
-  console.log(`[server] levantando en el puerto ${PORT}`);
+  console.log(`[server] levantando en http://localhost:${PORT}`);
 })
