@@ -4,7 +4,6 @@
   text-decoration: none;
   list-style: none;
   color: inherit;
-  font-size: 14px;
   margin: 0;
   padding: 0;
 }
@@ -17,65 +16,419 @@ rgb(116,173,209)    rgb(69,117,180)
 
 
 /* styles hedear */
-.container-search-bar {
+.header-top-container {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  
-}
-.input-search{
-  border: solid 1px black;
-  border-radius: 10px;
-  padding: 5px;
-  width: 270px;
+  align-items: center;
+  padding: 5px 50px 5px 20px ;
 }
 
-.item-links a {
+.logo-header {
+  margin-left: 15px;
+  width: 12vw;
+}
+
+.logo-header img {
+  width: 100%;
+}
+
+.input-search{
+  border: solid 1px black;
+  border-radius: 3px;
+  padding: 6px;
+  width: 20vw;
+}
+
+.links-user-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.links-user-header a {
+  font-size: 15px;
+  font-weight: 300;
   margin: 0 5px;
 }
 
-.container-nav-header {
+.links-user-header i{
+  color: black;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.hearder-burger-menu {
+  display: none;
+}
+
+.hearder-burger-menu i {
+  color: black;
+  font-size: 20px;
+}
+
+
+.header-bottom-container {
   display: flex;
+  background-color: #272343;
+  /* background-color: white; */
+  color: white;
   justify-content: center;
   padding: 10px 0;
 }
 
-.item-category {
+.item-link-category {
+  font-weight: 300;
+  font-size: 14px;
   margin: 0 40px;
 }
 
 .item-select {
+  background-color: #272343;
+  font-weight: 300;
   border-style: none;
+  font-size: 14px;
+  max-width: 100px; /* Puedes ajustar este valor al ancho deseado */
+  width: 100%; 
 }
 
-.item-link-nav p {
-  font-size: 14px;
+#category-select {
+  max-width: 100px; 
+  width: 70%; 
+
 }
+
+
+
+
+
+
+
+/* styles main */ 
+
+main {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  display: block;
+  margin: auto;
+}
+
+.new-books-container,
+.offer-books-container {
+  margin: auto;
+  width: 80vw;
+}
+
+.books-container{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.new-books-title,
+.offer-title{
+  font-size: 25px;
+  font-weight: 300;
+  /* margin-left: 30px; */
+}
+
+
+.book-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* width: 13%; medida relativa adecuada */
+  width: 122px;
+}
+.book-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 120px;
+  padding: 5px 0;
+}
+
+.info-title {
+  margin: 2px 0;
+}
+.info-title p{
+  font-weight: 300;
+}
+
+.info-author {
+  margin-bottom: 2px;
+}
+.info-author p{
+  color: #333;
+  font-size: 12px;
+}
+.book-item img{
+  width: 120px;
+}
+
+
+
+
+/* .book-item {
+  display: ;
+    background-color: #ebebeb ;
+} */
+
+
+/* carousel */ 
+
+.carousel-banners-container{
+  padding: 20px 0px;
+  width: 90vw;
+}
+
+.banners-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.item-banner-container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.banner{
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.banner img {
+  width: 60%;
+  height: 100%;
+}
+
+.banner-arrows{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw 13vw;
+}
+
+
+.carrousel-controller {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.carrousel-controller a {
+  color: gray;
+  font-size: 20px;
+  margin: 5px 10px;
+}
+
 
 
 
 /* styles footer  */
 
-.container-nav-footer {
+footer {
+  background-color: #333;
+}
+.nav-footer-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  padding: 45px 60px;
-
+  padding: 45px 50px 30px;
 }
 
 .nav-title-item {
+  color: white;
+  font-size: 14px ;
   padding-bottom: 5px;
 }
 
 .nav-text-links {
+  color: #979797;
   font-size: 13px;
-  font-weight: 300;
+}
+.nav-text-links li{
+  line-height: 1.4;
 }
 
-.container-copyrigth {
-  margin: 10px;
+
+.social-media-container {
+  text-align: center;
+  padding: 10px;
 }
+
+.social-media-container h4{
+  margin-bottom: 10px;
+}
+
+.social-media-container a{
+  font-size: 20px;
+  color: white;
+  margin: 0px 5px;
+}
+
 
 .text-copyrigth {
+  color: white;
   font-size: 10px;
+  padding: 0px 0px 10px 10px
+}
+
+
+@media (max-width: 1024px) {
+  
+  .logo-header {
+    margin-bottom: 10px;
+    width: 20vw ;
+  }
+
+  .logo-header img {
+    width: 120px;
+  }
+  
+  .input-search{
+    width: 30vw;
+  }
+
+  .links-user-header {
+    margin-top: 10px;
+  }
+  
+  
+  .header-bottom-container {
+    flex-wrap: wrap;
+  }
+  
+  .item-link-category {
+    margin: 0px 15px;
+  }
+  
+  
+  .item-select {
+    width: 70%; 
+  }
+
+  .carousel-banners-container {
+    display: none;
+  }
+
+  .new-books-container {
+    margin-top: 20px;
+    width: 90%;
+
+  }
+  .offer-books-container {
+    width: 90%;
+  }
+  
+  .book-item {
+    width: 30%;
+  }
+
+  .nav-title-item {
+    font-size: 12px;
+  }
+
+  .nav-text-links {
+    font-size: 11px;
+  }
+  
+}
+
+/* Styles for mobile (up to 480px) */
+@media (max-width: 600px) {
+  .header-top-container {
+    justify-content: space-between;
+    padding: 15px 0px
+  }
+
+    
+  .logo-header {
+    margin-bottom: 10px;
+    width: 20vw ;
+  }
+
+  .logo-header img {
+    width: 100px;
+  }
+
+  .input-search {
+    width: 50vw;
+  }
+
+  .hearder-burger-menu {
+    display: block;
+    margin-right: 30px;
+
+  }
+
+  .links-user-header,
+  .header-bottom-container {
+    display: none;
+  }
+
+  .new-books-container {
+    margin-top: 20px;
+    width: 95vw;
+
+  }
+  .offer-books-container {
+    width: 95vw;
+  }
+  
+  .book-item {
+    width: 30%;
+  }
+  
+  .nav-footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-footer-container nav{
+    margin-bottom: 25px;
+  }
+
+  .nav-title-item {
+    font-size: 16px;
+  }
+
+  .nav-text-links {
+    font-size: 15px;
+  }
+  
+  /* .nav-footer-container nav ul{
+    display: none;
+  }
+
+  .nav-title-item {
+    margin: 0 5px;
+    color: #979797;
+    font-size: 13px;
+  } */
+}
+
+/* Optional: Styles for larger tablets (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Add your styles here if you want to further optimize for larger tablets */
+}
+
+/* Optional: Styles for larger screens (greater than 1024px) */
+@media (min-width: 1025px) {
+  /* Add your styles here if you want to further optimize for larger screens */
 }
