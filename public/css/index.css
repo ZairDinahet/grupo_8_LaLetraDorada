@@ -181,8 +181,12 @@ main {
 /* carousel */ 
 
 .carousel-banners-container{
+  display: block ;
+  margin: auto;
+  text-align: center;
   padding: 20px 0px;
-  width: 90vw;
+  text-align: center;
+  /* width: 90vw; */
 }
 
 .banners-container {
@@ -206,7 +210,7 @@ main {
 }
 
 .banner img {
-  width: 60%;
+  width: 65%;
   height: 100%;
 }
 
