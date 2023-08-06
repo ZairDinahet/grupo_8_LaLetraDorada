@@ -18,6 +18,9 @@ app.get('/register', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, "./views/login.html"))
 })
+app.get('/productcart', (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/productCart.html"))
+})
 
 app.listen(PORT, () =>{
   console.log(`[server] levantando en http://localhost:${PORT}`);
