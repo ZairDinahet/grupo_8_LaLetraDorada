@@ -49,6 +49,11 @@ Así que, si estás listo para embarcarte en una emocionante travesía literaria
 
   Inspiración e interes en la opción de e-book o pdf, layout de precios.
 
+## Tablero de trabajo
+
+Tablero de trabajo La letra dorada: [Trello](https://trello.com/b/BnzSc7Ks/la-letra-dorada)
+
+
 ## Integrantes del grupo
 
 ### Rocío Cala
@@ -70,3 +75,4 @@ Hola, me llamo Nahuel Sanchez. Tengo 23 años y actualmente soy estudiante de di
 ### Zair Dinahet
 
 Me llamo Zair Dinahet, tengo 21 años y soy Desarrollador Web. Amante de la programacion, siempre ávido a aprender, crecer en el mundo IT y enfretar nuevos desafios.
+
