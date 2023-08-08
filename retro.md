@@ -1,4 +1,4 @@
-## Retroespectiva del 1er Sprint
+## Retroespectiva del 1er Sprint - Proyecto integrador Digital House
 ### Cosas que hicimos bien
 
 - Distribución de tareas
