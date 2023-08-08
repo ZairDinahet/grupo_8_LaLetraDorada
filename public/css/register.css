@@ -95,17 +95,15 @@
 
 /*  styles main   */
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 70px 0 ;
   background: linear-gradient(180deg, rgb(0 55 255 / 20%), rgb(0 255 217 / 50%));
 }
+
 .main-register-container {
   display: flex;
   border-radius: 20px;
   border: none;
-  box-shadow: 0px 3px 10px rgba(149, 146, 146, 0.5);
+  box-shadow: 0px 5px 15px rgba(149, 146, 146, 0.5);
   width: 58vw;
   height: 80vh;
   margin: auto;
@@ -115,14 +113,18 @@ main {
 .information-register-content {
   text-align: center;
   width: 45%;
-  padding-top: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
     background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.4)),
-    url("https://images.pexels.com/photos/3640930/pexels-photo-3640930.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    url("/img/register/register-background.jpeg");
   background-size: cover;
   color: rgb(242, 227, 227);
 }
+
+
 .information-register-content h1 {
   text-align: center;
   text-transform: uppercase;
@@ -137,7 +139,6 @@ main {
 
 .form-register-content {
   width: 55%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,11 +154,6 @@ main {
   font-size: 20px; 
   margin-bottom: 10px;
 }
-/*
-.forms-content{
-  padding: 5px;
-  background-color: greenyellow;
-} */
 
 .field-form {
   margin-bottom: 15px;
@@ -187,7 +183,7 @@ main {
   padding: 10px;
   border: none;
   outline: none;
-  font-weight: 100;
+  font-weight:300;
 }
 .field-form input::placeholder {
   color: #9A9A9A;
@@ -348,8 +344,40 @@ footer {
 
   /*------------------- REGISTER -------------------*/
 
+  .main-register-container {
+    display:block;
+    width: 50%;
+    height: 60%;
+  }
 
-   /*-----------------------------------------------*/
+  .information-register-content {
+    width: 100%;
+    padding: 8px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .information-register-content h1 {
+    font-size: 18px;
+  }
+  
+  .information-register-content p{
+    font-size: 12px;
+  }
+  
+  .form-register-content {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .sub-form-content {
+    width: 85%;
+  }
+
+  .sub-form-content h2{
+    font-size: 18px; 
+  }
   
 }
 
@@ -424,7 +452,30 @@ footer {
     color: #979797;
     font-size: 13px;
   } */
+
+  /* -------------------REGISTER-----------------------------*/
+
+  .main-register-container {
+    display: block;
+    width: 70%;
+    height: 60%;
+  }
+
+  .sub-form-content {
+    width: 90%;
+  }
+
 }
+
+@media (max-width: 375px) {
+  
+  .main-register-container {
+    display: block;
+    width: 90%;
+    height: 60%;
+  }
+}
+
 
 /* Optional: Styles for larger tablets (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
