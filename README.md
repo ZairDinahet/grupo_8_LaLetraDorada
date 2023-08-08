@@ -60,10 +60,6 @@ Tablero de trabajo La letra dorada: [Trello](https://trello.com/b/BnzSc7Ks/la-le
 
 ¡Hola, soy Rocío Cala, estudiante de 19 años de la Facultad de Ingeniería! Me gusta  la programación, busco aprender más sobre este mundo interesante. Leer y bailar son mis pasatiempos favoritos, pero descubrir nuevas tecnologías y desafíos es lo que realmente me motiva.
 
-### Gaston Montoya
-
-Yo soy Gaston Montoya estudiante de 22 años. Actualmente estudio ingenieria en la UNJu y siempre me gustaron los temas que tengan que ver con las computadoras, la informacion y las matematicas. Me gusta ser una persona analitica y capaz de resolver todos los dias un nuevo desafio. Tambien soy de leer bastantes libros y ver mucho temas actuales.
-
 ### Máximo Conde
 
 Conde, Máximo, 21 años: Desarrollador Web en formación. Proactivo, abierto al aprendizaje, interesado en desafíos durante esta parte de la formación.
