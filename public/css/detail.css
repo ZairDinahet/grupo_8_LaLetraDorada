@@ -281,62 +281,93 @@ rgb(116,173,209)    rgb(69,117,180)
   font-weight: 400;
 }
 
+
+
+/* Sección "lectores tambien disfrutaron */
+
+.carousel-detail{
+  background-color:rgba(185, 197, 239, 0.523) ;
+  height:400px;
+  width:80vw;
+  margin:auto;
+  padding:20px;
+  border:solid 1px black;
+}
+
+.carousel-detail-title {
+  font-family:Helvetica;
+  font-size:larger;
+  color:rgb(18, 3, 52)
+}
+
+.carousel-books{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  /*  overflow:scroll; */
+  height:90%;
+  width:90%;
+  margin:auto;
+  padding:20px;
+}
+
+
 /* Seccion sugerencias de libros */
 
-.new-books-container{
-  border: solid 1px black;
-  padding: 20px;
-  margin: auto;
-  width: 80vw;
-}
-
-.books-container{
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  margin-right: 0;
-  width: 100%;
-}
-
-.new-books-title{
-  font-size: 25px;
-  font-weight: 300;
-
-}
 
 .book-item {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 122px;
+  justify-content:center;
+  height:95%;
+  width: 15%;
+  margin:2.5%;
+  border:solid 1px #212121;
 }
 
 .book-info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 120px;
+  width: 100%;
   padding: 5px 0;
 }
 
-.info-title {
+
+.info-title{
+  font-size: 16px;
+  font-weight: 300;
   margin: 2px 0;
 }
-.info-title p{
-  font-weight: 300;
-}
 
-.info-author {
-  margin-bottom: 2px;
-}
 .info-author p{
+  margin-bottom: 2px;
   color: #333;
   font-size: 12px;
 }
 .book-item img{
-  width: 120px;
+  height:60%;
+  width:90%;
+  justify-self: center;
+  
+}
+
+.info-price{
+  display:flex;
+  width:100%;
+  justify-content:space-around;
+}
+.price-itself{
+  justify-self: left;
+  color:#272343;
+  
+}
+
+.cart-button{
+  width:25%;
+  justify-self: right;
+  color:rgb(251, 248, 244);
+  background-color: #120378;
 }
 
   /* .contenedor01{
@@ -367,6 +398,7 @@ rgb(116,173,209)    rgb(69,117,180)
 .item-comment p{
   font-weight: 200;
 }
+
 
 
 
