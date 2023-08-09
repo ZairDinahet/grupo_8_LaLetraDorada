@@ -18,17 +18,22 @@
     <header>
         <div class="header-top-container">
           <div class="logo-header" >
-            <img src="/img/home/La_letra_dorada_200_69_px.svg" alt="">
+            <a href="/">
+              <img src="/img/home/La_letra_dorada_200_69_px.svg" alt="">
+            </a>
           </div>
           <!-- Barra de búsqueda -->
           <div class="search-bar-header">
-            <input class="input-search"  type="text" placeholder="Buscar por autor, titulo,ISBN..." > 
+            <form action="/">
+              <input class="input-search"  type="text" placeholder="Buscar por autor, titulo,ISBN..." > 
+            </form>
           </div>
     
           <div class="links-user-header" >
-            <a href="#">Ingresar</a>
-            <a href="#">Registrarse</a>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="/login">Ingresar</a>
+            <a href="/register">Registrarse</a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            
           </div>
     
           <div class="hearder-burger-menu">
@@ -101,7 +106,7 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="descrption-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestiae quasi, fugiat aspernatur, iure dignissimos magnam repudiandae reiciendis ad earum omnis, ex dicta magni libero quis voluptatum fugit. Aut, nisi!.
+                <p>1984 de George Orwell es una novela de distopía cuya trama ocurre en Oceanía, un país dominado por un gobierno totalitario que mantiene en constante vigilancia a sus ciudadanos e, incluso, insiste en espiar sus pensamientos para mantener el orden.
                 </p>
                 <a href="#">Seguir leyendo...</a>
               </div>
@@ -143,51 +148,115 @@
           </section>
 
           <div class="byography-container">
-            <h2>Lorem Ipsum</h2>
+            <h2>Biografia</h2>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident magnam quia dolore illo facere inventore quae consectetur, dicta tempora iste aliquam non delectus nesciunt tempore quasi mollitia, soluta sapiente optio.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident magnam quia dolore illo facere inventore quae consectetur, dicta tempora iste aliquam non delectus nesciunt tempore quasi mollitia, soluta sapiente optio.
+              Eric Arthur Blair (Motihari, Raj Británico, 25 de junio de 1903-Londres, Reino Unido, 21 de enero de 1950),12 conocido por su seudónimo de George Orwell, fue un novelista, periodista, ensayista y crítico británico nacido en la India, autor entre otras obras de las novelas distópicas Rebelión en la granja (1945) y 1984 (1949).
+              <br>
+              Su obra lleva la marca de las experiencias autobiográficas vividas por el autor en tres etapas de su vida: su posición en contra del imperialismo británico que lo llevó al compromiso como representante de las fuerzas del orden colonial en Birmania durante su juventud; a favor del socialismo democrático, después de haber observado y sufrido las condiciones de vida de las clases sociales de los trabajadores de Londres y París; y en contra de los totalitarismos nazi y estalinista tras su participación en la guerra civil española, en el bando republicano.
+              <br>
+              <a href="#">Seguir leyendo...</a>
             </p>
           </div>
 
+          <section class="interested">
+            <div class="interested-title">
+              <h3><strong>Los lectores tambien disfrutan </strong></h3>
+            </div>
+            <div class="books-container">
+      
+              <a href="#item-3">
+                      <i class="fa-solid fa-chevron-left"></i>
+              </a>
+              
+              <article class="book-01">
+                <div class="book-info-container">
+                  <img src="/img/productCart/el-hobbit.png" alt="Libro">
+                  <div class="info-title">
+                    <p>El Hobbit</p>
+                  </div>
+                  <div class="info-author">
+                    <p>J.R.R. Tolkien</p>
+                  </div>
+                  <div class="info-price">
+                    <p>$7000</p>
+                  </div>
+                  <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </article>
+        
+              <article class="book-02">
+                <div class="book-info-container">
+                  <img src="/img/productCart/cuentos-de-hadas.png" alt="Libro">
+                  <div class="info-title">
+                    <p>Cuento de hadas</p>
+                  </div>
+                  <div class="info-author">
+                    <p>Stephen King</p>
+                  </div>
+                  <div class="info-price">
+                    <p>$3100</p>
+                  </div>
+                  <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </article>
+        
+              <article class="book-03">
+                <div class="book-info-container">
+                  <img src="/img/productCart/el-lobo-estepario.png" alt="Libro">
+                  <div class="info-title">
+                    <p>El lobo estepario</p>
+                  </div>
+                  <div class="info-author">
+                    <p>Hermann Hesse</p>
+                  </div>
+                  <div class="info-price">
+                    <p>$3000</p>
+                  </div>
+                  <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </article>
+      
+              <article class="book-04">
+                <div class="book-info-container">
+                  <img src="/img/productCart/dune.png"  alt="Libro">
+                  <div class="info-title">
+                    <p>Dune</p>
+                  </div>
+                  <div class="info-author">
+                    <p>Frank Herbert</p>
+                  </div>
+                  <div class="info-price">
+                    <p>$3000</p>
+                  </div>
+                  <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div class="carousel-detail">
+              <article class="book-05">
+                <div class="book-info-container">
+                  <a href="/detail">              
+                    <img src="/img/home/sigmund-freud.png" alt="Libro">
+                  </a>
+                  <div class="info-title">
+                    <p>Obras Completa</p>
+                  </div>
+                  <div class="info-author">
+                    <p>Sigmund Freud</p>
+                  </div>
+                  <div class="info-price">
+                    <p>$10000</p>
+                  </div>
+                  <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </article>
+      
+              <a href="#item-2">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+      
+            </div>
+          </section>
+          <!-- <div class="carousel-detail">
 
             <h3 class="carousel-detail-title">Los lectores también disfrutan</h3>
             <div class="carousel-books">
@@ -243,16 +312,9 @@
               </div>
             </article>
             </div>
-          </div>
+          </div> -->
 
-
-
-
-
-
-
-
-          <section class="new-books-container">
+          <!-- <section class="new-books-container">
             <h3 class="new-books-title">Los lectores tambien disfrutan</h3>
             <div class="books-container">
               <article class="book-item">
@@ -355,13 +417,6 @@
 
 
 
-
-
-
-
-
-
-
           <section class="comment-book-container">
             <h2>Comentarios</h2>
             <div class="book-comment">
@@ -378,7 +433,7 @@
                 <p><span>user:</span> Provident magnam quia dolore illo facere inventore quae consectetur, dicta tempora iste aliquam non delectus nesciunt tempore quasi mollitia, soluta sapiente optio..</p>
               </div>
             </div>
-          </section>
+          </section> -->
         </section>
       </main>
 

@@ -153,6 +153,7 @@ rgb(116,173,209)    rgb(69,117,180)
   color: rgb(116, 116, 255);
 }
 
+
 .buttons-price-container {
   display: flex;
   justify-content: flex-start;
@@ -281,11 +282,156 @@ rgb(116,173,209)    rgb(69,117,180)
   font-weight: 400;
 }
 
+.byography-container a{
+  font-weight: 200;
+  color: rgb(116, 116, 255);
+}
+
+
+
+
+
+/* Sección "lectores tambien disfrutaron" inprovisada*/
+
+.interested {
+  margin: auto;
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  background-color: white;
+}
+
+.interested-title {
+  background-color: #272343;
+  width: 100%;
+}
+
+.interested-title h3 {
+  font-size: 20px;
+  background-color: #272343;
+  color: #FFFFFF;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  padding: 3px;
+}
+
+.books-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.books-container article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 122px;
+}
+
+.books-container article img {
+  width: 120px;
+  height: 180px;
+}
+
+.book-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 120px;
+  padding: 5px 0;
+}
+
+.info-title {
+  margin: 2px 0;
+}
+
+.info-title p {
+  font-weight: 300;
+}
+
+.info-author {
+  margin-bottom: 2px;
+}
+
+.info-author p {
+  color: #333;
+  font-size: 12px;
+}
+
+.book-item img {
+  width: 120px;
+}
+
+.button-add-product {
+  background: #fff;
+  backface-visibility: hidden;
+  margin-top: 5px;
+  border-radius: .375rem;
+  border-style: solid;
+  border-width: .08rem;
+  color: #212121;
+  cursor: pointer;
+  font-family: Circular, Helvetica, sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: .1rem 1rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-add-product:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-add-product:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-add-product:focus {
+  outline: 0 solid transparent;
+}
+
+.button-add-product:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-add-product:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-add-product:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+.button-add-product:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+
+
 
 
 /* Sección "lectores tambien disfrutaron */
 
-.carousel-detail{
+/* .carousel-detail{
   background-color:rgba(185, 197, 239, 0.523) ;
   height:400px;
   width:80vw;
@@ -304,18 +450,18 @@ rgb(116,173,209)    rgb(69,117,180)
   display:flex;
   flex-wrap:wrap;
   justify-content:space-around;
-  /*  overflow:scroll; */
+  overflow:scroll; 
   height:90%;
   width:90%;
   margin:auto;
   padding:20px;
-}
+} */
 
 
 /* Seccion sugerencias de libros */
 
 
-.book-item {
+/* .book-item {
   display: flex;
   flex-direction: row;
   justify-content:center;
@@ -368,7 +514,7 @@ rgb(116,173,209)    rgb(69,117,180)
   justify-self: right;
   color:rgb(251, 248, 244);
   background-color: #120378;
-}
+} */
 
   /* .contenedor01{
     background-color:rgba(0,222,168,0.5);
@@ -542,6 +688,13 @@ footer {
     text-align: center;
   }
 
+  .books-container .book-05 {
+    display: none;
+  }
+
+.books-container .book-04 {
+    display: none;
+  }
 
 }
 
@@ -606,20 +759,26 @@ footer {
   .nav-text-links {
     font-size: 15px;
   }
-  
-  /* .nav-footer-container nav ul{
-    display: none;
-  }
-
-  .nav-title-item {
-    margin: 0 5px;
-    color: #979797;
-    font-size: 13px;
-  } */
 
   .book-detail-container {
     display: block;
     width: 100%;
     text-align: center;
   }
+
+  .books-container .book-05 {
+    display: none;
+  }
+
+  .books-container .book-04 {
+    display: none;
+  }
+  .books-container .book-03 {
+    display: none;
+  }
+
+  .books-container .book-02 {
+    display: none;
+  }
+
 }
