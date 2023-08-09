@@ -138,6 +138,7 @@ rgb(116,173,209)    rgb(69,117,180)
 .book-detail h2 {
   font-size: 30px;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .incon-container i {
   font-size: 25px;
@@ -267,8 +268,8 @@ rgb(116,173,209)    rgb(69,117,180)
 
 .byography-container {
   width: 80vw;
-  padding: 30px;
-  margin: 20px 0px; 
+  padding: 10px;
+  margin: 10px 0px; 
 }
 
 .byography-container h2{
@@ -366,15 +367,6 @@ rgb(116,173,209)    rgb(69,117,180)
 .item-comment p{
   font-weight: 200;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -487,7 +479,38 @@ footer {
   .nav-text-links {
     font-size: 11px;
   }
+
   
+  .book-detail-container {
+    display: block;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .book-img {
+    margin: auto;
+    width: 50%;
+  }
+  
+  .book-img img {
+    width: 200px;
+  }
+  
+  .book-detail{
+    padding-left: 0;
+  }
+  .buttons-price-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .byography-container p{
+    text-align: center;
+  }
+
+
 }
 
 /* Styles for mobile (up to 480px) */
@@ -561,4 +584,10 @@ footer {
     color: #979797;
     font-size: 13px;
   } */
+
+  .book-detail-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
