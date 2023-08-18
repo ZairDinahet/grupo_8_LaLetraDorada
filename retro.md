@@ -28,3 +28,33 @@ Aunque hemos sido buenos en coordinar las reuniones, existe una oportunidad para
 ### Nuestra conclusión
 
 En resumen, nuestra retroespectiva revela que hemos logrado una distribución efectiva de tareas y una coordinación fluida para programar reuniones. Sin embargo, identificamos áreas para mejorar, como la definición anticipada de objetivos concretos, la implementación de un tablero de trabajo para una mejor visualización y la optimización de la duración de las reuniones a través de una agenda clara y contribuciones concisas. Estas mejoras contribuirán a un proceso más eficiente y a resultados más efectivos en nuestros futuros sprints.
+
+
+
+
+### SEGUNDA RETRO:
+
+### COSAS POR MEJORAR:
+- Falta de regularidad en las Reuniones Diarias:
+No llevamos a las daily meetings propuestas por la metodología. En lugar de tener horarios predefinidos, las reuniones eran esporádicas, programadas en momentos convenientes para todos pero sin establecer días y horas fijas. 
+
+- Retrasos en la Finalización de Tareas:
+Un integrante del equipo no logró completar su tarea a tiempo y comunicó esto cerca de la fecha límite.
+
+- Desafíos en el Manejo de Versiones en Git:
+En ocasiones, la falta de uso de ramas en el repositorio de GitHub complicó el proceso de push y pull.
+
+### NUESTRA CONCLUSIÓN:
+Para evitar estas situaciones, decidimos establecer una serie de cambios, divididos en "cambios del equipo" y "cambios técnicos"
+
+## Del equipo:
+- Implementación de Horarios para Reuniones Diarias:
+Estableceremos horarios fijos para las reuniones diarias (dailies).
+
+- Transparencia en Caso de Problemas o Retrasos:
+Priorizaremos la apertura y la transparencia respecto a retrasos o conflictos que puedan surgir en el proceso. En lugar de esperar, se notificará inmediatamente para abordar y resolver estos problemas de manera eficiente.
+
+## Enfoque técnico:
+
+- Implementación Parcial de Git Flow:
+Procederemos a implementar una parte de la metodología de trabajo Git Flow, centrándonos en la utilización de git pull requests y ramas de trabajo. 
