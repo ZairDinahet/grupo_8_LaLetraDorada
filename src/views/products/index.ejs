@@ -146,7 +146,27 @@
     <section class="new-books-container">
       <h3 class="new-books-title">Novedades</h3>
       <div class="books-container">
-        <article class="book-item">
+
+        <% books.slice(0, 6).forEach(book => { %>
+          <article class="book-item">
+            <div class="book-info-container">
+              <a href="/detail/<%= book.id %>">              
+                <img src="<%= book.img %>" alt="Libro">
+              </a>
+              <div class="info-title">
+                <p><%= book.name %></p>
+              </div>
+              <div class="info-author">
+                <p><%= book.author %></p>
+              </div>
+              <div class="info-price">
+                <p><%= book.price %></p>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+
+        <!-- <article class="book-item">
           <div class="book-info-container">
             <a href="/detail">              
               <img src="/img/home/asimov.png" alt="Libro">
@@ -246,121 +266,138 @@
               <p>$5000</p>
             </div>
           </div>
-        </article>
+        </article> -->
       </div>
     </section>
 
-
-
-
       <!--Otro hacer nuevamente lo hecho en ultimas novedades -->
-      <section class="offer-books-container"> 
-        <h3 class="offer-title">Ofertas!</h3>       
-        <div class="books-container">
+    <section class="offer-books-container"> 
+      <h3 class="offer-title">Ofertas!</h3>       
+      <div class="books-container">
+
+        <% books.slice(6).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
-              <a href="/detail">
-                <img src="/img/home/el-hobbit.png" alt="Libro">
-              </a>
-              <div class="info-title"> 
-                <p>El Hobbit</p>
-              </div>
-              <div class="info-author">
-                <p>J.R.R. Tolkien</p>
-              </div>
-              <div class="info-price">
-                <p>$7000</p>
-              </div>
-            </div>
-          </article>
-    
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/detail">
-                <img src="/img/home/el-lobo-estepario.png" alt="Libro">
+              <a href="/detail/<%= book.id %>">              
+                <img src="<%= book.img %>" alt="Libro">
               </a>
               <div class="info-title">
-                <p>El lobo estepario</p>
+                <p><%= book.name %></p>
               </div>
               <div class="info-author">
-                <p>Hermann Hesse</p>
+                <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p>$3000</p>
+                <p><%= book.price %></p>
               </div>
             </div>
           </article>
-    
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/detail">              
-                <img src="/img/home/frank-kafka.png" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p>En la colonia penitenciaria</p>
-              </div>
-              <div class="info-author">
-                <p>Franz Kafka</p>
-              </div>
-              <div class="info-price">
-                <p>$3000</p>
-              </div>
+        <% }) %>
+        
+        <!-- <article class="book-item">
+          <div class="book-info-container">
+            <a href="/detail">
+              <img src="/img/home/el-hobbit.png" alt="Libro">
+            </a>
+            <div class="info-title"> 
+              <p>El Hobbit</p>
             </div>
-          </article>
-    
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/detail">              
-                <img src="/img/home/sigmund-freud.png" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p>Obras Completa</p>
-              </div>
-              <div class="info-author">
-                <p>Sigmund Freud</p>
-              </div>
-              <div class="info-price">
-                <p>$10000</p>
-              </div>
+            <div class="info-author">
+              <p>J.R.R. Tolkien</p>
             </div>
-          </article>
-    
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/detail">              
-                <img src="/img/home/george-orwell-1984.png" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p>1984</p>
-              </div>
-              <div class="info-author">
-                <p>George Orwell</p>
-              </div>
-              <div class="info-price">
-                <p>$5000</p>
-              </div>
+            <div class="info-price">
+              <p>$7000</p>
             </div>
-          </article>
-    
-          <article class="book-item" >
-            <div class="book-info-container">
-              <a href="/detail">              
-                <img src="/img/home/leon-tolstoi.png" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p>¿Cuánta tierra necesita un hombre?</p>
-              </div>
-              <div class="info-author">
-                <p>León Tolstói</p>
-              </div>
-              <div class="info-price">
-                <p>$3000</p>
-              </div>
+          </div>
+        </article>
+  
+        <article class="book-item">
+          <div class="book-info-container">
+            <a href="/detail">
+              <img src="/img/home/el-lobo-estepario.png" alt="Libro">
+            </a>
+            <div class="info-title">
+              <p>El lobo estepario</p>
             </div>
-            
-          </article>
-        </div>
-      </section>
+            <div class="info-author">
+              <p>Hermann Hesse</p>
+            </div>
+            <div class="info-price">
+              <p>$3000</p>
+            </div>
+          </div>
+        </article>
+  
+        <article class="book-item">
+          <div class="book-info-container">
+            <a href="/detail">              
+              <img src="/img/home/frank-kafka.png" alt="Libro">
+            </a>
+            <div class="info-title">
+              <p>En la colonia penitenciaria</p>
+            </div>
+            <div class="info-author">
+              <p>Franz Kafka</p>
+            </div>
+            <div class="info-price">
+              <p>$3000</p>
+            </div>
+          </div>
+        </article>
+  
+        <article class="book-item">
+          <div class="book-info-container">
+            <a href="/detail">              
+              <img src="/img/home/sigmund-freud.png" alt="Libro">
+            </a>
+            <div class="info-title">
+              <p>Obras Completa</p>
+            </div>
+            <div class="info-author">
+              <p>Sigmund Freud</p>
+            </div>
+            <div class="info-price">
+              <p>$10000</p>
+            </div>
+          </div>
+        </article>
+  
+        <article class="book-item">
+          <div class="book-info-container">
+            <a href="/detail">              
+              <img src="/img/home/george-orwell-1984.png" alt="Libro">
+            </a>
+            <div class="info-title">
+              <p>1984</p>
+            </div>
+            <div class="info-author">
+              <p>George Orwell</p>
+            </div>
+            <div class="info-price">
+              <p>$5000</p>
+            </div>
+          </div>
+        </article>
+  
+        <article class="book-item" >
+          <div class="book-info-container">
+            <a href="/detail">              
+              <img src="/img/home/leon-tolstoi.png" alt="Libro">
+            </a>
+            <div class="info-title">
+              <p>¿Cuánta tierra necesita un hombre?</p>
+            </div>
+            <div class="info-author">
+              <p>León Tolstói</p>
+            </div>
+            <div class="info-price">
+              <p>$3000</p>
+            </div>
+          </div>
+          
+        </article> -->
+      </div>
+    </section>
   </main>
 
   <footer >
