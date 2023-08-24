@@ -8,85 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-  <title>Carrito - La Letra Dorada</title>
   <link rel="stylesheet" href="/css/productCart.css">
+  <title>Carrito - La Letra Dorada</title>
 </head>
 
 <body>
 
-  <header>
-    <div class="header-top-container">
-      <div class="logo-header" >
-        <a href="/">
-          <img src="/img/home/La_letra_dorada_200_69_px.svg" alt="">
-        </a>
-      </div>
-
-      <div class="search-bar-header">
-        <form action="/">
-          <input class="input-search"  type="text" placeholder="Buscar por autor, titulo,ISBN..." > 
-        </form>
-      </div>
-
-      <div class="links-user-header" >
-        <a href="/login">Ingresar</a>
-        <a href="/register">Registrarse</a>
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        
-      </div>
-
-      <div class="hearder-burger-menu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    </div>
-
-    <nav class="header-bottom-container">
-      <div class="item-link-category">      
-        <select class="item-select" id="category-select">
-          <option value="antologia">Antología</option>
-          <option value="arquitectura">Arquitectura y diseño</option>
-          <option value="arte">Arte</option>
-          <option value="ciencia">Ciencia</option>
-          <option value="ciencia_ficcion">Ciencia ficción</option>
-          <option value="clasicos">Clásicos</option>
-          <option value="cuentos">Cuentos</option>
-          <option value="derecho">Derecho</option>
-          <option value="economia_negocios">Economía y Negocios</option>
-          <option value="fantasia" selected>Fantasía</option>
-          <option value="filosofia">Filosofía</option>
-          <option value="genero" selected>Género</option>
-          <option value="novela_juvenil">Novela Juvenil</option>
-          <option value="romance">Romance</option>
-          <option value="suspenso">Suspenso</option>
-        </select>
-      </div>
-      <div class="item-link-category">
-        <select class="item-select">
-          <option value="None">Tematica</option>
-          <option value="None">Infantil</option>
-          <option value="None">Juvenil</option>
-          <option value="None">Moderno</option>
-          <option value="None">Autoayuda</option>
-        </select>
-      </div>
-      <div class="item-link-category">
-        <p class="item-colection">
-          <a href="">Colecciones</a>
-        </p>
-      </div>
-      <div class="item-link-category">
-        <p class="item-news">
-          <a href="">Novedades</a>
-        </p>
-      </div>
-      <div class="item-link-category">
-        <p class="item-most-read">
-          <a href="">Más leidos</a>
-        </p>
-      </div>
-    </nav>
-  </header>
+  <%- include('../partials/header.ejs') %>
 
   <main>
 
@@ -96,48 +24,36 @@
           <h1>Tus Libros</h1>
         </div>
   
-        <div class="main-product">
-          <div class="product-description">
-            <img src="/img/productCart/86_eighty_six.png">
-            <div>
-              <h3 class="product-name">86 - Eighty Six Vol. 10</h3>
-              <br>
-              <p class="product-author">Asato Asato</p>
-              <p>Acción, Drama, Ciencia Ficción, Distopía</p>
+        <% if (cart.length > 0) { %>
+          <% cart.forEach(product => { %>
+            <div class="main-product">
+              <div class="product-description">
+                <img src="<%= product.img %>">
+                <div>
+                  <h3 class="product-name"><%= product.name %></h3>
+                  <br>
+                  <p class="product-author"><%= product.author %></p><br>
+                  <p class="genres"><%= product.genre %></p>
+                </div>
+              </div>
+              <div class="product-box-button-amount">
+                <button>-</button>
+                <input type="text" value="1">
+                <button>+</button>
+              </div>
+              <p class="product-price"><%= "$" + product.price %></p>
             </div>
+          <% }); %>
+        <% } else { %>
+          <div class="main-product-empty">
+            <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
           </div>
-          <div class="product-box-button-amount">
-            <button>-</button>
-            <input type="text" value="1">
-            <button>+</button>
-          </div>
-          <p class="product-price">$7700</p>
-          
-        </div>
-  
-        <div class="main-product">
-          <div class="product-description">
-            <img src="/img/productCart/dune.png">
-            <div>
-              <h3 class="product-name">Dune</h3>
-              <br>
-              <p class="product-author">Frank Herbert</p>
-              <p>Ciencia Ficción</p>
-            </div>
-          </div>
-          <div class="product-box-button-amount">
-            <button>-</button>
-            <input type="text" value="1">
-            <button>+</button>
-          </div>
-          <p class="product-price">$3000</p>
-          
-        </div>
-  
+        <% } %>
+
         <div class="main-discount-title">
-          <h1>Cupón de Descuento</h1>
+          <h1>Código de Descuento</h1>
         </div>
-  
+        
         <div class="main-discount">
           <div>
             <input type="text" placeholder="Código de Descuento">
@@ -204,24 +120,32 @@
         <div>
           <h1>Tu Pedido</h1>
           <br>
-          <div class="price-details">
-            <h3>
-              <span>Subtotal</span>
-              <span>$10700</span>
-            </h3>
-            <h3>
-              <span>Cód. de Descuento</span>
-              <span>-$500</span>
-            </h3>
-            <h3>
-              <span>Envío</span>
-              <span>$1200</span>
-            </h3>
-            <h2>
-              <span>TOTAL</span>
-              <span>$11400</span>
-            </h2>
-          </div>
+          <% if (cart.length > 0) { %>
+            <% cart.forEach(product => { %>
+              <div class="price-details">
+                <h3>
+                  <div>Subtotal</div>
+                  <div><%= "$" + product.price %></div>
+                </h3>
+                <h3>
+                  <div>Cód. de Descuento</div>
+                  <div>-$500</div>
+                </h3>
+                <h3>
+                  <div>Envío</div>
+                  <div>$1200</div>
+                </h3>
+                <h2>
+                  <div>TOTAL</div>
+                  <div><%= "$" + (product.price - 500 + 1200) %></div>
+                </h2>
+              </div>
+              <% }); %>
+            <% } else { %>
+              <div class="cart-empty">
+                <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
+              </div>
+            <% } %>
         </div>
         <br>
         <div class="checkout">
@@ -236,7 +160,7 @@
       </div>
       <div class="books-container">
 
-        <a href="#item-3">
+        <a href="#">
                 <i class="fa-solid fa-chevron-left"></i>
         </a>
         
@@ -304,7 +228,7 @@
           </div>
         </article>
 
-        <a href="#item-2">
+        <a href="#">
           <i class="fa-solid fa-chevron-right"></i>
         </a>
 
@@ -313,62 +237,7 @@
     
   </main>
 
-  <footer >
-    <section class="nav-footer-container">
-      <nav>
-        <h4 class="nav-title-item">Contacto</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Tel: 0800 565-3232</a></li>
-          <li><a href="#">Whatsapp: (+54)11 543-0334 </a></li>
-          <li><a href="#">laletradorada@dorada.com</a></li>
-          <li><a href="#">laletradoradareclamos@gmail.com</a></li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Sobre Nosotros</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Quienes somos</a></li>
-          <li><a href="#">Nuetras sucursales</a></li>
-          <li><a href="#"></a>Trabaja con nosotros</li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Información legal</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Terminos y condiciones</a></li>
-          <li><a href="#">Politica de devoluciones y anulacion</a></li>
-          <li><a href="#">Politica de proteccion de datos</a></li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Servicios</h4>
-        <ul class="nav-text-links">
-          <li><a href="#"></a></li>
-          <li><a href="#">Venta a Empresas e instituciones</a></li>
-          <li><a href="#">Compra Recurrente</a></li>
-          <li><a href="#">Libros al por mayor</a></li>
-          <li><a href="#">Preventa</a></li>
-        </ul>
-      </nav>
-  
-      <div class="social-media-container">
-        <h4 class="nav-title-item">Siguenos en </h4>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </div>
-    </section>
-
-    <div class="container-copyrigth">
-      <p class="text-copyrigth">
-        ©1997-2023 LaLetraDorada.com®.
-      </p>
-    </div>
-
-  </footer>
+  <%- include('../partials/footer.ejs') %>
 
 </body>
 
