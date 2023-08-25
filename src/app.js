@@ -5,6 +5,7 @@ const registerRouter = require('./routers/register')
 const loginRouter = require('./routers/login')
 const productCartRouter = require('./routers/productCart')
 const detailRouter = require('./routers/detail')
+const createRouter = require('./routers/create')
 
 const app = express();
 const PORT = 8080
@@ -22,6 +23,7 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/productcart', productCartRouter)
 app.use('/detail', detailRouter)
+app.use('/create', createRouter)
 
 
 app.listen(PORT, () =>{
