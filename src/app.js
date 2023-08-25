@@ -24,7 +24,8 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/productcart', productCartRouter)
 app.use('/detail', detailRouter)
-app.use('/productedit',productEditRouter)app.use('/create', createRouter)
+app.use('/productedit',productEditRouter)
+app.use('/create', createRouter)
 
 
 app.listen(PORT, () =>{
