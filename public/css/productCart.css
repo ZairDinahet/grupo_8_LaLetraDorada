@@ -138,10 +138,8 @@ main {
 
 .product-name {
     display: flex;
+    white-space: nowrap;
     margin-top: 5px;
-    margin-left: 10px;
-    width: 150px;
-    height: 20px;
     font-size: 15px;
 }
 
@@ -216,6 +214,18 @@ main {
 .product-box-button-amount input {
     width: 25px;
     text-align: center;
+}
+
+.main-product-empty {
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #272343;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .main-discount-title {
@@ -414,8 +424,7 @@ main {
     color: #272343;
 }
 
-.shipping-icons label,
-input {
+.shipping-icons label, input {
     cursor: pointer;
 }
 
@@ -467,11 +476,9 @@ input {
 
 .main-box-2 {
     width: 20%;
-    height: 400px;
+    height: 370px;
     border: 1px solid #000000;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     text-align: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -487,18 +494,25 @@ input {
 }
 
 .price-details {
-    display: flex;
     flex-direction: column;
-    margin-left: -60px;
-    margin-right: -60px;
+    width: 100%;
     color: #333;
     font-size: 12px;
+    padding: 0 10px;
 }
 
 .price-details h3,
 h2 {
     display: flex;
     justify-content: space-between;
+}
+
+.cart-empty {
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
 }
 
 .checkout {
@@ -519,14 +533,13 @@ h2 {
     min-height: 50px;
     min-width: 0;
     outline: none;
-    padding: 10px 16px;
+    padding: 0 16px;
     text-align: center;
-    text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: 100%;
+    width: 70%;
     will-change: transform;
 }
 
@@ -822,12 +835,7 @@ footer {
     }
 
     .checkout button {
-        padding: 8px 16px;
-    }
-
-    .price-details {
-        margin-left: -30px;
-        margin-right: -30px;
+        width: 90%;
     }
 
     .books-container .book-04 {
@@ -867,10 +875,8 @@ footer {
         padding-bottom: 10px;
     }
 
-    .price-details h3,
-    h2 {
-        margin-left: -30px;
-        margin-right: -30px;
+    .checkout button {
+        width: 60%;
     }
 
     .books-container .book-02 {

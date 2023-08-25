@@ -13,78 +13,8 @@
   <title>La Letra Dorada</title>
 </head>
 <body>
-  <header>
-    <div class="header-top-container">
-      <div class="logo-header" >
-        <a href="/">
-          <img src="/img/home/La_letra_dorada_200_69_px.svg" alt="">
-        </a>
-      </div>
-      <!-- Barra de búsqueda -->
-      <div class="search-bar-header">
-        <form action="/">
-          <input class="input-search"  type="text" placeholder="Buscar por autor, titulo,ISBN..." > 
-        </form>
-      </div>
 
-      <div class="links-user-header" >
-        <a href="/login">Ingresar</a>
-        <a href="/register">Registrarse</a>
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        
-      </div>
-
-      <div class="hearder-burger-menu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    </div>
-
-    <nav class="header-bottom-container">
-      <div class="item-link-category">      
-        <select class="item-select" id="category-select">
-          <option value="antologia">Antología</option>
-          <option value="arquitectura">Arquitectura y diseño</option>
-          <option value="arte">Arte</option>
-          <option value="ciencia">Ciencia</option>
-          <option value="ciencia_ficcion">Ciencia ficción</option>
-          <option value="clasicos">Clásicos</option>
-          <option value="cuentos">Cuentos</option>
-          <option value="derecho">Derecho</option>
-          <option value="economia_negocios">Economía y Negocios</option>
-          <option value="fantasia" selected>Fantasía</option>
-          <option value="filosofia">Filosofía</option>
-          <option value="genero" selected>Género</option>
-          <option value="novela_juvenil">Novela Juvenil</option>
-          <option value="romance">Romance</option>
-          <option value="suspenso">Suspenso</option>
-        </select>
-      </div>
-      <div class="item-link-category">
-        <select class="item-select">
-          <option value="None">Tematica</option>
-          <option value="None">Infantil</option>
-          <option value="None">Juvenil</option>
-          <option value="None">Moderno</option>
-          <option value="None">Autoayuda</option>
-        </select>
-      </div>
-      <div class="item-link-category">
-        <p class="item-colection">
-          <a href="">Colecciones</a>
-        </p>
-      </div>
-      <div class="item-link-category">
-        <p class="item-news">
-          <a href="">Novedades</a>
-        </p>
-      </div>
-      <div class="item-link-category">
-        <p class="item-most-read">
-          <a href="">Más leidos</a>
-        </p>
-      </div>
-    </nav>
-  </header>
+  <%- include('../partials/header.ejs') %>
 
   <main>
     <section class="carousel-banners-container">
@@ -400,61 +330,7 @@
     </section>
   </main>
 
-  <footer >
-    <section class="nav-footer-container">
-      <nav>
-        <h4 class="nav-title-item">Contacto</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Tel: 0800 565-3232</a></li>
-          <li><a href="#">Whatsapp: (+54)11 543-0334 </a></li>
-          <li><a href="#">laletradorada@dorada.com</a></li>
-          <li><a href="#">laletradoradareclamos@gmail.com</a></li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Sobre Nosotros</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Quienes somos</a></li>
-          <li><a href="#">Nuetras sucursales</a></li>
-          <li><a href="#"></a>Trabaja con nosotros</li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Información legal</h4>
-        <ul class="nav-text-links">
-          <li><a href="#">Terminos y condiciones</a></li>
-          <li><a href="#">Politica de devoluciones y anulacion</a></li>
-          <li><a href="#">Politica de proteccion de datos</a></li>
-        </ul>
-      </nav>
-    
-      <nav>
-        <h4 class="nav-title-item">Servicios</h4>
-        <ul class="nav-text-links">
-          <li><a href="#"></a></li>
-          <li><a href="#">Venta a Empresas e instituciones</a></li>
-          <li><a href="#">Compra Recurrente</a></li>
-          <li><a href="#">Libros al por mayor</a></li>
-          <li><a href="#">Preventa</a></li>
-        </ul>
-      </nav>
+  <%- include('../partials/footer.ejs') %>
   
-      <div class="social-media-container">
-        <h4 class="nav-title-item">Siguenos en </h4>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </div>
-    </section>
-
-    <div class="container-copyrigth">
-      <p class="text-copyrigth">
-        ©1997-2023 LaLetraDorada.com®.
-      </p>
-    </div>
-
-  </footer>
 </body>
 </html>
