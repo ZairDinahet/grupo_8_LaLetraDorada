@@ -153,22 +153,23 @@ main {
   padding: 0 2px;
   color: #9a9a9a;
 }
-.field-form .input-with-icon input {
+.field-form .input-with-icon input,.input-with-icon select{
   width: 100%;
   padding: 10px;
   border: none;
   outline: none;
 }
+
 .input-with-icon textarea {
     width: 100%;
     border: none;
     outline: none;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding: 30px 0 20px 10px;
+    cursor: c;
 }
 
-.field-form input::placeholder {
-  color: #9a9a9a;
+#descripcion{
+  flex-grow: 0.9;
 }
 
 .field-form-button {
