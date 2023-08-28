@@ -70,7 +70,9 @@
                   <p>pdf</p>
                 </div>
                 <div class="button-item-cart">
-                  <button class="button-cart">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                   <form action="/productcart/<%=book.id %>" method="get">
+                    <button class="button-cart">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+                  </form>
                 </div>
               </div>
             </div>
