@@ -587,18 +587,23 @@ footer {
 
   
   .book-detail-container {
-    display: block;
-    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
     text-align: center;
   }
   
+  .book-detail{
+    width:65%;
+    margin:0px;
+  }
   .book-img {
-    margin: auto;
-    width: 50%;
+    margin:0px;
+    width: 30%;
   }
   
   .book-img img {
-    width: 200px;
+    width: 250px;
   }
   
   .buttons-price-container {
@@ -705,4 +710,26 @@ footer {
     display: none;
   }
 
+}
+
+@media (min-width:1024px){
+  .book-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .book-detail{
+    width:65%;
+    margin:0px;
+  }
+  .book-img {
+    margin:0px;
+    width: 30%;
+  }
+  
+  .book-img img {
+    width: 250px;
+  }
 }

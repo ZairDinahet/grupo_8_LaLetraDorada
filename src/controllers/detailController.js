@@ -6,7 +6,7 @@ const detailController = {
     const idDeseada = parseInt(req.params.id);
     let book = books.find(b => b.id == idDeseada);
     const biografiaParrafos = book.biographyAuthor.split('\n\n');
-    res.render('products/detail', {books, book,biografiaParrafos})
+    res.render('products/detail', {books, book, biografiaParrafos})
   }
 };
 
