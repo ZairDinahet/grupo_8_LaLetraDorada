@@ -3,7 +3,7 @@ const detailController = require('../controllers/detailController')
 
 const router = Router()
 
-router.get('/', detailController.index )
+router.get('/:id?', detailController.index )
 
 
 module.exports = router
