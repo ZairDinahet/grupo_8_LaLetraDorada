@@ -101,12 +101,16 @@ rgb(116,173,209)    rgb(69,117,180)
 
 /* main */
 
+
 .detail-container{
   width: 90vw;
   display: flex;
   flex-direction: column;
   margin: auto;
-  align-items:center
+  align-items:center;
+  background-color:rgba(0, 0, 0, 0.07);
+  border-radius:12px;
+  margin-bottom:10px;
 }
 
 .book-detail-container {
@@ -120,7 +124,7 @@ rgb(116,173,209)    rgb(69,117,180)
 .book-img {
   display: flex;
   justify-content: center;
-  width: 25%;
+  width: 30%;
 }
 
 .book-img img {
@@ -132,9 +136,6 @@ rgb(116,173,209)    rgb(69,117,180)
   flex-direction: column;
   justify-content: space-between;
   padding: 30px;
-  margin-left: 30px;
-  width:75%;
-  overflow:hidden;
 }
 
 .book-detail h2 {
@@ -148,8 +149,8 @@ rgb(116,173,209)    rgb(69,117,180)
   color: gold;
 }
 .description-container{
+  margin-bottom: 10px;
   overflow:hidden;
-  margin-bottom: 10px;  
 }
 
 .description-container a {
@@ -517,7 +518,13 @@ footer {
 }
 
 
-
+@media (max-width: 350px){
+  h2{
+    font-size:smaller;
+    font-weight: 300;
+    text-align: center;
+  }
+}
 
 @media (max-width: 1024px) {
   
@@ -593,9 +600,6 @@ footer {
     width: 200px;
   }
   
-  .book-detail{
-    padding-left: 0;
-  }
   .buttons-price-container {
     display: flex;
     justify-content: center;

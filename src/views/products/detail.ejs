@@ -19,6 +19,7 @@
     <%- include('../partials/header.ejs') %>
 
       <main>
+      <div class="detail-container-all">
         <section class="detail-container">
           <section class="book-detail-container">
 
@@ -97,7 +98,7 @@
 
               <div class="books-container-books">
 
-               <% books.slice(0, 6).forEach(book => { %>
+               <% books.slice(0, 5).forEach(book => { %>
                 <article class="book-item">
                   <div class="book-info-container">
                     <a href="/detail/<%= book.id %>">              
@@ -142,6 +143,7 @@
             </div>
           </section>
         </section>
+      </div>
       </main>
 
     <%- include('../partials/footer.ejs') %>
