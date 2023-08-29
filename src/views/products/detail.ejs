@@ -101,6 +101,7 @@
 
                <% books.slice(0, 5).forEach(book => { %>
                 <article class="book-item">
+           <!-- <article class="book-item-<%= book.id %>"> -->
                   <div class="book-info-container">
                     <a href="/detail/<%= book.id %>">              
                       <img src="<%= book.img %>" alt="Libro">
@@ -144,7 +145,6 @@
             </div>
           </section>
         </section>
-      </div>
       </main>
 
     <%- include('../partials/footer.ejs') %>

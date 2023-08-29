@@ -111,6 +111,7 @@ rgb(116,173,209)    rgb(69,117,180)
   background-color:rgba(0, 0, 0, 0.07);
   border-radius:12px;
   margin-bottom:10px;
+  margin-top:10px;
 }
 
 .book-detail-container {
@@ -128,7 +129,7 @@ rgb(116,173,209)    rgb(69,117,180)
 }
 
 .book-img img {
-  width: 70%;
+  width: 100%;
 }
 
 .book-detail {
@@ -136,7 +137,6 @@ rgb(116,173,209)    rgb(69,117,180)
   flex-direction: column;
   justify-content: space-between;
   padding: 30px;
-  width: 70%;
 }
 
 .book-detail h2 {
@@ -349,8 +349,23 @@ rgb(116,173,209)    rgb(69,117,180)
   justify-content: center;
   width: 122px;
   height:100%;
-
 }
+
+/* .book-item-01 {
+  display:none;
+}
+.book-item-2 {
+  display:none;
+}
+.book-item-3 {
+  display:none;
+}
+.book-item-4 {
+  display:none;
+}
+.book-item-5 {
+  display:none;
+} */
 
 .books-container article img {
   width: 120px;
@@ -587,23 +602,18 @@ footer {
 
   
   .book-detail-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
+    display: block;
+    width: 80%;
     text-align: center;
   }
   
-  .book-detail{
-    width:65%;
-    margin:0px;
-  }
   .book-img {
-    margin:0px;
-    width: 30%;
+    margin: auto;
+    width: 50%;
   }
   
   .book-img img {
-    width: 250px;
+    width: 200px;
   }
   
   .buttons-price-container {
@@ -695,41 +705,28 @@ footer {
     text-align: center;
   }
 
-  .books-container .book-05 {
+  .books-container .book-item-5 {
     display: none;
   }
 
-  .books-container .book-04 {
+  .books-container .book-item-4 {
     display: none;
   }
-  .books-container .book-03 {
-    display: none;
-  }
-
-  .books-container .book-02 {
+  .books-container .book-item-3 {
     display: none;
   }
 
 }
 
 @media (min-width:1024px){
-  .book-detail-container {
-    display: flex;
+  .book-detail-container{
+    display:flex;
     flex-wrap: wrap;
-    width: 90%;
-    text-align: center;
   }
-  
+  .book-img{
+    width:25%;
+  }
   .book-detail{
     width:65%;
-    margin:0px;
-  }
-  .book-img {
-    margin:0px;
-    width: 30%;
-  }
-  
-  .book-img img {
-    width: 250px;
   }
 }
