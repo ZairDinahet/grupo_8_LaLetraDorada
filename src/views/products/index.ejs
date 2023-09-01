@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="/css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 
         <div class="item-banner-container" id="item-1">
           <div class="banner">
-            <img src="/img/home/1.jpg" alt="biblioteca">
+            <img src="/img/banners/1.jpg" alt="biblioteca">
           </div>
           <div class="banner-arrows">
               <a href="#item-3">
@@ -37,7 +37,7 @@
 
         <div class="item-banner-container" id="item-2">
           <div class="banner">
-            <img src="/img/home/2.jpg" alt="">
+            <img src="/img/banners/2.jpg" alt="">
           </div>
           <div class="banner-arrows">
               <a href="#item-1">
@@ -51,7 +51,7 @@
 
         <div class="item-banner-container" id="item-3">
           <div class="banner">
-            <img src="/img/home/3.jpg" alt="">
+            <img src="/img/banners/3.jpg" alt="">
           </div>
           <div class="banner-arrows">
               <a href="#item-2">
@@ -80,7 +80,7 @@
         <% books.slice(0, 6).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
-              <a href="/detail/<%= book.id %>">              
+              <a href="/products/<%= book.id %>">              
                 <img src="<%= book.img %>" alt="Libro">
               </a>
               <div class="info-title">
@@ -90,7 +90,7 @@
                 <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p><%= book.price %></p>
+                <p>$ <%= book.price %></p>
               </div>
             </div>
           </article>
@@ -208,7 +208,7 @@
         <% books.slice(6).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
-              <a href="/detail/<%= book.id %>">              
+              <a href="/products/<%= book.id %>">              
                 <img src="<%= book.img %>" alt="Libro">
               </a>
               <div class="info-title">
@@ -218,7 +218,7 @@
                 <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p><%= book.price %></p>
+                <p>$ <%= book.price %></p>
               </div>
             </div>
           </article>
