@@ -14,23 +14,6 @@ const router = Router()
 
 // Dentro de la etiqueda form de los formularios que quieran que se comporten como put o delete agregar al final del path del atributo action esto ?_method=PUT o DELETE. Ej: action="usuarios/actualizar?_method=PUT"
 
-// router.get('/', productsController.index)
-
-// router.get('/create', productsController.create)
-// router.post('/', productsController.post)
-
-// router.get('/cart/:id?', productsController.cart);
-
-// router.get('/:id/edit', productsController.edit)
-// router.put('/:id', productsController.put)
-
-// router.get('/:id', productsController.detail)
-
-// router.delete('/:id', productsController.delete)
-
-
-
-
 router.get('/', productsController.index)
 
 router.get('/create', productsController.create)
