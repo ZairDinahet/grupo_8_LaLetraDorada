@@ -1,0 +1,75 @@
+[
+    { 
+      "id":1,
+      "firstName":"Warden",
+      "lastName":"Beadell",
+      "email":"wbeadell0@oaic.gov.au",
+      "postalCode":null,
+      "category":"owner",
+      "shippingAdress":"87 Colorado Center",
+      "likedGenres":"Comedy|Classic|War",
+      "previousPurchases":"Men in black",
+      "wishlist":"Piloto de Guerra",
+      "productCart":"War and peace"
+    },
+    {
+        "id":2,
+        "firstName":"Willi",
+        "lastName":"Resdale",
+        "email":"wresdale1@howstuffworks.com",
+        "postalCode":"Y4500",
+        "shippingAdress":"9 Mallory Court",
+        "likedGenres":"Adventure|Mystery|Psych Thriller",
+        "previousPurchases":"Lord of the Flies",
+        "wishlist":"Crimen y Castigo",
+        "productCart":"Midnight Clear, A"
+    },
+    {
+        "id":3,
+        "firstName":"Simone",
+        "lastName":"Lillgard",
+        "email":"slillgard2@skype.com",
+        "postalCode":null,
+        "shippingAdress":"2 Canary Crossing",
+        "likedGenres":"Drama|Romance",
+        "previousPurchases":"Gate of Hell (Jigokumon)",
+        "wishlist":"Prince of the City",
+        "productCart":"Brotherhood of the Wolf (Pacte des loups, Le)"
+    },
+    {
+        "id":4,
+        "firstName":,
+        "lastName":,
+        "email":,
+        "postalCode":,
+        "shippingAdress":,
+        "likedGenres":,
+        "previousPurchases":,
+        "wishlist":,
+        "productCart":
+    },
+    {
+        "id":5,
+        "firstName":,
+        "lastName":,
+        "email":,
+        "postalCode":,
+        "shippingAdress":,
+        "likedGenres":,
+        "previousPurchases":,
+        "wishlist":,
+        "productCart":
+    },
+    {
+        "id":6,
+        "firstName":,
+        "lastName":,
+        "email":,
+        "postalCode":,
+        "shippingAdress":,
+        "likedGenres":,
+        "previousPurchases":,
+        "wishlist":,
+        "productCart":
+    }
+]
