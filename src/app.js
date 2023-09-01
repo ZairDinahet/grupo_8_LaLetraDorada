@@ -1,32 +1,34 @@
 const express = require('express');
-// Importo las rutas de mis diferentes vistas:
-const indexRoute = require('./routers/index')
-const registerRouter = require('./routers/register')
-const loginRouter = require('./routers/login')
-const productCartRouter = require('./routers/productCart')
-const detailRouter = require('./routers/detail')
-const productEditRouter = require('./routers/productEdit')
-const createRouter = require('./routers/create')
+const productsRouter = require('./routers/products')
+const usersRouter = require('./routers/users')
+const methodOverride = require('method-override')
 
 const app = express();
 const PORT = 8080
 
-
 app.use(express.static('public'))
-
 // Configuro el template engine:
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views');
+// Configuro el entorno de la aplicacion para poder capturar la informacion de los forularios en forma de objeto literal:
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+//Configuro methodOverride para poder usar los metodos put y delete:
+app.use(methodOverride('_method'))
 
-// Configuro el servidor usando app.use para que al usar determinado path(ej: "/login") se derive la responsabilidad de respoder a las rutas que importe previamente.
-app.use('/', indexRoute)
-app.use('/register', registerRouter)
-app.use('/login', loginRouter)
-app.use('/productcart', productCartRouter)
-app.use('/detail', detailRouter)
-app.use('/productedit',productEditRouter)
-app.use('/create', createRouter)
 
+app.get('/', (req, res) => {
+  res.redirect('/products')
+})
+
+app.use('/products', productsRouter)
+app.use('/user', usersRouter)
+
+
+
+app.use((req, res) => {
+  res.status(404).send("ERROR 404 - Not Found")
+});
 
 app.listen(PORT, () =>{
   console.log(`[server] levantando en http://localhost:${PORT}`);
