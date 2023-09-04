@@ -58,3 +58,26 @@ Priorizaremos la apertura y la transparencia respecto a retrasos o conflictos qu
 
 - Implementación Parcial de Git Flow:
 Procederemos a implementar una parte de la metodología de trabajo Git Flow, centrándonos en la utilización de git pull requests y ramas de trabajo. 
+
+
+## TERCERA RETRO
+
+### Cosas que hicimos bien
+
+- Optimización en las Reuniones 
+Pudimos tomar medidas concretas para asegurarnos de que las reuniones sean productivas, efectivas y que se utilicen de manera eficiente con todos los participantes,estableciendo objetivos claros.
+
+- Horarios definidos
+Planificamos la reuniones en donde tuvimos en cuenta la disponibilidad y preferencias de todos los integrantes.
+
+### Cosas por mejorar
+
+- Evitar Estar Justo de Tiempo en el Trabajo
+Avanzar progresivamente con las tareas para no estar justos con el tiempo. Ir avanzando aunque sea poco a poco para dar noticias en la dailys y mostrar que se inicio a hacer la tarea.
+
+- No olvidar el uso de trello 
+Estar activos con el uso de trello, para notificar y mantener al tanto a nuestros compañeros del estado con las tareas asignadas y asi ser mas eficientes.    
+
+### Nuestra Conclusión
+
+En síntesis, hemos alcanzado una mayor eficiencia y claridad en nuestras reuniones al establecer horarios fijos cuando es posible para asi obtener una mayor coordinación. Además, hemos identificado la necesidad de no olvidar usar la herramienta "Trello" para notificar nuestra situación y evitar estar justos con el tiempo en la ejecución de tareas.
