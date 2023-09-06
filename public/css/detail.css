@@ -120,6 +120,7 @@ rgb(116,173,209)    rgb(69,117,180)
   padding: 20px;
   margin: 20px 0;
   width: 80vw;
+  position: relative;
 }
 
 .book-img {
@@ -144,6 +145,29 @@ rgb(116,173,209)    rgb(69,117,180)
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+
+.button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+}
+
+.button-container form {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container button {
+  background-color: rgba(0, 0, 0, 0.01);
+  border: none;
+  margin: 0 3px;
+}
+
+.button-container img {
+  width: 100%;
+}
+
 .incon-container i {
   font-size: 25px;
   margin-bottom: 10px;
