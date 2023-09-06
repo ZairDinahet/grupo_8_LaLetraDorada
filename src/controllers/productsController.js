@@ -1,5 +1,5 @@
 const books = require("../data/books.json")
-
+const fs = require("fs")
 const productsController = {
 
   index: function (req, res) {
@@ -34,11 +34,20 @@ const productsController = {
 
   edit: function(req,res){
     //agregar la logica buscar el libro que tenga el id que me pasan por params y enviarlo a mi vista prodcutEdit para que se complete el formulario con esa informacion
-    res.render('products/productEdit')
+    const idProduct = parseInt(req.params.id);
+    let productE = books.find(p => p.id === idProduct)
+    res.render('products/productEdit',{productE})
   },
 
   put: function (req, res) {
     //agregar la logica para editar un libro del objeto books. Primero hay que encontrarlo usando el id, books y despues actualizar el archivo books.json
+    const idProduct = parseInt(req.params.id);
+    const edit = req.body;
+    //const index = books.find(p => p.id === idProduct)
+    
+    console.log(edit);
+    /*fs.writeFileSync(path.join(__dirname,"../data/books.json"),JSON.stringify())
+    res.render('products/',{})*/
   },
 
   delete: function (req, res) {
