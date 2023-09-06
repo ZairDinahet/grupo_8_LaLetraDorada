@@ -241,7 +241,18 @@ main {
   margin: 5px 10px;
 }
 
-
+.createBook{
+  color:white;
+  display:flex;
+  justify-content: center;
+  padding:10px;
+}
+.createBook button{
+  color:white;
+  background-color: #272343;
+  padding:3px;
+  border-radius:3px;
+}
 
 
 /* styles footer  */

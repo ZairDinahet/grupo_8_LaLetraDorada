@@ -5,7 +5,7 @@ const { Router } = require('express')
 const productsController = require('../controllers/productsController')
 const upload = require('../middleware/productsMulter')
 
-// Eejecuto Router para empezar a crear mis rutas que devolveran las vistas.
+// Ejecuto Router para empezar a crear mis rutas que devolveran las vistas.
 const router = Router()
 
 // Agrego esta porcion de codigo "upload.single('nameInput')" entre la ruta(las que usare para cargar imagenes o modificarlas) y el controlador. Tomando en cuanta que hay que pasarle a single el name del input que queremos guardar.

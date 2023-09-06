@@ -1,3 +1,4 @@
+const fs = require(`fs`);
 const books = require("../data/books.json")
 
 const productsController = {
@@ -29,7 +30,18 @@ const productsController = {
   },
 
   post: function (req, res) {
-    //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.json
+    //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.jsonz
+    const newBook = req.body;
+    console.log(newBook);
+    newBook.tapaDura = +newBook.tapaDura;
+    newBook.tapaBlanda = +newBook.tapaBlanda;
+    newBook.pdf = +newBook.pdf;
+    newBook.ebook = +newBook.ebook;
+
+    books.push(newBook);
+/* 
+    fs.writeFileSync("../data/books.json", JSON.stringify(books)); */
+    /* res.redirect("/products") */
   },
 
   edit: function(req,res){
