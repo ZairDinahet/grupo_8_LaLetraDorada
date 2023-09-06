@@ -1,4 +1,6 @@
 const books = require("../data/books.json")
+const fs = require('fs')
+const path = require('path')
 
 const productsController = {
 
@@ -42,8 +44,19 @@ const productsController = {
   },
 
   delete: function (req, res) {
-    //agregar la logica para buscar el libro que tenga el id que me pasan por params para eliminarlo de book, books.json y eliminar su foto.
+    const bookId = parseInt(req.params.id);
+    const book = books.find((book) => book.id === bookId);
+
+  if (book) {
+    const bookImg = path.resolve(__dirname, `../../public${book.img}`);
+    fs.unlinkSync(bookImg);
+
+    const bookDeleted = books.filter((book) => book.id !== bookId);
+    fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(bookDeleted));
   }
+
+    res.redirect('/products')
+}
 }
 
 
