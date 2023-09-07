@@ -205,7 +205,7 @@
       <h3 class="offer-title">Ofertas!</h3>       
       <div class="books-container">
 
-        <% books.slice(6).forEach(book => { %>
+        <% books.slice(6, 12).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
               <a href="/products/<%= book.id %>">              
@@ -328,9 +328,6 @@
         </article> -->
       </div>
     </section>
-    <div class="createBook">
-      <button class="button-createBook"><a href="/products/create">Crear producto</a></button>
-    </div>
   </main>
 
   <%- include('../partials/footer.ejs') %>

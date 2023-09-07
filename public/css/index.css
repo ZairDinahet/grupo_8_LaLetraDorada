@@ -73,6 +73,7 @@ rgb(116,173,209)    rgb(69,117,180)
   color: white;
   justify-content: center;
   padding: 10px 0;
+  align-items:center;
 }
 
 .item-link-category {
@@ -96,7 +97,19 @@ rgb(116,173,209)    rgb(69,117,180)
 
 }
 
+.createBook{
+  background-color: #272343;
+  display:flex;
+  justify-content: center;
+}
 
+.createBook a{
+  color:#fff;
+  font-weight: 600;
+  font-size:18px;
+  max-width: 100px; /* Puedes ajustar este valor al ancho deseado */
+  width: 100%; 
+}
 
 
 
@@ -239,19 +252,6 @@ main {
   color: gray;
   font-size: 20px;
   margin: 5px 10px;
-}
-
-.createBook{
-  color:white;
-  display:flex;
-  justify-content: center;
-  padding:10px;
-}
-.createBook button{
-  color:white;
-  background-color: #272343;
-  padding:3px;
-  border-radius:3px;
 }
 
 

@@ -92,6 +92,10 @@
   width: 70%;
 }
 
+.createBook{
+  display:none;
+}
+
 /*  styles main   */
 main {
   padding: 70px 0;
