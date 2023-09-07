@@ -17,7 +17,7 @@ const router = Router()
 router.get('/', productsController.index)
 
 router.get('/create', productsController.create)
-router.post('/create', productsController.post)
+router.post('/create', upload.single("facade") , productsController.post)
 
 router.get('/cart/:id?', productsController.cart);
 

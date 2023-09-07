@@ -1,5 +1,6 @@
 const fs = require(`fs`);
-const books = require("../data/books.json")
+const books = require("../data/books.json");
+const path = require("path");
 
 const productsController = {
 
@@ -39,9 +40,9 @@ const productsController = {
     newBook.ebook = +newBook.ebook;
 
     books.push(newBook);
-/* 
-    fs.writeFileSync("../data/books.json", JSON.stringify(books)); */
-    /* res.redirect("/products") */
+
+    fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books));
+    res.redirect("/products") 
   },
 
   edit: function(req,res){

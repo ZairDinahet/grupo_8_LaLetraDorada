@@ -7,15 +7,13 @@ const app = express();
 const PORT = 8080
 
 app.use(express.static('public'))
+// Configuro el entorno de la aplicacion para poder capturar la informacion de los forularios en forma de objeto literal:
+app.use(express.urlencoded({ extended: true }))
 // Configuro el template engine:
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views');
-// Configuro el entorno de la aplicacion para poder capturar la informacion de los forularios en forma de objeto literal:
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
 //Configuro methodOverride para poder usar los metodos put y delete:
 app.use(methodOverride('_method'))
-
 
 app.get('/', (req, res) => {
   res.redirect('/products')
