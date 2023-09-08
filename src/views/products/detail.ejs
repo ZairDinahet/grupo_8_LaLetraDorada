@@ -58,14 +58,14 @@
   
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.pdf %>
+                    <%= "$" + book.epub %>
                   </button>
-                  <p>e-book</p>
+                  <p>e-pub</p>
                 </div>
   
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.epub %>
+                    <%= "$" + book.pdf %>
                   </button>
                   <p>pdf</p>
                 </div>
@@ -119,9 +119,9 @@
 
               <div class="books-container-books">
 
-               <% books.slice(0, 5).forEach(book => { %>
+              <% books.slice(0, 5).forEach(book => { %>
                 <article class="book-item">
-           <!-- <article class="book-item-<%= book.id %>"> -->
+          <!-- <article class="book-item-<%= book.id %>"> -->
                   <div class="book-info-container">
                     <a href="/detail/<%= book.id %>">              
                       <img src="<%= book.img %>" alt="Libro">
@@ -133,7 +133,7 @@
                       <p><%= book.author %></p>
                     </div>
                     <div class="info-price">
-                      <p>$<%= book.price %></p>
+                      <p>$<%= book.tapaDura %></p>
                     </div>
                     <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
                   </div>
