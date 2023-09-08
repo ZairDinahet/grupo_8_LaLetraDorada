@@ -33,15 +33,17 @@ const productsController = {
   post: function (req, res) {
     //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.jsonz
     const newBook = req.body;
+    const file = req.file;
     console.log(newBook);
     newBook.tapaDura = +newBook.tapaDura;
     newBook.tapaBlanda = +newBook.tapaBlanda;
     newBook.pdf = +newBook.pdf;
     newBook.ebook = +newBook.ebook;
+    newBook.img = `/img/products/${file.filename}`
 
     books.push(newBook);
 
-    fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books));
+    fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books, null, 4));
     res.redirect("/products") 
   },
 

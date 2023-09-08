@@ -178,6 +178,11 @@ main {
   color: #333;
   font-size: 12px;
 }
+
+.info-price-pdf{
+  font-size:14px;
+  color:#272343;
+}
 .book-item img{
   width: 120px;
 }

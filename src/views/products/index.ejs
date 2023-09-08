@@ -205,7 +205,7 @@
       <h3 class="offer-title">Ofertas!</h3>       
       <div class="books-container">
 
-        <% books.slice(6, 12).forEach(book => { %>
+        <% books.slice(8,14).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
               <a href="/products/<%= book.id %>">              
@@ -218,7 +218,7 @@
                 <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p>$ <%= book.price %></p>
+                <p>$ <%= book.tapaDura %></p>
               </div>
             </div>
           </article>
