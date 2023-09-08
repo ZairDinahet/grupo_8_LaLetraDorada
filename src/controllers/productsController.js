@@ -1,5 +1,6 @@
 const books = require("../data/books.json")
 const fs = require("fs")
+let path = require("path")
 const productsController = {
 
   index: function (req, res) {
@@ -43,11 +44,23 @@ const productsController = {
     //agregar la logica para editar un libro del objeto books. Primero hay que encontrarlo usando el id, books y despues actualizar el archivo books.json
     const idProduct = parseInt(req.params.id);
     const edit = req.body;
-    //const index = books.find(p => p.id === idProduct)
+    const file = req.file;
     
-    console.log(edit);
-    /*fs.writeFileSync(path.join(__dirname,"../data/books.json"),JSON.stringify())
-    res.render('products/',{})*/
+    const index = books.findIndex(p => p.id === idProduct)
+    books[index].name = edit.name
+    books[index].author = edit.author
+    books[index].genre = !edit.genre ? books[index].genre : edit.genre
+    books[index].description = edit.description
+    books[index].biographyAuthor = edit.biographyAuthor
+    books[index].tapaDura = +edit.tapaDura
+    books[index].tapaBlanda = +edit.tapaBlanda
+    books[index].epub = +edit.epub
+    books[index].pdf = +edit.pdf
+    books[index].img = file ? `/img/products/${file.filename}` :  books[index].img 
+
+    fs.writeFileSync(path.resolve(__dirname,"../data/books.json"),JSON.stringify(books,null,4))
+    res.redirect('/products')
+    console.log(books[index]);
   },
 
   delete: function (req, res) {

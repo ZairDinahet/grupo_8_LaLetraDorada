@@ -62,10 +62,10 @@
                         </div>
                        
                         <div class="field-form">
-                            <label for="portada">Portada</label>
+                            <label for="img">Portada</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-book"></i>
-                                <input type="file" name="portada" id="portada" accept=".png, .jpg, .jpeg" value="<%= productE.img %>" >
+                                <input type="file" name="img" id="img" accept=".png, .jpg, .jpeg" value="<%= productE.img %>" >
                             </div>
                         </div>
                         <div class="field-form" id="descripcion">
@@ -85,33 +85,32 @@
                             <label for="tapaDura">Tapa Dura</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="tapaDura" id="tapaDura" placeholder="Precio Tapa Dura " value="<%= productE.price %>" required>
+                                <input type="number" name="tapaDura" id="tapaDura" placeholder="Precio Tapa Dura " value="<%= productE.tapaDura %>" required>
                             </div>
                         </div>
-                        
                         <div class="field-form">
                             <label for="tapaBlanda">Tapa Blanda</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="tapaBlanda" id="tapaBlanda" placeholder="Precio Tapa Blanda " >
+                                <input type="number" name="tapaBlanda" id="tapaBlanda" placeholder="Precio Tapa Blanda " value="<%= productE.tapaBlanda %>">
                             </div>
                         </div>
                         <div class="field-form">
-                            <label for="ebook">Ebook</label>
+                            <label for="epub">Ebook</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="ebook" id="ebook" placeholder="Precio Ebook " >
+                                <input type="number" name="epub" id="epub" placeholder="Precio Ebook " value="<%= productE.epub %>">
                             </div>
                         </div>
                         <div class="field-form">
                             <label for="pdf">PDF</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="pdf" id="pdf" placeholder="Precio PDF" >
+                                <input type="number" name="pdf" id="pdf" placeholder="Precio PDF" value="<%= productE.pdf %>" >
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                </div>
+                </div> 
 
                 <div class="section">
                     <h3>Información del Autor</h3>

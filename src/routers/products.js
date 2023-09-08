@@ -22,7 +22,7 @@ router.post('/create', productsController.post)
 router.get('/cart/:id?', productsController.cart);
 
 router.get('/edit/:id', productsController.edit)
-router.put('/edit/:id', productsController.put)
+router.put('/edit/:id',upload.single("img"), productsController.put)
 
 router.get('/:id', productsController.detail)
 
