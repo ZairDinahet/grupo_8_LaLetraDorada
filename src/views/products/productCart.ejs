@@ -41,7 +41,7 @@
                 <input type="text" value="1">
                 <button>+</button>
               </div>
-              <p class="product-price"><%= "$" + product.price %></p>
+              <p class="product-price"><%= "$" + product.tapaDura %></p>
             </div>
           <% }); %>
         <% } else { %>
@@ -125,7 +125,7 @@
               <div class="price-details">
                 <h3>
                   <div>Subtotal</div>
-                  <div><%= "$" + product.price %></div>
+                  <div><%= "$" + product.tapaDura %></div>
                 </h3>
                 <h3>
                   <div>Cód. de Descuento</div>
@@ -137,7 +137,7 @@
                 </h3>
                 <h2>
                   <div>TOTAL</div>
-                  <div><%= "$" + (product.price - 500 + 1200) %></div>
+                  <div><%= "$" + (product.tapaDura - 500 + 1200) %></div>
                 </h2>
               </div>
               <% }); %>
