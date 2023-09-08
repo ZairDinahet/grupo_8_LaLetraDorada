@@ -11,7 +11,8 @@ const productsController = {
   detail: function (req, res) {
     const idDeseada = parseInt(req.params.id);
     let book = books.find(b => b.id == idDeseada);
-    const biografiaParrafos = book.biographyAuthor.split('\n\n');
+    let biografiaParrafos = book.biographyAuthor;
+    if(book.biographyAuthor.includes("\r\n")){ biografiaParrafos = book.biographyAuthor.split('\r\n');}
     res.render('products/detail', {books, book, biografiaParrafos})
   },
 
@@ -35,14 +36,19 @@ const productsController = {
     const newBook = req.body;
     const file = req.file;
     console.log(newBook);
+    //volviendo a los precios números en vez de strings
     newBook.tapaDura = +newBook.tapaDura;
     newBook.tapaBlanda = +newBook.tapaBlanda;
     newBook.pdf = +newBook.pdf;
     newBook.ebook = +newBook.ebook;
     newBook.img = `/img/products/${file.filename}`
-
+    //creando una nueva Id a product
+    let oldBook = books[books.length - 1];
+    let ultimaId = oldBook ? oldBook.id : 0;
+    newBook.id = ultimaId + 1;
+    //pusheando el cambio a books
     books.push(newBook);
-
+    //sobreescribiendo el json
     fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books, null, 4));
     res.redirect("/products") 
   },

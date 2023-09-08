@@ -97,9 +97,15 @@
 
           <div class="byography-container">
             <h2>Biografia</h2>
-              <% biografiaParrafos.forEach(parrafo => { %>
-                <p><%- parrafo %></p>
-              <% }); %>
+               <% if (!Array.isArray(biografiaParrafos)){%>
+                 <p><% biografiaParrafos %></p>
+              <% } else; { %>
+                <% biografiaParrafos.forEach((parrafo) => { %>
+                  <p><%- parrafo %></p>
+                <% })} %> 
+              <!-- <% biografiaParrafos.forEach(parrafo=>{ %>
+                <p><% parrafo %></p>  
+              <% }) %> -->
               <a href="#">Seguir leyendo...</a>
           </div>
 
