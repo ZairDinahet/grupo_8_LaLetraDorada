@@ -43,7 +43,7 @@ const productsController = {
     newBook.tapaDura = +newBook.tapaDura;
     newBook.tapaBlanda = +newBook.tapaBlanda;
     newBook.pdf = +newBook.pdf;
-    newBook.ebook = +newBook.ebook;
+    newBook.epub = +newBook.epub;
     newBook.img = `/img/products/${file.filename}`
     //creando una nueva Id a product
     let oldBook = books[books.length - 1];
@@ -90,16 +90,15 @@ const productsController = {
     const bookId = parseInt(req.params.id);
     const book = books.find((book) => book.id === bookId);
 
-  if (book) {
-    const bookImg = path.resolve(__dirname, `../../public${book.img}`);
-    fs.unlinkSync(bookImg);
+    if (book) {
+      const bookImg = path.resolve(__dirname, `../../public${book.img}`);
+      fs.unlinkSync(bookImg);
 
-    const bookDeleted = books.filter((book) => book.id !== bookId);
-    fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(bookDeleted));
-  }
-
+      const bookDeleted = books.filter((book) => book.id !== bookId);
+      fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(bookDeleted,null,4));
+    }
     res.redirect('/products')
-}
+  }
 }
 
 
