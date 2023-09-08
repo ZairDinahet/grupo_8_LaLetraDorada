@@ -132,5 +132,33 @@
         "ebook": null,
         "img": "/img/products/book-1694146409262.jpg",
         "id": 13
+    },
+    {
+        "name": "Ensayos de Montaigne",
+        "author": "Michel de Montaigne",
+        "genre": "filosofia",
+        "description": "\"...tampoco me propongo con mi obra prestarte ningún servicio, ni con ella trabajo para mi gloria, que mis fuerzas no alcanzan al logro de tal designio. Lo consagro a la comodidad particular de mis parientes y amigos para que, cuando yo muera (lo que acontecerá pronto), puedan encontrar en él algunos rasgos de mi condición y humor, y por este medio conserven más completo y más vivo el conocimiento que de mí tuvieron. Si mi objetivo hubiera sido buscar el favor del mundo, habría echado mano de adornos prestados; pero no, quiero sólo mostrarme en mi manera de ser sencilla, natural y ordinaria, sin estudio ni artificio, porque soy yo mismo a quien pinto\". -Extracto del prefacio del presente libro.",
+        "biographyAuthor": "Michel de Montaigne (1533-1592) fue un filósofo, ensayista y estadista francés del Renacimiento. Nacido en el seno de una familia noble del suroeste de Francia, recibió una educación clásica. Montaigne fue magistrado en Burdeos y más tarde alcalde de esa ciudad.\r\nSu obra más conocida es \"Ensayos\", una colección de reflexiones y consideraciones personales. En estos ensayos, Montaigne exploró una amplia gama de temas, desde la naturaleza humana y la educación hasta la amistad y la moralidad. A menudo se le considera uno de los primeros practicantes de la introspección en la literatura, ya que examinaba sus propios pensamientos y experiencias.\r\nLos ensayos de Montaigne se caracterizan por su enfoque franco y a menudo escéptico del conocimiento y el comportamiento humano, y por la impronta estilística de su carácter personal y humor. Adoptó la idea de que la verdad es relativa y está sujeta a las perspectivas individuales y culturales, un concepto que influyó enormemente en el pensamiento filosófico posterior. Reconoce, por ende, la gran importancia de la libertad humana y de la búsqueda de la verdad. Por esto, a menudo se piensa en él como un nexo entre la filosofía medieval y la moderna.\r\nAdemás de sus actividades literarias, Montaigne se dedicó a la política y la diplomacia. Desempeñó un papel crucial en las negociaciones entre las facciones católica y protestante durante las Guerras de Religión francesas, marcando como su objetivo la consecución de una paz duradera. \r\nMichel de Montaigne falleció el 13 de septiembre de 1592 en el castillo de su familia en Francia. Su innovador enfoque de la escritura, su exploración de la naturaleza humana y sus contribuciones a la diplomacia han dejado un legado duradero en la literatura, la filosofía y la política.",
+        "tapaDura": 6500,
+        "tapaBlanda": 6200,
+        "pdf": 800,
+        "epub": "1200",
+        "ebook": null,
+        "img": "/img/products/book-1694199971073.jpg",
+        "id": 14
+    },
+    {
+        "name": "A game of thrones (inglés)",
+        "author": "George R. R. Martin",
+        "genre": "fantasia",
+        "description": "\"Juego de tronos\", de George R.R. Martin, es la primera entrega de la serie de fantasía épica \"Canción de hielo y fuego\". La historia sigue las luchas de poder entre familias nobles que se disputan el control del Trono de Hierro. La novela es famosa por la complejidad de sus personajes, la intriga política y la riqueza de detalles de un mundo lleno de caballeros, dragones y magia. Martin teje una apasionante historia de honor, traición y ambición, presentando a los lectores un amplio elenco de personajes, cada uno con sus propios motivos y secretos. Mientras los Siete Reinos se tambalean al borde de la guerra, el libro es una mezcla magistral de maniobras políticas y elementos sobrenaturales, lo que lo convierte en una lectura cautivadora para los aficionados a la fantasía épica y la narración intrincada.",
+        "biographyAuthor": "George R.R. Martin, nacido el 20 de septiembre de 1948 en Bayonne (Nueva Jersey, EEUU), es un escritor y productor de televisión estadounidense más conocido por \"Canción de hielo y fuego\", una célebre saga de fantasía que comenzó con \"Juego de tronos\" en 1996. Martin comenzó su carrera de escritor en la década de 1970, trabajando en relatos de ciencia ficción y terror, pero adquirió fama internacional con su serie de fantasía, conocida por la intrincada construcción del mundo, los complejos personajes y la intriga política. La adaptación televisiva de \"Juego de Tronos\" se convirtió en un fenómeno cultural. Actualmente reside con su esposa en Santa Fe, New Mexico, EEUU.",
+        "tapaDura": 12000,
+        "tapaBlanda": 9200,
+        "pdf": 2100,
+        "epub": "2100",
+        "ebook": null,
+        "img": "/img/products/book-1694202309045.webp",
+        "id": 15
     }
 ]

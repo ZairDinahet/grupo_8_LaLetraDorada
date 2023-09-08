@@ -11,9 +11,12 @@ const productsController = {
   detail: function (req, res) {
     const idDeseada = parseInt(req.params.id);
     let book = books.find(b => b.id == idDeseada);
-    let biografiaParrafos = book.biographyAuthor;
-    if(book.biographyAuthor.includes("\r\n")){ biografiaParrafos = book.biographyAuthor.split('\r\n');}
-    res.render('products/detail', {books, book, biografiaParrafos})
+    //resolviendo problema de separación en párrafos de la biografía:
+    let biografia = book.biographyAuthor;
+    let biografiaArray = [];
+    if(book.biographyAuthor.includes("\r\n")){ biografia = biografia.split('\r\n');}else{biografiaArray.push(biografia);biografia = biografiaArray}
+    //renderizado de la página:
+    res.render('products/detail', {books, book, biografia})
   },
 
   cart: function (req,res) {
