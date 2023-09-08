@@ -17,6 +17,7 @@
   <%- include('../partials/header.ejs') %>
 
   <main>
+    <!-- Cambiar la propiedad price por tapaDura y modificar el json para que cambie esa propiedad-->
     <section class="carousel-banners-container">
 
       <div class="banners-container">
@@ -90,7 +91,7 @@
                 <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p>$ <%= book.price %></p>
+                <p>$ <%= book.tapaDura %></p>
               </div>
             </div>
           </article>
@@ -115,7 +116,7 @@
                 <p><%= book.author %></p>
               </div>
               <div class="info-price">
-                <p>$ <%= book.price %></p>
+                <p>$ <%= book.tapaDura %></p>
               </div>
             </div>
           </article>
@@ -141,7 +142,7 @@
                   <p><%= book.author %></p>
                 </div>
                 <div class="info-price">
-                  <p>$ <%= book.price %></p>
+                  <p>$ <%= book.tapaDura %></p>
                 </div>
               </div>
             </article>
