@@ -1,6 +1,6 @@
-const fs = require(`fs`);
-const books = require("../data/books.json");
-const path = require("path");
+const books = require("../data/books.json")
+const fs = require('fs')
+const path = require('path')
 
 const productsController = {
 
@@ -58,16 +58,48 @@ const productsController = {
 
   edit: function(req,res){
     //agregar la logica buscar el libro que tenga el id que me pasan por params y enviarlo a mi vista prodcutEdit para que se complete el formulario con esa informacion
-    res.render('products/productEdit')
+    const idProduct = parseInt(req.params.id);
+    let productE = books.find(p => p.id === idProduct)
+    res.render('products/productEdit',{productE})
   },
 
   put: function (req, res) {
     //agregar la logica para editar un libro del objeto books. Primero hay que encontrarlo usando el id, books y despues actualizar el archivo books.json
+    const idProduct = parseInt(req.params.id);
+    const edit = req.body;
+    const file = req.file;
+    
+    const index = books.findIndex(p => p.id === idProduct)
+    books[index].name = edit.name
+    books[index].author = edit.author
+    books[index].genre = !edit.genre ? books[index].genre : edit.genre
+    books[index].description = edit.description
+    books[index].biographyAuthor = edit.biographyAuthor
+    books[index].tapaDura = +edit.tapaDura
+    books[index].tapaBlanda = +edit.tapaBlanda
+    books[index].epub = +edit.epub
+    books[index].pdf = +edit.pdf
+    books[index].img = file ? `/img/products/${file.filename}` :  books[index].img 
+
+    fs.writeFileSync(path.resolve(__dirname,"../data/books.json"),JSON.stringify(books,null,4))
+    res.redirect('/products')
+    console.log(books[index]);
   },
 
   delete: function (req, res) {
-    //agregar la logica para buscar el libro que tenga el id que me pasan por params para eliminarlo de book, books.json y eliminar su foto.
+    const bookId = parseInt(req.params.id);
+    const book = books.find((book) => book.id === bookId);
+
+  if (book) {
+    const bookImg = path.resolve(__dirname, `../../public${book.img}`);
+    fs.unlinkSync(bookImg);
+
+    const bookDeleted = books.filter((book) => book.id !== bookId);
+    fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(bookDeleted));
   }
+
+    res.redirect('/products')
+}
 }
 
 

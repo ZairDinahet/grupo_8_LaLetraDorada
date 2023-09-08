@@ -19,29 +19,29 @@
     <main>
         <div class="main-container">
             <h2>Editar producto</h2>
-            <form class="forms-container" action="" method="post">
+            <form class="forms-container" action="/products/edit/<%= productE.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="section">
                     <h3>Información del Producto</h3>
                     <div class="fields">
                         <div class="field-form">
-                            <label for="titulo">Titulo</label>
+                            <label for="name">Titulo</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-heading"></i>
-                                <input type="text" name="titulo" id="titulo" placeholder="Titulo del Libro" required>
+                                <input type="text" name="name" id="name" placeholder="Titulo del Libro" value="<%= productE.name %>" required>
                             </div>
                         </div>
                         <div class="field-form">
-                            <label for="autor">Autor</label>
+                            <label for="author">Autor</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-feather"></i>
-                                <input type="text" name="autor" id="autor" placeholder="Autor del Libro" required>
+                                <input type="text" name="author" id="author" placeholder="Autor del Libro"  value="<%= productE.author %>" required>
                             </div>
                         </div>
                         <div class="field-form">
-                            <label for="category">Género </label>
+                            <label for="genre">Género </label>
                             <div class="input-with-icon">
                                 <i class="fa-regular fa-star"></i>
-                                <select name="category" id="category">
+                                <select name="genre" id="genre">
                                     <option value="" disabled selected >Elige un Género</option>
                                     <option value="antologia">Antología</option>
                                     <option value="arquitectura">Arquitectura y diseño</option>
@@ -60,18 +60,19 @@
                                 </select>
                             </div>
                         </div>
+                       
                         <div class="field-form">
-                            <label for="portada">Portada</label>
+                            <label for="img">Portada</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-book"></i>
-                                <input type="file" name="portada" id="portada" accept=".png, .jpg, .jpeg" required>
+                                <input type="file" name="img" id="img" accept=".png, .jpg, .jpeg" value="<%= productE.img %>" >
                             </div>
                         </div>
                         <div class="field-form" id="descripcion">
-                            <label for="descripcion">Descripción</label>
+                            <label for="description">Descripción</label>
                             <div class="input-with-icon">
                                 <i class="fa-regular fa-envelope"></i>
-                                <textarea name="descripcion" id="descripcion" placeholder="Descripción"></textarea>
+                                <textarea name="description" id="description" placeholder="Descripción"><%= productE.description %></textarea>
                             </div>
                         </div>
                     </div>
@@ -84,35 +85,49 @@
                             <label for="tapaDura">Tapa Dura</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="tapaDura" id="tapaDura" placeholder="Precio Tapa Dura " required>
+                                <input type="number" name="tapaDura" id="tapaDura" placeholder="Precio Tapa Dura " value="<%= productE.tapaDura %>" required>
                             </div>
                         </div>
                         <div class="field-form">
                             <label for="tapaBlanda">Tapa Blanda</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="tapaBlanda" id="tapaBlanda" placeholder="Precio Tapa Blanda " required>
+                                <input type="number" name="tapaBlanda" id="tapaBlanda" placeholder="Precio Tapa Blanda " value="<%= productE.tapaBlanda %>">
                             </div>
                         </div>
                         <div class="field-form">
-                            <label for="ebook">Ebook</label>
+                            <label for="epub">Ebook</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="ebook" id="ebook" placeholder="Precio Ebook " required>
+                                <input type="number" name="epub" id="epub" placeholder="Precio Ebook " value="<%= productE.epub %>">
                             </div>
                         </div>
                         <div class="field-form">
                             <label for="pdf">PDF</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="pdf" id="pdf" placeholder="Precio PDF" required>
+                                <input type="number" name="pdf" id="pdf" placeholder="Precio PDF" value="<%= productE.pdf %>" >
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="section">
+                    <h3>Información del Autor</h3>
+                    <div class="fields">
+                        <div class="field-form" id="descripcion">
+                            <label for="biographyAuthor">Descripción del Autor</label>
+                            <div class="input-with-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                                <textarea name="biographyAuthor" id="biographyAuthor" placeholder="Descripción"><%= productE.biographyAuthor %></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="field-form-button">
                     <button class="form-button-creat" type="submit">Guardar Cambios</button>
-                    <button class="form-button-cancel" type="reset">Cancelar</button>
+                    <button class="form-button-cancel" type="reset"><a href="/products/<%=productE.id%>">Cancelar</a></button>
                 </div>
             </form>
         </div>
