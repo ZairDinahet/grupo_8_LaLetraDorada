@@ -72,8 +72,5 @@ Hola, me llamo Nahuel Sanchez. Tengo 23 años y actualmente soy estudiante de di
 
 Me llamo Zair Dinahet, tengo 21 años y soy Desarrollador Web. Amante de la programacion, siempre ávido a aprender, crecer en el mundo IT y enfretar nuevos desafios.
 
-### Gastón Gonzalez
-
-Soy Gastón Gonzalez, tengo 19 años, actualmente estudio Licenciatura en Sistemas en la Facultad de Ingeniería. Busco adquirir nuevos conocimientos y habilidades en el mundo de la programación. Me gustan los videojuegos y practicar deportes.
 
 
