@@ -11,8 +11,12 @@ const productsController = {
   detail: function (req, res) {
     const idDeseada = parseInt(req.params.id);
     let book = books.find(b => b.id == idDeseada);
-    const biografiaParrafos = book.biographyAuthor.split('\n\n');
-    res.render('products/detail', {books, book, biografiaParrafos})
+    //resolviendo problema de separación en párrafos de la biografía:
+    let biografia = book.biographyAuthor;
+    let biografiaArray = [];
+    if(book.biographyAuthor.includes("\r\n")){ biografia = biografia.split('\r\n');}else{biografiaArray.push(biografia);biografia = biografiaArray}
+    //renderizado de la página:
+    res.render('products/detail', {books, book, biografia})
   },
 
   cart: function (req,res) {
@@ -31,7 +35,25 @@ const productsController = {
   },
 
   post: function (req, res) {
-    //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.json
+    //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.jsonz
+    const newBook = req.body;
+    const file = req.file;
+    console.log(newBook);
+    //volviendo a los precios números en vez de strings
+    newBook.tapaDura = +newBook.tapaDura;
+    newBook.tapaBlanda = +newBook.tapaBlanda;
+    newBook.pdf = +newBook.pdf;
+    newBook.ebook = +newBook.ebook;
+    newBook.img = `/img/products/${file.filename}`
+    //creando una nueva Id a product
+    let oldBook = books[books.length - 1];
+    let ultimaId = oldBook ? oldBook.id : 0;
+    newBook.id = ultimaId + 1;
+    //pusheando el cambio a books
+    books.push(newBook);
+    //sobreescribiendo el json
+    fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books, null, 4));
+    res.redirect("/products") 
   },
 
   edit: function(req,res){

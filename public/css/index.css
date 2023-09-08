@@ -73,6 +73,7 @@ rgb(116,173,209)    rgb(69,117,180)
   color: white;
   justify-content: center;
   padding: 10px 0;
+  align-items:center;
 }
 
 .item-link-category {
@@ -96,7 +97,19 @@ rgb(116,173,209)    rgb(69,117,180)
 
 }
 
+.createBook{
+  background-color: #272343;
+  display:flex;
+  justify-content: center;
+}
 
+.createBook a{
+  color:#fff;
+  font-weight: 600;
+  font-size:18px;
+  max-width: 100px; /* Puedes ajustar este valor al ancho deseado */
+  width: 100%; 
+}
 
 
 
@@ -163,6 +176,11 @@ main {
 .info-author p{
   color: #333;
   font-size: 12px;
+}
+
+.info-price-pdf{
+  font-size:14px;
+  color:#272343;
 }
 .book-item img{
   width: 120px;
@@ -239,8 +257,6 @@ main {
   font-size: 20px;
   margin: 5px 10px;
 }
-
-
 
 
 /* styles footer  */

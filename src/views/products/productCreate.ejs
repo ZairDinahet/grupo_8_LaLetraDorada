@@ -18,7 +18,7 @@
     <main>
         <div class="main-create-container">
             <h2>Creación de Producto</h2>
-            <form action="" method="post">
+            <form action="/products/create" method="post" enctype="multipart/form-data">
 
                 <section class="book-data">
 
@@ -26,8 +26,8 @@
 
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="title"> Título </label>
-                            <input type="text" name="title" id="title" 
+                            <label for="name"> Título </label>
+                            <input type="text" name="name" id="name" 
                             placeholder="Título" required>
                         </div>
 
@@ -42,15 +42,15 @@
                     
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="facade">Portada</label>
-                            <input type="file" name="facade" id="facade" 
+                            <label for="img">Portada</label>
+                            <input type="file" name="img" id="img" 
                             placeholder="Elegir Portada" required>
                         </div>
 
                         <div class="right">
                             <label>Categoría </label>
                             <select class="category-select-main" 
-                            id="category-select-main" required>
+                            id="category-select-main" name="genre" required>
                                 <option value="antologia">Antología</option>
                                 <option value="arquitectura">Arquitectura y diseño</option>
                                 <option value="arte">Arte</option>
@@ -63,6 +63,7 @@
                                 <option value="fantasia">Fantasía</option>
                                 <option value="filosofia">Filosofía</option>
                                 <option value="genero">Género</option>
+                                <option value="Latinoamericana">Literatura latinoamericana</option>
                                 <option value="novela_juvenil">Novela Juvenil</option>
                                 <option value="romance">Romance</option>
                                 <option value="suspenso">Suspenso</option>
@@ -77,7 +78,16 @@
                     <div class="field-form-container">
                         <label for="description">Descripción</label>
                         <textarea name="description" id="description" 
-                        cols="100" rows="10" placeholder="Descripción" required></textarea>
+                        cols="100" rows="8" placeholder="Descripción" required></textarea>
+                    </div>
+
+                </section>
+                <section class="textarea-description">
+
+                    <div class="field-form-container">
+                        <label for="biography">Biografía del autor</label>
+                        <textarea name="biographyAuthor" id="biographyAuthor" 
+                        cols="100" rows="12" placeholder="Biografía del autor - al menos dos párrafos" required></textarea>
                     </div>
 
                 </section>
@@ -103,14 +113,14 @@
                     
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="tapaDura"> Tapa dura </label>
-                            <input type="text" name="tapaDura" id="tapaDura"
+                            <label for="tapaDura"> Pdf </label>
+                            <input type="text" name="pdf" id="pdf"
                             placeholder="Precio">
                         </div>
                         
                         <div class="right">
-                            <label for="price"> Precio </label>
-                            <input type="text" name="price" id="price" 
+                            <label for="price"> Epub </label>
+                            <input type="text" name="epub" id="epub" 
                             placeholder="Precio">
                         </div>
                     </section>
