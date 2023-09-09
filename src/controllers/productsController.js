@@ -68,7 +68,7 @@ const productsController = {
     const idProduct = parseInt(req.params.id);
     const edit = req.body;
     const file = req.file;
-    
+
     const index = books.findIndex(p => p.id === idProduct)
     books[index].name = edit.name
     books[index].author = edit.author
@@ -79,7 +79,13 @@ const productsController = {
     books[index].tapaBlanda = +edit.tapaBlanda
     books[index].epub = +edit.epub
     books[index].pdf = +edit.pdf
-    books[index].img = file ? `/img/products/${file.filename}` :  books[index].img 
+
+    if(file){
+      fs.unlinkSync(path.resolve(__dirname, `../../public${books[index].img}`));
+      books[index].img = `/img/products/${file.filename}`
+    } else{
+      books[index].img =  books[index].img 
+    }
 
     fs.writeFileSync(path.resolve(__dirname,"../data/books.json"),JSON.stringify(books,null,4))
     res.redirect('/products')
