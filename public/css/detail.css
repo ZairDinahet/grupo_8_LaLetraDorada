@@ -153,17 +153,18 @@ rgb(116,173,209)    rgb(69,117,180)
   top: 0;
   right: 0;
   width: 60px;
-}
-
-.button-container form {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
-.button-container button {
+.button-container .options{
+  width: 40%;
+}
+
+.button-container button{
   background-color: rgba(0, 0, 0, 0.01);
   border: none;
-  margin: 0 3px;
+  cursor: pointer;
 }
 
 .button-container img {
