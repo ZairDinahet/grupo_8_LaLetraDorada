@@ -72,5 +72,8 @@ Hola, me llamo Nahuel Sanchez. Tengo 23 años y actualmente soy estudiante de di
 
 Me llamo Zair Dinahet, tengo 21 años y soy Desarrollador Web. Amante de la programacion, siempre ávido a aprender, crecer en el mundo IT y enfretar nuevos desafios.
 
+### Natalia Calizaya
+
+Hola, me llamo Natalia Calizaya tengo 22 años, estudio Ing. Informatica, me gusta aprender de todo un poco, programar por supuesto, me encantan los videojuegos y el helado.
 
 
