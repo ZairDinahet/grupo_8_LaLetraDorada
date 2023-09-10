@@ -78,16 +78,17 @@
             </div>
 
             <div class="button-container">
-              <form action="" method="post">
+              <form action="/products/delete/<%= book.id %>?_method=DELETE" method="POST">
                 <div>
                   <button type="submit" class="remove-button">
                     <img src="/img/detail/remove.png" alt="">
                   </button>
                 </div>
-                
+
                 <div>
                   <button type="submit" class="edit-button">
                     <img src="/img/detail/pencil.png" alt="">
+                    <a href="/products/edit/<%=book.id%>">edit</a>
                   </button>
                 </div>
               </form>

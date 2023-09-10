@@ -22,11 +22,11 @@ router.post('/create', upload.single("img") , productsController.post)
 router.get('/cart/:id?', productsController.cart);
 
 router.get('/edit/:id', productsController.edit)
-router.put('/edit/:id', productsController.put)
+router.put('/edit/:id',upload.single("img"), productsController.put)
 
 router.get('/:id', productsController.detail)
 
-router.delete('/:id', productsController.delete)
+router.delete('/delete/:id', productsController.delete)
 
 
 //Exporto router, quien aloja todas las rutas que creo para que mi archivo de cabecera (en este caso app.js) decida donde usar esta ruta. 

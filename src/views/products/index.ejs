@@ -17,6 +17,7 @@
   <%- include('../partials/header.ejs') %>
 
   <main>
+    <!-- Cambiar la propiedad price por tapaDura y modificar el json para que cambie esa propiedad-->
     <section class="carousel-banners-container">
 
       <div class="banners-container">
@@ -73,139 +74,11 @@
     
     </section>
 
-    <section class="new-books-container">
-      <h3 class="new-books-title">Novedades</h3>
+    <section class="section-container">
+      <h3 class="section-title">¡Mas vendidos!</h3>
       <div class="books-container">
 
         <% books.slice(0, 6).forEach(book => { %>
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/products/<%= book.id %>">              
-                <img src="<%= book.img %>" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p><%= book.name %></p>
-              </div>
-              <div class="info-author">
-                <p><%= book.author %></p>
-              </div>
-              <div class="info-price">
-                <p>$ <%= book.price %></p>
-              </div>
-            </div>
-          </article>
-        <% }) %>
-
-        <!-- <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/asimov.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>Trilogía de la Fundación</p>
-            </div>
-            <div class="info-author">
-              <p>Isaac Asimov</p>
-            </div>
-            <div class="info-price">
-              <p>$1989</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">
-              <img src="/img/home/cuentos-de-hadas.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>Cuento de hadas</p>
-            </div>
-            <div class="info-author">
-              <p>Stephen King</p>
-            </div>
-            <div class="info-price">
-              <p>$3100</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/dorian-gray.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>El retrato de Dorian Gray</p>
-            </div>
-            <div class="info-author">
-              <p>Oscar Wilde</p>
-            </div>
-            <div class="info-price">
-              <p>$6000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/dune.png"  alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>Dune</p>
-            </div>
-            <div class="info-author">
-              <p>Frank Herbert</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/edgar-allan-poe.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>La verdad sobre el caso del señor Valderman</p>
-            </div>
-            <div class="info-author">
-              <p>Edgar Allan Poe</p>
-            </div>
-            <div class="info-price">
-              <p>$2000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item" >
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/el-corazon-delator.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>El corazón delator</p>
-            </div>
-            <div class="info-author">
-              <p>Edgar Allan Poe</p>
-            </div>
-            <div class="info-price">
-              <p>$5000</p>
-            </div>
-          </div>
-        </article> -->
-      </div>
-    </section>
-
-      <!--Otro hacer nuevamente lo hecho en ultimas novedades -->
-    <section class="offer-books-container"> 
-      <h3 class="offer-title">Ofertas!</h3>       
-      <div class="books-container">
-
-        <% books.slice(8,13).forEach(book => { %>
           <article class="book-item">
             <div class="book-info-container">
               <a href="/products/<%= book.id %>">              
@@ -223,111 +96,59 @@
             </div>
           </article>
         <% }) %>
-        
-        <!-- <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">
-              <img src="/img/home/el-hobbit.png" alt="Libro">
-            </a>
-            <div class="info-title"> 
-              <p>El Hobbit</p>
-            </div>
-            <div class="info-author">
-              <p>J.R.R. Tolkien</p>
-            </div>
-            <div class="info-price">
-              <p>$7000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">
-              <img src="/img/home/el-lobo-estepario.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>El lobo estepario</p>
-            </div>
-            <div class="info-author">
-              <p>Hermann Hesse</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/frank-kafka.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>En la colonia penitenciaria</p>
-            </div>
-            <div class="info-author">
-              <p>Franz Kafka</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/sigmund-freud.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>Obras Completa</p>
-            </div>
-            <div class="info-author">
-              <p>Sigmund Freud</p>
-            </div>
-            <div class="info-price">
-              <p>$10000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item">
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/george-orwell-1984.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>1984</p>
-            </div>
-            <div class="info-author">
-              <p>George Orwell</p>
-            </div>
-            <div class="info-price">
-              <p>$5000</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="book-item" >
-          <div class="book-info-container">
-            <a href="/detail">              
-              <img src="/img/home/leon-tolstoi.png" alt="Libro">
-            </a>
-            <div class="info-title">
-              <p>¿Cuánta tierra necesita un hombre?</p>
-            </div>
-            <div class="info-author">
-              <p>León Tolstói</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-          </div>
-          
-        </article> -->
       </div>
     </section>
+
+    <section class="section-container"> 
+      <h3 class="section-title">¡Ofertas!</h3>       
+      <div class="books-container">
+        <% books.slice(6, 12).forEach(book => { %>
+          <article class="book-item">
+            <div class="book-info-container">
+              <a href="/products/<%= book.id %>">              
+                <img src="<%= book.img %>" alt="Libro">
+              </a>
+              <div class="info-title">
+                <p><%= book.name %></p>
+              </div>
+              <div class="info-author">
+                <p><%= book.author %></p>
+              </div>
+              <div class="info-price">
+                <p>$ <%= book.tapaDura %></p>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    </section>
+
+    <% if(books.length > 12){%>
+      <section class="section-container"> 
+        <h3 class="section-title">¡Ultima novedades!</h3>       
+        <div class="books-container">
+  
+          <% books.slice(12).forEach(book => { %>
+            <article class="book-item">
+              <div class="book-info-container">
+                <a href="/products/<%= book.id %>">              
+                  <img src="<%= book.img %>" alt="Libro">
+                </a>
+                <div class="info-title">
+                  <p><%= book.name %></p>
+                </div>
+                <div class="info-author">
+                  <p><%= book.author %></p>
+                </div>
+                <div class="info-price">
+                  <p>$ <%= book.tapaDura %></p>
+                </div>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      </section>
+    <% } %> 
   </main>
 
   <%- include('../partials/footer.ejs') %>
