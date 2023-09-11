@@ -7,10 +7,10 @@
     "postalCode":null,
     "category":"owner",
     "shippingAdress":"87 Colorado Center",
-    "likedGenres":"Clásicos|Romance",
-    "previousPurchases":"El lobo estepario",
-    "wishlist":"El retrato de Dorian Gray",
-    "productCart":"¿Cuánta tierra necesita un hombre?"
+    "likedGenres":["Clásicos", "Romance"] ,
+    "previousPurchases":["El lobo estepario"],
+    "wishlist":["El retrato de Dorian Gray"],
+    "productCart":["¿Cuánta tierra necesita un hombre?"]
   },
   {
     "id":2,
@@ -19,10 +19,10 @@
     "email":"wresdale1@howstuffworks.com",
     "postalCode":"Y4500",
     "shippingAdress":"9 Mallory Court",
-    "likedGenres":"Arte|Fantasía|Suspenso",
-    "previousPurchases":"En la colonia penitenciaria",
-    "wishlist":"El Hobbit",
-    "productCart":"A game of thrones (inglés)"
+    "likedGenres":["Arte","Fantasía","Suspenso"],
+    "previousPurchases":["En la colonia penitenciaria"],
+    "wishlist":["El Hobbit"],
+    "productCart":["A game of thrones (inglés)"]
   },
   {
     "id":3,
@@ -31,9 +31,9 @@
     "email":"slillgard2@skype.com",
     "postalCode":null,
     "shippingAdress":"2 Canary Crossing",
-    "likedGenres":"Filosofía|Fantasía",
-    "previousPurchases":"Dune",
-    "wishlist":"Ensayos de Montaigne",
-    "productCart":"Obras Completas de Sigmund Freud"
+    "likedGenres":["Filosofía","Fantasía"],
+    "previousPurchases":["Dune"],
+    "wishlist":["Ensayos de Montaigne"],
+    "productCart":["Obras Completas de Sigmund Freud"]
   }
 ]
