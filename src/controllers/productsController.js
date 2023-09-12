@@ -1,4 +1,4 @@
-const books = require("../data/books.json")
+let books = require("../data/books.json")
 const fs = require('fs')
 const path = require('path')
 
@@ -100,8 +100,8 @@ const productsController = {
       const bookImg = path.resolve(__dirname, `../../public${book.img}`);
       fs.unlinkSync(bookImg);
 
-      const bookDeleted = books.filter((book) => book.id !== bookId);
-      fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(bookDeleted,null,4));
+      books = books.filter((book) => book.id !== bookId);
+      fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(books,null,4));
     }
     res.redirect('/products')
   }
