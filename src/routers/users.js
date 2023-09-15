@@ -8,6 +8,6 @@ router.get('/login', usersController.login)
 
 router.get('/register', usersController.register)
 
-
+router.get(['/index','/'], usersController.index)
 
 module.exports = router;

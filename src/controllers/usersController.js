@@ -8,6 +8,9 @@ const usersController = {
   
   register: function (req, res) {
     res.render('users/register')
+  },
+  index: function (req, res) {
+    res.render('users/index')
   }
 }
 
