@@ -263,6 +263,12 @@
     margin-bottom: 25px;
   }
   
+
+  .text-danger {
+    color: rgb(252, 58, 58);
+    font-size: 12px;
+    padding: 5px;
+  }
   /* styles footer  */
   
   footer {
