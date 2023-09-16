@@ -27,27 +27,41 @@
           
           <div class="form-login-content">
             <div class="sub-form-content">
+
               <h2>Inicia Sesión</h2>
-              <form class="login-form-content" action="" method="post">
+
+              <form class="login-form-content" action="/user/login" method="post">
+
                 <div class="field-form">
-                    <label for="correo">Correo Electronico</label>
+                    <label for="email">Correo Electronico</label>
                     <div class="input-icon">
                         <i class="fa-regular fa-envelope"></i>
-                        <input type="email" name="correo" id="correo" placeholder="Ingresa tu Email" required>
-                    </div>
-                </div>
-                <div class="field-form">
-                    <label for="contraseña">Contraseña</label>
-                    <div class="input-icon">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
-                        required>
+                        <input type="text" name="email" id="email" placeholder="Ingresa tu Email" value="<%= (locals.oldData && oldData.email) ? oldData.email : null %>" >
+                        
                       </div>
-                      <a href="">¿Has olvidado tu contraseña?</a>
+                      <% if (locals.errors && errors.email) { %>
+                      <div class="text-danger"><%= errors.email.msg %></div>  
+                      <% } %>
                 </div>
+
+                <div class="field-form">
+                  <label for="password">Contraseña</label>
+                  <div class="input-icon">
+                      <i class="fa-solid fa-lock"></i>
+                      <input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña">
+                  </div>
+                    <% if (locals.errors && errors.password) { %>
+                      <div class="text-danger"><%= errors.password.msg %></div>  
+                    <% } %>
+                    <a href="">¿Has olvidado tu contraseña?</a>
+                </div>
+
                 <div class="checkbox"> <label> <input type="checkbox" name="Recordarme"> Recordarme</label> </div>
+
                 <button class="form-button-access" type="submit"> Acceder </button>
-                <span>¿Aún no tienes una cuenta?<a href=""> Registrate</a></span>
+
+                <span>¿Aún no tienes una cuenta?<a href="/user/register"> Registrate</a></span>
+
               </form>
             </div>
           </div>
