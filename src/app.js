@@ -2,9 +2,16 @@ const express = require('express');
 const productsRouter = require('./routers/products')
 const usersRouter = require('./routers/users')
 const methodOverride = require('method-override')
+const session = require('express-session')
 
 const app = express();
 const PORT = 8080
+
+app.use(session({
+  secret: "Shh",
+  resave: false,
+  saveUninitialized: false,
+}))
 
 app.use(express.static('public'))
 // Configuro el entorno de la aplicacion para poder capturar la informacion de los forularios en forma de objeto literal:
