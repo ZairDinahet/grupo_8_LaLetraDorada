@@ -5,6 +5,7 @@ const userLoginValidation = require('../middleware/userLoginValdation')
 const router = Router();
 
 
+router.get(['/index','/'], usersController.index)
 
 router.get('/register', usersController.register)
 
@@ -16,5 +17,6 @@ router.post('/login', userLoginValidation, usersController.loginProcess)
 
 // Logout
 router.get('/logout', usersController.logout)
+
 
 module.exports = router;

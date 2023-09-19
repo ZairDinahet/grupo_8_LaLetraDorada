@@ -51,7 +51,7 @@ Así que, si estás listo para embarcarte en una emocionante travesía literaria
 
 ## Tablero de trabajo
 
-Tablero de trabajo La letra dorada: [Trello](https://trello.com/b/BnzSc7Ks/la-letra-dorada)
+Tablero de trabajo La letra dorada: [Trello]()
 
 
 ## Integrantes del grupo

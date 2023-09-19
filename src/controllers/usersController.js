@@ -3,6 +3,10 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const usersController = {
+  
+  index: function (req, res) {
+  res.render('users/landing')
+  },
 
   register: function (req, res) {
     res.render('users/register')
