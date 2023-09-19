@@ -10,7 +10,7 @@ const usersController = {
     res.render('users/register')
   },
   index: function (req, res) {
-    res.render('users/index')
+    res.render('users/landing')
   }
 }
 
