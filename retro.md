@@ -1,3 +1,4 @@
+
 ## Retroespectiva del 1er Sprint - Proyecto integrador Digital House
 ### Cosas que hicimos bien
 
@@ -32,7 +33,7 @@ En resumen, nuestra retroespectiva revela que hemos logrado una distribución ef
 
 
 
-### SEGUNDA RETRO:
+## Retroespectiva del 2do Sprint - Proyecto integrador Digital House
 
 ### COSAS POR MEJORAR:
 - Falta de regularidad en las Reuniones Diarias:
@@ -47,20 +48,20 @@ En ocasiones, la falta de uso de ramas en el repositorio de GitHub complicó el 
 ### NUESTRA CONCLUSIÓN:
 Para evitar estas situaciones, decidimos establecer una serie de cambios, divididos en "cambios del equipo" y "cambios técnicos"
 
-## Del equipo:
+### Del equipo
 - Implementación de Horarios para Reuniones Diarias:
 Estableceremos horarios fijos para las reuniones diarias (dailies).
 
 - Transparencia en Caso de Problemas o Retrasos:
 Priorizaremos la apertura y la transparencia respecto a retrasos o conflictos que puedan surgir en el proceso. En lugar de esperar, se notificará inmediatamente para abordar y resolver estos problemas de manera eficiente.
 
-## Enfoque técnico:
+### Enfoque técnico:
 
 - Implementación Parcial de Git Flow:
 Procederemos a implementar una parte de la metodología de trabajo Git Flow, centrándonos en la utilización de git pull requests y ramas de trabajo. 
 
 
-## TERCERA RETRO
+## Retroespectiva del 3er Sprint - Proyecto integrador Digital House
 
 ### Cosas que hicimos bien
 
@@ -81,3 +82,20 @@ Estar activos con el uso de trello, para notificar y mantener al tanto a nuestro
 ### Nuestra Conclusión
 
 En síntesis, hemos alcanzado una mayor eficiencia y claridad en nuestras reuniones al establecer horarios fijos cuando es posible para asi obtener una mayor coordinación. Además, hemos identificado la necesidad de no olvidar usar la herramienta "Trello" para notificar nuestra situación y evitar estar justos con el tiempo en la ejecución de tareas.
+
+
+## Retroespectiva del 4to Sprint - Proyecto integrador Digital House
+
+### Cosas que hicimos bien
+
+En este sprint, logramos completar todas nuestras tareas a tiempo. Esto es un gran logro y muestra nuestra mejora en la gestión del tiempo y la planificación.
+
+### Cosas por mejorar
+
+- Pruebas de errores en el código: Necesitamos dedicar más tiempo a probar nuestro código para detectar y corregir errores.
+
+- Mejorar los comentarios en los commits: Para facilitar el seguimiento de los cambios y entender el propósito de cada commit, debemos esforzarnos por mejorar nuestros comentarios en los commits.
+
+### Nuestra conclusión
+
+En general, estamos haciendo un buen progreso y continuamos mejorando con cada sprint. Hemos logrado cumplir con nuestros plazos y hemos mantenido una fuerte cohesión del equipo. Sin embargo, reconocemos que hay áreas en las que podemos mejorar, como las pruebas de errores en el código, las revisiones grupales y los comentarios en los commits. Al abordar estos desafíos, esperamos seguir mejorando nuestra eficiencia y productividad en los próximos sprints.
