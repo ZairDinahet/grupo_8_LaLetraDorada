@@ -115,7 +115,7 @@
     box-shadow: 0px 3px 10px rgba(149, 146, 146, 0.5);
     width: 80vw;
     margin: auto;
-    background-color: white;
+    background-color: rgb(35 35 67);
     flex-direction: column;
  }
 
@@ -125,9 +125,7 @@
     text-align: center;
     font-weight: 2px;
     padding: 1%;
-    background: linear-gradient(rgb(0 55 255),rgb(35 35 67));
-    -webkit-background-clip: text;
-     color: transparent;
+    color: white;
 
  }
  .main-index-container img{
@@ -137,21 +135,21 @@
  .sub-information-content{
     font-family: 'Roboto', sans-serif;
     font-size: 120%;
-    padding: 1% 3%;
+    margin:auto;
     color: #979797;
     text-align: center;
+    padding: 15px;
 
  }
  .subtitle-container{
-  margin-top: 3%;
-  margin-bottom: 3%;
-  margin-left: 9%;
+  margin: 4% 0;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
   color:#333;
+  text-align: center;
  }
  .text-button-products{
-  font-size: 160%;
+  font-size: 120%;
   text-align: center;
   color:white;
   margin:auto;
@@ -163,21 +161,23 @@
   border: none;
   background-color: #232343;
   box-shadow: 0px 3px 10px rgba(149, 146, 146, 0.5);
-  width: 20vw;
+  width: 12vw;
   margin: auto;
-  height: 12vh;
+  height: 9vh;
   box-sizing: content-box;
  }
 .main-banner{
     padding: 1%;
-    margin: 2vw 21vh;
-    width: 80vw;
+    display: flex;
+    margin: auto;
+    width: 70vw;
     
 }
 .main-banner img{
     margin:auto;
-    width: 70vw;
+    width: 100%;
     border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(149, 146, 146, 0.5);
     
 }
 .main-labels{
@@ -281,10 +281,12 @@
   
     /*---------------MAIN-------------------*/
 
-  .main-banner {
-    padding: 1%;
-   width: 90vw;
-  }    
+  
+   .information-content{
+      font-size: 35px;
+      
+   }
+     
   .button-products {
     display: flex;
     border-radius: 20px;
@@ -342,29 +344,33 @@
     padding: 50px 0;
     background: white;
   }
-    .main-banner{
-      padding: 1%;
-      margin: 4vw 7vh;
-      
-  }
-  .main-banner img{
-      margin:auto;
-      width: 80vw;
-      border-radius: 5px;
-      
-  }
+
   .information-content{
-    font-size: 24px;
+    font-size: 20px;
   }
   .sub-information-content{
     
-    font-size: 10px;
+    font-size: 9px;
   }
   .subtitle-container{
     padding-top: 30px;
     padding-top: 20px;
-    font-size: 20px;
+    font-size: 14px;
   }
+  .button-products {
+    display: flex;
+    border-radius: 10px;
+    border: none;
+    background-color: #232343;
+    box-shadow: 0px 3px 10px rgba(149, 146, 146, 0.5);
+    width: 28vw;
+    margin: auto;
+    height: 4vh;  
+    font-size: 50%
+  }
+  /* .button-products a {
+    font-size: 100%;
+  } */
     .main-labels{
       display: flex;
       flex-wrap: wrap;
