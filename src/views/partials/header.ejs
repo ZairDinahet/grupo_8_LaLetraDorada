@@ -13,11 +13,13 @@
       </div>
 
       <div class="links-user-header" >
+        <% if(!locals.isLogged){ %>
         <a href="/user/login">Ingresar</a>
         <a href="/user/register">Registrarse</a>
+        <% }else{ %>
         <a href="/user/logout">Cerrar sesion</a>
         <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        
+        <%  } %>
       </div>
 
       <div class="hearder-burger-menu">
@@ -69,8 +71,10 @@
           <a href="">Más leidos</a>
         </p>
       </div>
-      <div class="createBook">
-        <a href="/products/create">+</a>
-      </div>
+      <% if (locals.isLogged) { %>
+        <div class="createBook">
+          <a href="/products/create">+</a>
+        </div>
+      <% } %>
     </nav>
 </header>
