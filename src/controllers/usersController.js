@@ -1,6 +1,7 @@
 const User = require('../models/User.js');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const cookieParser = require('cookie-parser');
 
 const usersController = {
   
@@ -18,7 +19,7 @@ const usersController = {
 
   logout: function (req, res) {
     req.session.destroy()
-    //En este controller se deben eliminar las coockies
+    res.clearCookie('userLogged')
     return res.redirect('/')
   },
 
@@ -45,7 +46,15 @@ const usersController = {
 
       if(isOkThePassword) {
 
+        delete userToLogin.password;
         req.session.userLogged = userToLogin.email
+
+        if (req.body.Recordarme) {
+          res.cookie('userLogged', req.session.userLogged, {
+            maxAge: 1000 * 60 * 60 * 24 * 7,
+          });
+        }
+
         return res.redirect("/products")
 
       } else {
