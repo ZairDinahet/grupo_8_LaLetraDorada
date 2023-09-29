@@ -46,13 +46,11 @@ const usersController = {
 
       if(isOkThePassword) {
 
-        delete userToLogin.password;
         req.session.userLogged = userToLogin.email
 
         if (req.body.Recordarme) {
-          res.cookie('userLogged', req.session.userLogged, {
-            maxAge: 1000 * 60 * 60 * 24 * 7,
-          });
+            res.cookie('userLogged',
+            req.session.userLogged, { maxAge: 1000 * 60 * 60 * 24 * 7 });
         }
 
         return res.redirect("/products")
