@@ -5,6 +5,7 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const userMiddleware = require('./middleware/userMiddleware')
 const cookies = require('cookie-parser');
+const cookieMiddleware = require('./middleware/cookieMiddleware')
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(session({
 }))
 
 app.use(cookies());
+app.use(cookieMiddleware);
 
 app.use(express.static('public'))
 // Configuro el entorno de la aplicacion para poder capturar la informacion de los forularios en forma de objeto literal:
