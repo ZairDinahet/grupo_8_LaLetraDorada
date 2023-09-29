@@ -4,6 +4,7 @@
     "firstName":"Warden",
     "lastName":"Beadell",
     "email":"wbeadell0@oaic.gov.au",
+    "password":"$2a$10$R0yT94vBpMDyAYlrqqD6k.a82NgTIPxjQPzn0hHx5C.E2EFMAMwWi",
     "postalCode":null,
     "category":"owner",
     "shippingAdress":"87 Colorado Center",
