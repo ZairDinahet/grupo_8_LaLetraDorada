@@ -1,5 +1,8 @@
+let allUsers = require("../data/users.json");
 const User = require('../models/User.js');
 const bcrypt = require('bcryptjs');
+const fs = require("fs");
+const path = require("path");
 const { validationResult } = require('express-validator');
 
 const usersController = {
@@ -12,7 +15,33 @@ const usersController = {
     res.render('users/register')
   },
 
-  login: function (req, res) {
+  registerPost: function(req,res){
+     const validation = validationResult(req);
+     if (validation.errors.length = 0){ 
+      let newUser = req.body;
+    
+      const file = req.file;
+      newUser.id = User.generateId();
+      newUser.firstName = newUser.firstName;
+      newUser.lastName = newUser.lastName;
+      newUser.age = +newUser.age;
+      newUser.email = newUser.email;
+      newUser.postalCode = newUser.postalCode;
+      newUser.shippingAdress = newUser.shippingAdress;
+      newUser.password = bcrypt.hashSync(req.body.password, 10);
+      
+      allUsers.push(newUser);
+
+      fs.writeFileSync(path.resolve(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, 4));
+      res.redirect("/products")
+     } else if (validation.errors.length > 0){
+      return res.render('users/login', {
+        errors: validation.errors.mapped(),
+        oldData: req.body
+      })}
+    },
+
+  login: function(req, res) {
     res.render('users/login')
   },
 

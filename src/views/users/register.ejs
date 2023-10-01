@@ -29,43 +29,66 @@
         </div>
       </div>
 
+
+      
       <div class="form-register-content">
         <div class="sub-form-content">
           <h2>Registrate</h2>
-          <form class="forms-content" action="../../routers/users.js" method="post">
+          <form class="forms-content" action="/user/register" method="post" enctype="multipart/form-data">
             <div class="field-form">
-              <label for="nombre">Nombre</label>
+              <label for="firstName">Nombre</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu Nombre" required>
+                <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu Nombre" required>
               </div>
             </div>
             <div class="field-form">
-              <label for="apellido">Apellido</label>
+              <label for="lastName">Apellido</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu Apellido" required>
+                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" required>
               </div>
             </div>
             <div class="field-form">
-              <label for="correo">Correo Electronico</label>
-              <div class="input-with-icon">
-                <i class="fa-regular fa-envelope"></i>
-                <input type="email" name="correo" id="correo" placeholder="Ingresa tu Email" required>
-              </div>
-            </div>
-            <div class="field-form">
-              <label for="contraseña">Nueva Contraseña</label>
-              <div class="input-with-icon">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña" required>
-              </div>
-            </div>
-            <div class="field-form">
-              <label for="edad">Edad</label>
+              <label for="age">Edad</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-heart"></i>
-                <input type="number" name="edad" id="edad" placeholder="Ingresa tu Edad" required>
+                <input type="number" name="age" id="age" placeholder="Ingresa tu Edad" required>
+              </div>
+            </div>
+            <div class="field-form">
+              <label for="imgUser">Foto de perfil</label>
+              <div class="input-with-icon">
+                <input type="file" name="imgUser" id="imgUser" 
+                placeholder="Foto de perfil" required>
+              </div>
+            </div>
+            <div class="field-form">
+              <label for="email">Correo Electronico</label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu Email" required>
+              </div>
+            </div>
+            <div class="field-form">
+              <label for="password">Nueva Contraseña</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña" required>
+              </div>
+            </div>
+            <div class="field-form">
+              <label for="postalCode">Código Postal</label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="number" name="postalCode" id="postalCode" placeholder="Ingresa tu código postal" required>
+              </div>
+            </div>
+            <div class="field-form">
+              <label for="postalCode">Dirección de envío</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-dolly"></i>
+                <input type="text" name="shippingAdress" id="shippingAdress" placeholder="Dirección a la que llegarán los productos" required>
               </div>
             </div>
             <div class="field-form-button">
