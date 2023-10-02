@@ -44,16 +44,5 @@
         "productCart": [
             "A game of thrones (inglés)"
         ]
-    },
-    {
-        "firstName": "Máximo",
-        "lastName": "Conde",
-        "age": 21,
-        "email": "maxiconde02@gmail.com",
-        "password": "$2a$10$oh8nr955NUkTJYvlRgtkYeRYCr0j7Vrc/Gd3a3k3vJwYAqfe1ijJW",
-        "postalCode": "4000",
-        "shippingAdress": "Provincia de Salta 307",
-        "id": 6,
-        "isChild": true
     }
 ]
