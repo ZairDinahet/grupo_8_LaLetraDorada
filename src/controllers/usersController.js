@@ -16,30 +16,28 @@ const usersController = {
   },
 
   registerPost: function(req,res){
-     const validation = validationResult(req);
-     if (validation.errors.length = 0){ 
+    const validationReq = validationResult(req); 
+    if (validationReq.errors.length > 0){
+      console.log(validationReq.errors)
+      return res.render('users/register', {
+        errors: validationReq.mapped(),
+        oldData: req.body
+      })}
       let newUser = req.body;
     
       const file = req.file;
       newUser.id = User.generateId();
-      newUser.firstName = newUser.firstName;
-      newUser.lastName = newUser.lastName;
       newUser.age = +newUser.age;
-      newUser.email = newUser.email;
       newUser.postalCode = newUser.postalCode;
-      newUser.shippingAdress = newUser.shippingAdress;
+
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
       allUsers.push(newUser);
 
       fs.writeFileSync(path.resolve(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, 4));
-      res.redirect("/products")
-     } else if (validation.errors.length > 0){
-      return res.render('users/login', {
-        errors: validation.errors.mapped(),
-        oldData: req.body
-      })}
-    },
+      return res.redirect("/products")
+     } 
+    ,
 
   login: function(req, res) {
     res.render('users/login')

@@ -46,25 +46,13 @@
         ]
     },
     {
-        "id": 3,
-        "firstName": "Simone",
-        "lastName": "Lillgard",
-        "email": "slillgard2@skype.com",
-        "age": 35,
-        "postalCode": null,
-        "shippingAdress": "2 Canary Crossing",
-        "likedGenres": [
-            "Filosofía",
-            "Fantasía"
-        ],
-        "previousPurchases": [
-            "Dune"
-        ],
-        "wishlist": [
-            "Ensayos de Montaigne"
-        ],
-        "productCart": [
-            "Obras Completas de Sigmund Freud"
-        ]
+        "firstName": "Máximo",
+        "lastName": "Conde",
+        "age": 21,
+        "email": "maxiconde02@gmail.com",
+        "password": "$2a$10$xR5cthDIwE8jDRysX8wvUOfzNsLJkLc5ZXFG/v38aSp9XUkpjx9Ji",
+        "postalCode": "4000",
+        "shippingAdress": "Provincia de Salta 307",
+        "id": 4
     }
 ]

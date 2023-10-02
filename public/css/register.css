@@ -151,6 +151,16 @@ main {
   justify-content: center;
   padding:20px 0px;;
 }
+.text-danger{
+  display: flex;
+  height:auto;
+  width: auto;
+}
+.text-danger p{
+  color: rgb(235, 39, 39);
+  font-size: 12px;
+  padding: 5px;
+}
 
 .sub-form-content {
   width: 70%;
