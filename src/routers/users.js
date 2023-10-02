@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const userMiddleware = require('../middleware/userMiddleware') //middleware user
 const router = Router();
 const upload = require('../middleware/usersMulter');
 const usersController = require('../controllers/usersController')
@@ -8,12 +9,13 @@ const userRegisterValidation = require(`../middleware/usersRegisterValidation`)
 
 router.get(['/index','/'], usersController.index)
 
+
 //Creación de usuario
-router.get('/register', usersController.register)
+router.get('/register',userMiddleware.auth, usersController.register)
 router.post('/register',upload.single("imgUser"), userRegisterValidation, usersController.registerPost)
 
 // Formulario de Login
-router.get('/login', usersController.login)
+router.get('/login',userMiddleware.auth, usersController.login)
 
 // Proceso de login
 router.post('/login', userLoginValidation, usersController.loginProcess)

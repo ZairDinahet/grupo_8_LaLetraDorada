@@ -44,5 +44,19 @@
         "productCart": [
             "A game of thrones (inglés)"
         ]
+    },
+      {
+    "id":4,
+    "firstName":"Fulano",
+    "lastName":"Fernandez",
+    "email":"fulano@gmail.com",
+    "password":"$2a$10$lkjZrUFWeYbKkIjRWVM/ceUXzX/C9nkdtLJ.KFIazv/MRxuOqOxqm",
+    "postalCode":null,
+    "shippingAdress":"2 Canary Crossing",
+    "likedGenres":["Filosofía","Fantasía"],
+    "previousPurchases":["Dune"],
+    "wishlist":["Ensayos de Montaigne"],
+    "productCart":["Obras Completas de Sigmund Freud"]
     }
+
 ]

@@ -4,6 +4,7 @@ const { Router } = require('express')
 //Mediante el path y el metodo http que tenga nuestra ruta sabremos que devolver. 
 const productsController = require('../controllers/productsController')
 const upload = require('../middleware/productsMulter')
+const guest = require('../middleware/guestMiddleware') // middleware huesped
 
 // Ejecuto Router para empezar a crear mis rutas que devolveran las vistas.
 const router = Router()
@@ -16,17 +17,17 @@ const router = Router()
 
 router.get('/', productsController.index)
 
-router.get('/create', productsController.create)
+router.get('/create',guest.auth, productsController.create)
 router.post('/create', upload.single("img") , productsController.post)
 
-router.get('/cart/:id?', productsController.cart);
+router.get('/cart/:id?',guest.auth, productsController.cart);
 
-router.get('/edit/:id', productsController.edit)
+router.get('/edit/:id',guest.auth, productsController.edit)
 router.put('/edit/:id',upload.single("img"), productsController.put)
 
 router.get('/:id', productsController.detail)
 
-router.delete('/delete/:id', productsController.delete)
+router.delete('/delete/:id',guest.auth, productsController.delete)
 
 
 //Exporto router, quien aloja todas las rutas que creo para que mi archivo de cabecera (en este caso app.js) decida donde usar esta ruta. 
