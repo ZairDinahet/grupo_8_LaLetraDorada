@@ -1,5 +1,8 @@
+let allUsers = require("../data/users.json");
 const User = require('../models/User.js');
 const bcrypt = require('bcryptjs');
+const fs = require("fs");
+const path = require("path");
 const { validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
 
@@ -13,7 +16,31 @@ const usersController = {
     res.render('users/register')
   },
 
-  login: function (req, res) {
+  registerPost: function(req,res){
+    const validationReq = validationResult(req); 
+    if (validationReq.errors.length > 0){
+      console.log(validationReq.mapped())
+      return res.render('users/register', {
+        errors: validationReq.mapped(),
+        oldData: req.body
+      })}
+      let newUser = req.body;
+    
+      const file = req.file;
+      newUser.id = User.generateId();
+      newUser.age = +newUser.age;
+      newUser.isChild = newUser.age>=18;
+
+      newUser.password = bcrypt.hashSync(req.body.password, 10);
+      
+      allUsers.push(newUser);
+
+      fs.writeFileSync(path.resolve(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, 4));
+      return res.redirect("/products")
+     } 
+    ,
+
+  login: function(req, res) {
     res.render('users/login')
   },
 

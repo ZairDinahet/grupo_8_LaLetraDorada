@@ -4,6 +4,8 @@
 // 4. Editar la información del usuario
 // 5. Eliminar al usuario de la DB
 const users = require('../data/users.json')
+const fs = require("fs")
+const path = require("path")
 
 const User = {
   getData: function(){
@@ -22,6 +24,12 @@ const User = {
     return userFound
   },
 
+  findByPk: function (id){
+    let allUsers = this.getData();
+    let userFound = allUsers.find(oneUser => oneUser.id === id);
+    return userFound
+  },
+
   generateId: function(){
     let allUsers = this.getData()
     let lastuser = allUsers.pop()
@@ -29,12 +37,16 @@ const User = {
       return lastuser.id + 1;
     }
     return 1;
-  }
+  },
 
   //getCreateUser
   //Aqui pon tu logica para agregar usuarios al Json
-
-
+  create: function(userData){
+    let allUsers = this.getData;
+    allUsers.push(userData);
+    fs.writeFileSync(__dirname,"../data/users.json", JSON.stringify(allUsers, null, 4));
+    return true;
+  }
 }
 
 module.exports = User
