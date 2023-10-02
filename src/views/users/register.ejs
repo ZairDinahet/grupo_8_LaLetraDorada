@@ -40,80 +40,80 @@
               <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
                 <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu Nombre"  class="form-control <% (locals.errors && errors.firstName) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.firstName) ? oldData.firstName : null %>">
-                <% if(locals.errors && errors.firstName){ %>
-                <div class="text-danger"> <p><% errors.firstName.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.firstName){ %>
+                <div class="text-danger"> <p><%= errors.firstName.msg %> </p></div>
+                <% } %>
             </div>
             <div class="field-form">
               <label for="lastName">Apellido</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
                 <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" class="form-control <% (locals.errors && errors.lastName) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.lastName) ? oldData.lastName : null %>">
-                <% if(locals.errors && errors.lastName){ %>
-                <div class="text-danger"> <p><% errors.lastName.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.lastName){ %>
+              <div class="text-danger"> <p><%= errors.lastName.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form">
               <label for="age">Edad</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-heart"></i>
                 <input type="number" name="age" id="age" placeholder="Ingresa tu Edad" class="form-control <% (locals.errors && errors.age) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.age) ? oldData.age : null %>">              
-                <% if(locals.errors && errors.age){ %>
-                <div class="text-danger"> <p><% errors.age.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.age){ %>
+              <div class="text-danger"> <p><%= errors.age.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form">
               <label for="imgUser">Foto de perfil</label>
               <div class="input-with-icon">
                 <input type="file" name="imgUser" id="imgUser" 
                 placeholder="Foto de perfil" <% (locals.errors && errors.imgUser) ? 'is invalid' : null %> >
-                <% if(locals.errors && errors.shippingAdress){ %>
-                  <div class="text-danger"> <p><% errors.shippingAdress.msg %> </p></div>
-                  <% } %>
               </div>
+              <% if(locals.errors && errors.imgUser){ %>
+                <div class="text-danger"> <p><%= errors.imgUser.msg %> </p></div>
+                <% } %>
             </div>
             <div class="field-form">
               <label for="email">Correo Electronico</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-envelope"></i>
                 <input type="email" name="email" id="email" placeholder="Ingresa tu Email" class="form-control <% (locals.errors && errors.email) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.email) ? oldData.email : null %>">
-                <% if(locals.errors && errors.email){ %>
-                <div class="text-danger"> <p><% errors.email.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.email){ %>
+              <div class="text-danger"> <p><%= errors.email.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form">
               <label for="password">Nueva Contraseña</label>
               <div class="input-with-icon">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña" class="form-control <% (locals.errors && errors.password) ? 'is invalid' : null %>">
-                <% if(locals.errors && errors.password){ %>
-                <div class="text-danger"> <p><% errors.password.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.password){ %>
+              <div class="text-danger"> <p><%= errors.password.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form">
               <label for="postalCode">Código Postal</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-envelope"></i>
                 <input type="text" name="postalCode" id="postalCode" placeholder="Ingresa tu código postal" class="form-control <% (locals.errors && errors.postalCode) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.postalCode) ? oldData.postalCode : null %>">
-                <% if(locals.errors && errors.postalCode){ %>
-                <div class="text-danger"> <p><% errors.postalCode.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.postalCode){ %>
+              <div class="text-danger"> <p><%= errors.postalCode.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form">
               <label for="postalCode">Dirección de envío</label>
               <div class="input-with-icon">
                 <i class="fa-solid fa-dolly"></i>
                 <input type="text" name="shippingAdress" id="shippingAdress" placeholder="Dirección a la que llegarán los productos" class="form-control <% (locals.errors && errors.shippingAdress) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.shippingAdress) ? oldData.shippingAdress : null %>">
-                <% if(locals.errors && errors.shippingAdress){ %>
-                <div class="text-danger"> <p><% errors.shippingAdress.msg %> </p></div>
-                <% } %>
               </div>
+              <% if(locals.errors && errors.shippingAdress){ %>
+              <div class="text-danger"> <p><%= errors.shippingAdress.msg %> </p></div>
+              <% } %>
             </div>
             <div class="field-form-button">
               <button class="form-button-creat" type="submit">Crear Cuenta</button>

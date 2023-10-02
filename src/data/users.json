@@ -50,9 +50,10 @@
         "lastName": "Conde",
         "age": 21,
         "email": "maxiconde02@gmail.com",
-        "password": "$2a$10$xR5cthDIwE8jDRysX8wvUOfzNsLJkLc5ZXFG/v38aSp9XUkpjx9Ji",
+        "password": "$2a$10$oh8nr955NUkTJYvlRgtkYeRYCr0j7Vrc/Gd3a3k3vJwYAqfe1ijJW",
         "postalCode": "4000",
         "shippingAdress": "Provincia de Salta 307",
-        "id": 4
+        "id": 6,
+        "isChild": true
     }
 ]

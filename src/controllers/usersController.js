@@ -18,7 +18,7 @@ const usersController = {
   registerPost: function(req,res){
     const validationReq = validationResult(req); 
     if (validationReq.errors.length > 0){
-      console.log(validationReq.errors)
+      console.log(validationReq.mapped())
       return res.render('users/register', {
         errors: validationReq.mapped(),
         oldData: req.body
@@ -28,7 +28,7 @@ const usersController = {
       const file = req.file;
       newUser.id = User.generateId();
       newUser.age = +newUser.age;
-      newUser.postalCode = newUser.postalCode;
+      newUser.isChild = newUser.age>=18;
 
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
