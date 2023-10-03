@@ -69,7 +69,7 @@
               <label for="imgUser">Foto de perfil</label>
               <div class="input-with-icon">
                 <input type="file" name="imgUser" id="imgUser" 
-                placeholder="Foto de perfil" <% (locals.errors && errors.imgUser) ? 'is invalid' : null %> >
+                placeholder="Foto de perfil" <% (locals.errors && errors.imgUser) ? 'is invalid' : null %> accept ='.jpg, .png'>
               </div>
               <% if(locals.errors && errors.imgUser){ %>
                 <div class="text-danger"> <p><%= errors.imgUser.msg %> </p></div>
