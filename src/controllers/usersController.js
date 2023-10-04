@@ -1,4 +1,4 @@
-let allUsers = require("../data/users.json");
+// let allUsers = require("../data/users.json");
 const User = require('../models/User.js');
 const bcrypt = require('bcryptjs');
 const fs = require("fs");
@@ -49,6 +49,12 @@ const usersController = {
   
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
+      let allUsers = []
+        if (fs.existsSync(path.resolve(__dirname, '../data/users.json'))) {
+          let data = fs.readFileSync(path.resolve(__dirname, '../data/users.json'));
+          allUsers = JSON.parse(data);
+        }
+  
       allUsers.push(newUser);
   
       fs.writeFileSync(path.resolve(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, 4));
