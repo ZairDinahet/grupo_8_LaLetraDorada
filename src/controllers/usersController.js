@@ -45,7 +45,7 @@ const usersController = {
       const file = req.file;
       newUser.id = User.generateId();
       newUser.age = +newUser.age;
-      newUser.isChild = newUser.age>=18;
+      newUser.isChild = newUser.age<18;
   
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
