@@ -40,13 +40,17 @@ const usersController = {
 
     } else {
 
-      let newUser = req.body;
-    
-      const file = req.file;
+      let newUser = {}
       newUser.id = User.generateId();
+      let data = req.body;
+      newUser = {
+        ...newUser,
+        ...data
+      }
+      const file = req.file;
       newUser.age = +newUser.age;
       newUser.isChild = newUser.age<18;
-  
+      
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
       let allUsers = []
