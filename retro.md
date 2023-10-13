@@ -99,3 +99,25 @@ En este sprint, logramos completar todas nuestras tareas a tiempo. Esto es un gr
 ### Nuestra conclusión
 
 En general, estamos haciendo un buen progreso y continuamos mejorando con cada sprint. Hemos logrado cumplir con nuestros plazos y hemos mantenido una fuerte cohesión del equipo. Sin embargo, reconocemos que hay áreas en las que podemos mejorar, como las pruebas de errores en el código, las revisiones grupales y los comentarios en los commits. Al abordar estos desafíos, esperamos seguir mejorando nuestra eficiencia y productividad en los próximos sprints.
+
+## Retroespectiva del 5to Sprint - Proyecto integrador Digital House
+
+### Cosas que hicimos bien
+
+- Testear la pagina en busca de errores y resolverlos.
+
+- Buena organización en la distribución de tareas, responsabilidades.
+
+- Se logró  una coordinación de daily mettings, en su mayoría, en días y horarios fijos.
+
+- Implementamos la mejora en la escritura de commits, para entender mas facilmente lo que se modifico.
+
+### Cosas por mejorar
+
+- Planificación en la duración de cada una de las tareas para no llegar muy justos con el tiempo a la fecha de presentación del sprint.
+
+- No olvidar el uso de Trello para poder ver el avance de la ejecución de tareas.
+
+### Nuestra conclusión
+
+Pudimos concretar las mejoras que habiamos planteado en la retrospectiva anterior, lo que es muy importante. Cumplimos con las tareas asignadas en un buen tiempo, y mantuvimos las buenas practicas que teniamos desde presentaciones anteriores. Aun asi podemos seguir mejorando y esforzarnos por seguir asi, en la union, comunicacion y coordinacion del equipo.
