@@ -1,10 +1,9 @@
-let allUsers = require("../data/users.json");
+// let allUsers = require("../data/users.json");
 const User = require('../models/User.js');
 const bcrypt = require('bcryptjs');
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require('express-validator');
-const cookieParser = require('cookie-parser');
 
 const usersController = {
   
@@ -17,28 +16,55 @@ const usersController = {
   },
 
   registerPost: function(req,res){
+    const { email } = req.body;
     const validationReq = validationResult(req); 
+
     if (validationReq.errors.length > 0){
-      console.log(validationReq.mapped())
       return res.render('users/register', {
         errors: validationReq.mapped(),
         oldData: req.body
-      })}
-      let newUser = req.body;
-    
-      const file = req.file;
-      newUser.id = User.generateId();
-      newUser.age = +newUser.age;
-      newUser.isChild = newUser.age>=18;
+    })}
 
+    const userToRegister = User.findByField('email', email)
+
+    if(userToRegister){
+
+      return res.render('users/register', {
+        errors: {
+          email: {
+            msg: 'Email ya registrado',
+          }
+        },
+        oldData: req.body
+      })
+
+    } else {
+
+      let newUser = {}
+      newUser.id = User.generateId();
+      let data = req.body;
+      newUser = {
+        ...newUser,
+        ...data
+      }
+      const file = req.file;
+      newUser.age = +newUser.age;
+      newUser.isChild = newUser.age<18;
+      
       newUser.password = bcrypt.hashSync(req.body.password, 10);
       
+      let allUsers = []
+        if (fs.existsSync(path.resolve(__dirname, '../data/users.json'))) {
+          let data = fs.readFileSync(path.resolve(__dirname, '../data/users.json'));
+          allUsers = JSON.parse(data);
+        }
+  
       allUsers.push(newUser);
-
+  
       fs.writeFileSync(path.resolve(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, 4));
       return res.redirect("/products")
-     } 
-    ,
+    }
+  },
 
   login: function(req, res) {
     res.render('users/login')
