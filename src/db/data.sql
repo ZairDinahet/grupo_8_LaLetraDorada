@@ -1,0 +1,87 @@
+INSERT INTO carts (unitPrice,quantity,shipping,discount,totalPrice,payMethod)
+VALUES
+  (12429.95,8,"Eighty Six",0.10,89495.64,"efectivo"),
+  (8669.68,3,"Asimov",0.20,20807.23,"tarjeta de debito"),
+  (3708.85,6,"Cuentos de Hadas",0.30,15577.17,"efectivo"),
+  (11116.11,2,"El retrato de Dorian Gray",0.30,15562.55,"tarjeta de credito"),
+  (9150.25,6,"Dune",0.10,49411.35,"tarjeta de debito"),
+  (4937.25,6,"La verdad sobre el caso del Señor Valdemar",0.50,14811.75,"efectivo"),
+  (5793.75,6,"El corazon delator",0.50,17381.25,"tarjeta de debito"),
+  (11269.20,8,"El Hobbit",0.02,88350.53,"efectivo"),
+  (8272.09,3,"El lobo Estepario",null,24816.27,"tarjeta de debito"),
+  (6810.54,8,"En la Colonia Penitenciaria",0.50,27242.16,"tarjeta de debito");
+  (6923.13,8,"1984",0.30,38769.53,"tarjeta de credito"),
+  (13032.25,2,"Cuanta tierra necesita un Hombre?",0.30,18245.15,"efectivo"),
+  (8902.61,2,"Obras Completas",0.10,16024,70,"tarjeta de debito"),
+  (13277.67,8,"Fahrenheit 451",0.10,95599,22,"tarjeta de debito"),
+  (9490.71,2,"Rayuela",0.02,18601.79,"tarjeta de debito"),
+  (6968.17,6,"Ensayos Completos Obras Maestras",null,41809.02,"tarjeta de credito"),
+  (11197.89,1,"Juego de Tronos",0.20,8958,31,"tarjeta de credito"),
+  (11707.41,8,"Orgullo y Prejuicio",0.10,84293.35,"tarjeta de debito"),
+  (6041.17,8,"Lo que Debas Ser",0.30,33830,55,"tarjeta de credito"),
+  (1032.13,5,"El Conquistador",0.30,3612.46,"efectivo"),
+  (9950.18,5,"James Bond 007 De espia a icono",0.50,24875.45,"tarjeta de debito"),
+  (11295.97,6,"Deja de Ser Tu",null,67775.82,"tarjeta de debito"),
+  (7594.84,6,"Que Absurdo!",0.02,44657.66,"tarjeta de credito"),
+  (8030.59,4,"Zoologico Humano",0.10,28910.12,"tarjeta de debito"),
+  (10607.87,5,"Ya pueden encender las luces",0.02,51978.56,"tarjeta de credito");
+
+INSERT INTO users (firstName, lastName, age, email, password, category, child, Img) 
+VALUES
+ ('Kendra', 'Truitt', 6, 'Kendra.Truitt@gmail.com', 'hA2?(`''O', 'collaborator', 1, 'https://acortar.link/1PbI9C'),
+ ('Myrtle', 'Scanlin', 65, 'Myrtle.Scanlin@gmail.com', 'qP7*ix8T9@~MZ', 'guest', 0, 'https://acortar.link/ioAruf'),
+ ('Dannel', 'Humerstone', 35, 'Dannel.Humerstone@gmail.com', 'hF8(,hz!`s()', 'administrator', 0, 'https://acortar.link/N6mbeP'),
+ ('Cynthea', 'Mandrier', 6, 'Cynthea.Mandrier@gmail.com', 'bT9%0{.GMf+7Tm\Z', 'guest', 1, 'https://acortar.link/U6DJbk'),
+ ('Hunt', 'Hedley', 21, 'Hunt.Hedley@gmail.com', 'gX6+!(Y&9Q', 'administrator', 0, null),
+ ('Gunner', 'Innett', 37, 'Gunner.Innett@gmail.com', 'vZ0_=U6RlhPJv4G', 'guest', 0, 'https://acortar.link/VZaG6l'),
+ ('Putnem', 'Wanek', 31, 'Putnem.Wanek@gmail.com', 'aD4\""XtAI', 'administrator', 0, 'https://acortar.link/XRaxLp'),
+ ('Joly', 'Gaythor', 58, 'Joly.Gaythor@gmail.com', 'uW8>y''''Q/', 'guest', 0, 'https://acortar.link/0AlHmC'),
+ ('Nicoli', 'Dohmann', 26, 'Nicoli.Dohmann@gmail.com', 'gA4&o9O/Y', 'administrator', 0, 'https://acortar.link/PGru0V'),
+ ('Natalina', 'Lusty', 60, 'Natalina.Lusty@gmail.com', 'eE0=U*W5', 'guest', 0, 'https://acortar.link/EJEHbS'),
+ ('Erv', 'Gaymar', 8, 'Erv.Gaymar@gmail.com', 'rD5#aoC(SZo', 'administrator', 1, 'https://acortar.link/yTWd5m'),
+ ('Josefa', 'Bernardt', 18, 'Josefa.Bernardt@gmail.com', 'sE9<DH&j&$<O"iPZ', 'administrator', 0, 'https://acortar.link/TJIaUv'),
+ ('Peria', 'Orrum', 59, 'Peria.Orrum@gmail.com', 'rK6>D0eu', 'collaborator', 0, 'https://acortar.link/mfJM55'),
+ ('Hali', 'Toten', 34, 'Hali.Toten@gmail.com', 'aK3''mLW90sP.#&S', 'guest', 0, 'https://acortar.link/eRlKS4'),
+ ('Gaye', 'Jannasch', 20, 'Gaye.Jannasch@gmail.com', 'mN7?JqD~T#t', 'administrator', 0, 'https://acortar.link/9ELeoE'),
+ ('Dill', 'Lorans', 34, 'Dill.Lorans@gmail.com', 'zK5''6*s|/O1', 'guest', 0, 'https://acortar.link/BjR0ks'),
+ ('Constancy', 'Rowdell', 52, 'Constancy.Rowdell@gmail.com', 'pS1(%I{hdA,/n0r', 'administrator', 0, 'https://acortar.link/fnRqk9'),
+ ('Eleen', 'Bogace', 19, 'Eleen.Bogace@gmail.com', 'uA3!P|<C', 'administrator', 0, 'https://acortar.link/pBDtnq'),
+ ('Lyndy', 'Colchett', 27, 'Lyndy.Colchett@gmail.com', 'oB1~vhW$<C*8P"m', 'administrator', 0, 'https://acortar.link/59b0VY'),
+ ('Tony', 'MacCafferty', 18, 'Tony.MacCafferty@gmail.com', 'kP3''&~mDt!M+', 'guest', 0, 'https://acortar.link/9qDc9V'),
+ ('Gardiner', 'Tyre', 28, 'Gardiner.Tyre@gmail.com', 'xZ7{#d8&@{y>g', 'collaborator', 0, 'https://acortar.link/AdShha'),
+ ('Carry', 'Smalridge', 17, 'Carry.Smalridge@gmail.com', 'eP8$(rBl9', 'collaborator', 0, 'https://acortar.link/9g4CP3'),
+ ('Devinne', 'Binnall', 49, 'Devinne.Binnall@gmail.com', 'yQ8*qxx%$r/pBOQj', 'guest', 0, 'https://acortar.link/gVqwrz'),
+ ('Ardelis', 'Enderle', 70, 'Ardelis.Enderle@gmail.com', 'qN2<Coy_"?KO"%`g', 'administrator', 0, null),
+ ('Ragnar', 'Wallis', 21, 'Ragnar.Wallis@gmail.com', 'bN9#_ppx\/7W%', 'guest', 0, 'https://acortar.link/Xl5jW9');
+
+INSERT INTO addresses (street, number, city, letras, numeros, postalCode) 
+VALUES 
+('Clyde Gallagher', 06745, 'Fengcheng', '2087RMK'),
+('Laurel', 1593, 'Aracruz', '1907SYL'),
+('Forest Dale', 89771, 'Izbicko', '1800CLG'),
+('Mesta', 48, 'Gaoqiao', '1657BOU'),
+('La Follette', 161, 'Katipunan', '2128PRA'),
+('Utah', null, 'Limoeiro do Norte', '1859HLS'),
+('Cottonwood', 18296, 'Xiabao', '1893RAH'),
+('Debra', 958, 'Boulogne-Billancourt', '1693DLI'),
+('Florence', 12374, 'Sirnasari', '1740HIP'),
+('Rowland', 365, 'Kota Kinabalu', '1967TIB'),
+('David', 625, 'Bayanhoshuu', '2105FLD'),
+('Delaware', null, 'Ängelholm', '1831CNA'),
+('Monica', 0, 'Turangi', '1638AMJ'),
+('Fair Oaks', 7351, 'Ksawerów', '2027ZNA'),
+('Prairieview', 15560, 'Inderka', '1623MXN'),
+('Evergreen', null, 'Detik Satu', '1653OKT'),
+('5th', 5518, 'Gaza', '1876ULP'),
+('Del Mar', 0876, 'Yangshan', '1786NIB'),
+('Old Shore', 787, 'Mūdīyah', '1699YZR'),
+('Blue Bill Park', 984, 'Rosh Pinna', '1939IKS'),
+('Oak Valley', 11, 'Pandi', '1746BDC'),
+('Walton', 6266, 'Bang Lamung', '1745ISO'),
+('Pawling', 31309, 'São Roque', '1948RBG'),
+('Northwestern', 950, 'Plewiska', '1738FPR'),
+('Manley', 323, 'Runaway Bay', '1579MTL');
+
+
+
+ 
