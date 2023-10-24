@@ -23,16 +23,24 @@ CREATE TABLE `Addresses` (
   `postalCode` VARCHAR(10) NOT NULL
 );
 
-
 CREATE TABLE `Carts` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `idUser` INT NOT NULL,
-  `unitPrice` DECIMAL(10,2) CHECK (unitPrice > 0),
-  `quantity` INT CHECK (quantity > 0),
-  `shipping` VARCHAR(50),
   `discount` DECIMAL(10,2) CHECK (discount > 0),
   `totalPrice` DECIMAL(10,2) CHECK (totalPrice > 0),
   `payMethod` VARCHAR(50)
+);
+
+CREATE TABLE `Shipments` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(50),
+  `price` DECIMAL(10,2) CHECK (price > 0)
+);
+
+CREATE TABLE `CartsShipments` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idCart` INT NOT NULL,
+  `idShipment` INT NOT NULL
 );
 
 CREATE TABLE `Invoices` (
@@ -73,9 +81,12 @@ CREATE TABLE `BooksGenres` (
 );
 
 CREATE TABLE `CartsBooks` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `idCart` INT NOT NULL,
   `idBook` INT NOT NULL,
-  PRIMARY KEY (`idCart`, `idBook`)
+  `unitPrice` DECIMAL(10,2) CHECK (unitPrice > 0),
+  `quantity` INT CHECK (quantity > 0),
+  `subtotal` DECIMAL(10,2) CHECK (subtotal > 0)
 );
 
 CREATE TABLE `BooksAuthors` (
@@ -86,6 +97,8 @@ CREATE TABLE `BooksAuthors` (
 
 ALTER TABLE `Users` ADD FOREIGN KEY (`idAddress`) REFERENCES `Addresses` (`id`);
 ALTER TABLE `Carts` ADD FOREIGN KEY (`idUser`) REFERENCES `Users` (`id`);
+ALTER TABLE `CartsShipments` ADD FOREIGN KEY (`idCart`) REFERENCES `Carts` (`id`);
+ALTER TABLE `CartsShipments` ADD FOREIGN KEY (`idShipment`) REFERENCES `Shipments` (`id`);
 ALTER TABLE `Invoices` ADD FOREIGN KEY (`idCart`) REFERENCES `Carts` (`id`);
 ALTER TABLE `CartsBooks` ADD FOREIGN KEY (`idCart`) REFERENCES `Carts` (`id`);
 ALTER TABLE `CartsBooks` ADD FOREIGN KEY (`idBook`) REFERENCES `Books` (`id`);
