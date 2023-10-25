@@ -1,88 +1,10 @@
-INSERT INTO carts (unitPrice,quantity,shipping,discount,totalPrice,payMethod)
-VALUES
-(1,4704.86,5,"OCA",0.05,22348.09,"tarjeta de debito")
-(2,3263.8,5,"Correo Argentino",0.05,15503.05,"tarjeta de credito")
-(3,3275.08,4,"Andreani",0.20,10480.26,"tarjeta de credito")
-(4,4985.05,2,"Correo Argentino",0.05,9471.59,"tarjeta de debito")
-(5,11200.29,2,"Correo Argentino",0.02,21952.57,"tarjeta de credito")
-(6,9720.04,3,"Andreani",0.00,29160.12,"tarjeta de debito")
-(7,7328.64,5,"Correo Argentino",0.30,25650.24,"efectivo")
-(8,10043.21,1,"Correo Argentino",0.05,9541.05,"efectivo")
-(9,3142.76,3,"Correo Argentino",0.00,9428.28,"efectivo")
-(10,6111.02,5,"Correo Argentino",0.20,24444.08,"tarjeta de credito")
-(11,3619.17,4,"Andreani",0.30,10133.68,"tarjeta de debito")
-(12,5372.94,4,"Andreani",0.02,21061.92,"tarjeta de credito")
-(13,6334.01,4,"OCA",0.02,24829.32,"efectivo")
-(14,11684.22,5,"Andreani",0.30,40894.77,"tarjeta de credito")
-(15,4385.19,2,"Correo Argentino",0.20,7016.3,"tarjeta de debito")
-(16,4271.74,3,"OCA",0.30,8970.65,"efectivo")
-(17,11974.02,4,"Andreani",0.05,45501.28,"tarjeta de credito")
-(18,4018.5,1,"Correo Argentino",0.20,3214.8,"tarjeta de debito")
-(19,4798.03,4,"Correo Argentino",0.00,19192.12,"efectivo")
-(20,9444.19,3,"Correo Argentino",0.05,26915.94,"tarjeta de credito")
-(21,6691.6,1,"Correo Argentino",0.20,5353.28,"efectivo")
-(22,3421.83,4,"OCA",0.20,10949.86,"tarjeta de credito")
-(23,6153.33,2,"Andreani",0.20,9845.33,"efectivo")
-(24,3409.45,2,"Andreani",0.02,6682.52,"tarjeta de debito")
-(25,9694.32,2,"Correo Argentino",0.05,18419.21,"efectivo")
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: localhost    Database: laletradorada
+-- ------------------------------------------------------
 
-INSERT INTO invoices (idCart, type , date, totalPrice, payMethod) 
-VALUES
-(1, 'B', '2023-03-01 13:34:20', '22348.09', 'tarjeta de debito'),
- (2, 'C', '2023-05-23 11:56:17', '15503.05', 'tarjeta de credito'),
- (3, 'C', '2023-03-18 16:15:28', '10480.26', 'tarjeta de credito'),
- (4, 'A', '2023-04-19 18:56:51', '9471.59', 'tarjeta de debito'),
- (5, 'C', '2023-03-31 06:45:16', '21952.57', 'tarjeta de credito'),
- (6, 'B', '2023-06-15 00:18:14', '27702.11', 'tarjeta de debito'),
- (7, 'A', '2023-08-20 10:23:49', '25650.24', 'efectivo'),
- (8, 'C', '2023-09-20 23:25:25', '9541.05', 'efectivo'),
- (9, 'B', '2023-05-06 07:53:18', '8956.87', 'efectivo'),
- (10, 'C', '2023-07-05 01:33:59', '24444.08', 'tarjeta de credito'),
- (11, 'B', '2023-06-18 16:30:52', '10133.68', 'tarjeta de debito'),
- (12, 'B', '2023-05-13 23:24:03', '21061.92', 'tarjeta de credito'),
- (13, 'A', '2023-08-13 15:06:16', '24829.32', 'efectivo'),
- (14, 'B', '2023-05-26 21:38:01', '40894.77', 'tarjeta de credito'),
- (15, 'C', '2023-07-23 05:14:05', '7016.3', 'tarjeta de debito'),
- (16, 'B', '2023-04-22 01:09:22', '8970.65', 'efectivo'),
- (17, 'B', '2023-08-05 09:33:53', '45501.28', 'tarjeta de credito'),
- (18, 'B', '2023-06-15 17:55:54', '3214.8', 'tarjeta de debito'),
- (19, 'A', '2023-03-07 09:31:27', '13434.48', 'efectivo'),
- (20, 'C', '2023-10-11 21:18:37', '26915.94', 'tarjeta de credito'),
- (21, 'A', '2023-01-28 09:37:26', '5353.28', 'efectivo'),
- (22, 'C', '2023-10-07 07:13:10', '10949.86', 'tarjeta de credito'),
- (23, 'B', '2023-05-06 21:52:48', '9845.33', 'efectivo'),
- (24, 'A', '2023-05-02 06:27:41', '6682.52', 'tarjeta de debito'),
- (25, 'C', '2023-02-16 20:35:46', '18419.21', 'efectivo');
 
-INSERT INTO users (firstName, lastName, age, email, password, category, child, Img) 
-VALUES
- ('Kendra', 'Truitt', 6, 'Kendra.Truitt@gmail.com', 'hA2?(`''O', 'collaborator', 1, 'https://acortar.link/1PbI9C'),
- ('Myrtle', 'Scanlin', 65, 'Myrtle.Scanlin@gmail.com', 'qP7*ix8T9@~MZ', 'guest', 0, 'https://acortar.link/ioAruf'),
- ('Dannel', 'Humerstone', 35, 'Dannel.Humerstone@gmail.com', 'hF8(,hz!`s()', 'administrator', 0, 'https://acortar.link/N6mbeP'),
- ('Cynthea', 'Mandrier', 6, 'Cynthea.Mandrier@gmail.com', 'bT9%0{.GMf+7Tm\Z', 'guest', 1, 'https://acortar.link/U6DJbk'),
- ('Hunt', 'Hedley', 21, 'Hunt.Hedley@gmail.com', 'gX6+!(Y&9Q', 'administrator', 0, null),
- ('Gunner', 'Innett', 37, 'Gunner.Innett@gmail.com', 'vZ0_=U6RlhPJv4G', 'guest', 0, 'https://acortar.link/VZaG6l'),
- ('Putnem', 'Wanek', 31, 'Putnem.Wanek@gmail.com', 'aD4\""XtAI', 'administrator', 0, 'https://acortar.link/XRaxLp'),
- ('Joly', 'Gaythor', 58, 'Joly.Gaythor@gmail.com', 'uW8>y''''Q/', 'guest', 0, 'https://acortar.link/0AlHmC'),
- ('Nicoli', 'Dohmann', 26, 'Nicoli.Dohmann@gmail.com', 'gA4&o9O/Y', 'administrator', 0, 'https://acortar.link/PGru0V'),
- ('Natalina', 'Lusty', 60, 'Natalina.Lusty@gmail.com', 'eE0=U*W5', 'guest', 0, 'https://acortar.link/EJEHbS'),
- ('Erv', 'Gaymar', 8, 'Erv.Gaymar@gmail.com', 'rD5#aoC(SZo', 'administrator', 1, 'https://acortar.link/yTWd5m'),
- ('Josefa', 'Bernardt', 18, 'Josefa.Bernardt@gmail.com', 'sE9<DH&j&$<O"iPZ', 'administrator', 0, 'https://acortar.link/TJIaUv'),
- ('Peria', 'Orrum', 59, 'Peria.Orrum@gmail.com', 'rK6>D0eu', 'collaborator', 0, 'https://acortar.link/mfJM55'),
- ('Hali', 'Toten', 34, 'Hali.Toten@gmail.com', 'aK3''mLW90sP.#&S', 'guest', 0, 'https://acortar.link/eRlKS4'),
- ('Gaye', 'Jannasch', 20, 'Gaye.Jannasch@gmail.com', 'mN7?JqD~T#t', 'administrator', 0, 'https://acortar.link/9ELeoE'),
- ('Dill', 'Lorans', 34, 'Dill.Lorans@gmail.com', 'zK5''6*s|/O1', 'guest', 0, 'https://acortar.link/BjR0ks'),
- ('Constancy', 'Rowdell', 52, 'Constancy.Rowdell@gmail.com', 'pS1(%I{hdA,/n0r', 'administrator', 0, 'https://acortar.link/fnRqk9'),
- ('Eleen', 'Bogace', 19, 'Eleen.Bogace@gmail.com', 'uA3!P|<C', 'administrator', 0, 'https://acortar.link/pBDtnq'),
- ('Lyndy', 'Colchett', 27, 'Lyndy.Colchett@gmail.com', 'oB1~vhW$<C*8P"m', 'administrator', 0, 'https://acortar.link/59b0VY'),
- ('Tony', 'MacCafferty', 18, 'Tony.MacCafferty@gmail.com', 'kP3''&~mDt!M+', 'guest', 0, 'https://acortar.link/9qDc9V'),
- ('Gardiner', 'Tyre', 28, 'Gardiner.Tyre@gmail.com', 'xZ7{#d8&@{y>g', 'collaborator', 0, 'https://acortar.link/AdShha'),
- ('Carry', 'Smalridge', 17, 'Carry.Smalridge@gmail.com', 'eP8$(rBl9', 'collaborator', 0, 'https://acortar.link/9g4CP3'),
- ('Devinne', 'Binnall', 49, 'Devinne.Binnall@gmail.com', 'yQ8*qxx%$r/pBOQj', 'guest', 0, 'https://acortar.link/gVqwrz'),
- ('Ardelis', 'Enderle', 70, 'Ardelis.Enderle@gmail.com', 'qN2<Coy_"?KO"%`g', 'administrator', 0, null),
- ('Ragnar', 'Wallis', 21, 'Ragnar.Wallis@gmail.com', 'bN9#_ppx\/7W%', 'guest', 0, 'https://acortar.link/Xl5jW9');
-
-INSERT INTO addresses (street, number, city, letras, numeros, postalCode) 
+INSERT INTO addresses (street, number, city, postalCode) 
 VALUES 
 ('Clyde Gallagher', 06745, 'Fengcheng', '2087RMK'),
 ('Laurel', 1593, 'Aracruz', '1907SYL'),
@@ -110,6 +32,33 @@ VALUES
 ('Northwestern', 950, 'Plewiska', '1738FPR'),
 ('Manley', 323, 'Runaway Bay', '1579MTL');
 
+INSERT INTO authors (name, biography) 
+VALUES 
+("Isaac Asimov","Isaac Asimov nació en Rusia, entre 1919 y 1920. Poco después de que este cumpliera tres años, sus padres decidieron trasladarse a Brooklyn, en Nueva York, EEUU. Fue trabajando en los kioscos de este barrio donde encontró su pasión por la escritura y la ciencia ficción. Eventualmente se graduó como bioquímico y comenzó a trabajar como investigador para la marina estadounidense, trabajo que tuvo un profundo impacto en su persona. Tras terminar su posgrado, fue aceptado como asociado en la Universidad de Boston. Para ese momento ya era padre de una prolífica literatura, que le reportaba más ingresos que su empleo formal. En 1966 fue nombrado vicepresidente honorario de la asociación MENSA, cargo en que permaneció hasta 1989. En 1985 fue elegido presidente de la Asociación Humanista Estadounidense, cargo que desempeñó hasta su muerte. Su postura filosófica, reflejada a lo largo de su literatura, era racionalista y humanista. Fue un divulgador de la ciencia y la historia mediante su literatura; en la cual también exploraba posibles cursos de desarrollo de la tecnología y la sociedad. Murió de SIDA en 1992, tras haber recibido una transfusión sanguinea contaminada con el virus una década antes"),
+("Stephen King","Stephen King, nacido en 1947 en Portland, Maine, Estados Unidos, es un prolífico y aclamado autor conocido por su dominio del terror, la ficción sobrenatural y el suspense. Tras publicar su primera novela, “Carrie“, en 1974, su carrera se disparó. Sus obras, como “El resplandor“, “Eso“ y la serie “La Torre Oscura“, han cautivado a lectores de todo el mundo.\r\n La destreza narrativa de King reside en su capacidad para crear relatos envolventes y escalofriantes que ahondan en las profundidades de los miedos y las emociones humanas. Su estilo único combina el terror con la exploración psicológica, dando como resultado una obra que trasciende las fronteras del género.\r\n Más allá de su éxito literario, las novelas y relatos de King han inspirado numerosas adaptaciones cinematográficas y televisivas, consolidando su influencia en la cultura popular. Sus logros incluyen más de 350 millones de libros vendidos, lo que le convierte en uno de los autores más vendidos de la historia."),
+("Oscar Wilde","Oscar Wilde nació en Irlanda en 1854, hijo de un médico y de una poeta. Graduado con honores de Trinity College y Magdalen College, donde su caracter jovial le había ganado el cariño de sus pares a pesar de su excentricidad, se convirtió en defensor del movimiento artístico esteticista; que postulaba que la belleza del arte es un fin en sí misma. Tras casarse con Constance Lloyd, amplió la visión de su sociedad al abordar en revistas femeninas no solo tendencias de moda, sino también opiniones de mujeres sobre arte, literatura y vida moderna. Su prolífica literatura es un retrato irónico y adornado de la sociedad inglesa de su época; incluyendo obras como “La importancia de llamarse Ernesto“ y “El retrato de Dorian Gray“. En 1895, en el apogeo de su carrera literaria, fue condenado a prisión tras ser denunciado por homosexualidad por su amigo Alfred Douglas, a quien escribió desde prisión la demoledora carta “De Profundis“. En 1897, Wilde sale de la cárcel. Emocionalmente exhausto y físicamente agotado, se marchó a Francia y nunca regresó a Inglaterra ni a Irlanda. Oscar Wilde murió el 30 de noviembre de 1900 a causa de una meningitis, a la edad de 46 años."),
+("Frank Herbert","Frank Patrick Herbert, nacido el 8 de octubre de 1920 en Estados Unidos, fue un escritor estadounidense de ciencia ficción conocido por ser el autor de la serie de novelas futuristas Dune, un grupo de obras de gran complejidad que exploran temas como la ecología, la evolución humana, las consecuencias de la manipulación genética y las posibilidades místicas y psíquicas.\r\nHasta 1972, cuando empezó a escribir a tiempo completo, Herbert desempeñó diversos trabajos mientras escribía ciencia ficción socialmente comprometida. Trabajaba como periodista cuando se dio a conocer con la publicación de la épica Dune (1965), que se tradujo a 14 idiomas y vendió unos 12 millones de ejemplares, más que ningún otro libro de ciencia ficción de la historia. Sin embargo, su prolífica carrera abarcó mucho más. Escribió obras muy diversas, desde relatos breves hasta novelas que abordaban problemas sociales acuciantes.\r\nAunque “Dune“ sigue siendo su creación más conocida, el legado de Herbert reverbera a través de un espectro de temas, desentrañando complejas narrativas humanas con trasfondos especulativos. Herbert dio una nueva forma a la ciencia ficción, utilizando su pluma para ahondar en los intrincados recovecos de la existencia y las posibilidades humanas."),
+("Edgar Allan Poe","Edgar Allan Poe (1809-1849) fue un escritor, poeta, editor y crítico literario estadounidense conocido por sus cuentos macabros y góticos. Nacido en Boston, Massachusetts, Poe tuvo una vida tumultuosa marcada por la tragedia. Sus padres murieron cuando era joven, y fue criado por John Allan, un rico comerciante de tabaco, pero su relación fue tensa debido a desacuerdos financieros. Poe asistió brevemente a la Universidad de Virginia antes de alistarse en el ejército. Publicó su primer libro de poesía en 1827 y más tarde alcanzó el reconocimiento por sus relatos cortos, como “La caída de la casa Usher“ y “El corazón delator“. Estos relatos, caracterizados por su profundidad psicológica y sus temas oscuros, sentaron las bases de los géneros policíaco y de terror en la literatura estadounidense.\r\n Las obras críticas de Poe también dejaron un impacto duradero en la teoría literaria. Defendió la importancia de la unidad en un relato corto y destacó el impacto emocional de una obra por encima de su mensaje didáctico o moral. \r\n A pesar de su talento, tuvo dificultades para mantener unos ingresos estables debido a problemas con los derechos de autor y a la falta de leyes internacionales sobre derechos de autor en aquella época.\r\n La tragedia siguió persiguiendo a Poe cuando su esposa, Virginia, sucumbió a la tuberculosis en 1847. El propio Poe murió misteriosamente en 1849 a la edad de 40 años. Sin embargo, su legado literario perduró. "),
+("Edgar Allan Poe","Edgar Allan Poe (1809-1849) fue un escritor, poeta, editor y crítico literario estadounidense conocido por sus cuentos macabros y góticos. Nacido en Boston, Massachusetts, Poe tuvo una vida tumultuosa marcada por la tragedia. Sus padres murieron cuando era joven, y fue criado por John Allan, un rico comerciante de tabaco, pero su relación fue tensa debido a desacuerdos financieros. Poe asistió brevemente a la Universidad de Virginia antes de alistarse en el ejército. Publicó su primer libro de poesía en 1827 y más tarde alcanzó el reconocimiento por sus relatos cortos, como “La caída de la casa Usher“ y “El corazón delator“. Estos relatos, caracterizados por su profundidad psicológica y sus temas oscuros, sentaron las bases de los géneros policíaco y de terror en la literatura estadounidense.\r\n Las obras críticas de Poe también dejaron un impacto duradero en la teoría literaria. Defendió la importancia de la unidad en un relato corto y destacó el impacto emocional de una obra por encima de su mensaje didáctico o moral. \r\n A pesar de su talento, tuvo dificultades para mantener unos ingresos estables debido a problemas con los derechos de autor y a la falta de leyes internacionales sobre derechos de autor en aquella época.\r\n La tragedia siguió persiguiendo a Poe cuando su esposa, Virginia, sucumbió a la tuberculosis en 1847. El propio Poe murió misteriosamente en 1849 a la edad de 40 años. Sin embargo, su legado literario perduró. "),
+("J.R.R. Tolkien","J.R.R. Tolkien (1892-1973) fue un escritor, filólogo y académico inglés, conocido sobre todo por sus obras de alta fantasía que han cautivado a generaciones de lectores. Nacido en Bloemfontein (Sudáfrica), se trasladó a Inglaterra con su familia cuando era muy joven, tras la muerte de su padre.\r\nLa temprana fascinación de Tolkien por las lenguas y la mitología influyó enormemente en sus creaciones literarias. Estudió en la Universidad de Oxford y más tarde fue profesor de lengua y literatura anglosajona e inglesa. Sus actividades académicas le permitieron profundizar en las lenguas y los mitos antiguos que darían forma al rico tapiz de sus mundos de ficción.\r\n Su obra magna, “El Señor de los Anillos“, se publicó como trilogía entre 1954 y 1955. Ambientada en el reino ficticio de la Tierra Media, la saga épica sigue el peligroso viaje de un variopinto grupo de personajes para destruir un poderoso anillo y derrotar al señor oscuro Sauron. La meticulosa construcción del mundo por parte de Tolkien, con sus lenguas, culturas, historias y una geografía totalmente realista, sentó nuevas bases para el género fantástico. Su intrincada construcción del mundo, sus memorables personajes y sus profundos temas sobre la amistad, el heroísmo y la lucha entre el bien y el mal han dejado una huella indeleble. Sus obras han sido adaptadas al cine con gran éxito y han inspirado a innumerables autores, artistas y creadores. El legado de J.R.R. Tolkien continúa prosperando, encantando a los lectores e inspirando a escritores actuales a crear obras como “Canción de Hielo y Fuego“."),
+("Hermann Hesse","Hermann Hesse (1877-1962) fue un escritor y poeta germano-suizo conocido por sus profundas exploraciones de la espiritualidad, el autodescubrimiento y la condición humana. Nacido en Alemania, creció en el seno de una familia pietista y vivió una juventud problemática marcada por los conflictos con sus padres y las dificultades en la escuela.\r\nSu afán viajero y su deseo de autoexploración le llevaron a viajar por Europa y Asia, experiencias que influirían profundamente en sus obras posteriores.\r\n Una de sus novelas más célebres, “Siddhartha“ (1922), se inspira en la filosofía y la espiritualidad orientales, siguiendo el viaje de un joven en busca de la iluminación. El interés de Hesse por el pensamiento y el misticismo orientales siguió influyendo en su escritura, como queda patente en obras como “El lobo estepario“ (1927), que ahonda en la dualidad de la naturaleza humana.\r\n Durante el tumultuoso periodo de entreguerras, la postura antibelicista y los temas espirituales de Hesse resonaron entre los lectores que buscaban sentido en un mundo fracturado. Su negativa a alinearse con la ideología nazi hizo que sus obras fueran prohibidas en Alemania, lo que le llevó a nacionalizarse suizo. Ganó el Premio Nobel de Literatura en 1946.\r\n Su influencia se extendió más allá de la literatura. El movimiento contracultural de los años sesenta hizo suyos los temas de autodescubrimiento y rebelión contra las normas sociales de Hesse.\r\n Los escritos de Hermann Hesse siguen siendo relevantes por su exploración de las luchas humanas universales y la búsqueda de la plenitud espiritual. Su legado perdura como fuente de inspiración para quienes navegan por las complejidades de la existencia y buscan una comprensión más profunda de sí mismos y del mundo que les rodea."),
+("Franz Kafka","Franz Kafka (1883-1924) fue un escritor checo de lengua alemana cuyas singulares y enigmáticas obras han tenido un profundo impacto en la literatura y el pensamiento modernos. Nacido en Praga en el seno de una familia judía de clase media, la obra de Kafka se convertiría más tarde en sinónimo de alienación, burocracia y desesperación existencial.\r\nSu infancia estuvo marcada por una tensa relación con su padre y un profundo sentimiento de aislamiento. Estudió Derecho en la universidad y trabajó para una compañía de seguros, una experiencia que influiría enormemente en sus escritos, sobre todo en su exploración de los sistemas burocráticos opresivos y absurdos.\r\n Sus obras más famosas, como “La metamorfosis“ (1915) y “El proceso“ (1925), ejemplifican sus temas de surrealismo e introspección psicológica. “La Metamorfosis“ cuenta la historia de Gregor Samsa, que un día se despierta y se encuentra transformado en un insecto gigante, lo que constituye una poderosa alegoría de la alienación y el absurdo.\r\n “El proceso“ se adentra en la pesadilla de Josef K., detenido y sometido a un desconcertante proceso judicial por un delito no especificado.Franz Kafka falleció el 3 de junio de 1924 debido a complicaciones de tuberculosis, dejando un legado que La escritura de Franz Kafka sigue invitando a los lectores a enfrentarse a las incertidumbres de la existencia y a los entresijos de la psique humana."),
+("Sigmund Freud","Sigmund Freud (1856-1939) fue un neurólogo austriaco y fundador del psicoanálisis, un campo pionero que revolucionó nuestra comprensión de la mente humana. Nació en lo que hoy es la República Checa y más tarde se estableció en Viena (Austria).\r\n La exploración por Freud de la mente inconsciente y su influencia en el comportamiento humano condujo al desarrollo del psicoanálisis. Introdujo conceptos como el complejo de Edipo, el ello, el ego y el superego, y la interpretación de los sueños. Su obra desafió las opiniones predominantes sobre psicología y sexualidad.\r\n Recibió tanto elogios como críticas por sus teorías, que incluían ideas controvertidas sobre el desarrollo humano y la sexualidad, y su flagrante deshonestidad como investigador. A pesar de la oposición, las ideas de Freud se impusieron y dieron forma a los campos de la psicología, la psiquiatría y los estudios culturales.\r\nEn 1938, cuando los nazis subieron al poder en Austria, Freud huyó a Londres para escapar de la persecución por su ascendencia judía. Su salud empeoró y luchó contra un cáncer de boca. Continuó escribiendo y trabajando en sus teorías durante sus últimos años.\r\n Sigmund Freud murió el 23 de septiembre de 1939 en Londres, dejando un legado que transformó nuestra comprensión de la mente y sigue influyendo en la psicología, la literatura y las artes."),
+("George Orwell","George Orwell (1903-1950) fue un novelista, ensayista, periodista y crítico inglés célebre por su análisis crítico y perspicaz de temas políticos y sociales. Nacido como Eric Arthur Blair en la India, fue a la escuela en Inglaterra y más tarde sirvió en la Policía Imperial India en Birmania.\r\n Las experiencias de Orwell le llevaron a cuestionar la autoridad y el poder, temas que definirían su obra. Alcanzó la fama literaria con “Rebelión en la granja“ (1945), una alegoría satírica de la Revolución Rusa y la aparición del totalitarismo. La novela explora cómo el idealismo puede convertirse en opresión.\r\n Su obra maestra “Mil novecientos ochenta y cuatro“ (1949) describe un futuro distópico bajo el dominio de un régimen totalitario dirigido por el Gran Hermano. La acuñación por Orwell de términos como “neolengua“ y “crímen de pensamiento“ se ha convertido en emblema de la manipulación política y los estados de vigilancia.\r\n El compromiso de Orwell con la honestidad y la verdad se extendió a su periodismo y sus ensayos. Escribió sobre la pobreza, las desigualdades de clase y los peligros de la propaganda. Sus experiencias en la Guerra Civil española influyeron en su relato “Homenaje a Cataluña“. \r\n Aquejado de tuberculosis, la salud de Orwell empeoró, pero siguió escribiendo prolíficamente hasta su muerte. Falleció el 21 de enero de 1950 en Londres, dejando un legado literario que sigue siendo esencial por su crítica del poder, el lenguaje y las complejidades de la verdad en la sociedad."),
+("León Tolstói","León Tolstoi (1828-1910) fue un novelista y filósofo ruso conocido por sus monumentales obras que exploran la naturaleza humana, la sociedad y la espiritualidad. Nacido en la nobleza rusa, tuvo una educación privilegiada, pero más tarde cuestionó las desigualdades e injusticias de su sociedad.\r\n Entre las obras maestras de Tolstói figuran “La guerra y la paz“ (1869) y “Ana Karenina“ (1877), que profundizan en la vida interior de los personajes y en la dinámica de la sociedad. “La guerra y la paz“ ofrece una visión panorámica de la sociedad rusa durante la época napoleónica, mientras que “Ana Karenina“ examina las complejidades del amor, la moral y las normas sociales. \r\n En sus últimos años, Tolstoi experimentó una profunda transformación espiritual, renunciando a su estilo de vida aristocrático y a su riqueza. Desarrolló una filosofía que hacía hincapié en la sencillez, el pacifismo y la compasión. Estas creencias provocaron conflictos en el seno de su familia y de la Iglesia Ortodoxa Rusa. \r\n Las enseñanzas de Tolstói, centradas en la no violencia y la búsqueda de una vida con sentido, influyeron en figuras como Mahatma Gandhi y Martin Luther King Jr. Escribió ensayos sobre temas que iban desde la educación y el arte hasta la religión y la ética.\r\n La salud de Tolstói empeoró en sus últimos años y buscó la soledad. Abandonó su finca y a su familia, embarcándose en un viaje que terminaría en la remota estación de tren de Astapovo, donde cayó enfermo. Falleció el 20 de noviembre de 1910, dejando un legado literario que sigue iluminando la experiencia humana y la búsqueda de un significado más profundo."),
+("Julio Cortázar","Julio Cortázar (1914-1984) fue un escritor argentino y uno de los autores más influyentes en lengua española. Nacido en Bélgica de padres argentinos, pasó gran parte de su vida en Argentina y más tarde en Francia.\r\nCortázar es conocido sobre todo por sus obras de ficción innovadoras y experimentales. Su literatura desafía las formas narrativas tradicionales. Esto es evidente en \'Rayuela\', que permite a los lectores elegir su propio orden de lectura, creando una experiencia literaria única y no lineal.\r\nSu obra aborda a menudo temas como el existencialismo, la identidad y los límites entre realidad y fantasía. El uso que Cortázar hace del flujo de consciencia y su fascinación por lo fantástico y lo surrealista (que el escritor describe como 'presente en su vida desde la infancia') han dejado una huella perdurable en la literatura del boom latinoamericano.\r\nAdemás de su obra de ficción, Cortázar fue también un consumado traductor y ensayista, contribuyendo a la difusión de las obras de Edgar Allan Poe y otros autores en el mundo hispanohablante.\r\nJulio Cortázar falleció el 12 de febrero de 1984 en París, Francia."),
+("Michel de Montaigne","Michel de Montaigne (1533-1592) fue un filósofo, ensayista y estadista francés del Renacimiento. Nacido en el seno de una familia noble del suroeste de Francia, recibió una educación clásica. Montaigne fue magistrado en Burdeos y más tarde alcalde de esa ciudad.\r\nSu obra más conocida es \'Ensayos\', una colección de reflexiones y consideraciones personales. En estos ensayos, Montaigne exploró una amplia gama de temas, desde la naturaleza humana y la educación hasta la amistad y la moralidad. A menudo se le considera uno de los primeros practicantes de la introspección en la literatura, ya que examinaba sus propios pensamientos y experiencias.\r\nLos ensayos de Montaigne se caracterizan por su enfoque franco y a menudo escéptico del conocimiento y el comportamiento humano, y por la impronta estilística de su carácter personal y humor. Adoptó la idea de que la verdad es relativa y está sujeta a las perspectivas individuales y culturales, un concepto que influyó enormemente en el pensamiento filosófico posterior. Reconoce, por ende, la gran importancia de la libertad humana y de la búsqueda de la verdad. Por esto, a menudo se piensa en él como un nexo entre la filosofía medieval y la moderna.\r\nAdemás de sus actividades literarias, Montaigne se dedicó a la política y la diplomacia. Desempeñó un papel crucial en las negociaciones entre las facciones católica y protestante durante las Guerras de Religión francesas, marcando como su objetivo la consecución de una paz duradera. \r\nMichel de Montaigne falleció el 13 de septiembre de 1592 en el castillo de su familia en Francia. Su innovador enfoque de la escritura, su exploración de la naturaleza humana y sus contribuciones a la diplomacia han dejado un legado duradero en la literatura, la filosofía y la política."),
+("George R. R. Martin","George R.R. Martin, nacido el 20 de septiembre de 1948 en Bayonne (Nueva Jersey, EEUU), es un escritor y productor de televisión estadounidense más conocido por \"Canción de hielo y fuego\", una célebre saga de fantasía que comenzó con \'Juego de tronos\' en 1996. Martin comenzó su carrera de escritor en la década de 1970, trabajando en relatos de ciencia ficción y terror, pero adquirió fama internacional con su serie de fantasía, conocida por la intrincada construcción del mundo, los complejos personajes y la intriga política. La adaptación televisiva de \"Juego de Tronos\" se convirtió en un fenómeno cultural. Actualmente reside con su esposa en Santa Fe, New Mexico, EEUU."),
+("Ray Bradbury","Ray Bradbury nació el 22 de agosto de 1920 en Waukegan, hijo de Leonard Spaulding Bradbury y de Esther Moberg. Su familia se mudó varias veces desde su lugar de origen, Illinois, hasta establecerse, finalmente, en Los Ángeles, California, en 1934. Bradbury tenía dos hermanos gemelos mayores nacidos en 1916: Leonard y Sam, pero Sam murió a la edad de dos años. Su hermana Isabel, que nació en 1926, también murió en la infancia de neumonía. En el mismo año falleció el abuelo del escritor. Esta familiaridad temprana con la muerte se reflejó en muchas obras literarias futuras."),
+("Asato Asato","Asato comenzó a escribir novelas justo antes de ingresar a la escuela secundaria.Inicialmente envió su trabajo al premio Kadokawa Beans Bunko Rookie, pero cuando en 2014 su manuscrito llegó a la tercera ronda del 21.er premio de novela Dengeki de 2014, Asato comenzó a pensar en escribir una novela que fuera del estilo de la editora Dengeki Bunko.1​ Esta novela se convertiría en el comienzo de la serie de novelas ligeras 86: Eighty-Six.1​ Esta obra un drama bélico que transcurre en un mundo de ciencia ficción distópico, enmarcado dentro del subgénero del género de ciencia ficción llamado mecha, de máquinas gigantes de guerra piloteadas, común en la ficción japonesa"),
+("Joe Dispenza","Joe Dispenza es un conferencista internacional, doctor en quiropráctica y escritor estadounidense. Ha viajado a más de 33 países para enseñarle a las personas a crear una vida más sana y feliz por medio de sus interpretaciones de los últimos descubrimientos de la neurociencia, la epigenética y la física cuántica."),
+("Federico Andahazi","Federico Andahazi es hijo de Bela Rodolfo Andahazi-Kasnya (poeta y psicoanalista de origen húngaro) y de Juana Merlín. Se graduó como licenciado en psicología en la Universidad de Buenos Aires.1​ En 1989 escribe su primera novela, que todavía permanece inédita​"),
+("Doc Pastor","Doc Pastor comenzó su carrera como periodista y fotógrafo, pero poco a poco fue enfocándose en la cultura pop, tema que le daría a conocer y gracias al que pasaría a ser uno de los grandes divulgadores de la actualidad. Desde hace unos años está centrado en su faceta de escritor, habiendo publicado libros sobre temas muy diversos entre los que se pueden destacar 'Doctor Who: el loco de la cabina' (Dolmen Editorial), '¡Qué festín! Un menú de cine' (Héroes de Papel), 'Batman: Dentro de la batcueva' (Redbook Ediciones) o 'Celuloide y seda: iconos del estilo en el cine' (Plan B)."),
+("Silvia Werner","Silvia Werner nació en Buenos Aires, en 1964.Es odontóloga y estudió periodismo de gráfica y radio.Se acercó a la escritura a través del periodismo científico, pero las ganas de volcar en un papel las historias que imaginaba la llevaron a escribir cuentos y novelas."),
+("Jane Austen", "Jane Austen (Steventon, 16 de diciembre de 1775-Winchester, 18 de julio de 1817) fue una novelista británica que vivió durante la época georgiana. La ironía que empleaba para dotar de comicidad a sus novelas hace que Jane Austen sea considerada entre los clásicos de la novela inglesa, a la vez que su recepción va, incluso en la actualidad, más allá del interés académico, siendo sus obras leídas por un público más amplio."),
+("Gorey, Edward","Chicago; Illinois; 22 de febrero de 1925 - Hyannis; Massachusetts; 15 de abril de 2000. Ilustrador y escritor; consiguio ser elevado a autor de culto por su entendimiento de la realidad y su manera de plasmarla en unas imagenes excentricas; con un equilibro perfecto entre el humor acido y la ternura. La influencia de Gorey puede encontrarse en algunos artistas contemporaneos como Tim Burton; innegable deudor de su obra."),
+("Ariel Urquiza","Ariel Urquiza es escritor, periodista y traductor de inglés. En los últimos años, se ha labrado un sólido camino dentro de la literatura argentina. Su novela Ya pueden encender las luces fue finalista del III Premio Eugenio Cambaceres, organizado por la Biblioteca Nacional, en 2013."),
+("Ricardo Silva Romero","Ricardo Silva Romero Nació en Bogotá en 1975. Es autor de las novelas Relato de Navidad en La Gran Vía; Walkman; Tic; Parece que va a llover; Fin; El hombre de los mil nombres; En orden de estatura; Autogol; Érase una vez en Colombia -compuesta por Comedia romántica y El Espantapájaros-; El libro de la envidia; Historia oficial del amor; Todo va a estar bien; Cómo perderlo todo (ganad ora del V Premio Biblioteca de Narrativa Colombiana) y Río Muerto ");
 
 INSERT INTO books (title, description, coverImg, priceHardCover, priceSoftCover, priceEpub, priceAudio) 
 VALUES 
@@ -125,12 +74,12 @@ VALUES
 ("Obras Completas de Sigmund Freud","Esta edición de las 'Obras completas' de Sigmund Freud pone a disposición de los lectores y estudiosos hispanohablantes la traducción de una obra fundacional. A este exhaustivo trabajo se suman la revisión de los textos de Jacobo Numhauser y su ordenamiento cronológico, según el criterio de la edición de James Strachey y Anna Freud; el aparato crítico, que contribuye a esclarecer conceptos y referencias, y una selección iconográfica del autor, además de ilustraciones afines a su obra. Asimismo, por primera vez las 'Obras completas' de Sigmund Freud incluyen un cuarto tomo de índices alfabéticos  y temáticos que servirá de guía para quienes deseen profundizar exhaustivamente en la vastedad científica de esta obra.", "/img/products/sigmund-freud.png", 10759.54, 9602.6, 1709.45, 7749.2),
 ("1984","Londres, 1984: Winston Smith decide rebelarse ante un gobierno totalitario que controla cada uno de los movimientos de sus ciudadanos y castiga incluso a aquellos que delinquen con el pensamiento. Consciente de las terribles consecuencias que puede acarrear la disidencia, Winston se une a la ambigua Hermandad por mediación del líder O'Brien. Paulatinamente, sin embargo, nuestro protagonista va comprendiendo que ni la Hermandad ni O'Brien son lo que aparentan, y que la rebelión, al cabo, quizá sea un objetivo inalcanzable.", "/img/products/george-orwell-1984.png", 8128.73, 4545.41, 2361.2, 8355.4),
 ("¿Cuánta tierra necesita un hombre?","Pajom es un campesino al que ninguna extensión de tierra satisface: cuanta más tiene, más necesita. Al conocer que los habitantes de una lejana región, los bashkirios, le ofrecen tanta tierra como pueda recorrer en un día, no lo dudará e intentará abarcar la mayor cantidad posible.", "/img/products/leon-tolstoi.png", 5548.36, 7928.09, 1251.67, 8050.73),
-("Rayuela", "Rayuela de Julio Cortázar es una novela innovadora que desafía la estructura narrativa tradicional. Cuenta la historia de Horacio Oliveira, un intelectual argentino que vive en París, y su tumultuosa relación amorosa con La Maga y El Club de la Serpiente (\"Del lado de allá\"), y con Traveler y Talita (\"Del lado de acá\"). A lo largo del libro se incluyen recortes de noticias, fragmentos escritos por otros autores, capítulos \"prescindibles\", capítulos escritos en idiomas inventados por los personajes, y encuentros con un escritor que se plantea a sí mismo el problema de la \"Rayuela\". El libro es conocido por su formato poco convencional, que permite a los lectores elegir su propio camino a través de la narración, saltando entre capítulos y perspectivas. Explora temas como la identidad, el apego, la migración y el existencialismo, lo que la convierte en una obra fundamental de la literatura latinoamericana y en una obra maestra de la narrativa experimental. El estilo innovador de Cortázar invita a los lectores a participar activamente en el texto, creando una experiencia de lectura envolvente y creativa.", "/img/products/book-1694146409262.jpg", 16488.08, 5376.4, 4438.63, 7117.8),
+("Rayuela", "Rayuela de Julio Cortázar es una novela innovadora que desafía la estructura narrativa tradicional. Cuenta la historia de Horacio Oliveira, un intelectual argentino que vive en París, y su tumultuosa relación amorosa con La Maga y El Club de la Serpiente (\'Del lado de allá\'), y con Traveler y Talita (\'Del lado de acá\'). A lo largo del libro se incluyen recortes de noticias, fragmentos escritos por otros autores, capítulos \'prescindibles\', capítulos escritos en idiomas inventados por los personajes, y encuentros con un escritor que se plantea a sí mismo el problema de la \"Rayuela\". El libro es conocido por su formato poco convencional, que permite a los lectores elegir su propio camino a través de la narración, saltando entre capítulos y perspectivas. Explora temas como la identidad, el apego, la migración y el existencialismo, lo que la convierte en una obra fundamental de la literatura latinoamericana y en una obra maestra de la narrativa experimental.", "/img/products/book-1694146409262.jpg", 16488.08, 5376.4, 4438.63, 7117.8),
 ("Ensayos de Montaigne", "...tampoco me propongo con mi obra prestarte ningún servicio, ni con ella trabajo para mi gloria, que mis fuerzas no alcanzan al logro de tal designio. Lo consagro a la comodidad particular de mis parientes y amigos para que, cuando yo muera (lo que acontecerá pronto), puedan encontrar en él algunos rasgos de mi condición y humor, y por este medio conserven más completo y más vivo el conocimiento que de mí tuvieron. Si mi objetivo hubiera sido buscar el favor del mundo, habría echado mano de adornos prestados; pero no, quiero sólo mostrarme en mi manera de ser sencilla, natural y ordinaria, sin estudio ni artificio, porque soy yo mismo a quien pinto. -Extracto del prefacio del presente libro.", "/img/products/book-1694199971073.jpg", 13774.44, 5845.12, 4371.94, 4218.41),
-("A game of thrones (inglés)", "\"Juego de tronos\", de George R.R. Martin, es la primera entrega de la serie de fantasía épica \"Canción de hielo y fuego\". La historia sigue las luchas de poder entre familias nobles que se disputan el control del Trono de Hierro. La novela es famosa por la complejidad de sus personajes, la intriga política y la riqueza de detalles de un mundo lleno de caballeros, dragones y magia. Martin teje una apasionante historia de honor, traición y ambición, presentando a los lectores un amplio elenco de personajes, cada uno con sus propios motivos y secretos. Mientras los Siete Reinos se tambalean al borde de la guerra, el libro es una mezcla magistral de maniobras políticas y elementos sobrenaturales, lo que lo convierte en una lectura cautivadora para los aficionados a la fantasía épica y la narración intrincada.", "/img/products/book-1694202309045.webp", 16485.94, 2640.36, 4159.64, 3725.66),
+("'A game of thrones (inglés)'", "'Juego de tronos', de George R.R. Martin, es la primera entrega de la serie de fantasía épica 'Canción de hielo y fuego\'. La historia sigue las luchas de poder entre familias nobles que se disputan el control del Trono de Hierro. La novela es famosa por la complejidad de sus personajes, la intriga política y la riqueza de detalles de un mundo lleno de caballeros, dragones y magia. Martin teje una apasionante historia de honor, traición y ambición, presentando a los lectores un amplio elenco de personajes, cada uno con sus propios motivos y secretos. Mientras los Siete Reinos se tambalean al borde de la guerra, el libro es una mezcla magistral de maniobras políticas y elementos sobrenaturales, lo que lo convierte en una lectura cautivadora para los aficionados a la fantasía épica y la narración intrincada.", "/img/products/book-1694202309045.webp", 16485.94, 2640.36, 4159.64, 3725.66),
 ("FAHRENHEIT 451", "Guy Montag es bombero en un futuro en el que no hay que apagar in-cendios domésticos porque las casas; tratadas con una capa ignífuga; ya no arden. Pero la nueva función de los bomberos no es menos importan-te: descubrir y quemar los libros que algunos todavía atesoran; prohibidos porque se considera que solo sirven para divulgar ideas falsas; difundir in-venciones y mentiras y para confundir a la gente; que en cambio puede disfrutar del ocio oficial; un entretenimiento banal que ahorra el esfuerzo de pensar y llega a sus salas a través de cuatro paredes que son otras tantas pantallas de televisión.", "/img/products/451.png", 16138.57, 8259.35, 3229.89, 7916.95),
-("86:Eighty Six ", "La República de San Magnolia. Durante mucho tiempo, este país ha sido asediado por su vecino, el Imperio Giadian, que creó una serie de drones no tripulados llamados Legion. Después de años de minuciosa investigación, la República finalmente desarrolló sus propios drones autónomos, convirtiendo la lucha unilateral en una guerra sin víctimas, o al menos, eso es lo que el gobierno afirma. En verdad, no existe una guerra sin sangre. Más allá de los muros fortificados que protegen los ochenta y cinco territorios de la República se encuentra el Sector "inexistente" 86. Los hombres y mujeres jóvenes de esta tierra abandonada son tildados como los Ochenta y Seis y, despojados de sus derechos como humanos; su libertad, sus nombres, sus vidas... su humanidad", "/img/products/86_eighty_six", 15991.85, 9153.47, 4125.61, 6712.73),
-("Deja de ser Tu: la mente crea la realidad", "Francesc Miralles recomienda: Joe Dispenza se ha convertido en un must para los que saben que la realidad se empieza a fraguar en la mente. A diferencia de otros autores que se pierden en libros demasiado teóricos, el creador de "Deja de ser tú" es capaz de explicar los procesos mentales y cómo incidir en ellos de forma clara, fresca e inspiradora a partir de los últimos avances en neurociencia, biología y genética. Joe Dispenza saltó a la fama en nuestro país tras participar en la película¿Y tú qué sabes?, un documental sobre la sobrecogedora capacidad de la mente para transformar la realidad que corrió de mano en mano sin ninguna publicidad, gracias al boca oreja.", "/img/products/Deja_De_Ser_Tu.jpg", 16441.95, 9304.44, 1531.42, 6709.71),
+("86:Eighty Six ", "La República de San Magnolia. Durante mucho tiempo, este país ha sido asediado por su vecino, el Imperio Giadian, que creó una serie de drones no tripulados llamados Legion. Después de años de minuciosa investigación, la República finalmente desarrolló sus propios drones autónomos, convirtiendo la lucha unilateral en una guerra sin víctimas, o al menos, eso es lo que el gobierno afirma. En verdad, no existe una guerra sin sangre. Más allá de los muros fortificados que protegen los ochenta y cinco territorios de la República se encuentra el Sector 'inexistente' 86. Los hombres y mujeres jóvenes de esta tierra abandonada son tildados como los Ochenta y Seis y, despojados de sus derechos como humanos; su libertad, sus nombres, sus vidas... su humanidad", "/img/products/86_eighty_six", 15991.85, 9153.47, 4125.61, 6712.73),
+("Deja de ser Tu: la mente crea la realidad", "Francesc Miralles recomienda: Joe Dispenza se ha convertido en un must para los que saben que la realidad se empieza a fraguar en la mente. A diferencia de otros autores que se pierden en libros demasiado teóricos, el creador de 'Deja de ser tú' es capaz de explicar los procesos mentales y cómo incidir en ellos de forma clara, fresca e inspiradora a partir de los últimos avances en neurociencia, biología y genética. Joe Dispenza saltó a la fama en nuestro país tras participar en la película¿Y tú qué sabes?, un documental sobre la sobrecogedora capacidad de la mente para transformar la realidad que corrió de mano en mano sin ninguna publicidad, gracias al boca oreja.", "/img/products/Deja_De_Ser_Tu.jpg", 16441.95, 9304.44, 1531.42, 6709.71),
 ("EL CONQUISTADOR", "¿Cómo sería el mundo si la Conquista de América no hubiera sido como creemos que fue? Quetza, el más brillante de los hijos de Tenochtitlan, intuía que había un continente por descubrir al otro lado del océano. Para demostrarlo se hizo a la mar con una nave construida con sus propias manos y un puñado de hombres. Así, adelantándose a los grandes viajeros, es el primero que logrará realizar el viaje a una nueva tierra: Europa.", "/img/products/El_Conquistador.jpg", 9000.97, 5759.08, 3448.78, 6573.33),
 ("007 JAMES BOND, De espia a icono ", "an Fleming ha pasado por siempre a la historia por ser el padre de James Bond; sin duda alguna el agente secreto más conocido del mundo. Sus aventuras le han hecho recorrer todos los rincones del planeta y sus aventuras son devoradas por miles de aficionados que ansían más. Esto llega a su máxima expresión en la conocida saga de películas que protagonizó Sean Connery y otros grandes actores a su marcha. Parte de su éxito; o la clave del mismo; es el haber sabido evolucionar con el paso del tiempo adaptándose al mismo y no quedándose anclado en un pasado que nunca volverá. Siempre igual; pero siempre distinto. 007. James Bond. Espía. Mujeriego. Bebedor. Icono.", "/img/products/James_Bond.jpg", 13796.66, 5175.59, 3236.14, 6571.48),
 ("Lo que debas ser", "Pablo, el protagonista de esta novela, debe ser abogado, como su padre, como su abuelo. Ése es el mandato familiar, lo que se espera de él. Entonces, ¿qué lugar ocupan sus sueños, sus capacidades, sus deseos? El autoritarismo del abuelo marca el destino de todos los personajes de esta obra, quienes parecen no poder escapar de esa influencia. Sin embargo, el amor, el chat, la música, la pintura, y alguien - cuya existencia desconoce - ayudarán a Pablo en la búsqueda de su identidad.Esta es una novela muy apropiada para reflexionar sobre la vocación y las definiciones en lo profesional, temas que inquietan a la mayoría de los adolescentes.", "/img/products/Lo_que_Debas_Ser.jpg", 5888.55, 4443.5, 3864.71, 6239.71),
@@ -139,14 +88,43 @@ VALUES
 ("Ya pueden encender las luces", "Julián es un actor que está atravesando un mal momento profesional. Condicionado por el temor al fracaso; acepta un ofrecimiento cuyas consecuencias no es capaz de medir y que lo arrastran a un punto de no retorno. Pero su pasión por encarnar vidas completamente diferentes a la suya será más fuerte que su sentido de supervivencia.", "/img/products/Ya_pueden_encender_las_luces.jpg", 11395.94, 3094.83, 2298.27, 3048.62),
 ("Zoologico humano", "Jorge Franco Simón Hernández; un escritor bogotano con más ínfulas que obra; ha muerto. Y en su viaje por el inframundo se encuentra con siete pe rsonajes de todas las épocas y paisajes: una monja tunjana del siglo XVII; un enterrador portugués que presencia la destrucción de Lisboa de 1755; una joven impostora colaboradora de Dumas; un soldado alemán que durante la Primera Guerra Mundial batalla contra su propia violencia; un astronauta trastornado por la experiencia de viajar a la Luna; una rabiosa rockera acechada por la fama de los ochenta y una profesora china que se bate por recuperar la humanidad en el mundo del futuro dominado por las máquinas.", "/img/products/Zoologico_Humano.jpg", 16471.64, 9500.59, 3469.64, 3929.81);
 
-INSERT INTO genres (name) 
+
+INSERT INTO booksauthors (idBook, idAuthors) 
+VALUES
+(1, 1),
+ (2, 2),
+ (3, 3),
+ (4, 4),
+ (5, 5),
+ (6, 6),
+ (7, 7),
+ (8, 8),
+ (9, 9),
+ (10, 10),
+ (11, 11),
+ (12, 12),
+ (13, 13),
+ (14, 14),
+ (15, 15),
+ (16, 16),
+ (17, 17),
+ (18, 18),
+ (19, 19),
+ (20, 20),
+ (21, 21),
+ (22, 22),
+ (23, 23),
+ (24, 24),
+ (25, 25);
+
+ INSERT INTO genres (name) 
 VALUES 
 ("Ciencia ficción clásica"),
 ("Aventura, Fantasía"),
 ("Ficción clásica"),
 ("Ficción clásica, Ciencia ficción clásica"),
 ("Clásico"),
-("Cuentos clásicos de terror y fantasmas, Novelas gráficas"),
+("Cuentos clásicos de terror y fantasmas"),
 ("Fantasía, Ciencia ficción"),
 ("Ficción clásica"),
 ("Ficción clásica"),
@@ -157,7 +135,7 @@ VALUES
 ("filosofia"),
 ("Fantasia"),
 ("Fantasia, Ciencia ficción"),
-("Accion, Ciencia ficción, Drama")
+("Accion, Ciencia ficción, Drama"),
 ("Autoayuda"),
 ("Ficción clásica"),
 ("Ficción clásica"),
@@ -165,88 +143,205 @@ VALUES
 ("Ficción clásica"),
 ("Ficción clásica, comics"),
 ("Ficción clásica"),
-("Ficción clásica"),
+("Ficción clásica");
 
-INSERT INTO authors (name, biography) 
+
+INSERT INTO booksgenres (idBook, idGenre) 
 VALUES 
-("Isaac Asimov","Isaac Asimov nació en Rusia, entre 1919 y 1920. Poco después de que este cumpliera tres años, sus padres decidieron trasladarse a Brooklyn, en Nueva York, EEUU. Fue trabajando en los kioscos de este barrio donde encontró su pasión por la escritura y la ciencia ficción. Eventualmente se graduó como bioquímico y comenzó a trabajar como investigador para la marina estadounidense, trabajo que tuvo un profundo impacto en su persona. Tras terminar su posgrado, fue aceptado como asociado en la Universidad de Boston. Para ese momento ya era padre de una prolífica literatura, que le reportaba más ingresos que su empleo formal. En 1966 fue nombrado vicepresidente honorario de la asociación MENSA, cargo en que permaneció hasta 1989. En 1985 fue elegido presidente de la Asociación Humanista Estadounidense, cargo que desempeñó hasta su muerte. Su postura filosófica, reflejada a lo largo de su literatura, era racionalista y humanista. Fue un divulgador de la ciencia y la historia mediante su literatura; en la cual también exploraba posibles cursos de desarrollo de la tecnología y la sociedad. Murió de SIDA en 1992, tras haber recibido una transfusión sanguinea contaminada con el virus una década antes"),
-("Stephen King","Stephen King, nacido en 1947 en Portland, Maine, Estados Unidos, es un prolífico y aclamado autor conocido por su dominio del terror, la ficción sobrenatural y el suspense. Tras publicar su primera novela, “Carrie“, en 1974, su carrera se disparó. Sus obras, como “El resplandor“, “Eso“ y la serie “La Torre Oscura“, han cautivado a lectores de todo el mundo.\r\n La destreza narrativa de King reside en su capacidad para crear relatos envolventes y escalofriantes que ahondan en las profundidades de los miedos y las emociones humanas. Su estilo único combina el terror con la exploración psicológica, dando como resultado una obra que trasciende las fronteras del género.\r\n Más allá de su éxito literario, las novelas y relatos de King han inspirado numerosas adaptaciones cinematográficas y televisivas, consolidando su influencia en la cultura popular. Sus logros incluyen más de 350 millones de libros vendidos, lo que le convierte en uno de los autores más vendidos de la historia."),
-("Oscar Wilde","Oscar Wilde nació en Irlanda en 1854, hijo de un médico y de una poeta. Graduado con honores de Trinity College y Magdalen College, donde su caracter jovial le había ganado el cariño de sus pares a pesar de su excentricidad, se convirtió en defensor del movimiento artístico esteticista; que postulaba que la belleza del arte es un fin en sí misma. Tras casarse con Constance Lloyd, amplió la visión de su sociedad al abordar en revistas femeninas no solo tendencias de moda, sino también opiniones de mujeres sobre arte, literatura y vida moderna. Su prolífica literatura es un retrato irónico y adornado de la sociedad inglesa de su época; incluyendo obras como “La importancia de llamarse Ernesto“ y “El retrato de Dorian Gray“. En 1895, en el apogeo de su carrera literaria, fue condenado a prisión tras ser denunciado por homosexualidad por su amigo Alfred Douglas, a quien escribió desde prisión la demoledora carta “De Profundis“. En 1897, Wilde sale de la cárcel. Emocionalmente exhausto y físicamente agotado, se marchó a Francia y nunca regresó a Inglaterra ni a Irlanda. Oscar Wilde murió el 30 de noviembre de 1900 a causa de una meningitis, a la edad de 46 años.")
-("Frank Herbert","Frank Patrick Herbert, nacido el 8 de octubre de 1920 en Estados Unidos, fue un escritor estadounidense de ciencia ficción conocido por ser el autor de la serie de novelas futuristas Dune, un grupo de obras de gran complejidad que exploran temas como la ecología, la evolución humana, las consecuencias de la manipulación genética y las posibilidades místicas y psíquicas.\r\nHasta 1972, cuando empezó a escribir a tiempo completo, Herbert desempeñó diversos trabajos mientras escribía ciencia ficción socialmente comprometida. Trabajaba como periodista cuando se dio a conocer con la publicación de la épica Dune (1965), que se tradujo a 14 idiomas y vendió unos 12 millones de ejemplares, más que ningún otro libro de ciencia ficción de la historia. Sin embargo, su prolífica carrera abarcó mucho más. Escribió obras muy diversas, desde relatos breves hasta novelas que abordaban problemas sociales acuciantes.\r\nAunque “Dune“ sigue siendo su creación más conocida, el legado de Herbert reverbera a través de un espectro de temas, desentrañando complejas narrativas humanas con trasfondos especulativos. Herbert dio una nueva forma a la ciencia ficción, utilizando su pluma para ahondar en los intrincados recovecos de la existencia y las posibilidades humanas."),
-("Edgar Allan Poe","Edgar Allan Poe (1809-1849) fue un escritor, poeta, editor y crítico literario estadounidense conocido por sus cuentos macabros y góticos. Nacido en Boston, Massachusetts, Poe tuvo una vida tumultuosa marcada por la tragedia. Sus padres murieron cuando era joven, y fue criado por John Allan, un rico comerciante de tabaco, pero su relación fue tensa debido a desacuerdos financieros. Poe asistió brevemente a la Universidad de Virginia antes de alistarse en el ejército. Publicó su primer libro de poesía en 1827 y más tarde alcanzó el reconocimiento por sus relatos cortos, como “La caída de la casa Usher“ y “El corazón delator“. Estos relatos, caracterizados por su profundidad psicológica y sus temas oscuros, sentaron las bases de los géneros policíaco y de terror en la literatura estadounidense.\r\n Las obras críticas de Poe también dejaron un impacto duradero en la teoría literaria. Defendió la importancia de la unidad en un relato corto y destacó el impacto emocional de una obra por encima de su mensaje didáctico o moral. \r\n A pesar de su talento, tuvo dificultades para mantener unos ingresos estables debido a problemas con los derechos de autor y a la falta de leyes internacionales sobre derechos de autor en aquella época.\r\n La tragedia siguió persiguiendo a Poe cuando su esposa, Virginia, sucumbió a la tuberculosis en 1847. El propio Poe murió misteriosamente en 1849 a la edad de 40 años. Sin embargo, su legado literario perduró. "),
-("Edgar Allan Poe","Edgar Allan Poe (1809-1849) fue un escritor, poeta, editor y crítico literario estadounidense conocido por sus cuentos macabros y góticos. Nacido en Boston, Massachusetts, Poe tuvo una vida tumultuosa marcada por la tragedia. Sus padres murieron cuando era joven, y fue criado por John Allan, un rico comerciante de tabaco, pero su relación fue tensa debido a desacuerdos financieros. Poe asistió brevemente a la Universidad de Virginia antes de alistarse en el ejército. Publicó su primer libro de poesía en 1827 y más tarde alcanzó el reconocimiento por sus relatos cortos, como “La caída de la casa Usher“ y “El corazón delator“. Estos relatos, caracterizados por su profundidad psicológica y sus temas oscuros, sentaron las bases de los géneros policíaco y de terror en la literatura estadounidense.\r\n Las obras críticas de Poe también dejaron un impacto duradero en la teoría literaria. Defendió la importancia de la unidad en un relato corto y destacó el impacto emocional de una obra por encima de su mensaje didáctico o moral. \r\n A pesar de su talento, tuvo dificultades para mantener unos ingresos estables debido a problemas con los derechos de autor y a la falta de leyes internacionales sobre derechos de autor en aquella época.\r\n La tragedia siguió persiguiendo a Poe cuando su esposa, Virginia, sucumbió a la tuberculosis en 1847. El propio Poe murió misteriosamente en 1849 a la edad de 40 años. Sin embargo, su legado literario perduró. "),
-("J.R.R. Tolkien","J.R.R. Tolkien (1892-1973) fue un escritor, filólogo y académico inglés, conocido sobre todo por sus obras de alta fantasía que han cautivado a generaciones de lectores. Nacido en Bloemfontein (Sudáfrica), se trasladó a Inglaterra con su familia cuando era muy joven, tras la muerte de su padre.\r\nLa temprana fascinación de Tolkien por las lenguas y la mitología influyó enormemente en sus creaciones literarias. Estudió en la Universidad de Oxford y más tarde fue profesor de lengua y literatura anglosajona e inglesa. Sus actividades académicas le permitieron profundizar en las lenguas y los mitos antiguos que darían forma al rico tapiz de sus mundos de ficción.\r\n Su obra magna, “El Señor de los Anillos“, se publicó como trilogía entre 1954 y 1955. Ambientada en el reino ficticio de la Tierra Media, la saga épica sigue el peligroso viaje de un variopinto grupo de personajes para destruir un poderoso anillo y derrotar al señor oscuro Sauron. La meticulosa construcción del mundo por parte de Tolkien, con sus lenguas, culturas, historias y una geografía totalmente realista, sentó nuevas bases para el género fantástico. Su intrincada construcción del mundo, sus memorables personajes y sus profundos temas sobre la amistad, el heroísmo y la lucha entre el bien y el mal han dejado una huella indeleble. Sus obras han sido adaptadas al cine con gran éxito y han inspirado a innumerables autores, artistas y creadores. El legado de J.R.R. Tolkien continúa prosperando, encantando a los lectores e inspirando a escritores actuales a crear obras como “Canción de Hielo y Fuego“."),
-("Hermann Hesse","Hermann Hesse (1877-1962) fue un escritor y poeta germano-suizo conocido por sus profundas exploraciones de la espiritualidad, el autodescubrimiento y la condición humana. Nacido en Alemania, creció en el seno de una familia pietista y vivió una juventud problemática marcada por los conflictos con sus padres y las dificultades en la escuela.\r\nSu afán viajero y su deseo de autoexploración le llevaron a viajar por Europa y Asia, experiencias que influirían profundamente en sus obras posteriores.\r\n Una de sus novelas más célebres, “Siddhartha“ (1922), se inspira en la filosofía y la espiritualidad orientales, siguiendo el viaje de un joven en busca de la iluminación. El interés de Hesse por el pensamiento y el misticismo orientales siguió influyendo en su escritura, como queda patente en obras como “El lobo estepario“ (1927), que ahonda en la dualidad de la naturaleza humana.\r\n Durante el tumultuoso periodo de entreguerras, la postura antibelicista y los temas espirituales de Hesse resonaron entre los lectores que buscaban sentido en un mundo fracturado. Su negativa a alinearse con la ideología nazi hizo que sus obras fueran prohibidas en Alemania, lo que le llevó a nacionalizarse suizo. Ganó el Premio Nobel de Literatura en 1946.\r\n Su influencia se extendió más allá de la literatura. El movimiento contracultural de los años sesenta hizo suyos los temas de autodescubrimiento y rebelión contra las normas sociales de Hesse.\r\n Los escritos de Hermann Hesse siguen siendo relevantes por su exploración de las luchas humanas universales y la búsqueda de la plenitud espiritual. Su legado perdura como fuente de inspiración para quienes navegan por las complejidades de la existencia y buscan una comprensión más profunda de sí mismos y del mundo que les rodea."),
-("Franz Kafka","Franz Kafka (1883-1924) fue un escritor checo de lengua alemana cuyas singulares y enigmáticas obras han tenido un profundo impacto en la literatura y el pensamiento modernos. Nacido en Praga en el seno de una familia judía de clase media, la obra de Kafka se convertiría más tarde en sinónimo de alienación, burocracia y desesperación existencial.\r\nSu infancia estuvo marcada por una tensa relación con su padre y un profundo sentimiento de aislamiento. Estudió Derecho en la universidad y trabajó para una compañía de seguros, una experiencia que influiría enormemente en sus escritos, sobre todo en su exploración de los sistemas burocráticos opresivos y absurdos.\r\n Sus obras más famosas, como “La metamorfosis“ (1915) y “El proceso“ (1925), ejemplifican sus temas de surrealismo e introspección psicológica. “La Metamorfosis“ cuenta la historia de Gregor Samsa, que un día se despierta y se encuentra transformado en un insecto gigante, lo que constituye una poderosa alegoría de la alienación y el absurdo.\r\n “El proceso“ se adentra en la pesadilla de Josef K., detenido y sometido a un desconcertante proceso judicial por un delito no especificado.Franz Kafka falleció el 3 de junio de 1924 debido a complicaciones de tuberculosis, dejando un legado que La escritura de Franz Kafka sigue invitando a los lectores a enfrentarse a las incertidumbres de la existencia y a los entresijos de la psique humana."),
-("Sigmund Freud","Sigmund Freud (1856-1939) fue un neurólogo austriaco y fundador del psicoanálisis, un campo pionero que revolucionó nuestra comprensión de la mente humana. Nació en lo que hoy es la República Checa y más tarde se estableció en Viena (Austria).\r\n La exploración por Freud de la mente inconsciente y su influencia en el comportamiento humano condujo al desarrollo del psicoanálisis. Introdujo conceptos como el complejo de Edipo, el ello, el ego y el superego, y la interpretación de los sueños. Su obra desafió las opiniones predominantes sobre psicología y sexualidad.\r\n Recibió tanto elogios como críticas por sus teorías, que incluían ideas controvertidas sobre el desarrollo humano y la sexualidad, y su flagrante deshonestidad como investigador. A pesar de la oposición, las ideas de Freud se impusieron y dieron forma a los campos de la psicología, la psiquiatría y los estudios culturales.\r\nEn 1938, cuando los nazis subieron al poder en Austria, Freud huyó a Londres para escapar de la persecución por su ascendencia judía. Su salud empeoró y luchó contra un cáncer de boca. Continuó escribiendo y trabajando en sus teorías durante sus últimos años.\r\n Sigmund Freud murió el 23 de septiembre de 1939 en Londres, dejando un legado que transformó nuestra comprensión de la mente y sigue influyendo en la psicología, la literatura y las artes."),
-("George Orwell","George Orwell (1903-1950) fue un novelista, ensayista, periodista y crítico inglés célebre por su análisis crítico y perspicaz de temas políticos y sociales. Nacido como Eric Arthur Blair en la India, fue a la escuela en Inglaterra y más tarde sirvió en la Policía Imperial India en Birmania.\r\n Las experiencias de Orwell le llevaron a cuestionar la autoridad y el poder, temas que definirían su obra. Alcanzó la fama literaria con “Rebelión en la granja“ (1945), una alegoría satírica de la Revolución Rusa y la aparición del totalitarismo. La novela explora cómo el idealismo puede convertirse en opresión.\r\n Su obra maestra “Mil novecientos ochenta y cuatro“ (1949) describe un futuro distópico bajo el dominio de un régimen totalitario dirigido por el Gran Hermano. La acuñación por Orwell de términos como “neolengua“ y “crímen de pensamiento“ se ha convertido en emblema de la manipulación política y los estados de vigilancia.\r\n El compromiso de Orwell con la honestidad y la verdad se extendió a su periodismo y sus ensayos. Escribió sobre la pobreza, las desigualdades de clase y los peligros de la propaganda. Sus experiencias en la Guerra Civil española influyeron en su relato “Homenaje a Cataluña“. \r\n Aquejado de tuberculosis, la salud de Orwell empeoró, pero siguió escribiendo prolíficamente hasta su muerte. Falleció el 21 de enero de 1950 en Londres, dejando un legado literario que sigue siendo esencial por su crítica del poder, el lenguaje y las complejidades de la verdad en la sociedad."),
-("León Tolstói","León Tolstoi (1828-1910) fue un novelista y filósofo ruso conocido por sus monumentales obras que exploran la naturaleza humana, la sociedad y la espiritualidad. Nacido en la nobleza rusa, tuvo una educación privilegiada, pero más tarde cuestionó las desigualdades e injusticias de su sociedad.\r\n Entre las obras maestras de Tolstói figuran “La guerra y la paz“ (1869) y “Ana Karenina“ (1877), que profundizan en la vida interior de los personajes y en la dinámica de la sociedad. “La guerra y la paz“ ofrece una visión panorámica de la sociedad rusa durante la época napoleónica, mientras que “Ana Karenina“ examina las complejidades del amor, la moral y las normas sociales. \r\n En sus últimos años, Tolstoi experimentó una profunda transformación espiritual, renunciando a su estilo de vida aristocrático y a su riqueza. Desarrolló una filosofía que hacía hincapié en la sencillez, el pacifismo y la compasión. Estas creencias provocaron conflictos en el seno de su familia y de la Iglesia Ortodoxa Rusa. \r\n Las enseñanzas de Tolstói, centradas en la no violencia y la búsqueda de una vida con sentido, influyeron en figuras como Mahatma Gandhi y Martin Luther King Jr. Escribió ensayos sobre temas que iban desde la educación y el arte hasta la religión y la ética.\r\n La salud de Tolstói empeoró en sus últimos años y buscó la soledad. Abandonó su finca y a su familia, embarcándose en un viaje que terminaría en la remota estación de tren de Astapovo, donde cayó enfermo. Falleció el 20 de noviembre de 1910, dejando un legado literario que sigue iluminando la experiencia humana y la búsqueda de un significado más profundo."),
-("Julio Cortázar","Julio Cortázar (1914-1984) fue un escritor argentino y uno de los autores más influyentes en lengua española. Nacido en Bélgica de padres argentinos, pasó gran parte de su vida en Argentina y más tarde en Francia.\r\nCortázar es conocido sobre todo por sus obras de ficción innovadoras y experimentales. Su literatura desafía las formas narrativas tradicionales. Esto es evidente en \"Rayuela\", que permite a los lectores elegir su propio orden de lectura, creando una experiencia literaria única y no lineal.\r\nSu obra aborda a menudo temas como el existencialismo, la identidad y los límites entre realidad y fantasía. El uso que Cortázar hace del flujo de consciencia y su fascinación por lo fantástico y lo surrealista (que el escritor describe como \"presente en su vida desde la infancia\") han dejado una huella perdurable en la literatura del boom latinoamericano.\r\nAdemás de su obra de ficción, Cortázar fue también un consumado traductor y ensayista, contribuyendo a la difusión de las obras de Edgar Allan Poe y otros autores en el mundo hispanohablante.\r\nJulio Cortázar falleció el 12 de febrero de 1984 en París, Francia."),
-("Michel de Montaigne","Michel de Montaigne (1533-1592) fue un filósofo, ensayista y estadista francés del Renacimiento. Nacido en el seno de una familia noble del suroeste de Francia, recibió una educación clásica. Montaigne fue magistrado en Burdeos y más tarde alcalde de esa ciudad.\r\nSu obra más conocida es \"Ensayos\", una colección de reflexiones y consideraciones personales. En estos ensayos, Montaigne exploró una amplia gama de temas, desde la naturaleza humana y la educación hasta la amistad y la moralidad. A menudo se le considera uno de los primeros practicantes de la introspección en la literatura, ya que examinaba sus propios pensamientos y experiencias.\r\nLos ensayos de Montaigne se caracterizan por su enfoque franco y a menudo escéptico del conocimiento y el comportamiento humano, y por la impronta estilística de su carácter personal y humor. Adoptó la idea de que la verdad es relativa y está sujeta a las perspectivas individuales y culturales, un concepto que influyó enormemente en el pensamiento filosófico posterior. Reconoce, por ende, la gran importancia de la libertad humana y de la búsqueda de la verdad. Por esto, a menudo se piensa en él como un nexo entre la filosofía medieval y la moderna.\r\nAdemás de sus actividades literarias, Montaigne se dedicó a la política y la diplomacia. Desempeñó un papel crucial en las negociaciones entre las facciones católica y protestante durante las Guerras de Religión francesas, marcando como su objetivo la consecución de una paz duradera. \r\nMichel de Montaigne falleció el 13 de septiembre de 1592 en el castillo de su familia en Francia. Su innovador enfoque de la escritura, su exploración de la naturaleza humana y sus contribuciones a la diplomacia han dejado un legado duradero en la literatura, la filosofía y la política."),
-("George R. R. Martin","George R.R. Martin, nacido el 20 de septiembre de 1948 en Bayonne (Nueva Jersey, EEUU), es un escritor y productor de televisión estadounidense más conocido por \"Canción de hielo y fuego\", una célebre saga de fantasía que comenzó con \"Juego de tronos\" en 1996. Martin comenzó su carrera de escritor en la década de 1970, trabajando en relatos de ciencia ficción y terror, pero adquirió fama internacional con su serie de fantasía, conocida por la intrincada construcción del mundo, los complejos personajes y la intriga política. La adaptación televisiva de \"Juego de Tronos\" se convirtió en un fenómeno cultural. Actualmente reside con su esposa en Santa Fe, New Mexico, EEUU."),
-("Ray Bradbury","Ray Bradbury nació el 22 de agosto de 1920 en Waukegan, hijo de Leonard Spaulding Bradbury y de Esther Moberg. Su familia se mudó varias veces desde su lugar de origen, Illinois, hasta establecerse, finalmente, en Los Ángeles, California, en 1934. Bradbury tenía dos hermanos gemelos mayores nacidos en 1916: Leonard y Sam, pero Sam murió a la edad de dos años. Su hermana Isabel, que nació en 1926, también murió en la infancia de neumonía. En el mismo año falleció el abuelo del escritor. Esta familiaridad temprana con la muerte se reflejó en muchas obras literarias futuras."),
-("Asato Asato","Asato comenzó a escribir novelas justo antes de ingresar a la escuela secundaria.Inicialmente envió su trabajo al premio Kadokawa Beans Bunko Rookie, pero cuando en 2014 su manuscrito llegó a la tercera ronda del 21.er premio de novela Dengeki de 2014, Asato comenzó a pensar en escribir una novela que fuera del estilo de la editora Dengeki Bunko.1​ Esta novela se convertiría en el comienzo de la serie de novelas ligeras 86: Eighty-Six.1​ Esta obra un drama bélico que transcurre en un mundo de ciencia ficción distópico, enmarcado dentro del subgénero del género de ciencia ficción llamado mecha, de máquinas gigantes de guerra piloteadas, común en la ficción japonesa"),
-("Joe Dispenza","Joe Dispenza es un conferencista internacional, doctor en quiropráctica y escritor estadounidense. Ha viajado a más de 33 países para enseñarle a las personas a crear una vida más sana y feliz por medio de sus interpretaciones de los últimos descubrimientos de la neurociencia, la epigenética y la física cuántica.")
-("Federico Andahazi","Federico Andahazi es hijo de Bela Rodolfo Andahazi-Kasnya (poeta y psicoanalista de origen húngaro) y de Juana Merlín. Se graduó como licenciado en psicología en la Universidad de Buenos Aires.1​ En 1989 escribe su primera novela, que todavía permanece inédita​"),
-("Doc Pastor","Doc Pastor comenzó su carrera como periodista y fotógrafo, pero poco a poco fue enfocándose en la cultura pop, tema que le daría a conocer y gracias al que pasaría a ser uno de los grandes divulgadores de la actualidad. Desde hace unos años está centrado en su faceta de escritor, habiendo publicado libros sobre temas muy diversos entre los que se pueden destacar 'Doctor Who: el loco de la cabina" (Dolmen Editorial), '¡Qué festín! Un menú de cine' (Héroes de Papel), "Batman: Dentro de la batcueva' (Redbook Ediciones) o 'Celuloide y seda: iconos del estilo en el cine' (Plan B)."),
-("Silvia Werner","Silvia Werner nació en Buenos Aires, en 1964.Es odontóloga y estudió periodismo de gráfica y radio.Se acercó a la escritura a través del periodismo científico, pero las ganas de volcar en un papel las historias que imaginaba la llevaron a escribir cuentos y novelas."),
-("Jane Austen", "Jane Austen (Steventon, 16 de diciembre de 1775-Winchester, 18 de julio de 1817) fue una novelista británica que vivió durante la época georgiana. La ironía que empleaba para dotar de comicidad a sus novelas hace que Jane Austen sea considerada entre los clásicos de la novela inglesa, a la vez que su recepción va, incluso en la actualidad, más allá del interés académico, siendo sus obras leídas por un público más amplio."),
-("Gorey, Edward","Chicago; Illinois; 22 de febrero de 1925 - Hyannis; Massachusetts; 15 de abril de 2000. Ilustrador y escritor; consiguio ser elevado a autor de culto por su entendimiento de la realidad y su manera de plasmarla en unas imagenes excentricas; con un equilibro perfecto entre el humor acido y la ternura. La influencia de Gorey puede encontrarse en algunos artistas contemporaneos como Tim Burton; innegable deudor de su obra."),
-("Ariel Urquiza","Ariel Urquiza es escritor, periodista y traductor de inglés. En los últimos años, se ha labrado un sólido camino dentro de la literatura argentina. Su novela Ya pueden encender las luces fue finalista del III Premio Eugenio Cambaceres, organizado por la Biblioteca Nacional, en 2013."),
-("Ricardo Silva Romero","Ricardo Silva Romero Nació en Bogotá en 1975. Es autor de las novelas Relato de Navidad en La Gran Vía; Walkman; Tic; Parece que va a llover; Fin; El hombre de los mil nombres; En orden de estatura; Autogol; Érase una vez en Colombia -compuesta por Comedia romántica y El Espantapájaros-; El libro de la envidia; Historia oficial del amor; Todo va a estar bien; Cómo perderlo todo (ganad ora del V Premio Biblioteca de Narrativa Colombiana) y Río Muerto "),
+(1, 76),
+ (2, 77),
+ (3, 78),
+ (4, 79),
+ (5, 80),
+ (6, 81),
+ (7, 82),
+ (8, 83),
+ (9, 84),
+ (10, 85),
+ (11, 86),
+ (12, 87),
+ (13, 88),
+ (14, 89),
+ (15, 90),
+ (16, 91),
+ (17, 92),
+ (18, 93),
+ (19, 94),
+ (20, 95),
+ (21, 96),
+ (22, 97),
+ (23, 98),
+ (24, 99),
+ (25, 100);
 
-INSERT INTO cartsbooks (idCart, idBook)
-VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10),
-(11, 11),
-(12, 12),
-(13, 13),
-(14, 14),
-(15, 15),
-(16, 16),
-(17, 17),
-(18, 18),
-(19, 19),
-(20, 20),
-(21, 21),
-(22, 22),
-(23, 23),
-(24, 24),
-(25, 25);
+INSERT INTO carts (idUser, discount, totalPrice, payMethod) 
+VALUES 
+(76, 0.05, 41927.41, 'tarjeta de credito'),
+ (77, 0.30, 10493.76, 'efectivo'),
+ (78, 0.30, 12185.29, 'tarjeta de credito'),
+ (79, 0.20, 25114.76, 'tarjeta de credito'),
+ (80, 0.05, 11852.26, 'efectivo'),
+ (81, 0.20, 36673.09, 'tarjeta de credito'),
+ (82, 0.20, 7089.62, 'tarjeta de debito'),
+ (83, 0.20, 15155.41, 'tarjeta de debito'),
+ (84, 0.30, 8175.22, 'tarjeta de credito'),
+ (85, 0.30, 8661.00, 'tarjeta de credito'),
+ (86, 0.00, 31965.65, 'tarjeta de debito'),
+ (87, 0.30, 14437.72, 'tarjeta de credito'),
+ (88, 0.00, 6846.64, 'tarjeta de credito'),
+ (89, 0.05, 10658.12, 'tarjeta de credito'),
+ (90, 0.05, 11760.35, 'tarjeta de debito'),
+ (91, 0.02, 23340.15, 'tarjeta de credito'),
+ (92, 0.05, 18609.22, 'tarjeta de debito'),
+ (93, 0.05, 43884.02, 'tarjeta de debito'),
+ (94, 0.00, 41027.32, 'efectivo'),
+ (95, 0.05, 33789.13, 'efectivo'),
+ (96, 0.05, 13078.42, 'tarjeta de credito'),
+ (97, 0.02, 30996.58, 'tarjeta de debito'),
+ (98, 0.00, 26415.40, 'efectivo'),
+ (99, 0.02, 4617.01, 'tarjeta de credito'),
+ (100, 0.30, 2870.41, 'tarjeta de debito');
  
-INSERT INTO booksauthors (idBook, idGenre)
-VALUES
+INSERT INTO cartsbooks (idCart, idBook, unitPrice, quantity, subtotal) 
+VALUES 
+(1, 1, 11033.53, 4, 44134.12),
+(2, 2, 4997.03, 3, 14991.09),
+(3, 3, 8703.78, 2, 17407.56),
+(4, 4, 6278.69, 5, 31393.45),
+(5, 5, 6238.03, 2, 12476.06),
+(6, 6, 11460.34, 4, 45841.36),
+(7, 7, 8862.03, 1, 8862.03),
+(8, 8, 9472.13, 2, 18944.26),
+(9, 9, 5839.44, 2, 11678.88),
+(10, 10, 6186.43, 2, 12372.86),
+(11, 11, 6393.13, 5, 31965.65),
+(12, 12, 10312.66, 2, 20625.32),
+(13, 13, 6846.64, 1, 6846.64),
+(14, 14, 11219.07, 1, 11219.07),
+(15, 15, 3094.83, 4, 12379.32),
+(16, 16, 11908.24, 2, 23816.48),
+(17, 17, 3917.73, 5, 19588.65),
+(18, 18, 9238.74, 5, 46193.7),
+(19, 19, 10256.83, 4, 41027.32),
+(20, 20, 7113.5, 5, 35567.5),
+(21, 21, 3441.69, 4, 13766.76),
+(22, 22, 7907.29, 4, 31629.16),
+(23, 23, 5283.08, 5, 26415.4),
+(24, 24, 4711.23, 1, 4711.23),
+(25, 25, 4100.59, 1, 4100.59);
+
+INSERT INTO cartsshipments (idCart, idShipment) 
+VALUES 
 (1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10),
-(11, 11),
-(12, 12),
-(13, 13),
-(14, 14),
-(15, 15),
-(16, 16),
-(17, 17),
-(18, 18),
-(19, 19),
-(20, 20),
-(21, 21),
-(22, 22),
-(23, 23),
-(24, 24),
-(25, 25);
+ (2, 2),
+ (3, 3),
+ (4, 4),
+ (5, 5),
+ (6, 6),
+ (7, 7),
+ (8, 8),
+ (9, 9),
+ (10, 10),
+ (11, 11),
+ (12, 12),
+ (13, 13),
+ (14, 14),
+ (15, 15),
+ (16, 16),
+ (17, 17),
+ (18, 18),
+ (19, 19),
+ (20, 20),
+ (21, 21),
+ (22, 22),
+ (23, 23),
+ (24, 24),
+ (25, 25);
+
+
+
+INSERT INTO invoices (idCart, type, date, totalPrice, payMethod) 
+VALUES
+(1, 'B', '2023-03-01 13:34:20', '22348.09', 'tarjeta de debito'),
+ (2, 'C', '2023-05-23 11:56:17', '15503.05', 'tarjeta de credito'),
+ (3, 'C', '2023-03-18 16:15:28', '10480.26', 'tarjeta de credito'),
+ (4, 'A', '2023-04-19 18:56:51', '9471.59', 'tarjeta de debito'),
+ (5, 'C', '2023-03-31 06:45:16', '21952.57', 'tarjeta de credito'),
+ (6, 'B', '2023-06-15 00:18:14', '27702.11', 'tarjeta de debito'),
+ (7, 'A', '2023-08-20 10:23:49', '25650.24', 'efectivo'),
+ (8, 'C', '2023-09-20 23:25:25', '9541.05', 'efectivo'),
+ (9, 'B', '2023-05-06 07:53:18', '8956.87', 'efectivo'),
+ (10, 'C', '2023-07-05 01:33:59', '24444.08', 'tarjeta de credito'),
+ (11, 'B', '2023-06-18 16:30:52', '10133.68', 'tarjeta de debito'),
+ (12, 'B', '2023-05-13 23:24:03', '21061.92', 'tarjeta de credito'),
+ (13, 'A', '2023-08-13 15:06:16', '24829.32', 'efectivo'),
+ (14, 'B', '2023-05-26 21:38:01', '40894.77', 'tarjeta de credito'),
+ (15, 'C', '2023-07-23 05:14:05', '7016.3', 'tarjeta de debito'),
+ (16, 'B', '2023-04-22 01:09:22', '8970.65', 'efectivo'),
+ (17, 'B', '2023-08-05 09:33:53', '45501.28', 'tarjeta de credito'),
+ (18, 'B', '2023-06-15 17:55:54', '3214.8', 'tarjeta de debito'),
+ (19, 'A', '2023-03-07 09:31:27', '13434.48', 'efectivo'),
+ (20, 'C', '2023-10-11 21:18:37', '26915.94', 'tarjeta de credito'),
+ (21, 'A', '2023-01-28 09:37:26', '5353.28', 'efectivo'),
+ (22, 'C', '2023-10-07 07:13:10', '10949.86', 'tarjeta de credito'),
+ (23, 'B', '2023-05-06 21:52:48', '9845.33', 'efectivo'),
+ (24, 'A', '2023-05-02 06:27:41', '6682.52', 'tarjeta de debito'),
+ (25, 'C', '2023-02-16 20:35:46', '18419.21', 'efectivo');
+
+INSERT INTO shipments (name, price) 
+VALUES 
+('OCA', 2474.06),
+ ('Correo Argentino', 2377.68),
+ ('OCA', 2918.54),
+ ('Andreani', 2646.66),
+ ('Andreani', 2970.76),
+ ('OCA', 1397.48),
+ ('Correo Argentino', 2005.62),
+ ('OCA', 2227.63),
+ ('Correo Argentino', 2188.33),
+ ('Correo Argentino', 1489.91),
+ ('Correo Argentino', 2689.37),
+ ('Correo Argentino', 2060.76),
+ ('OCA', 2654.66),
+ ('OCA', 2423.98),
+ ('Andreani', 2317.98),
+ ('OCA', 2524.11),
+ ('Andreani', 2656.09),
+ ('Andreani', 1275.69),
+ ('Andreani', 2252.29),
+ ('Andreani', 2978.27),
+ ('OCA', 2433.81),
+ ('Correo Argentino', 2736.57),
+ ('Andreani', 1339.12),
+ ('Andreani', 2128.03),
+ ('OCA', 1498.79);
+
+INSERT INTO users (firstName, lastName, age, email, password, category, child, profileImg,idAddress) 
+VALUES
+ ('Kendra', 'Truitt', 6, 'Kendra.Truitt@gmail.com', 'hA2?(`''O', 'collaborator', 1, 'https://acortar.link/1PbI9C',1),
+ ('Myrtle', 'Scanlin', 65, 'Myrtle.Scanlin@gmail.com', 'qP7*ix8T9@~MZ', 'guest', 0, 'https://acortar.link/ioAruf',2),
+ ('Dannel', 'Humerstone', 35, 'Dannel.Humerstone@gmail.com', 'hF8(,hz!`s()', 'administrator', 0, 'https://acortar.link/N6mbeP',3),
+ ('Cynthea', 'Mandrier', 6, 'Cynthea.Mandrier@gmail.com', 'bT9%0{.GMf+7Tm\Z', 'guest', 1, 'https://acortar.link/U6DJbk',4),
+ ('Hunt', 'Hedley', 21, 'Hunt.Hedley@gmail.com', 'gX6+!(Y&9Q', 'administrator', 0, null,5),
+ ('Gunner', 'Innett', 37, 'Gunner.Innett@gmail.com', 'vZ0_=U6RlhPJv4G', 'guest', 0, 'https://acortar.link/VZaG6l',6),
+ ('Putnem', 'Wanek', 31, 'Putnem.Wanek@gmail.com', 'aD4\""XtAI', 'administrator', 0, 'https://acortar.link/XRaxLp',7),
+ ('Joly', 'Gaythor', 58, 'Joly.Gaythor@gmail.com', 'uW8>y''''Q/', 'guest', 0, 'https://acortar.link/0AlHmC',8),
+ ('Nicoli', 'Dohmann', 26, 'Nicoli.Dohmann@gmail.com', 'gA4&o9O/Y', 'administrator', 0, 'https://acortar.link/PGru0V',9),
+ ('Natalina', 'Lusty', 60, 'Natalina.Lusty@gmail.com', 'eE0=U*W5', 'guest', 0, 'https://acortar.link/EJEHbS',10),
+ ('Erv', 'Gaymar', 8, 'Erv.Gaymar@gmail.com', 'rD5#aoC(SZo', 'administrator', 1, 'https://acortar.link/yTWd5m',11),
+ ('Josefa', 'Bernardt', 18, 'Josefa.Bernardt@gmail.com', 'sE9<DH&j&$<O"iPZ', 'administrator', 0, 'https://acortar.link/TJIaUv',12),
+ ('Peria', 'Orrum', 59, 'Peria.Orrum@gmail.com', 'rK6>D0eu', 'collaborator', 0, 'https://acortar.link/mfJM55',13),
+ ('Hali', 'Toten', 34, 'Hali.Toten@gmail.com', 'aK3''mLW90sP.#&S', 'guest', 0, 'https://acortar.link/eRlKS4',14),
+ ('Gaye', 'Jannasch', 20, 'Gaye.Jannasch@gmail.com', 'mN7?JqD~T#t', 'administrator', 0, 'https://acortar.link/9ELeoE',15),
+ ('Dill', 'Lorans', 34, 'Dill.Lorans@gmail.com', 'zK5''6*s|/O1', 'guest', 0, 'https://acortar.link/BjR0ks',16),
+ ('Constancy', 'Rowdell', 52, 'Constancy.Rowdell@gmail.com', 'pS1(%I{hdA,/n0r', 'administrator', 0, 'https://acortar.link/fnRqk9',17),
+ ('Eleen', 'Bogace', 19, 'Eleen.Bogace@gmail.com', 'uA3!P|<C', 'administrator', 0, 'https://acortar.link/pBDtnq',18),
+ ('Lyndy', 'Colchett', 27, 'Lyndy.Colchett@gmail.com', 'oB1~vhW$<C*8P"m', 'administrator', 0, 'https://acortar.link/59b0VY',19),
+ ('Tony', 'MacCafferty', 18, 'Tony.MacCafferty@gmail.com', 'kP3''&~mDt!M+', 'guest', 0, 'https://acortar.link/9qDc9V',20),
+ ('Gardiner', 'Tyre', 28, 'Gardiner.Tyre@gmail.com', 'xZ7{#d8&@{y>g', 'collaborator', 0, 'https://acortar.link/AdShha',21),
+ ('Carry', 'Smalridge', 17, 'Carry.Smalridge@gmail.com', 'eP8$(rBl9', 'collaborator', 0, 'https://acortar.link/9g4CP3',22),
+ ('Devinne', 'Binnall', 49, 'Devinne.Binnall@gmail.com', 'yQ8*qxx%$r/pBOQj', 'guest', 0, 'https://acortar.link/gVqwrz',23),
+ ('Ardelis', 'Enderle', 70, 'Ardelis.Enderle@gmail.com', 'qN2<Coy_"?KO"%`g', 'administrator', 0, null,24),
+ ('Ragnar', 'Wallis', 21, 'Ragnar.Wallis@gmail.com', 'bN9#_ppx\/7W%', 'guest', 0, 'https://acortar.link/Xl5jW9',25);
+
+
