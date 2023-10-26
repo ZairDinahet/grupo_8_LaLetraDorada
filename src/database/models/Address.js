@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Address = sequelize.define('Address', {
     id: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   },
   {
     timestamps: false,
-    tableName: 'adresses',
+    tableName: 'addresses',
   })
 
   Address.associate = function (models) {

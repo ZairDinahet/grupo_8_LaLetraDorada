@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define('Book', {
     id: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true

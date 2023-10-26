@@ -1,23 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
   const Cart = sequelize.define('Cart', {
     id: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
     },
 
-    unitPrice: {
-      type: DataTypes.DECIMAL(10, 2),
-    },
+    // unitPrice: {
+    //   type: DataTypes.DECIMAL(10, 2),
+    // },
 
-    quantity: {
-      type: DataTypes.INRTEGER,
-    },
+    // quantity: {
+    //   type: DataTypes.INRTEGER,
+    // },
 
-    shipping: {
-      type: DataTypes.STRING(50),
-    },
+    // shipping: {
+    //   type: DataTypes.STRING(50),
+    // },
 
     dicount: {
       type: DataTypes.DECIMAL(10, 2),
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     idUser: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
     }
   }, 
   {
@@ -55,6 +55,14 @@ module.exports = (sequelize, DataTypes) => {
       through: 'cartsbooks',
       foreignKey: 'idCart',
       otherKey: 'idBook',
+      timestamps: false
+    })
+
+    Cart.belongsToMany(models.Shipment, {
+      as: 'shipments',
+      through: 'cartsshipments',
+      foreignKey: 'idCart',
+      otherKey: 'idShipment',
       timestamps: false
     })
   }

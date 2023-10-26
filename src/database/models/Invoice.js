@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Invoice = sequelize.define('Invoice', {
     id: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
 
-    total: {
+    totalPrice: {
       type: DataTypes.DECIMAL(10, 2)
     },
 
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     idCart: {
-      type: DataTypes.BIGINT(10),
+      type: DataTypes.BIGINT(10).UNSIGNED,
       allowNull: false,
     },
   }, 
