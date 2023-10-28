@@ -1,11 +1,26 @@
 let books = require("../data/books.json")
 const fs = require('fs')
 const path = require('path')
+const db = require('../database/model')
 
 const productsController = {
 
-  index: function (req, res) {
-    res.render('products/index', {books})
+  index: async function (req, res) {
+    //res.render('products/index', {books})
+
+    try{
+      const data = await db.Book.findAll({
+        raw: true
+      })
+      if(data.length > 0) {
+
+        return res.render('products/index', {books: dat})
+      } else {
+        throw new Error("¡Ups!, hubo un problema al cargar los datos");
+      }
+    } catch (err) {
+        res.status(404).json({message: err.message})
+    }
   },
 
   detail: function (req, res) {
