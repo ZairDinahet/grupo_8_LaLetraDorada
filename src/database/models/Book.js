@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'authors',
         through: 'booksauthors',
         foreignKey: 'idBook',
-        otherKey:'idAuthor',
+        otherKey:'idAuthors',
         timestamps: false
     })
 
