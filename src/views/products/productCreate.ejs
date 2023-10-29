@@ -26,8 +26,8 @@
 
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="name"> Título </label>
-                            <input type="text" name="name" id="name" 
+                            <label for="title"> Título </label>
+                            <input type="text" name="title" id="title" 
                             placeholder="Título" required>
                         </div>
 
@@ -42,8 +42,8 @@
                     
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="img">Portada</label>
-                            <input type="file" name="img" id="img" 
+                            <label for="coverImg">Portada</label>
+                            <input type="file" name="coverImg" id="coverImg" 
                             placeholder="Elegir Portada" required>
                         </div>
 
@@ -51,21 +51,10 @@
                             <label>Género </label>
                             <select class="category-select-main" 
                             id="category-select-main" name="genre" required>
-                                <option value="antologia">Antología</option>
-                                <option value="arquitectura">Arquitectura y diseño</option>
-                                <option value="arte">Arte</option>
-                                <option value="ciencia">Ciencia</option>
-                                <option value="ciencia_ficcion">Ciencia ficción</option>
-                                <option value="clasicos">Clásicos</option>
-                                <option value="cuentos">Cuentos</option>
-                                <option value="derecho">Derecho</option>
-                                <option value="economia_negocios">Economía y Negocios</option>
-                                <option value="fantasia">Fantasía</option>
-                                <option value="filosofia">Filosofía</option>
-                                <option value="Latinoamericana">Literatura latinoamericana</option>
-                                <option value="novela_juvenil">Novela Juvenil</option>
-                                <option value="romance">Romance</option>
-                                <option value="suspenso">Suspenso</option>
+                            <option value="" disabled selected>Seleccione el género </option>
+                            <% genres.forEach(genre => { %>
+                            <option value="<%= genre.id %>"><%= genre.name %></option>
+                            <% }); %>
                             </select>
                         </div>
                     </section>
@@ -75,7 +64,9 @@
                 <section class="textarea-description">
 
                     <div class="field-form-container">
-                        <label for="description">Descripción</label>
+                        <label for="description">
+                            Descripción
+                        </label>
                         <textarea name="description" id="description" 
                         cols="100" rows="8" placeholder="Descripción" required></textarea>
                     </div>
@@ -84,8 +75,10 @@
                 <section class="textarea-description">
 
                     <div class="field-form-container">
-                        <label for="biography">Biografía del autor</label>
-                        <textarea name="biographyAuthor" id="biographyAuthor" 
+                        <label for="biography">
+                            Biografía del autor
+                        </label>
+                        <textarea name="biography" id="biography" 
                         cols="100" rows="12" placeholder="Biografía del autor - al menos dos párrafos" required></textarea>
                     </div>
 
@@ -97,14 +90,16 @@
 
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="tapaDura"> Tapa dura </label>
-                            <input type="number" name="tapaDura" id="tapaDura"
+                            <label for="priceHardCover"> 
+                                Tapa dura 
+                            </label>
+                            <input type="number" name="priceHardCover" id="priceHardCover"
                             placeholder="Precio">
                         </div>
 
                         <div class="right">
-                            <label for="tapaBlanda"> Tapa blanda </label>
-                            <input type="number" name="tapaBlanda" id="tapaBlanda" 
+                            <label for="priceSoftCover"> Tapa blanda </label>
+                            <input type="number" name="priceSoftCover" id="priceSoftCover"
                             placeholder="Precio">
                         </div>
                     </section>
@@ -112,14 +107,14 @@
                     
                     <section class="field-form-container">
                         <div class="left">
-                            <label for="tapaDura"> Pdf </label>
-                            <input type="number" name="pdf" id="pdf"
+                            <label for="priceAudio"> Audio Libro </label>
+                            <input type="number" name="priceAudio" id="priceAudio"
                             placeholder="Precio">
                         </div>
                         
                         <div class="right">
-                            <label for="epub"> Epub </label>
-                            <input type="number" name="epub" id="epub" 
+                            <label for="priceEpub"> Epub </label>
+                            <input type="number" name="priceEpub" id="priceEpub" 
                             placeholder="Precio">
                         </div>
                     </section>

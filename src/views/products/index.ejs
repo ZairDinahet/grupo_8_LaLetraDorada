@@ -82,16 +82,16 @@
           <article class="book-item">
             <div class="book-info-container">
               <a href="/products/<%= book.id %>">              
-                <img src="<%= book.img %>" alt="Libro">
+                <img src="<%= book.coverImg %>" alt="Libro">
               </a>
               <div class="info-title">
-                <p><%= book.name %></p>
+                <p><%= book.title %></p>
               </div>
               <div class="info-author">
-                <p><%= book.author %></p>
+                <p><%= book.authors[0].name %></p>
               </div>
               <div class="info-price">
-                <p>$ <%= book.tapaDura %></p>
+                <p>$ <%= book.priceHardCover %></p>
               </div>
             </div>
           </article>
@@ -106,16 +106,16 @@
           <article class="book-item">
             <div class="book-info-container">
               <a href="/products/<%= book.id %>">              
-                <img src="<%= book.img %>" alt="Libro">
+                <img src="<%= book.coverImg %>" alt="Libro">
               </a>
               <div class="info-title">
-                <p><%= book.name %></p>
+                <p><%= book.title %></p>
               </div>
               <div class="info-author">
-                <p><%= book.author %></p>
+                <p><%= book.authors[0].name  %></p>
               </div>
               <div class="info-price">
-                <p>$ <%= book.tapaDura %></p>
+                <p>$ <%= book.priceHardCover %></p>
               </div>
             </div>
           </article>
@@ -132,16 +132,16 @@
             <article class="book-item">
               <div class="book-info-container">
                 <a href="/products/<%= book.id %>">              
-                  <img src="<%= book.img %>" alt="Libro">
+                  <img src="<%= book.coverImg %>" alt="Libro">
                 </a>
                 <div class="info-title">
-                  <p><%= book.name %></p>
+                  <p><%= book.title %></p>
                 </div>
                 <div class="info-author">
-                  <p><%= book.author %></p>
+                  <p><%= book.authors[0].name  %></p>
                 </div>
                 <div class="info-price">
-                  <p>$ <%= book.tapaDura %></p>
+                  <p>$ <%= book.priceHardCover %></p>
                 </div>
               </div>
             </article>

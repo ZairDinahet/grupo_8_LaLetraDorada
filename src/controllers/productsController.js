@@ -1,38 +1,66 @@
 let books = require("../data/books.json")
 const fs = require('fs')
 const path = require('path')
-const db = require('../database/model')
+const db = require('../database/models')
 
 const productsController = {
 
   index: async function (req, res) {
-    //res.render('products/index', {books})
 
     try{
-      const data = await db.Book.findAll({
-        raw: true
+      let data = await db.Book.findAll({
+        include:[{
+          model: db.Author,
+          as: 'authors',
+          attributes: ['name'],
+          through: {
+            attributes: [],
+          }
+        }],
       })
+
       if(data.length > 0) {
 
-        return res.render('products/index', {books: dat})
+        return res.render('products/index', {books: data})
+
       } else {
         throw new Error("¡Ups!, hubo un problema al cargar los datos");
       }
     } catch (err) {
-        res.status(404).json({message: err.message})
+        res.status(500).json({message: err.message})
     }
   },
 
-  detail: function (req, res) {
-    const idDeseada = parseInt(req.params.id);
-    let book = books.find(b => b.id == idDeseada);
-    //resolviendo problema de separación en párrafos de la biografía:
-    let biografia = book.biographyAuthor;
-    let biografiaArray = [];
-    if(book.biographyAuthor.includes("\r\n")){ biografia = biografia.split('\r\n');}else{biografiaArray.push(biografia);biografia = biografiaArray}
-    //renderizado de la página:
-    res.render('products/detail', {books, book, biografia})
+  detail: async function (req, res) {
+    try {      
+      const { id } = req.params;
+      let data = await db.Book.findByPk(id, {
+        include:[{
+          model: db.Author,
+          as: 'authors',
+        }],
+      });
+
+      if(data !== null) {
+        res.render('products/detail', {books, book: data})
+      } else {
+        throw new Error("¡Ups!, hubo un problema al cargar los datos");
+      }
+      // let biografia = data.biographyAuthor;
+      // let biografiaArray = [];
+      // if(data.biographyAuthor.includes("\r\n")){ 
+      //   biografia = biografia.split('\r\n');
+      // } else
+      // {
+      //   biografiaArray.push(biografia);
+      //   biografia = biografiaArray
+      // }
+  
+    } catch (error) {
+      res.status(500).json({message: err.message})
+    }
   },
+
 
   cart: function (req,res) {
     const productId = parseInt(req.params.id);
@@ -45,30 +73,71 @@ const productsController = {
     
   },
 
-  create: function (req, res) {
-    res.render('products/productCreate')
+  create: async function (req, res) {
+    const data = await db.Genre.findAll()
+    try {      
+      if(data !== null) {
+        res.render('products/productCreate', {genres: data})
+      } else {
+        throw new Error("¡Ups!, hubo un problema al cargar los generos");
+      }
+
+    } catch (error) {
+      res.status(500).json({message: err.message})
+    }
+    
   },
 
-  post: function (req, res) {
-    //agregar la logica para agregar un libro al objeto books y actualizar el archivo books.jsonz
-    const newBook = req.body;
+  post: async function (req, res) {
+
+    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+
     const file = req.file;
-    console.log(newBook);
-    //volviendo a los precios números en vez de strings
-    newBook.tapaDura = +newBook.tapaDura;
-    newBook.tapaBlanda = +newBook.tapaBlanda;
-    newBook.pdf = +newBook.pdf;
-    newBook.epub = +newBook.epub;
-    newBook.img = `/img/products/${file.filename}`
-    //creando una nueva Id a product
-    let oldBook = books[books.length - 1];
-    let ultimaId = oldBook ? oldBook.id : 0;
-    newBook.id = ultimaId + 1;
-    //pusheando el cambio a books
-    books.push(newBook);
-    //sobreescribiendo el json
-    fs.writeFileSync(path.resolve(__dirname, "../data/books.json"), JSON.stringify(books, null, 4));
-    res.redirect("/products") 
+
+    const dataBook = {
+      title, 
+      description,
+      coverImg: `/img/products/${file.filename}`,
+      priceHardCover,
+      priceSoftCover,
+      priceAudio,
+      priceEpub,
+    }
+
+    const dataAuthor = {
+      name: author,
+      biography,
+    }
+    
+    try {
+
+      if(title !== null && description !== null && coverImg !== null && genre !== null && author !== null) {
+        
+        const genreFind = await db.Genre.findByPk(genre)
+
+        const [authorObj, createdAuthor] = await db.Author.findOrCreate({
+          where: { name: dataAuthor.name },
+          defaults: dataAuthor, 
+        });
+
+        const bookCreate = await db.Book.create(dataBook)
+        await bookCreate.addGenre(genreFind)
+        await bookCreate.addAuthor(authorObj)
+
+
+        res.redirect('/products')
+        
+      } else {
+
+        throw new Error("Error al crear libro. Debes completar todos los campos");
+
+      }
+    } catch (err) {
+      
+      res.status(400).json({ message: err.message });
+
+    }
+
   },
 
   edit: function(req,res){

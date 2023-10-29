@@ -23,11 +23,11 @@
           <section class="book-detail-container">
 
             <div class="book-img">
-              <img src="<%= book.img %>"  alt="">
+              <img src="<%= book.coverImg %>"  alt="">
             </div>
 
             <div class="book-detail">
-              <h2><%= book.name +" - "+ book.author %> </h2>
+              <h2><%= book.title +" - "+ book.authors[0].name %> </h2>
               <div class="incon-container"> 
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -44,30 +44,30 @@
               <div class="buttons-price-container">
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.tapaDura %>
+                    <%= "$" + book.priceHardCover %>
                   </button>
                   <p>tapa dura</p>
                 </div>
   
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.tapaBlanda %>
+                    <%= "$" + book.priceSoftCover %>
                   </button>
                   <p>tapa blanda</p>
                 </div>
   
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.epub %>
+                    <%= "$" + book.priceEpub %>
                   </button>
                   <p>e-pub</p>
                 </div>
   
                 <div class="button-item">
                   <button>
-                    <%= "$" + book.pdf %>
+                    <%= "$" + book.priceAudio %>
                   </button>
-                  <p>pdf</p>
+                  <p>audio libro</p>
                 </div>
                 <div class="button-item-cart">
                   <a href="/products/cart/<%=book.id%>">
@@ -98,12 +98,8 @@
 
           <div class="byography-container">
             <h2>Biografia</h2>
-                <% biografia.forEach((parrafo) => { %>
-                  <p><%- parrafo %></p>
-                <% }) %> 
-              <!-- <% biografia.forEach(parrafo=>{ %>
-                <p><% parrafo %></p>  
-              <% }) %> -->
+            <%= book.authors[0].biography %>
+            <br>
               <a href="#">Seguir leyendo...</a>
           </div>
 
