@@ -18,12 +18,12 @@ const router = Router()
 router.get('/', productsController.index)
 
 router.get('/create',guest.auth, productsController.create)
-router.post('/create', upload.single("img") , productsController.post)
+router.post('/create', upload.single("coverImg") , productsController.post)
 
 router.get('/cart/:id?',guest.auth, productsController.cart);
 
 router.get('/edit/:id',guest.auth, productsController.edit)
-router.put('/edit/:id',upload.single("img"), productsController.put)
+router.put('/edit/:id',upload.single("coverImg"), productsController.put)
 
 router.get('/:id', productsController.detail)
 
