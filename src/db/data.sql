@@ -1,4 +1,4 @@
--USE LaLetraDorada;
+USE LaLetraDorada;
 
 INSERT INTO addresses (street, number, city, postalCode) 
 VALUES 
@@ -74,7 +74,7 @@ VALUES
     ("Ensayos de Montaigne", "...tampoco me propongo con mi obra prestarte ningún servicio, ni con ella trabajo para mi gloria, que mis fuerzas no alcanzan al logro de tal designio. Lo consagro a la comodidad particular de mis parientes y amigos para que, cuando yo muera (lo que acontecerá pronto), puedan encontrar en él algunos rasgos de mi condición y humor, y por este medio conserven más completo y más vivo el conocimiento que de mí tuvieron. Si mi objetivo hubiera sido buscar el favor del mundo, habría echado mano de adornos prestados; pero no, quiero sólo mostrarme en mi manera de ser sencilla, natural y ordinaria, sin estudio ni artificio, porque soy yo mismo a quien pinto. -Extracto del prefacio del presente libro.", "/img/products/book-1694199971073.jpg", 13774.44, 5845.12, 4371.94, 4218.41),
     ("'A game of thrones (inglés)'", "'Juego de tronos', de George R.R. Martin, es la primera entrega de la serie de fantasía épica 'Canción de hielo y fuego\'. La historia sigue las luchas de poder entre familias nobles que se disputan el control del Trono de Hierro. La novela es famosa por la complejidad de sus personajes, la intriga política y la riqueza de detalles de un mundo lleno de caballeros, dragones y magia. Martin teje una apasionante historia de honor, traición y ambición, presentando a los lectores un amplio elenco de personajes, cada uno con sus propios motivos y secretos. Mientras los Siete Reinos se tambalean al borde de la guerra, el libro es una mezcla magistral de maniobras políticas y elementos sobrenaturales, lo que lo convierte en una lectura cautivadora para los aficionados a la fantasía épica y la narración intrincada.", "/img/products/book-1694202309045.webp", 16485.94, 2640.36, 4159.64, 3725.66),
     ("FAHRENHEIT 451", "Guy Montag es bombero en un futuro en el que no hay que apagar in-cendios domésticos porque las casas; tratadas con una capa ignífuga; ya no arden. Pero la nueva función de los bomberos no es menos importan-te: descubrir y quemar los libros que algunos todavía atesoran; prohibidos porque se considera que solo sirven para divulgar ideas falsas; difundir in-venciones y mentiras y para confundir a la gente; que en cambio puede disfrutar del ocio oficial; un entretenimiento banal que ahorra el esfuerzo de pensar y llega a sus salas a través de cuatro paredes que son otras tantas pantallas de televisión.", "/img/products/451.png", 16138.57, 8259.35, 3229.89, 7916.95),
-    ("86:Eighty Six ", "La República de San Magnolia. Durante mucho tiempo, este país ha sido asediado por su vecino, el Imperio Giadian, que creó una serie de drones no tripulados llamados Legion. Después de años de minuciosa investigación, la República finalmente desarrolló sus propios drones autónomos, convirtiendo la lucha unilateral en una guerra sin víctimas, o al menos, eso es lo que el gobierno afirma. En verdad, no existe una guerra sin sangre. Más allá de los muros fortificados que protegen los ochenta y cinco territorios de la República se encuentra el Sector 'inexistente' 86. Los hombres y mujeres jóvenes de esta tierra abandonada son tildados como los Ochenta y Seis y, despojados de sus derechos como humanos; su libertad, sus nombres, sus vidas... su humanidad", "/img/products/86_eighty_six", 15991.85, 9153.47, 4125.61, 6712.73),
+    ("86:Eighty Six ", "La República de San Magnolia. Durante mucho tiempo, este país ha sido asediado por su vecino, el Imperio Giadian, que creó una serie de drones no tripulados llamados Legion. Después de años de minuciosa investigación, la República finalmente desarrolló sus propios drones autónomos, convirtiendo la lucha unilateral en una guerra sin víctimas, o al menos, eso es lo que el gobierno afirma. En verdad, no existe una guerra sin sangre. Más allá de los muros fortificados que protegen los ochenta y cinco territorios de la República se encuentra el Sector 'inexistente' 86. Los hombres y mujeres jóvenes de esta tierra abandonada son tildados como los Ochenta y Seis y, despojados de sus derechos como humanos; su libertad, sus nombres, sus vidas... su humanidad", "/img/products/86_eighty_six.png", 15991.85, 9153.47, 4125.61, 6712.73),
     ("Deja de ser Tu: la mente crea la realidad", "Francesc Miralles recomienda: Joe Dispenza se ha convertido en un must para los que saben que la realidad se empieza a fraguar en la mente. A diferencia de otros autores que se pierden en libros demasiado teóricos, el creador de 'Deja de ser tú' es capaz de explicar los procesos mentales y cómo incidir en ellos de forma clara, fresca e inspiradora a partir de los últimos avances en neurociencia, biología y genética. Joe Dispenza saltó a la fama en nuestro país tras participar en la película¿Y tú qué sabes?, un documental sobre la sobrecogedora capacidad de la mente para transformar la realidad que corrió de mano en mano sin ninguna publicidad, gracias al boca oreja.", "/img/products/Deja_De_Ser_Tu.jpg", 16441.95, 9304.44, 1531.42, 6709.71),
     ("EL CONQUISTADOR", "¿Cómo sería el mundo si la Conquista de América no hubiera sido como creemos que fue? Quetza, el más brillante de los hijos de Tenochtitlan, intuía que había un continente por descubrir al otro lado del océano. Para demostrarlo se hizo a la mar con una nave construida con sus propias manos y un puñado de hombres. Así, adelantándose a los grandes viajeros, es el primero que logrará realizar el viaje a una nueva tierra: Europa.", "/img/products/El_Conquistador.jpg", 9000.97, 5759.08, 3448.78, 6573.33),
     ("007 JAMES BOND, De espia a icono ", "an Fleming ha pasado por siempre a la historia por ser el padre de James Bond; sin duda alguna el agente secreto más conocido del mundo. Sus aventuras le han hecho recorrer todos los rincones del planeta y sus aventuras son devoradas por miles de aficionados que ansían más. Esto llega a su máxima expresión en la conocida saga de películas que protagonizó Sean Connery y otros grandes actores a su marcha. Parte de su éxito; o la clave del mismo; es el haber sabido evolucionar con el paso del tiempo adaptándose al mismo y no quedándose anclado en un pasado que nunca volverá. Siempre igual; pero siempre distinto. 007. James Bond. Espía. Mujeriego. Bebedor. Icono.", "/img/products/James_Bond.jpg", 13796.66, 5175.59, 3236.14, 6571.48),
@@ -91,7 +91,26 @@ VALUES
     (3, 3),
     (4, 4),
     (5, 5),
-    (6, 6);
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10),
+    (11, 11),
+    (12, 12),
+    (13, 13),
+    (14, 14),
+    (15, 15),
+    (16, 16),
+    (17, 17),
+    (18, 18),
+    (19, 19),
+    (20, 20),
+    (21, 21),
+    (22, 22),
+    (23, 23),
+    (24, 24),
+    (25, 25);
 
 INSERT INTO genres (name) 
 VALUES 
