@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="icon" href="/img/pngwing.com.ico">
+  <title>La Letra Dorada</title>
+</head>
+<body>
+
+  <%- include('../partials/header.ejs') %>
+
+  <main>
+    <section class="carousel-banners-container">
+
+      <div class="banners-container">
+
+        <div class="item-banner-container" id="item-1">
+          <div class="banner">
+            <img src="/img/banners/1.jpg" alt="biblioteca">
+          </div>
+          <div class="banner-arrows">
+              <a href="#item-3">
+                <i class="fa-solid fa-chevron-left"></i>
+              </a>
+              <a href="#item-2">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+
+        <div class="item-banner-container" id="item-2">
+          <div class="banner">
+            <img src="/img/banners/2.jpg" alt="">
+          </div>
+          <div class="banner-arrows">
+              <a href="#item-1">
+                  <i class="fa-solid fa-chevron-left"></i>
+              </a>
+              <a href="#item-3">
+                  <i class="fa-solid fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+
+        <div class="item-banner-container" id="item-3">
+          <div class="banner">
+            <img src="/img/banners/3.jpg" alt="">
+          </div>
+          <div class="banner-arrows">
+              <a href="#item-2">
+                  <i class="fa-solid fa-chevron-left"></i>
+              </a>
+              <a href="#item-1">
+                  <i class="fa-solid fa-chevron-right"></i>
+              </a>
+          </div>
+        </div>
+
+
+      </div> 
+      <div class="carrousel-controller">
+        <a href="#item-1">•</a>
+        <a href="#item-2">•</a>
+        <a href="#iteml-3">•</a>
+      </div>   
+    
+    </section>
+    <% if (locals.book) { %>      
+      <section class="section-container">
+        <h3 class="section-title">Resultados</h3>
+        <div class="books-container">
+  
+          <% book.forEach(data => { %>
+            <article class="book-item">
+              <div class="book-info-container">
+                <a href="/products/<%= data.id %>">              
+                  <img src="<%= data.coverImg %>" alt="Libro">
+                </a>
+                <div class="info-title">
+                  <p><%= data.title %></p>
+                </div>
+                <div class="info-author">
+                  <p><%= data.authors[0].name %></p>
+                </div>
+                <div class="info-price">
+                  <p>$ <%= data.priceHardCover %></p>
+                </div>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      </section>
+    <% } else { %>
+      <section>
+        <div class="container-lost">
+          <img src="/img/home/Lost Tourist-big.png" class="img-lost">
+          <p class="text-lost">No encontramos le libro que que buscas</p> 
+        </div>
+      </section>
+    <% } %>
+
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+  
+</body>
+</html>

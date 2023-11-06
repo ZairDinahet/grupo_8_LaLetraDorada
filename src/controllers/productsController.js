@@ -2,6 +2,7 @@ let books = require("../data/books.json")
 const fs = require('fs')
 const path = require('path')
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 const productsController = {
 
@@ -56,11 +57,10 @@ const productsController = {
       //   biografia = biografiaArray
       // }
   
-    } catch (error) {
+    } catch (err) {
       res.status(500).json({message: err.message})
     }
   },
-
 
   cart: function (req,res) {
     const productId = parseInt(req.params.id);
@@ -82,7 +82,7 @@ const productsController = {
         throw new Error("¡Ups!, hubo un problema al cargar los generos");
       }
 
-    } catch (error) {
+    } catch (err) {
       res.status(500).json({message: err.message})
     }
     
@@ -188,7 +188,42 @@ const productsController = {
       fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(books,null,4));
     }
     res.redirect('/products')
-  }
+  },
+
+  search: async (req, res) => {
+    const { title } = req.body   
+
+    try{
+      
+      const data = await db.Book.findAll({
+          where: {
+              title: {
+                  [Op.like]: `%${title}%`
+              }
+          },
+          include:[{
+            model: db.Author,
+            as: 'authors',
+            attributes: ['name'],
+            through: {
+              attributes: [],
+            }
+          }],
+      })
+
+      if(data.length > 0) {
+        return res.render('products/productSearch', {book: data})
+
+      } else {
+        res.render('products/productSearch', {book: undefined})
+        //throw new Error("¡Ups!, hubo un problema al cargar los datos");
+      }
+    } catch (err) {
+        res.status(500).json({message: err.message})
+        
+    }
+
+  },
 }
 
 

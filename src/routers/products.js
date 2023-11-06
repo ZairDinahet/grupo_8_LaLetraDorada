@@ -29,6 +29,7 @@ router.get('/:id', productsController.detail)
 
 router.delete('/delete/:id',guest.auth, productsController.delete)
 
+router.post('/search', productsController.search)
 
 //Exporto router, quien aloja todas las rutas que creo para que mi archivo de cabecera (en este caso app.js) decida donde usar esta ruta. 
 module.exports = router

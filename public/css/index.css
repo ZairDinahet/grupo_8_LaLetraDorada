@@ -259,6 +259,24 @@ main {
 }
 
 
+.container-lost{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-lost {
+  font-size: 20px;
+  margin: 20px;;
+
+}
+
+.img-lost {
+  width: 300px;
+}
+
+
 /* styles footer  */
 
 footer {
@@ -368,6 +386,16 @@ footer {
     font-size: 11px;
   }
   
+
+  .container-lost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+  }
 }
 
 /* Styles for mobile (up to 480px) */
@@ -441,6 +469,19 @@ footer {
     color: #979797;
     font-size: 13px;
   } */
+  .img-lost {
+    width: 200px;
+  }
+
+  .container-lost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+  }
 }
 
 /* Optional: Styles for larger tablets (768px - 1024px) */
