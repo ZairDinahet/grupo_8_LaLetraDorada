@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/productCart.css">
+  <link rel="icon" href="/design/la-letra-dorada-icon1.png">
   <title>Carrito - La Letra Dorada</title>
 </head>
 
@@ -25,15 +26,16 @@
         </div>
   
         <% if (cart.length > 0) { %>
+          
           <% cart.forEach(product => { %>
             <div class="main-product">
               <div class="product-description">
-                <img src="<%= product.img %>">
+                <img src="<%= product.coverImg %>">
                 <div>
-                  <h3 class="product-name"><%= product.name %></h3>
+                  <h3 class="product-name"><%= product.title%></h3>
                   <br>
-                  <p class="product-author"><%= product.author %></p><br>
-                  <p class="genres"><%= product.genre %></p>
+                  <p class="product-author"><%= product.authors[0].name %></p><br>
+                  
                 </div>
               </div>
               <div class="product-box-button-amount">
@@ -41,13 +43,16 @@
                 <input type="text" value="1">
                 <button>+</button>
               </div>
-              <p class="product-price"><%= "$" + product.tapaDura %></p>
+              <p class="product-price"><%= "$" + product.priceHardCover %></p>
             </div>
           <% }); %>
+
         <% } else { %>
+
           <div class="main-product-empty">
             <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
           </div>
+
         <% } %>
 
         <div class="main-discount-title">
@@ -125,7 +130,7 @@
               <div class="price-details">
                 <h3>
                   <div>Subtotal</div>
-                  <div><%= "$" + product.tapaDura %></div>
+                  <div><%= "$" + product.priceHardCover %></div>
                 </h3>
                 <h3>
                   <div>Cód. de Descuento</div>
@@ -137,7 +142,7 @@
                 </h3>
                 <h2>
                   <div>TOTAL</div>
-                  <div><%= "$" + (product.tapaDura - 500 + 1200) %></div>
+                  <div><%= "$" + (product.priceHardCover - 500 + 1200) %></div>
                 </h2>
               </div>
               <% }); %>
@@ -163,6 +168,7 @@
         <a href="#">
                 <i class="fa-solid fa-chevron-left"></i>
         </a>
+      
         
         <article class="book-01">
           <div class="book-info-container">
@@ -179,7 +185,6 @@
             <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
           </div>
         </article>
-  
         <article class="book-02">
           <div class="book-info-container">
             <img src="/img/productCart/cuentos-de-hadas.png" alt="Libro">

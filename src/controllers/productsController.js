@@ -1,7 +1,7 @@
-let books = require("../data/books.json")
 const fs = require('fs')
 const path = require('path')
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 const productsController = {
 
@@ -19,70 +19,112 @@ const productsController = {
         }],
       })
 
-      if(data.length > 0) {
-
-        return res.render('products/index', {books: data})
-
-      } else {
+      if(!data.length) {
         throw new Error("¡Ups!, hubo un problema al cargar los datos");
       }
+      
+      return res.render('products/index', {books: data})
+
     } catch (err) {
-        res.status(500).json({message: err.message})
+
+      res.status(500).json({ message: err.message })
+
     }
   },
 
   detail: async function (req, res) {
+    const { id } = req.params;
+
     try {      
-      const { id } = req.params;
-      let data = await db.Book.findByPk(id, {
+
+      const data = await db.Book.findByPk(id, {
         include:[{
           model: db.Author,
           as: 'authors',
         }],
       });
 
-      if(data !== null) {
-        res.render('products/detail', {books, book: data})
-      } else {
+      const dataBooks = await db.Book.findAll({
+        include:[{
+          model: db.Author,
+          as: 'authors',
+          attributes: ['name'],
+          through: {
+            attributes: [],
+          }
+        }],
+      })
+
+      if(!data || !dataBooks.length) {
+        
         throw new Error("¡Ups!, hubo un problema al cargar los datos");
-      }
-      // let biografia = data.biographyAuthor;
-      // let biografiaArray = [];
-      // if(data.biographyAuthor.includes("\r\n")){ 
-      //   biografia = biografia.split('\r\n');
-      // } else
-      // {
-      //   biografiaArray.push(biografia);
-      //   biografia = biografiaArray
-      // }
-  
-    } catch (error) {
-      res.status(500).json({message: err.message})
+      } 
+
+      res.render('products/detail', {books: dataBooks, book: data})
+
+    } catch (err) {
+
+      res.status(404).json({message: err.message})
+
     }
   },
 
+  cart: async function (req,res) {
 
-  cart: function (req,res) {
-    const productId = parseInt(req.params.id);
-    if(productId) {
-      const productToAdd = books.find(book => book.id == productId);    
-      res.render('products/productCart', { cart: [productToAdd] });
-    } else {
-      res.render('products/productCart', { cart: [] });
+    const { id } = req.params
+
+    try {
+
+      const data = await db.Book.findByPk(id, {
+        include:[{
+          model: db.Author,
+          as: 'authors',
+        },
+        {
+          model: db.Genre,
+          as: 'genres',
+        }
+      ],
+      })
+
+      const books = await db.Book.findAll({
+        include:[{
+          model: db.Author,
+          as: 'authors',
+        }],
+      })
+
+      if(!data) {
+
+        throw new Error('El libro no fue encontrado');
+
+      }
+
+      res.render('products/productCart', { cart: [data], books});
+      
+    } catch (err) {
+
+      return res.status(404).json({ message: 'Error en la busqueda', err });
+
     }
     
   },
 
   create: async function (req, res) {
-    const data = await db.Genre.findAll()
-    try {      
-      if(data !== null) {
-        res.render('products/productCreate', {genres: data})
-      } else {
-        throw new Error("¡Ups!, hubo un problema al cargar los generos");
-      }
 
-    } catch (error) {
+    try {      
+
+      const data = await db.Genre.findAll()
+
+      if(data.length === 0) {  
+
+        throw new Error("¡Ups!, hubo un problema al cargar los generos");
+
+      } 
+
+      res.render('products/productCreate', {genres: data})
+      
+    } catch (err) {
       res.status(500).json({message: err.message})
     }
     
@@ -140,55 +182,168 @@ const productsController = {
 
   },
 
-  edit: function(req,res){
-    //agregar la logica buscar el libro que tenga el id que me pasan por params y enviarlo a mi vista prodcutEdit para que se complete el formulario con esa informacion
-    const idProduct = parseInt(req.params.id);
-    let productE = books.find(p => p.id === idProduct)
-    res.render('products/productEdit',{productE})
+  edit: async function(req,res){
+    const { id } = req.params;
+
+    try {      
+      
+
+      let data = await db.Book.findByPk(id, {
+        include:[{
+          model: db.Author,
+          as: 'authors',
+        },
+        {
+          model: db.Genre,
+          as: 'genres',
+        }
+      ],
+      });
+
+      const dataGenres = await db.Genre.findAll()
+
+      if(!data) {
+        
+        throw new Error("¡Ups!, hubo un problema al buscar los datos");
+      } 
+
+        return res.render('products/productEdit', {book: data, allGenres: dataGenres})
+        // res.json(data)
+
+    } catch (err) {
+      res.status(404).json({message: err.message})
+    }
   },
 
-  put: function (req, res) {
-    //agregar la logica para editar un libro del objeto books. Primero hay que encontrarlo usando el id, books y despues actualizar el archivo books.json
-    const idProduct = parseInt(req.params.id);
-    const edit = req.body;
+  put: async function (req, res) {
+
+    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+    const { id } = req.params;
+
     const file = req.file;
 
-    const index = books.findIndex(p => p.id === idProduct)
-    books[index].name = edit.name
-    books[index].author = edit.author
-    books[index].genre = !edit.genre ? books[index].genre : edit.genre
-    books[index].description = edit.description
-    books[index].biographyAuthor = edit.biographyAuthor
-    books[index].tapaDura = +edit.tapaDura
-    books[index].tapaBlanda = +edit.tapaBlanda
-    books[index].epub = +edit.epub
-    books[index].pdf = +edit.pdf
+    try {
+      
+      if(title !== null && description !== null && coverImg !== null && genre !== null && author !== null) {
 
-    if(file){
-      fs.unlinkSync(path.resolve(__dirname, `../../public${books[index].img}`));
-      books[index].img = `/img/products/${file.filename}`
-    } else{
-      books[index].img =  books[index].img 
+        let data = await db.Book.findByPk(id, {
+          include: [{
+            model: db.Author,
+            as: 'authors',
+          },
+          {
+            model: db.Genre,
+            as: 'genres',
+          }
+          ],
+        });
+
+        const dataBook = {
+          title,
+          description,
+          priceHardCover,
+          priceSoftCover,
+          priceAudio,
+          priceEpub,
+        }
+
+        if(file){
+          fs.unlinkSync(path.resolve(__dirname, `../../public${data.coverImg}`));
+
+          dataBook.coverImg = `/img/products/${file.filename}`
+        } else{
+          dataBook.coverImg = data.coverImg
+        }
+        
+        const [authorObj, createdAuthor] = await db.Author.findOrCreate({
+          where: { name: author, biography: biography},
+          defaults: { name: author, biography: biography},
+        });
+
+        const genreFind = await db.Genre.findByPk(genre)
+
+        await data.update(dataBook); 
+
+        await data.setGenres([genreFind]); 
+        await data.setAuthors([authorObj]);
+
+        res.redirect('/products')
+        
+      } else {
+
+        throw new Error("Error al editar libro. Debes completar todos los campos");
+
+      }
+
+    } catch (err) {
+      
+      res.status(400).json({ message: err.message });
+
     }
-
-    fs.writeFileSync(path.resolve(__dirname,"../data/books.json"),JSON.stringify(books,null,4))
-    res.redirect('/products')
-    console.log(books[index]);
+    
   },
 
-  delete: function (req, res) {
-    const bookId = parseInt(req.params.id);
-    const book = books.find((book) => book.id === bookId);
+  delete: async function (req, res) {
 
-    if (book) {
-      const bookImg = path.resolve(__dirname, `../../public${book.img}`);
-      fs.unlinkSync(bookImg);
+    const { id } = req.params
 
-      books = books.filter((book) => book.id !== bookId);
-      fs.writeFileSync(path.resolve(__dirname, '../data/books.json'), JSON.stringify(books,null,4));
+    try {
+      const data = await db.Book.findByPk(id)
+
+      if (!data) {
+        throw new Error('El libro no fue encontrado');
+      }
+      
+      await data.setGenres([]); 
+      await data.setAuthors([]);
+
+      await data.destroy()
+      
+      res.redirect('/products')
+
+    } catch (err) {
+
+      return res.status(500).json({ message: 'Error al eliminar el libro y sus relaciones', err });
+
     }
-    res.redirect('/products')
-  }
+    
+  },
+
+  search: async (req, res) => {
+    const { title } = req.body   
+
+    try{
+      
+      const data = await db.Book.findAll({
+          where: {
+              title: {
+                  [Op.like]: `%${title}%`
+              }
+          },
+          include:[{
+            model: db.Author,
+            as: 'authors',
+            attributes: ['name'],
+            through: {
+              attributes: [],
+            }
+          }],
+      })
+
+      if(!data.length) {
+        
+        res.render('products/productSearch', {book: undefined})
+      } 
+
+      return res.render('products/productSearch', {book: data})
+        
+      
+    } catch (err) {
+        res.status(404).json({message: err.message})
+        
+    }
+
+  },
 }
 
 

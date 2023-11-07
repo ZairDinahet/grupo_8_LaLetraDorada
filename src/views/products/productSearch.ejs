@@ -18,7 +18,6 @@
   <%- include('../partials/header.ejs') %>
 
   <main>
-    <!-- Cambiar la propiedad price por tapaDura y modificar el json para que cambie esa propiedad-->
     <section class="carousel-banners-container">
 
       <div class="banners-container">
@@ -74,82 +73,40 @@
       </div>   
     
     </section>
-
-    <section class="section-container">
-      <h3 class="section-title">¡Mas vendidos!</h3>
-      <div class="books-container">
-
-        <% books.slice(0, 6).forEach(book => { %>
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/products/<%= book.id %>">              
-                <img src="<%= book.coverImg %>" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p><%= book.title %></p>
-              </div>
-              <div class="info-author">
-                <p><%= book.authors[0].name %></p>
-              </div>
-              <div class="info-price">
-                <p>$ <%= book.priceHardCover %></p>
-              </div>
-            </div>
-          </article>
-        <% }) %>
-      </div>
-    </section>
-
-    <section class="section-container"> 
-      <h3 class="section-title">¡Ofertas!</h3>       
-      <div class="books-container">
-        <% books.slice(6, 12).forEach(book => { %>
-          <article class="book-item">
-            <div class="book-info-container">
-              <a href="/products/<%= book.id %>">              
-                <img src="<%= book.coverImg %>" alt="Libro">
-              </a>
-              <div class="info-title">
-                <p><%= book.title %></p>
-              </div>
-              <div class="info-author">
-                <p><%= book.authors[0].name  %></p>
-              </div>
-              <div class="info-price">
-                <p>$ <%= book.priceHardCover %></p>
-              </div>
-            </div>
-          </article>
-        <% }) %>
-      </div>
-    </section>
-
-    <% if(books.length > 12){%>
-      <section class="section-container"> 
-        <h3 class="section-title">¡Ultima novedades!</h3>       
+    <% if (locals.book) { %>      
+      <section class="section-container">
+        <h3 class="section-title">Resultados</h3>
         <div class="books-container">
   
-          <% books.slice(12).forEach(book => { %>
+          <% book.forEach(data => { %>
             <article class="book-item">
               <div class="book-info-container">
-                <a href="/products/<%= book.id %>">              
-                  <img src="<%= book.coverImg %>" alt="Libro">
+                <a href="/products/<%= data.id %>">              
+                  <img src="<%= data.coverImg %>" alt="Libro">
                 </a>
                 <div class="info-title">
-                  <p><%= book.title %></p>
+                  <p><%= data.title %></p>
                 </div>
                 <div class="info-author">
-                  <p><%= book.authors[0].name  %></p>
+                  <p><%= data.authors[0].name %></p>
                 </div>
                 <div class="info-price">
-                  <p>$ <%= book.priceHardCover %></p>
+                  <p>$ <%= data.priceHardCover %></p>
                 </div>
               </div>
             </article>
           <% }) %>
         </div>
       </section>
-    <% } %> 
+    <% } else { %>
+      <section>
+        <div class="container-lost">
+          <img src="/img/home/Lost Tourist-big.png" class="img-lost">
+          <p class="text-lost">No encontramos le libro que que buscas</p> 
+        </div>
+      </section>
+    <% } %>
+
   </main>
 
   <%- include('../partials/footer.ejs') %>
