@@ -29,9 +29,6 @@
             historias.</p>
         </div>
       </div>
-
-
-      
       <div class="form-register-content">
         <div class="sub-form-content">
           <h2>Registrate</h2>
@@ -67,13 +64,13 @@
               <% } %>
             </div>
             <div class="field-form">
-              <label for="imgUser">Foto de perfil</label>
+              <label for="profileImg">Foto de perfil</label>
               <div class="input-with-icon">
-                <input type="file" name="imgUser" id="imgUser" 
-                placeholder="Foto de perfil" <% (locals.errors && errors.imgUser) ? 'is invalid' : null %> accept ='.jpg, .png'>
+                <input type="file" name="profileImg" id="profileImg" 
+                placeholder="Foto de perfil" <% (locals.errors && errors.profileImg) ? 'is invalid' : null %> accept ='.jpg, .png' value="<%= (locals.oldData && oldData.profileImg) ? oldData.profileImg : null %>">
               </div>
-              <% if(locals.errors && errors.imgUser){ %>
-                <div class="text-danger"> <p><%= errors.imgUser.msg %> </p></div>
+              <% if(locals.errors && errors.profileImg){ %>
+                <div class="text-danger"> <p><%= errors.profileImg.msg %> </p></div>
                 <% } %>
             </div>
             <div class="field-form">
@@ -97,6 +94,16 @@
               <% } %>
             </div>
             <div class="field-form">
+              <label for="street">Dirección de envío</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-dolly"></i>
+                <input type="text" name="street" id="street" placeholder="Dirección a la que llegarán los productos" class="form-control <% (locals.errors && errors.street) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.street) ? oldData.street : null %>">
+              </div>
+              <% if(locals.errors && errors.street){ %>
+              <div class="text-danger"> <p><%= errors.street.msg %> </p></div>
+              <% } %>
+            </div>
+            <div class="field-form">
               <label for="postalCode">Código Postal</label>
               <div class="input-with-icon">
                 <i class="fa-regular fa-envelope"></i>
@@ -107,13 +114,39 @@
               <% } %>
             </div>
             <div class="field-form">
-              <label for="postalCode">Dirección de envío</label>
+              <label for="number"> Numero de Vivienda </label>
               <div class="input-with-icon">
                 <i class="fa-solid fa-dolly"></i>
-                <input type="text" name="shippingAdress" id="shippingAdress" placeholder="Dirección a la que llegarán los productos" class="form-control <% (locals.errors && errors.shippingAdress) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.shippingAdress) ? oldData.shippingAdress : null %>">
+                <input type="text" name="number" id="number" placeholder="Numero de vivienda a la que llegarán los productos" class="form-control <% (locals.errors && errors.number) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.number) ? oldData.number : null %>">
               </div>
-              <% if(locals.errors && errors.shippingAdress){ %>
-              <div class="text-danger"> <p><%= errors.shippingAdress.msg %> </p></div>
+              <% if(locals.errors && errors.number){ %>
+                <div class="text-danger"> <p><%= errors.number.msg %> </p></div>
+                <% } %>
+            </div>
+            <div class="field-form">
+              <label for="city"> Ciudad </label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-dolly"></i>
+                <input type="text" name="city" id="city" placeholder="Ciudad de vivienda a la que llegarán los productos" class="form-control <% (locals.errors && errors.city) ? 'is invalid' : null %>" value="<%= (locals.oldData && oldData.city) ? oldData.city : null %>">
+              </div>
+              <% if(locals.errors && errors.city){ %>
+                <div class="text-danger"> <p><%= errors.city.msg %> </p></div>
+               <% } %>
+            </div>
+            <div class="field-form">
+              <label for="category">Categoria</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-user"></i>
+                <select name="category" id="category" class="form-control">
+                  <option value="administrator " <%= (locals.oldData && oldData.category === 'administrator') ? 'selected' : null %>>Administrador</option>
+                  <option value="guest" <%= (locals.oldData && oldData.category === 'guest') ? 'selected' : null %>>Invitado</option>
+                  <option value="collaborator" <%= (locals.oldData && oldData.category === 'collaborator') ? 'selected' : null %>>Colaborador</option>
+                </select>
+              </div>
+              <% if (locals.errors && errors.category) { %>
+                <div class="text-danger">
+                  <p><%= errors.category.msg %></p>
+                </div>
               <% } %>
             </div>
             <div class="field-form-button">
