@@ -137,22 +137,7 @@ VALUES
     ("Humor"),
     ("Literatura clásica"),
     ("Literatura contemporánea"),
-    ("Literatura infantil"),
-    ("Literatura juvenil"),
-    ("Literatura adulta"),
-    ("Manga"),
-    ("Misterio"),
-    ("Mitología"),
-    ("Novela Gráfica"),
-    ("Novela Ligera"),
-    ("Poesia"),
-    ("Psicológico"),
-    ("Realismo"),
-    ("Romance"),
-    ("Suspenso"),
-    ("Terror"),
-    ("Tragedia"),
-    ("Thriller");
+    ("Literatura infantil");
 
 INSERT INTO booksgenres (idBook, idGenre) 
 VALUES 
@@ -162,7 +147,25 @@ VALUES
     (4, 4),
     (5, 5),
     (6, 6),
-    (7, 7);
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10),
+    (11, 11),
+    (12, 12),
+    (13, 13),
+    (14, 14),
+    (15, 15),
+    (16, 16),
+    (17, 17),
+    (18, 18),
+    (19, 19),
+    (20, 20),
+    (21, 21),
+    (22, 22),
+    (23, 23),
+    (24, 24),
+    (25, 25);
  
 INSERT INTO users (firstName, lastName, age, email, password, category, child, profileImg,idAddress) 
 VALUES
