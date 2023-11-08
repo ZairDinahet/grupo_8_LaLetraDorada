@@ -183,7 +183,6 @@
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-dolly"></i>
                                     <select name="category" id="category">
-                                        <option value="">--Elige una Categoría--</option>
                                         <option value="administrator" <%= (user.category === 'administrator') ? 'selected' : '' %>>Administrador</option>
                                         <option value="guest" <%= (user.category === 'guest') ? 'selected' : '' %>>Invitado</option>
                                         <option value="collaborator" <%= (user.category === 'collaborator') ? 'selected' : '' %>>Colaborador</option>

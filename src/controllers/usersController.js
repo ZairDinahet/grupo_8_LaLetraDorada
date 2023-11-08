@@ -206,7 +206,8 @@ const usersController = {
   put: async function (req, res) {
     const { firstName, lastName, age, email, password, category, street, number, city, postalCode } = req.body;
     const file = req.file;
- const findUser = await db.User.findByPk(
+
+    const findUser = await db.User.findByPk(
           req.params.id, {
           raw: true
         })
@@ -248,10 +249,10 @@ const usersController = {
           findUser.password = password
 
           if (file) {
-            if (findUser.profileImg) {
               fs.unlinkSync(path.resolve(__dirname, `../../public${findUser.profileImg}`));
-            }
-            findUser.profileImg = `/img/users/${file.filename}`;
+              findUser.profileImg = `/img/users/${file.filename}`;
+          }else{
+              findUser.profileImg = findUser.profileImg
           }
         }
 
