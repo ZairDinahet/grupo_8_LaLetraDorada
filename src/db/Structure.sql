@@ -8,11 +8,11 @@ CREATE TABLE `Users` (
   `lastName` VARCHAR(50) NOT NULL,
   `age` INT CHECK (age >= 0 AND age <= 110),
   `email` VARCHAR(50) NOT NULL UNIQUE,
-  `password` VARCHAR(60) NOT NULL,
+  `password` TEXT NOT NULL,
   `category` VARCHAR(20) NOT NULL,
   `child` TINYINT,
-  `profileImg` VARCHAR(200),
-  `idAddress` INT NOT NULL
+  `profileImg` TEXT,
+  `idAddress` INT
 );
 
 CREATE TABLE `Addresses` (
@@ -55,7 +55,7 @@ CREATE TABLE `Invoices` (
 CREATE TABLE `Books` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(50) NOT NULL,
-  `description` VARCHAR(2000) NOT NULL,
+  `description` TEXT NOT NULL,
   `coverImg` VARCHAR(200) NOT NULL,
   `priceHardCover` DECIMAL(10,2) CHECK (priceHardCover > 0),
   `priceSoftCover` DECIMAL(10,2) CHECK (priceSoftCover > 0),
@@ -65,13 +65,13 @@ CREATE TABLE `Books` (
 
 CREATE TABLE `Genres` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(30) NOT NULL
+  `name` VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE `Authors` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(100) NOT NULL,
-  `biography` VARCHAR(2000) NOT NULL
+  `biography` TEXT NOT NULL
 );
 
 CREATE TABLE `BooksGenres` (
