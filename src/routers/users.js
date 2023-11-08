@@ -6,6 +6,7 @@ const userMiddleware = require('../middleware/userMiddleware') //middleware user
 const guest = require('../middleware/guestMiddleware') // middleware huesped
 const userLoginValidation = require('../middleware/userLoginValidation')
 const userRegisterValidation = require(`../middleware/usersRegisterValidation`)
+const userEditValidation = require(`../middleware/usersEditMiddleware`)
 
 
 router.get(['/index','/'], usersController.index)
@@ -24,7 +25,7 @@ router.post('/login', userLoginValidation, usersController.loginProcess)
 router.get('/profile',guest.auth,usersController.profile)
 
 router.get('/edit/:id',guest.auth,usersController.edit)
-router.put('/edit/:id',upload.single("profileImg"), usersController.put)
+router.put('/edit/:id',upload.single("profileImg"),userEditValidation, usersController.put)
 // Logout
 router.get('/logout',guest.auth, usersController.logout)
 

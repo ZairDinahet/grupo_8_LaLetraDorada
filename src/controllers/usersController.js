@@ -206,22 +206,34 @@ const usersController = {
   put: async function (req, res) {
     const { firstName, lastName, age, email, password, category, street, number, city, postalCode } = req.body;
     const file = req.file;
-
+ const findUser = await db.User.findByPk(
+          req.params.id, {
+          raw: true
+        })
     try {
 
       const validationReq = validationResult(req);
       if (validationReq.errors.length > 0) {
         return res.render('users/profileEdit', {
           errors: validationReq.mapped(),
-          oldData: req.body
-        })
-      } else {
-        const findUser = await db.User.findByPk(
-          req.params.id, {
-          raw: true
-        }
+          oldData: req.body,
+          user: {
+            id: req.params.id,
+            ...req.body,
+            address: {
+              street,
+              postalCode,
+              number,
+              city
+            }
+          }
+        },
+        console.log(validationReq.array())
         )
-
+        
+      } else {
+       
+        console.log(req.body);
         if (findUser.email !== email) {
           req.session.userLogged = email
         }

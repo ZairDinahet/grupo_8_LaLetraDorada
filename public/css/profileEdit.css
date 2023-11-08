@@ -164,6 +164,19 @@
     padding: 0 2px;
     color: #9a9a9a;
   }
+
+  .text-danger{
+    display: flex;
+    height:auto;
+    width: auto;
+  } 
+  
+  .text-danger p{
+    color: rgb(235, 39, 39);
+    font-size: 12px;
+    padding: 5px;
+  }
+
   .input-with-icon input,.input-with-icon select {
     width: 100%;
     padding: 10px;
