@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/profileEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Registro-La Letra Dorada</title>
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+
+        <main>
+            <div class="main-register-container">
+
+                <div class="form-register-content">
+                    <div class="sub-form-content">
+                        <h2>Editar Perfil</h2>
+                        <form class="forms-content" action="/user/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <div class="field-form">
+                                <label for="firstName">Nombre</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu Nombre" 
+                                    value="<%= user.firstName %>"
+                                        class="form-control <% (locals.errors && errors.firstName) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.firstName){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.firstName.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="lastName">Apellido</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido"
+                                        value="<%= user.lastName %>"
+                                        class="form-control <% (locals.errors && errors.lastName) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.lastName){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.lastName.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="age">Edad</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <input type="number" name="age" id="age" placeholder="Ingresa tu Edad"
+                                        value="<%= user.age %>"
+                                        class="form-control <% (locals.errors && errors.age) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.age){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.age.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="profileImg">Foto de perfil</label>
+                                <div class="input-with-icon">
+                                    <input type="file" name="profileImg" id="profileImg" value="<%= user.profileImg %>"
+                                        placeholder="Foto de perfil" <% (locals.errors && errors.profileImg) ? 'is invalid': null %> accept ='.jpg, .png'>
+                                </div>
+                                <% if(locals.errors && errors.profileImg){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.profileImg.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="email">Correo Electronico</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <input type="email" name="email" id="email" placeholder="Ingresa tu Email"
+                                        value="<%= user.email %>"
+                                        class="form-control <% (locals.errors && errors.email) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.email){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.email.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="street">Dirección de envío</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-dolly"></i>
+                                    <input type="text" name="street" id="street"
+                                        placeholder="Dirección a la que llegarán los productos"
+                                        value="<%= user.address.street %>"
+                                        class="form-control <% (locals.errors && errors.street) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.street){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.street.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="postalCode">Código Postal</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <input type="text" name="postalCode" id="postalCode"
+                                        placeholder="Ingresa tu código postal" value="<%= user.address.postalCode %>"
+                                        class="form-control <% (locals.errors && errors.postalCode) ? 'is invalid' : null %>">
+                                </div>
+
+                                <% if(locals.errors && errors.postalCode){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.postalCode.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="number">Numero de Vivienda</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-dolly"></i>
+                                    <input type="text" name="number" id="number"
+                                        placeholder="Dirección a la que llegarán los productos"
+                                        value="<%= user.address.number %>"
+                                        class="form-control <% (locals.errors && errors.number) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.number){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.number.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="city"> Ciudad </label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-dolly"></i>
+                                    <input type="text" name="city" id="city"
+                                        placeholder="Dirección a la que llegarán los productos"
+                                        value="<%= user.address.city %>"
+                                        class="form-control <% (locals.errors && errors.city) ? 'is invalid' : null %>">
+                                </div>
+                                <% if(locals.errors && errors.city){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.city.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="field-form">
+                                <label for="category"> Categoria </label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-dolly"></i>
+                                    <select name="category" id="category">
+                                        <option value="">--Elige una Categoría--</option>
+                                        <option value="administrator" <%= (user.category === 'administrator') ? 'selected' : '' %>>Administrador</option>
+                                        <option value="guest" <%= (user.category === 'guest') ? 'selected' : '' %>>Invitado</option>
+                                        <option value="collaborator" <%= (user.category === 'collaborator') ? 'selected' : '' %>>Colaborador</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
+
+                            <div class="field-form-button">
+                                <button class="form-button-creat" type="submit">Guardar Cambios</button>
+                                <button class="form-button-cancel" type="reset"><a href="/user/profile">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>

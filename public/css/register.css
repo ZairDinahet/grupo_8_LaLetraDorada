@@ -198,7 +198,7 @@ main {
   padding: 0 2px;
   color: #9a9a9a;
 }
-.field-form .input-with-icon input {
+.input-with-icon input,.input-with-icon select {
   width: 100%;
   padding: 10px;
   border: none;
