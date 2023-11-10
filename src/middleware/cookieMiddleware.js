@@ -1,32 +1,22 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 function cookieMiddleware(req, res, next) {
     next();
 
     if (req.cookies.userLogged != undefined) {
-        let usersData = fs.readFileSync(path.join(__dirname, '../data/users.json'), {
-            encoding: 'utf-8'
-        });
-        let users;
-
-        if (usersData === "") {
-            users = [];
-        } else {
-            users = JSON.parse(usersData);
-        }
-
-        let userToLogin;
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email == req.cookies.userLogged) {
-                userToLogin = users[i];
-                break;
+        db.User.findOne({
+            where: {
+                email: req.cookies.userLogged
             }
-        }
-
-        if (userToLogin) {
-            req.session.userLogged = userToLogin.email;
-        }
+        })
+        .then(user => {
+            if(user) {
+                req.session.userLogged = user.email;
+            }
+        })
+        .catch(error => console.log(error))
     }
 }
 

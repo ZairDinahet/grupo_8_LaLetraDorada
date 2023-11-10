@@ -75,7 +75,7 @@ const usersController = {
           userDate.idAddress = addreesFind.id
           const userCreate = await db.User.create(userDate)
           //await userCreate.addAddress(addreesFind)   
-          return res.redirect("/products")
+          return res.redirect("/login")
         }
       }
 
@@ -235,9 +235,13 @@ const usersController = {
       } else {
        
         console.log(req.body);
-        if (findUser.email !== email) {
-          req.session.userLogged = email
-        }
+            if (findUser.email !== email) {
+                findUser.email = email;
+                req.session.userLogged = email;
+                if (req.cookies.userLogged) {
+                    res.cookie('userLogged', email, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+                }
+            }
 
         if (findUser) {
           findUser.firstName = firstName
