@@ -121,3 +121,31 @@ En general, estamos haciendo un buen progreso y continuamos mejorando con cada s
 ### Nuestra conclusión
 
 Pudimos concretar las mejoras que habiamos planteado en la retrospectiva anterior, lo que es muy importante. Cumplimos con las tareas asignadas en un buen tiempo, y mantuvimos las buenas practicas que teniamos desde presentaciones anteriores. Aun asi podemos seguir mejorando y esforzarnos por seguir asi, en la union, comunicacion y coordinacion del equipo.
+
+
+
+
+
+
+
+## Retroespectiva del 6to Sprint - Proyecto integrador Digital House
+
+### Cosas que hicimos bien
+
+- Se mantuvo una buena comunicacion entre los integrantes del equipo.
+
+- Se logró una coordinación efectiva en las daily meetings, mayormente en días y horarios fijos.
+
+- Testear la página en busca de errores y resolverlos.
+  
+- Buena organización en la distribución de tareas y responsabilidades.
+
+### Cosas por mejorar
+
+- Tratar de estar al dia con el contenido del curso para mantener un avance fluido del proyecto.
+
+- No olvidar el uso de Trello para poder visualizar el avance de la ejecución de tareas.
+
+### Nuestra conclusión
+
+En conclusión, reconocemos nuestros logros en la distribución de tareas y la comunicación efectiva. Sin embargo, estamos conscientes de las áreas que requieren atención, como la actualización en Trello y mantenernos al día con el contenido del curso. En los siguentes sprints nos esforzaremos por mejorar esos aspectos, siendo más diligentes en la gestión de tareas y manteniendo una sincronización constante con el material del curso. 
