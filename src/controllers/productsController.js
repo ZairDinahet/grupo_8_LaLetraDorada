@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const { validationResult } = require('express-validator');
 const db = require('../database/models')
 const { Op } = require("sequelize");
 
@@ -139,10 +140,13 @@ const productsController = {
 
     const file = req.file;
 
+    const validationReq = validationResult(req);
+    
+
     const dataBook = {
       title, 
       description,
-      coverImg: `/img/products/${file.filename}`,
+      coverImg: `/img/products/${file?.filename}`,
       priceHardCover,
       priceSoftCover,
       priceAudio,
@@ -154,9 +158,10 @@ const productsController = {
       biography,
     }
     
+
     try {
 
-      if(title !== null && description !== null && coverImg !== null && genre !== null && author !== null) {
+      if(validationReq.errors.length === 0) {
         
         const genreFind = await db.Genre.findByPk(genre)
 
@@ -174,12 +179,18 @@ const productsController = {
         
       } else {
 
-        throw new Error("Error al crear libro. Debes completar todos los campos");
+        const data = await db.Genre.findAll()
 
+        return res.render('products/productCreate', {
+          errors: validationReq.mapped(),
+          oldData: req.body,
+          genres: data
+        })
+        
       }
     } catch (err) {
       
-      res.status(400).json({ message: err.message });
+      res.status(400).json({ message: `Error al crear libro. ${err.message}` });
 
     }
 
