@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController')
 const upload = require('../middleware/productsMulter')
 const guest = require('../middleware/guestMiddleware') // middleware huesped
 const productsCreateValidation = require('../middleware/productsCreateValidation')
+const productsEditValidation = require('../middleware/productsEditValidation')
 
 const router = Router()
 
@@ -16,7 +17,7 @@ router.post('/create', upload.single("coverImg"), productsCreateValidation, prod
 router.get('/cart/:id?',guest.auth, productsController.cart);
 
 router.get('/edit/:id',guest.auth, productsController.edit)
-router.put('/edit/:id',upload.single("coverImg"), productsController.put)
+router.put('/edit/:id',upload.single("coverImg"), productsEditValidation, productsController.put)
 
 router.get('/:id', productsController.detail)
 

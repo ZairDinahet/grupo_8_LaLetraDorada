@@ -236,9 +236,11 @@ const productsController = {
 
     const file = req.file;
 
+    const validationReq = validationResult(req);
+
     try {
       
-      if(title !== null && description !== null && coverImg !== null && genre !== null && author !== null) {
+      if(validationReq.errors.length === 0) {
 
         let data = await db.Book.findByPk(id, {
           include: [{
@@ -285,13 +287,32 @@ const productsController = {
         
       } else {
 
-        throw new Error("Error al editar libro. Debes completar todos los campos");
+        const data = await db.Genre.findAll()
+
+        return res.render('products/productEdit', {
+          errors: validationReq.mapped(),
+          oldData: req.body,
+          book: {
+            id,
+            ...req.body,
+            genres: [
+              {id: genre}
+            ],
+            authors:[
+              {
+                name: author,
+                biography
+              }
+            ]
+          },
+          allGenres: data
+        })
 
       }
 
     } catch (err) {
       
-      res.status(400).json({ message: err.message });
+      res.status(400).json({ message: `"Error al editar libro. ${err.message}` });
 
     }
     
@@ -310,6 +331,7 @@ const productsController = {
       
       await data.setGenres([]); 
       await data.setAuthors([]);
+      await data.setCarts([]);
 
       await data.destroy()
       
