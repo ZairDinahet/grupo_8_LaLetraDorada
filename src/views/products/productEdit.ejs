@@ -28,15 +28,25 @@
                             <label for="title">Título </label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-heading"></i>
-                                <input type="text" name="title" id="title" placeholder="Titulo del Libro" value="<%= book.title %>" required>
+                                <input type="text" name="title" id="title" placeholder="Titulo del Libro" value="<%= book.title %>">
                             </div>
+                            <% if(locals.errors && errors.title){ %>
+                                <div class="text-danger">
+                                        <%= errors.title.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form">
                             <label for="author">Autor</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-feather"></i>
-                                <input type="text" name="author" id="author" placeholder="Autor del Libro"  value="<%= book.authors[0].name %>" required>
+                                <input type="text" name="author" id="author" placeholder="Autor del Libro"  value="<%= book.authors[0].name %>">
                             </div>
+                            <% if(locals.errors && errors.author){ %>
+                                <div class="text-danger">
+                                        <%= errors.author.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form">
                             <label for="genre">Género </label>
@@ -56,6 +66,11 @@
                                 <i class="fa-solid fa-book"></i>
                                 <input type="file" name="coverImg" id="coverImg" accept=".png, .jpg, .jpeg .webp" value="<%= book.coverImg %>"  >
                             </div>
+                            <% if(locals.errors && errors.coverImg){ %>
+                                <div class="text-danger">
+                                    <%= errors.coverImg.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form" id="descripcion">
                             <label for="description">Descripción</label>
@@ -63,6 +78,11 @@
                                 <i class="fa-regular fa-envelope"></i>
                                 <textarea name="description" id="description" placeholder="Descripción"><%= book.description %></textarea>
                             </div>
+                            <% if(locals.errors && errors.description){ %>
+                                <div class="text-danger">
+                                    <%= errors.description.msg %>
+                                </div>
+                                <% } %>
                         </div>
                     </div>
                 </div>
@@ -74,8 +94,13 @@
                             <label for="priceHardCover">Tapa Dura</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-dollar-sign"></i>
-                                <input type="number" name="priceHardCover"id="priceHardCover" placeholder="Precio Tapa Dura " value="<%= book.priceHardCover %>" required>
+                                <input type="number" name="priceHardCover"id="priceHardCover" placeholder="Precio Tapa Dura " value="<%= book.priceHardCover %>">
                             </div>
+                            <% if(locals.errors && errors.priceHardCover){ %>
+                                <div class="text-danger">
+                                    <%= errors.priceHardCover.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form">
                             <label for="priceSoftCover">Tapa Blanda</label>
@@ -83,6 +108,11 @@
                                 <i class="fa-solid fa-dollar-sign"></i>
                                 <input type="number" name="priceSoftCover" id="priceSoftCover" placeholder="Precio Tapa Blanda " value="<%= book.priceSoftCover %>">
                             </div>
+                            <% if(locals.errors && errors.priceSoftCover){ %>
+                                <div class="text-danger">
+                                    <%= errors.priceSoftCover.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form">
                             <label for="priceEpub">Epub</label>
@@ -90,6 +120,11 @@
                                 <i class="fa-solid fa-dollar-sign"></i>
                                 <input type="number" name="priceEpub" id="priceEpub" placeholder="Precio Ebook " value="<%= book.priceEpub %>">
                             </div>
+                            <% if(locals.errors && errors.priceEpub){ %>
+                                <div class="text-danger">
+                                    <%= errors.priceEpub.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="field-form">
                             <label for="priceAudio">Audio</label>
@@ -97,6 +132,11 @@
                                 <i class="fa-solid fa-dollar-sign"></i>
                                 <input type="number" name="priceAudio" id="priceAudio" placeholder="Precio Audio" value="<%= book.priceAudio %>" >
                             </div>
+                            <% if(locals.errors && errors.priceAudio){ %>
+                                <div class="text-danger">
+                                    <%= errors.priceAudio.msg %>
+                                </div>
+                                <% } %>
                         </div>
                     </div>
                 </div> 
@@ -110,6 +150,11 @@
                                 <i class="fa-regular fa-envelope"></i>
                                 <textarea name="biography"  id="biography"  placeholder="Descripción"><%= book.authors[0].biography %></textarea>
                             </div>
+                            <% if(locals.errors && errors.biography){ %>
+                                <div class="text-danger">
+                                    <%= errors.biography.msg %>
+                                </div>
+                                <% } %>
                         </div>
                     </div>
                 </div>
