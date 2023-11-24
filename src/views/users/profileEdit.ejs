@@ -23,13 +23,15 @@
                 <div class="form-register-content">
                     <div class="sub-form-content">
                         <h2>Editar Perfil</h2>
-                        <form class="forms-content" action="/user/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form class="forms-content" action="/user/edit/<%= user.id %>?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
+
                             <div class="field-form">
                                 <label for="firstName">Nombre</label>
                                 <div class="input-with-icon">
                                     <i class="fa-regular fa-user"></i>
-                                    <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu Nombre" 
-                                    value="<%= user.firstName %>"
+                                    <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu Nombre"
+                                        value="<%= user.firstName %>"
                                         class="form-control <% (locals.errors && errors.firstName) ? 'is invalid' : null %>">
                                 </div>
                                 <% if(locals.errors && errors.firstName){ %>
@@ -38,7 +40,9 @@
                                             <%= errors.firstName.msg %>
                                         </p>
                                     </div>
-                                    <% } %>
+                                    <% } else { %>
+                                        <div class="text-danger" id="errorFirstName"></div>
+                                        <% } %>
                             </div>
 
                             <div class="field-form">
@@ -55,7 +59,9 @@
                                             <%= errors.lastName.msg %>
                                         </p>
                                     </div>
-                                    <% } %>
+                                    <% } else { %>
+                                        <div class="text-danger" id="errorLastName"></div>
+                                        <% } %>
                             </div>
 
                             <div class="field-form">
@@ -72,22 +78,9 @@
                                             <%= errors.age.msg %>
                                         </p>
                                     </div>
-                                    <% } %>
-                            </div>
-
-                            <div class="field-form">
-                                <label for="profileImg">Foto de perfil</label>
-                                <div class="input-with-icon">
-                                    <input type="file" name="profileImg" id="profileImg" value="<%= user.profileImg %>"
-                                        placeholder="Foto de perfil" <% (locals.errors && errors.profileImg) ? 'is invalid': null %> accept ='.jpg, .png'>
-                                </div>
-                                <% if(locals.errors && errors.profileImg){ %>
-                                    <div class="text-danger">
-                                        <p>
-                                            <%= errors.profileImg.msg %>
-                                        </p>
-                                    </div>
-                                    <% } %>
+                                    <% }  else { %>
+                                        <div class="text-danger" id="errorAge"></div>
+                                        <% } %>
                             </div>
 
                             <div class="field-form">
@@ -104,11 +97,29 @@
                                             <%= errors.email.msg %>
                                         </p>
                                     </div>
+                                    <% } else { %>
+                                        <div class="text-danger" id="errorEmail"></div>
+                                        <% } %>
+                            </div>
+
+                            <div class="field-form">
+                                <label for="profileImg">Foto de perfil</label>
+                                <div class="input-with-icon">
+                                    <input type="file" name="profileImg" id="profileImg" value="<%= user.profileImg %>"
+                                        placeholder="Foto de perfil" <% (locals.errors && errors.profileImg)
+                                        ? 'is invalid' : null %> accept ='.jpg, .png'>
+                                </div>
+                                <% if(locals.errors && errors.profileImg){ %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.profileImg.msg %>
+                                        </p>
+                                    </div>
                                     <% } %>
                             </div>
 
                             <div class="field-form">
-                                <label for="street">Dirección de envío</label>
+                                <label for="street">Calle</label>
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-dolly"></i>
                                     <input type="text" name="street" id="street"
@@ -144,7 +155,7 @@
                             </div>
 
                             <div class="field-form">
-                                <label for="number">Numero de Vivienda</label>
+                                <label for="number">Número</label>
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-dolly"></i>
                                     <input type="text" name="number" id="number"
@@ -183,17 +194,20 @@
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-dolly"></i>
                                     <select name="category" id="category">
-                                        <option value="administrator" <%= (user.category === 'administrator') ? 'selected' : '' %>>Administrador</option>
-                                        <option value="guest" <%= (user.category === 'guest') ? 'selected' : '' %>>Invitado</option>
-                                        <option value="collaborator" <%= (user.category === 'collaborator') ? 'selected' : '' %>>Colaborador</option>
+                                        <option value="administrator" <%=(user.category==='administrator' ) ? 'selected'
+                                            : '' %>>Administrador</option>
+                                        <option value="guest" <%=(user.category==='guest' ) ? 'selected' : '' %>
+                                            >Invitado</option>
+                                        <option value="collaborator" <%=(user.category==='collaborator' ) ? 'selected'
+                                            : '' %>>Colaborador</option>
                                     </select>
                                 </div>
                             </div>
-                           
 
                             <div class="field-form-button">
                                 <button class="form-button-creat" type="submit">Guardar Cambios</button>
-                                <button class="form-button-cancel" type="reset"><a href="/user/profile">Cancelar</button>
+                                <button class="form-button-cancel" type="reset"><a
+                                        href="/user/profile">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -202,6 +216,8 @@
         </main>
 
         <%- include('../partials/footer.ejs') %>
+
+            <script src="/js/editUserValidation.js"></script>
 
 </body>
 
