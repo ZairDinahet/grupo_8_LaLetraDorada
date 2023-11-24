@@ -1,14 +1,16 @@
 window.onload = function () {
-    let form = document.querySelector('#editForm');
+    let form = document.querySelector('#registerForm');
     let firstName = document.querySelector('#firstName');
     let lastName = document.querySelector('#lastName');
     let email = document.querySelector('#email');
     let age = document.querySelector('#age');
+    let password = document.querySelector('#password')
 
     let errorFirstName = document.createElement('p');
     let errorLastName = document.createElement('p');
     let errorEmail = document.createElement('p');
     let errorAge = document.createElement('p');
+    let errorPassword = document.createElement('p');
 
     let errorFirstNameContainer = document.querySelector('#errorFirstName');
     errorFirstNameContainer.appendChild(errorFirstName);
@@ -22,14 +24,17 @@ window.onload = function () {
     let errorAgeContainer = document.querySelector('#errorAge');
     errorAgeContainer.appendChild(errorAge);
 
-    formulario.addEventListener('submit', (event) => {
+    let errorPasswordContainer = document.querySelector('#errorPassword')
+    errorPasswordContainer.appendChild(errorPassword);
+
+    form.addEventListener('submit', (event) => {
         if (firstName.value == '' || lastName.value == '' || age.value == '' || email.value == '') {
             event.preventDefault();
-            alert('Los campos no pueden estar vacios');
+            alert('Los campos no pueden estar vacíos');
         } else {
-            alert('El perfil se guardo correctamente');
+            alert('El perfil se guardó correctamente');
         }
-    })
+    });
 
     firstName.addEventListener('blur', (event) => {
         if (firstName.value == '' || firstName.value.length < 2) {
@@ -41,7 +46,7 @@ window.onload = function () {
             firstName.classList.remove('invalid');
             firstName.classList.add('valid');
         }
-    })
+    });
 
     lastName.addEventListener('blur', (event) => {
         if (lastName.value == '' || lastName.value.length < 2) {
@@ -53,7 +58,7 @@ window.onload = function () {
             lastName.classList.remove('invalid');
             lastName.classList.add('valid');
         }
-    })
+    });
 
     email.addEventListener('blur', (event) => {
         if (email.value == "" || !email.value.includes('@')) {
@@ -65,7 +70,7 @@ window.onload = function () {
             email.classList.remove('invalid');
             email.classList.add('valid');
         }
-    })
+    });
 
     age.addEventListener('blur', (event) => {
         if (age.value == "" || age.value <= 0 || age.value > 110) {
@@ -77,5 +82,19 @@ window.onload = function () {
             age.classList.remove('invalid');
             age.classList.add('valid');
         }
-    })
-}
+    });
+
+    password.addEventListener('blur', (event) => {
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,])(?=.*[a-zA-Z]).{8,}$/;
+        if (!passwordRegex.test(password.value)) {
+            errorPassword.textContent = 'La contraseña debe 8 caracteres, una mayúscula, una minúscula y un carácter especial';
+            password.classList.add('invalid');
+            password.classList.remove('valid');
+        } else {
+            errorPassword.textContent = '';
+            password.classList.remove('invalid');
+            password.classList.add('valid');
+        }
+    });
+    
+};

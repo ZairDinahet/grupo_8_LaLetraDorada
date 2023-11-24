@@ -23,7 +23,7 @@
                 <div class="form-register-content">
                     <div class="sub-form-content">
                         <h2>Editar Perfil</h2>
-                        <form class="forms-content" action="/user/edit/<%= user.id %>?_method=PUT" method="POST"
+                        <form class="forms-content" id="editForm" action="/user/edit/<%= user.id %>?_method=PUT" method="POST"
                             enctype="multipart/form-data">
 
                             <div class="field-form">
@@ -217,7 +217,7 @@
 
         <%- include('../partials/footer.ejs') %>
 
-            <script src="/js/editUserValidation.js"></script>
+        <script src="/js/editUserValidation.js"></script>
 
 </body>
 
