@@ -22,7 +22,7 @@ window.onload = function () {
     let errorAgeContainer = document.querySelector('#errorAge');
     errorAgeContainer.appendChild(errorAge);
 
-    formulario.addEventListener('submit', (event) => {
+    form.addEventListener('submit', (event) => {
         if (firstName.value == '' || lastName.value == '' || age.value == '' || email.value == '') {
             event.preventDefault();
             alert('Los campos no pueden estar vacios');
