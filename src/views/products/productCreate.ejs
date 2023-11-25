@@ -19,7 +19,7 @@
     <main>
         <div class="main-create-container">
             <h2>Creación de Producto</h2>
-            <form action="/products/create" method="post" enctype="multipart/form-data">
+            <form action="/products/create" method="post" enctype="multipart/form-data" class = "form-product-create">
 
                 <section class="book-data">
 
@@ -28,7 +28,7 @@
                     <section class="field-form-container">
                         <div class="left">
                             <label for="title"> Título </label>
-                            <input type="text" name="title" id="title" 
+                            <input type="text" name="title" id="title" class="jjaja" 
                             placeholder="Título"
                             value="<%= (locals.oldData && oldData.title) ? oldData.title : null %>"
                             >
@@ -37,6 +37,8 @@
                                         <%= errors.title.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-title-null text-danger' style='display: none;'>El titulo esta vacio</p>
+                            <p class = 'fix-title-short text-danger'style='display: none;'>El nombre del titulo es demasiado corta</p>
                         </div>
 
                         <div class="right">
@@ -50,11 +52,11 @@
                                         <%= errors.author.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-author-null text-danger'style='display: none;'>El nombre del autor esta vacio</p>
+                            <p class = 'fix-author-short text-danger'style='display: none;' >El nombre del autor es demasiado corto</p>
                         </div>
                     </section>
 
-                    
-                    
                     <section class="field-form-container">
                         <div class="left">
                             <label for="coverImg">Portada</label>
@@ -83,8 +85,9 @@
                                         <%= genre.name %>
                                     </option>
                                     <% }); %>
+                                    
                             </select>
-
+                            <div id="genreError" class="text-danger"></div>
                             <% if(locals.errors && errors.genre){ %>
                                 <div class="text-danger">
                                         <%= errors.genre.msg %>
@@ -109,6 +112,8 @@
                                     <%= errors.description.msg %>
                             </div>
                             <% } %>
+                        <p class = 'fix-description-null text-danger'style='display: none;'>La descripcion esta vacia</p>
+                        <p class = 'fix-description-short text-danger'style='display: none;' >La descripcion es demasiada corto</p> 
                     </div>
 
                 </section>
@@ -126,6 +131,8 @@
                                     <%= errors.biography.msg %>
                             </div>
                             <% } %>
+                        <p class = 'fix-biography-null text-danger'style='display: none;'>La biografia esta vacia</p>
+                        <p class = 'fix-biography-short text-danger'style='display: none;' >La descripcion es demasiada corto</p>
                     </div>
 
                 </section>
@@ -150,6 +157,8 @@
                                     <%= errors.priceHardCover.msg %>
                             </div>
                             <% } %>
+                            <p class = 'fix-priceHardCover-short text-danger'style='display: none;'>El Precio debe ser un numero</p>
+                            <p class = 'fix-priceHardCover-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
 
                         <div class="right">
@@ -165,6 +174,8 @@
                                     <%= errors.priceSoftCover.msg %>
                             </div>
                             <% } %>
+                            <p class = 'fix-priceSoftCover-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceSoftCover-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
                     </section>
                 
@@ -183,6 +194,8 @@
                                     <%= errors.priceAudio.msg %>
                             </div>
                             <% } %>
+                            <p class = 'fix-priceAudio-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceAudio-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
                         
                         <div class="right">
@@ -197,6 +210,8 @@
                                     <%= errors.priceEpub.msg %>
                             </div>
                             <% } %>
+                            <p class = 'fix-priceEpub-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceEpub-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
                     </section>
                     
@@ -204,13 +219,13 @@
                         <button class="reset" type="reset"> Borrar </button>
                         <button class="save" type="submit"> Guardar </button>
                     </section>
-
+                    <div class = "fixes"><ul></ul></div>
                 </section>
             </form>
         </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
-
+    <script src="/js/products.js"></script>
 </body>
 </html>

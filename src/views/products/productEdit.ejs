@@ -35,6 +35,8 @@
                                         <%= errors.title.msg %>
                                 </div>
                                 <% } %>
+                                <p class = 'fix-title-null text-danger' style='display: none;'>El titulo esta vacio</p>
+                                <p class = 'fix-title-short text-danger'style='display: none;'>El nombre del titulo es demasiado corta</p>
                         </div>
                         <div class="field-form">
                             <label for="author">Autor</label>
@@ -47,16 +49,19 @@
                                         <%= errors.author.msg %>
                                 </div>
                                 <% } %>
+                                <p class = 'fix-author-null text-danger'style='display: none;'>El nombre del autor esta vacio</p>
+                                <p class = 'fix-author-short text-danger'style='display: none;' >El nombre del autor es demasiado corto</p>
                         </div>
                         <div class="field-form">
                             <label for="genre">Género </label>
                             <div class="input-with-icon">
                                 <i class="fa-regular fa-star"></i>
-                                <select name="genre" id="genre">
+                                <select name="genre" id="category-select-main">
                                     <% allGenres.forEach(genre => { %>
                                         <option value="<%= genre.id %>" <% if (book.genres[0].id == genre.id) { %><%= 'selected' %><% }; %>><%= genre.name %></option>
                                         <% }); %>
                                 </select>
+                                <div id="genreError" class="text-danger"></div>
                             </div>
                         </div>
                     
@@ -83,6 +88,8 @@
                                     <%= errors.description.msg %>
                                 </div>
                                 <% } %>
+                                <p class = 'fix-description-null text-danger'style='display: none;'>La descripcion esta vacia</p>
+                                <p class = 'fix-description-short text-danger'style='display: none;' >La descripcion es demasiada corto</p> 
                         </div>
                     </div>
                 </div>
@@ -101,6 +108,8 @@
                                     <%= errors.priceHardCover.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-priceHardCover-null text-danger'style='display: none;'>El precio no puede estar vacio</p>
+                            <p class = 'fix-priceHardCover-short text-danger'style='display: none;' >El Precio debe ser un numero de hasta 2 decimales</p> 
                         </div>
                         <div class="field-form">
                             <label for="priceSoftCover">Tapa Blanda</label>
@@ -113,6 +122,8 @@
                                     <%= errors.priceSoftCover.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-priceSoftCover-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceSoftCover-null text-danger'style='display: none;' >El precio no puede estar vacio</p>    
                         </div>
                         <div class="field-form">
                             <label for="priceEpub">Epub</label>
@@ -125,6 +136,8 @@
                                     <%= errors.priceEpub.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-priceEpub-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceEpub-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
                         <div class="field-form">
                             <label for="priceAudio">Audio</label>
@@ -137,6 +150,8 @@
                                     <%= errors.priceAudio.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-priceAudio-short text-danger'style='display: none;'>El Precio debe ser un numero de hasta 2 decimales</p>
+                            <p class = 'fix-priceAudio-null text-danger'style='display: none;' >El precio no puede estar vacio</p>
                         </div>
                     </div>
                 </div> 
@@ -155,6 +170,8 @@
                                     <%= errors.biography.msg %>
                                 </div>
                                 <% } %>
+                            <p class = 'fix-biography-null text-danger'style='display: none;'>La biografia esta vacia</p>
+                            <p class = 'fix-biography-short text-danger'style='display: none;' >La biografia es demasiada corto</p>
                         </div>
                     </div>
                 </div>
@@ -173,6 +190,7 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/products.js"></script>
 </body>
 
 </html>
