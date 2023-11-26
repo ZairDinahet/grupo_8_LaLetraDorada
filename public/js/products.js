@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    let formulario = document.querySelector('form')
+    let formulario = document.querySelector('.forms-container')
     const title = document.getElementById('title');
     const author = document.querySelector('#author');
     const coverImg = document.querySelector('#coverImg');
@@ -9,16 +9,11 @@ window.addEventListener('load', function(){
     const priceHardCover = document.querySelector('#priceHardCover');
     const priceSoftCover = document.querySelector('#priceSoftCover');
     const priceAudio = document.querySelector('#priceAudio');
-
-    let fixes = document.querySelector ('.fixes ul');
-
-    console.log(formulario)
-    // let element=[]
-    // element = (author.closest('.right').querySelectorAll('p'))
-    // console.log(element)
-    // console.log(element[0].id)//null
-    // console.log(element[1].id)//short
+    const priceEpub = document.querySelector('#priceEpub');
+    
+    
     function validator (input){
+        
         input.addEventListener('blur',function(){
         if ((input== 'description' || input== 'biography')&& input.value.length<21 && input.value.length>0){
             document.querySelector('.fix-' +input.id+'-short').style.display = 'block'
@@ -39,50 +34,40 @@ window.addEventListener('load', function(){
         }else{
             document.querySelector('.fix-' +input.id+'-null').style.display = 'none'
         }
-    })}
+    })   
+}
     function validatorPrecios (input){
-        // input.addEventListener('change',function(){
-        // if (typeof(input)==string || typeof(input)==character ){
-        //     document.querySelector('.fix-' +input.id+'-short').style.display = 'block'
-
-        // }else{
-        //     document.querySelector('.fix-' +input.id+'-short').style.display = 'none'
-        // }
-        //)}
-        
         input.addEventListener('blur',function(){
         if (input.value.length==0) {
             document.querySelector('.fix-' +input.id+'-null').style.display = 'block'
         
         }else{
-            document.querySelector('.fix-' +input.id+'-null').style.display = 'none'
+            document.querySelector('.fix-' +input.id+'-null').style.display = 'none' 
         }
 
         let regex = /^[0-9]{1,10}(\.[0-9]{1,2})?$/;
-
-        if (regex.test(input)) {
-            document.querySelector('.fix-' +input.id+'-short').style.display = 'block'
+        console.log(input.value)
+        if (regex.test(parseFloat(input.value))) {
+            document.querySelector('.fix-' +input.id+'-short').style.display = 'none'
         
         } else {
-            document.querySelector('.fix-' +input.id+'-short').style.display = 'none'
+            document.querySelector('.fix-' +input.id+'-short').style.display = 'block'
+            
         }
         })
     }    
-    formulario.addEventListener('submit',function(event) {
-        if (title.value == ''|| author.value == '' || coverImg.value == '' || genero.value == '' || description.value == '' || biography.value == '' ||
-        title.value == null|| author.value == null || coverImg.value == null || genero.value == null || description.value == null || biography.value == null){
-            errores.innerHtml ='<li>Los campos no pueden estar vacios</li>'
-            formulario.preventDefault(e)
-        } else {
-            alert('La Pelicula se guardo')
+    coverImg.addEventListener('blur',function(){
+        let file = this.files[0];
+        if(!file){
+            document.querySelector('.fix-portada').style.display = 'block'
         }
- 
     })
     coverImg.addEventListener("change", function(){
-        let file = this.files[0];
+    let file = this.files[0];
+    let fileExtension = file.name.split('.').pop().toLowerCase();
+    let allowedExtensions = ['gif','jpeg', 'jpg', 'png'];
     if (file) {
-        let fileExtension = file.name.split('.').pop().toLowerCase();
-        let allowedExtensions = ['gif','jpeg', 'jpg', 'png'];
+        document.querySelector('.fix-portada').style.display = 'none'
         if (allowedExtensions.indexOf(fileExtension) === -1) {
             alert('Comprueba la extensión de tus imágenes. Los formatos aceptados son .gif, .jpeg, .jpg y .png');
             coverImg.value = "";
@@ -92,10 +77,11 @@ window.addEventListener('load', function(){
     })
     genre.addEventListener("blur", function(){
     let genreError = document.getElementById('genreError');
-    if (genre.value === '') {
-        genreError.textContent = ' Por favor, seleccione un género.';
+    if (genre.value == '') {
+        genreError.textContent = 'Por favor, seleccione un género.';
     } else {
         genreError.textContent = '';
+        
     }
     })
     validator(title)
@@ -106,7 +92,53 @@ window.addEventListener('load', function(){
     validatorPrecios(priceSoftCover)
     validatorPrecios(priceAudio)
     validatorPrecios(priceEpub)
+
+    formulario.addEventListener('submit',function(event) {
+        let fixes = document.querySelector ('.fixes ul');
+        //event.preventDefault()
+        if (title.value === '' && author.value === '' && coverImg.value === '' && genre.value === '' &&
+        description.value === '' && biography.value === '' && priceHardCover.value === '' &&
+        priceSoftCover.value === '' && priceAudio.value === '' && priceEpub.value === '') {
+            //event.preventDefault()
+            fixes.innerHTML = "<li class='text-danger'>Todos los campos están vacíos</li>";
+        } else {
+            //event.preventDefault()
+            fixes.innerHTML = ""
+            let campos = [title, author, coverImg, description, biography,  priceHardCover, priceSoftCover, priceAudio, priceEpub];
+            let labelElement = ""
+            let labelText = ""
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i].value.trim() === '') {
+                    labelElement = document.querySelector('label[for="' + campos[i].id + '"]');
+                    labelText = labelElement.textContent;
+                    fixes.innerHTML +=  "<li class='text-danger'> el campo " +labelText + " no puede estar vacío</li>";
+                    }
+                }
+            if (genre.value.trim() === '') {
+                fixes.innerHTML +=  "<li class='text-danger'> el campo Genero no puede estar vacío</li>";
+                }
+        }
+        //Se comprueba si no hay ningun error detectado en todo el formulario
+        let paragraphs = document.querySelectorAll('p.text-danger');
+        let trueOrFalse = Array.from(paragraphs).some(function(paragraph) {
+            let displayValue = window.getComputedStyle(paragraph).getPropertyValue('display');
+            return displayValue === 'block';
+        });
+        let lista = fixes.getElementsByTagName('li')
+        // console.log(paragraphs)
+        // console.log(trueOrFalse) 
+        // console.log(lista.length)  
+        if (trueOrFalse || lista.length !=0) {
+            alert('Por favor, corrige los errores antes de cargar el libro.');
+            event.preventDefault()
+            return;
+        }else{
+            alert('El libro se guardó correctamente');
+        } 
+    })
+    
 })
+        
 
 
 
