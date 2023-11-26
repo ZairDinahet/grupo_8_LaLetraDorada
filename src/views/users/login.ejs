@@ -40,9 +40,13 @@
                         <input type="text" name="email" id="email" placeholder="Ingresa tu Email" value="<%= (locals.oldData && oldData.email) ? oldData.email : null %>" >
                         
                       </div>
+
                       <% if (locals.errors && errors.email) { %>
-                      <div class="text-danger"><%= errors.email.msg %></div>  
+                        <div class="text-danger"><%= errors.email.msg %></div>  
+                        <% } else { %>
+                      <div class="text-danger" id="errorEmail"><p></p></div>  
                       <% } %>
+
                 </div>
 
                 <div class="field-form">
@@ -51,9 +55,13 @@
                       <i class="fa-solid fa-lock"></i>
                       <input type="password" name="password" id="password" placeholder="Ingresa tu Contraseña">
                   </div>
+
                     <% if (locals.errors && errors.password) { %>
                       <div class="text-danger"><%= errors.password.msg %></div>  
-                    <% } %>
+                    <% } else { %>
+                      <div class="text-danger" id="errorPass"><p></p></div>  
+                    <% }%>
+
                     <a href="">¿Has olvidado tu contraseña?</a>
                 </div>
 
@@ -70,7 +78,7 @@
     </main>
     <hr>
     <%- include('../partials/footer.ejs') %>
-
+    <script src="/js/login.js"></script>
 </body>
 
 </html>
