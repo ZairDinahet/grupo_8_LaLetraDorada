@@ -11,7 +11,7 @@ window.addEventListener('load', function(){
     const priceAudio = document.querySelector('#priceAudio');
     const priceEpub = document.querySelector('#priceEpub');
     
-    
+    //validacion para campos de texto
     function validator (input){
         
         input.addEventListener('blur',function(){
@@ -22,13 +22,13 @@ window.addEventListener('load', function(){
             document.querySelector('.fix-' +input.id+'-short').style.display = 'none'
         }
 
-        if (input!='description' && input.value.length<6 && input.value.length>0){
+        if (input!='description' && input== 'biography' && input.value.length<6 && input.value.length>0){
             document.querySelector('.fix-' +input.id+'-short').style.display = 'block'
 
         }else{
             document.querySelector('.fix-' +input.id+'-short').style.display = 'none'
         }
-        if (input!='description' && input.value.length==0) {
+        if (input!='description' && input== 'biography' && input.value.length==0) {
             document.querySelector('.fix-' +input.id+'-null').style.display = 'block'
         
         }else{
@@ -36,6 +36,7 @@ window.addEventListener('load', function(){
         }
     })   
 }
+    //validacion para precios 
     function validatorPrecios (input){
         input.addEventListener('blur',function(){
         if (input.value.length==0) {
@@ -56,6 +57,7 @@ window.addEventListener('load', function(){
         }
         })
     }    
+    //validacion para imagenes 
     coverImg.addEventListener('blur',function(){
         let file = this.files[0];
         if(!file){
@@ -75,6 +77,7 @@ window.addEventListener('load', function(){
         }
     }
     })
+    //validacion para campos select de genero
     genre.addEventListener("blur", function(){
     let genreError = document.getElementById('genreError');
     if (genre.value == '') {
@@ -92,24 +95,24 @@ window.addEventListener('load', function(){
     validatorPrecios(priceSoftCover)
     validatorPrecios(priceAudio)
     validatorPrecios(priceEpub)
-
+    //envio de informacion 
     formulario.addEventListener('submit',function(event) {
         let fixes = document.querySelector ('.fixes ul');
-        //event.preventDefault()
+        
         if (title.value === '' && author.value === '' && coverImg.value === '' && genre.value === '' &&
         description.value === '' && biography.value === '' && priceHardCover.value === '' &&
         priceSoftCover.value === '' && priceAudio.value === '' && priceEpub.value === '') {
-            //event.preventDefault()
+            
             fixes.innerHTML = "<li class='text-danger'>Todos los campos están vacíos</li>";
         } else {
-            //event.preventDefault()
+            
             fixes.innerHTML = ""
-            let campos = [title, author, coverImg, description, biography,  priceHardCover, priceSoftCover, priceAudio, priceEpub];
+            let fields = [title, author, coverImg, description, biography,  priceHardCover, priceSoftCover, priceAudio, priceEpub];
             let labelElement = ""
             let labelText = ""
-            for (let i = 0; i < campos.length; i++) {
-                if (campos[i].value.trim() === '') {
-                    labelElement = document.querySelector('label[for="' + campos[i].id + '"]');
+            for (let i = 0; i < fields.length; i++) {
+                if (fields[i].value.trim() === '') {
+                    labelElement = document.querySelector('label[for="' + fields[i].id + '"]');
                     labelText = labelElement.textContent;
                     fixes.innerHTML +=  "<li class='text-danger'> el campo " +labelText + " no puede estar vacío</li>";
                     }
@@ -118,17 +121,18 @@ window.addEventListener('load', function(){
                 fixes.innerHTML +=  "<li class='text-danger'> el campo Genero no puede estar vacío</li>";
                 }
         }
+
         //Se comprueba si no hay ningun error detectado en todo el formulario
         let paragraphs = document.querySelectorAll('p.text-danger');
         let trueOrFalse = Array.from(paragraphs).some(function(paragraph) {
             let displayValue = window.getComputedStyle(paragraph).getPropertyValue('display');
             return displayValue === 'block';
         });
-        let lista = fixes.getElementsByTagName('li')
+        let list = fixes.getElementsByTagName('li')
         // console.log(paragraphs)
         // console.log(trueOrFalse) 
         // console.log(lista.length)  
-        if (trueOrFalse || lista.length !=0) {
+        if (trueOrFalse || list.length !=0) {
             alert('Por favor, corrige los errores antes de cargar el libro.');
             event.preventDefault()
             return;
