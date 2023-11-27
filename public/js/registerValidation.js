@@ -4,13 +4,15 @@ window.onload = function () {
     let lastName = document.querySelector('#lastName');
     let email = document.querySelector('#email');
     let age = document.querySelector('#age');
-    let password = document.querySelector('#password')
+    let profileImg = document.querySelector('profileImg');
+    let password = document.querySelector('#password');
 
     let errorFirstName = document.createElement('p');
     let errorLastName = document.createElement('p');
     let errorEmail = document.createElement('p');
     let errorAge = document.createElement('p');
     let errorPassword = document.createElement('p');
+    let errorProfileImg = document.createElement('p');
 
     let errorFirstNameContainer = document.querySelector('#errorFirstName');
     errorFirstNameContainer.appendChild(errorFirstName);
@@ -27,17 +29,18 @@ window.onload = function () {
     let errorPasswordContainer = document.querySelector('#errorPassword')
     errorPasswordContainer.appendChild(errorPassword);
 
+    let errorProfileImgContainer = document.querySelector('#errorProfileImg')
+    errorProfileImgContainer.appendChild(errorProfileImg);
+
     form.addEventListener('submit', (event) => {
-        if (firstName.value == '' || lastName.value == '' || age.value == '' || email.value == '') {
+        if (firstName.classList.contains('invalid') || lastName.classList.contains('invalid') || age.classList.contains('invalid') || profileImg.classList.contains('invalid') || email.classList.contains('invalid') || password.classList.contains('invalid')) {
             event.preventDefault();
-            alert('Los campos no pueden estar vacíos');
-        } else {
-            alert('El perfil se guardó correctamente');
+            alert('Por favor, completa correctamente todos los campos.');
         }
     });
 
     firstName.addEventListener('blur', (event) => {
-        if (firstName.value == '' || firstName.value.length < 2) {
+        if (firstName.value == '' || firstName.value.length <= 2) {
             errorFirstName.textContent = 'El nombre debe tener al menos 2 caracteres';
             firstName.classList.add('invalid');
             firstName.classList.remove('valid');
@@ -49,7 +52,7 @@ window.onload = function () {
     });
 
     lastName.addEventListener('blur', (event) => {
-        if (lastName.value == '' || lastName.value.length < 2) {
+        if (lastName.value == '' || lastName.value.length <= 2) {
             errorLastName.textContent = 'El apellido debe tener al menos 2 caracteres';
             lastName.classList.add('invalid');
             lastName.classList.remove('valid');
@@ -81,6 +84,20 @@ window.onload = function () {
             errorAge.textContent = '';
             age.classList.remove('invalid');
             age.classList.add('valid');
+        }
+    });
+
+    profileImg.addEventListener('change', (event) => {
+        const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    
+        if (!allowedExtensions.exec(profileImg.value)) {
+            errorImg.textContent = 'Por favor, selecciona un archivo con una extensión válida (.jpg, .jpeg, .png, .gif)';
+            profileImg.classList.add('invalid');
+            profileImg.classList.remove('valid');
+        } else {
+            errorImg.textContent = '';
+            profileImg.classList.remove('invalid');
+            profileImg.classList.add('valid');
         }
     });
 

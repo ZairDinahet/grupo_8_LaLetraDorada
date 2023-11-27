@@ -23,13 +23,11 @@ window.onload = function () {
     errorAgeContainer.appendChild(errorAge);
 
     form.addEventListener('submit', (event) => {
-        if (firstName.value == '' || lastName.value == '' || age.value == '' || email.value == '') {
+        if (firstName.classList.contains('invalid') || lastName.classList.contains('invalid') || age.classList.contains('invalid') || email.classList.contains('invalid')) {
             event.preventDefault();
-            alert('Los campos no pueden estar vacios');
-        } else {
-            alert('El perfil se guardo correctamente');
+            alert('Por favor, completa correctamente todos los campos.');
         }
-    })
+    });
 
     firstName.addEventListener('blur', (event) => {
         if (firstName.value == '' || firstName.value.length < 2) {

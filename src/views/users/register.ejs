@@ -81,8 +81,10 @@
               </div>
               <% if(locals.errors && errors.profileImg){ %>
                 <div class="text-danger"> <p><%= errors.profileImg.msg %> </p></div>
-                <% } %>
-            </div>
+                <% } else { %>
+                  <div class="text-danger" id="errorProfileImg"></div>
+                  <% } %>
+              </div>
 
             <div class="field-form">
               <label for="email">Correo Electronico</label>
