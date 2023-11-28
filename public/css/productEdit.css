@@ -87,10 +87,10 @@
   width: 100%;
 }
 
-#category-select {
+/* #category-select {
   max-width: 100px;
   width: 70%;
-}
+} */
 
 .createBook{
   display:none;
