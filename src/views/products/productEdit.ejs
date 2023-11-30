@@ -36,7 +36,7 @@
                                 </div>
                                 <% } %>
                                 <p class = 'fix-title-null text-danger' style='display: none;'>El titulo esta vacio</p>
-                                <p class = 'fix-title-short text-danger'style='display: none;'>El nombre del titulo es demasiado corta</p>
+                                <p class = 'fix-title-short text-danger'style='display: none;'>El nombre del titulo es demasiado corto</p>
                         </div>
                         <div class="field-form">
                             <label for="author">Autor</label>
@@ -67,7 +67,7 @@
                     
                         <div class="field-form">
                             <label for="coverImg">Portada</label>
-                            <div class="input-with-icon">
+                            <div class=" product-edit input-with-icon">
                                 <i class="fa-solid fa-book"></i>
                                 <input type="file" name="coverImg" id="coverImg" accept=".png, .jpg, .jpeg .webp" value="<%= book.coverImg %>"  >
                             </div>
@@ -77,6 +77,7 @@
                                 </div>
                                 <% } %>
                                 <p class = 'fix-portada text-danger'style='display: none;'>Por favor cargue una imagen</p>
+                                <p class = 'fix-portada-large text-danger'style='display: none;'>Comprueba la extensión de tus imágenes. Los formatos aceptados son .gif, .jpeg, .jpg y .png</p>
                         </div>
                         <div class="field-form" id="descripcion">
                             <label for="description">Descripción</label>
@@ -90,7 +91,7 @@
                                 </div>
                                 <% } %>
                                 <p class = 'fix-description-null text-danger'style='display: none;'>La descripcion esta vacia</p>
-                                <p class = 'fix-description-short text-danger'style='display: none;' >La descripcion es demasiada corto</p> 
+                                <p class = 'fix-description-short text-danger'style='display: none;' >La descripcion es demasiada corta</p> 
                         </div>
                     </div>
                 </div>
@@ -172,7 +173,7 @@
                                 </div>
                                 <% } %>
                             <p class = 'fix-biography-null text-danger'style='display: none;'>La biografia esta vacia</p>
-                            <p class = 'fix-biography-short text-danger'style='display: none;' >La biografia es demasiada corto</p>
+                            <p class = 'fix-biography-short text-danger'style='display: none;' >La biografia es demasiada corta</p>
                         </div>
                     </div>
                 </div>
@@ -192,7 +193,7 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/products.js"></script>
+    <script src="/js/productsValidation.js"></script>
 </body>
 
 </html>

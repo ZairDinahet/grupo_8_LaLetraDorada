@@ -53,23 +53,21 @@
                                 </div>
                                 <% } %>
                             <p class = 'fix-author-null text-danger'style='display: none;'>El nombre del autor esta vacio</p>
-                            <p class = 'fix-author-short text-danger'style='display: none;' >El nombre del autor es demasiado corto</p>
+                            <p class = 'fix-author-short text-danger'style='display: none;'>El nombre del autor es demasiado corto</p>
                         </div>
                     </section>
 
                     <section class="field-form-container">
                         <div class="left">
                             <label for="coverImg">Portada</label>
-                            <input type="file" name="coverImg" id="coverImg" 
-                            placeholder="Elegir Portada"
-                            value="<%= (locals.oldData && oldData.coverImg) ? oldData.coverImg : null %>"
-                            >
+                            <input type="file" name="coverImg" id="coverImg" placeholder="Elegir Portada" value="<%= (locals.oldData && oldData.coverImg) ? oldData.coverImg : null %>">
                             <% if(locals.errors && errors.coverImg){ %>
                                 <div class="text-danger">
                                         <%= errors.coverImg.msg %>
                                 </div>
                                 <% } %>
                             <p class = 'fix-portada text-danger'style='display: none;'>Por favor cargue una imagen</p>
+                            <p class = 'fix-portada-large text-danger'style='display: none;'>Comprueba la extensión de tus imágenes. <br>Los formatos aceptados son .gif, .jpeg, .jpg y .png</p>
                         </div>
 
                         <div class="right">
@@ -113,10 +111,10 @@
                                     <%= errors.description.msg %>
                             </div>
                             <% } %>
-                        
+                            <p  class = 'fix-description-null text-danger'style='display: none;'>La descripcion esta vacia</p>
+                            <p  class = 'fix-description-short text-danger'style='display: none;' >La descripcion es demasiada corta</p> 
                     </div>
-                    <p  class = 'fix-description-null text-danger'style='display: none; padding-left:2%;'>La descripcion esta vacia</p>
-                    <p  class = 'fix-description-short text-danger'style='display: none; padding-left:2%;' >La descripcion es demasiada corto</p> 
+                    
 
                 </section>
                 <section class="textarea-description">
@@ -133,11 +131,9 @@
                                     <%= errors.biography.msg %>
                             </div>
                             <% } %>
-                        
+                        <p  class = 'fix-biography-null text-danger'style='display: none; '>La biografia esta vacia</p>
+                        <p  class = 'fix-biography-short text-danger'style='display: none; '>La descripcion es demasiada corta</p>
                     </div>
-                    <p  class = 'fix-biography-null text-danger'style='display: none; padding-left:2%;'>La biografia esta vacia</p>
-                    <p  class = 'fix-biography-short text-danger'style='display: none; padding-left:2%;' >La descripcion es demasiada corto</p>
-
                 </section>
 
                 <section class="book-cost">
@@ -229,6 +225,6 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/products.js"></script>
+    <script src="/js/productsValidation.js"></script>
 </body>
 </html>
