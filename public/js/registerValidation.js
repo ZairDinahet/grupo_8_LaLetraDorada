@@ -4,7 +4,7 @@ window.onload = function () {
     let lastName = document.querySelector('#lastName');
     let email = document.querySelector('#email');
     let age = document.querySelector('#age');
-    let profileImg = document.querySelector('profileImg');
+    let profileImg = document.querySelector('#profileImg');
     let password = document.querySelector('#password');
 
     let errorFirstName = document.createElement('p');
@@ -33,9 +33,15 @@ window.onload = function () {
     errorProfileImgContainer.appendChild(errorProfileImg);
 
     form.addEventListener('submit', (event) => {
-        if (firstName.classList.contains('invalid') || lastName.classList.contains('invalid') || age.classList.contains('invalid') || profileImg.classList.contains('invalid') || email.classList.contains('invalid') || password.classList.contains('invalid')) {
+        let errorContainer = document.querySelector('#errorMessages');
+        errorContainer.innerHTML = '';
+        
+        if (firstName.classList.contains('invalid') || lastName.classList.contains('invalid') || age.classList.contains('invalid') || email.classList.contains('invalid')) {
             event.preventDefault();
-            alert('Por favor, completa correctamente todos los campos.');
+            let errorMessage = document.createElement('p');
+            errorMessage.textContent = 'Complete los campos correctamente';
+            errorMessage.classList.add('error-message');
+            errorContainer.appendChild(errorMessage);
         }
     });
 

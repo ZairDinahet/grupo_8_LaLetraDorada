@@ -23,9 +23,15 @@ window.onload = function () {
     errorAgeContainer.appendChild(errorAge);
 
     form.addEventListener('submit', (event) => {
+        let errorContainer = document.querySelector('#errorMessages');
+        errorContainer.innerHTML = '';
+        
         if (firstName.classList.contains('invalid') || lastName.classList.contains('invalid') || age.classList.contains('invalid') || email.classList.contains('invalid')) {
             event.preventDefault();
-            alert('Por favor, completa correctamente todos los campos.');
+            let errorMessage = document.createElement('p');
+            errorMessage.textContent = 'Complete los campos correctamente';
+            errorMessage.classList.add('error-message');
+            errorContainer.appendChild(errorMessage);
         }
     });
 
