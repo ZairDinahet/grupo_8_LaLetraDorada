@@ -2,7 +2,41 @@ const db = require('../../database/models');
 
 
 const usersAPIController = {
+  
+  list: async function(req,res){
 
+   try{
+
+     const users = await db.User.findAll({
+      attributes: ['id', 'firstName','lastName', 'email']
+     })
+     const usersUpdate = users.map(user => ({
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      detail:  req.protocol + '://' + req.get('host') + req.url +'/' + user.id,
+    }));
+
+     return res.status(200).json({
+      meta: {
+        count: users.length,
+        code:res.statusCode,
+        url: req.protocol + '://' + req.get('host') + req.url,
+      },
+      data: usersUpdate,
+     })
+
+   }catch(error){
+    return res.status(404).json({
+      meta: {
+        code:res.statusCode,
+        message: error.message
+      }
+     })
+    }
+  },
+  
   detail: async function(req, res){
     const { id } = req.params;
 
