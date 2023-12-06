@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const router = Router();
 const upload = require('../middleware/usersMulter');
 const usersController = require('../controllers/usersController')
 const userMiddleware = require('../middleware/userMiddleware') //middleware user
@@ -8,6 +7,7 @@ const userLoginValidation = require('../middleware/userLoginValidation')
 const userRegisterValidation = require(`../middleware/usersRegisterValidation`)
 const userEditValidation = require(`../middleware/usersEditMiddleware`)
 
+const router = Router();
 
 router.get(['/index','/'], usersController.index)
 
