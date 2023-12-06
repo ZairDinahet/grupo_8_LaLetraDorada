@@ -2,6 +2,7 @@ const express = require('express');
 const productsRouter = require('./routers/products')
 const usersRouter = require('./routers/users')
 const usersApiRouter = require('./routers/api/usersAPI')
+const productsApiRouter = require('./routers/api/productsAPI')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const userMiddleware = require('./middleware/userMiddleware')
@@ -35,7 +36,9 @@ app.use(userMiddleware.logged)
 
 app.use('/products', productsRouter)
 app.use(['/user',"/"], usersRouter)
+
 app.use(usersApiRouter)
+app.use('/api', productsApiRouter)
 
 
 
