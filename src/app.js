@@ -35,7 +35,7 @@ app.use(userMiddleware.logged)
 
 app.use('/products', productsRouter)
 app.use(['/user',"/"], usersRouter)
-app.use('/api/users', usersApiRouter)
+app.use(usersApiRouter)
 
 
 

@@ -5,8 +5,8 @@ const usersAPIController = require('../../controllers/api/usersAPIController')
 const router = Router();
 
 
-
-router.get('/:id', usersAPIController.detail)
+router.get('/api/users', usersAPIController.list)
+router.get('/api/users/:id', usersAPIController.detail)
 
 
 module.exports = router;
