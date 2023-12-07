@@ -50,7 +50,60 @@ const apiProductsController = {
             });
             }
         },
-    };
+
+    detail: async function (req, res) {
+        const { id } = req.params;
+    
+        try {
+          const product = await db.Book.findOne({
+            where: {
+              id
+            },
+            include: [
+                {
+                  model: db.Genre,
+                  as: 'genres'
+                },
+                {
+                  model: db.Author,
+                  as: 'authors'
+                },
+              ]
+          });
+    
+          if (product) {
+            return res.status(200).json({
+              meta: {
+                status: res.statusCode,
+                url: req.protocol + '://' + req.get('host') + req.url
+              },
+              data: {
+                id: product.id,
+                title: product.title,
+                description: product.description,
+                coverImgUrl: product.coverImg ? req.protocol + '://' + req.get('host') + product.coverImg : null,
+                priceHardCover: product.priceHardCover,
+                priceSoftCover: product.priceSoftCover,
+                priceEpub: product.priceEpub,
+                priceAudio: product.priceAudio,
+                genres: product.genres.map((genre) => genre.name),
+                authors: product.authors.map((author) => author.name)
+              }
+            });
+          }
+    
+          throw new Error('El producto con el ID ingresado no existe en la base de datos');
+        } catch (error) {
+          res.status(404).json({
+            meta: {
+              status: res.statusCode,
+              url: req.protocol + '://' + req.get('host') + req.url
+            },
+            message: error.message
+          });
+        }
+      }
+};
     
 
 module.exports = apiProductsController
