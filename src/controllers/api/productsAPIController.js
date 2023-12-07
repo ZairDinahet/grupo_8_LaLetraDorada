@@ -77,18 +77,7 @@ const apiProductsController = {
                 status: res.statusCode,
                 url: req.protocol + '://' + req.get('host') + req.url
               },
-              data: {
-                id: product.id,
-                title: product.title,
-                description: product.description,
-                coverImgUrl: product.coverImg ? req.protocol + '://' + req.get('host') + product.coverImg : null,
-                priceHardCover: product.priceHardCover,
-                priceSoftCover: product.priceSoftCover,
-                priceEpub: product.priceEpub,
-                priceAudio: product.priceAudio,
-                genres: product.genres.map((genre) => genre.name),
-                authors: product.authors.map((author) => author.name)
-              }
+              data: product
             });
           }
     
