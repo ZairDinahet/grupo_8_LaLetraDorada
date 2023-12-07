@@ -38,7 +38,7 @@ app.use('/products', productsRouter)
 app.use(['/user',"/"], usersRouter)
 
 app.use(usersApiRouter)
-app.use('/api', productsApiRouter)
+app.use(productsApiRouter)
 
 
 

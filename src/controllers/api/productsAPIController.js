@@ -2,6 +2,9 @@ const db = require('../../database/models');
 
 const apiProductsController = {
     list: async function (req, res) {
+        // const { QueryTypes } = require('sequelize');
+        // const productsByCategory = await sequelize.query("SELECT * FROM `genres`", { type: QueryTypes.SELECT });
+        // console.log(productsByCategory)
         try {
             const products = await db.Book.findAll({
                 include: [{ 
@@ -11,24 +14,25 @@ const apiProductsController = {
               });
             res.status(200).json({
             meta: {
-              code: res.statusCode,
+              status: res.statusCode,
+              count: products.length,
+              url: req.protocol + '://' + req.get('host') + req.url,
             }, 
-            count: products.length,
-            
-            countByCategory: products.reduce((acc, product) => {
-                            product.genres.forEach((genre) => {
-                            acc[genre.name] = (acc[genre.name] || 0) + 1;
-                            //console.log(acc[genre.name])
-                            });
-                            return acc;
-                            }, {}),
-            products: products.map((product) => ({
-                      id: product.id,
-                      title: product.title,
-                      description: product.description,
-                      categories: product.genres.map((genre) => genre.name),
-                      detail: req.protocol + '://' + req.get('host') + req.url + `${product.id}` , 
+            data:{
+                countByCategory: products.reduce((acc, product) => {
+                    product.genres.forEach((genre) => {
+                    acc[genre.name] = (acc[genre.name] || 0) + 1;
+                    });
+                    return acc;
+                    }, {}),
+                products: products.map((product) => ({
+                    id: product.id,
+                    title: product.title,
+                    description: product.description,
+                    categories: product.genres.map((genre) => genre.name),
+                    detail: req.protocol + '://' + req.get('host') + req.url + `/${product.id}` , 
                     })),
+            },
             });
             } catch (error) {
             console.error(error);
