@@ -11,7 +11,7 @@ const apiProductsController = {
                     model: db.Genre, 
                     as: 'genres', 
                     through: 'booksgenres' }],
-              });
+                });
             res.status(200).json({
             meta: {
               status: res.statusCode,
