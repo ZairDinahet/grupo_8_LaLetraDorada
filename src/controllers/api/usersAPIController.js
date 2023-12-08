@@ -57,7 +57,9 @@ const usersAPIController = {
       });
 
       if(user){
-        user.profileImg = req.protocol + '://' + req.get('host') + user.profileImg
+
+        user.profileImg = user.profileImg[0] === "/" ? req.protocol + '://' + req.get('host') + user.profileImg : user.profileImg
+        
         return res.status(200).json({
           meta: {
               status: res.statusCode,
