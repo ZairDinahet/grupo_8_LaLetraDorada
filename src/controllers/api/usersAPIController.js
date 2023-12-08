@@ -21,7 +21,7 @@ const usersAPIController = {
      return res.status(200).json({
       meta: {
         count: users.length,
-        code:res.statusCode,
+        status:res.statusCode,
         url: req.protocol + '://' + req.get('host') + req.url,
       },
       data: usersUpdate,
