@@ -1,11 +1,18 @@
 const db = require('../../database/models');
+const { QueryTypes } = require('sequelize');
 
 const apiProductsController = {
     list: async function (req, res) {
-        // const { QueryTypes } = require('sequelize');
-        // const productsByCategory = await sequelize.query("SELECT * FROM `genres`", { type: QueryTypes.SELECT });
-        // console.log(productsByCategory)
+        //console.log(productsByCategory)
         try {
+          const productsByCategory = await db.sequelize.query(
+            "SELECT genres.name AS genero, COUNT(books.id) AS cantidad_De_Libros " +
+            "FROM genres " +
+            "JOIN booksgenres ON genres.id = booksgenres.idGenre " +
+            "JOIN books ON booksgenres.idBook = books.id " +
+            "GROUP BY genres.name",
+            { type: QueryTypes.SELECT }
+          );
             const products = await db.Book.findAll({
                 include: [{ 
                     model: db.Genre, 
@@ -19,12 +26,14 @@ const apiProductsController = {
               url: req.protocol + '://' + req.get('host') + req.url,
             }, 
             data:{
-                countByCategory: products.reduce((acc, product) => {
-                    product.genres.forEach((genre) => {
-                    acc[genre.name] = (acc[genre.name] || 0) + 1;
-                    });
-                    return acc;
-                    }, {}),
+                countByCategory: 
+                productsByCategory,
+                // products.reduce((acc, product) => {
+                //     product.genres.forEach((genre) => {
+                //     acc[genre.name] = (acc[genre.name] || 0) + 1;
+                //     });
+                //     return acc;
+                //     }, {}),
                 products: products.map((product) => ({
                     id: product.id,
                     title: product.title,
