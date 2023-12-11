@@ -8,6 +8,7 @@ const session = require('express-session')
 const userMiddleware = require('./middleware/userMiddleware')
 const cookies = require('cookie-parser');
 const cookieMiddleware = require('./middleware/cookieMiddleware')
+const cors = require("cors");
 
 
 const app = express();
@@ -18,6 +19,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }))
+
+app.use(cors());
 
 app.use(cookies());
 app.use(cookieMiddleware);
