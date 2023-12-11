@@ -92,6 +92,7 @@ const apiProductsController = {
           });
     
           if (product) {
+            product.coverImg = req.protocol + '://' + req.get('host') + product.coverImg
             return res.status(200).json({
               meta: {
                 status: res.statusCode,
