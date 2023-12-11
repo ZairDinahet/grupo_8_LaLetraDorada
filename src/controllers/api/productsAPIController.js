@@ -13,18 +13,27 @@ const apiProductsController = {
             "GROUP BY genres.name",
             { type: QueryTypes.SELECT }
           );
+
             const products = await db.Book.findAll({
                 include: [{ 
                     model: db.Genre, 
                     as: 'genres', 
-                    through: 'booksgenres' }],
+                    through: 'booksgenres' 
+                  },
+                    {
+                      model: db.Author,
+                      as: 'authors',
+                    },
+                  ],
                 });
+
             res.status(200).json({
             meta: {
               status: res.statusCode,
               count: products.length,
               url: req.protocol + '://' + req.get('host') + req.url,
             }, 
+
             data:{
                 countByCategory: 
                 productsByCategory,
@@ -38,7 +47,9 @@ const apiProductsController = {
                     id: product.id,
                     title: product.title,
                     description: product.description,
-                    categories: product.genres.map((genre) => genre.name),
+                    price: product.priceHardCover,
+                    genres: product.genres.map((genre) => genre.name),
+                    authors: product.authors.map((author) => author.name),
                     detail: req.protocol + '://' + req.get('host') + req.url + `/${product.id}` , 
                     })),
             },
@@ -47,13 +58,13 @@ const apiProductsController = {
             console.error(error);
             res.status(500).json({
                 meta: {
-                code: res.statusCode,
+                status: res.statusCode,
                 message: "Hubo un error en la base de datos",
                 },
             });
             res.status(400).json({
                 meta: {
-                code: res.statusCode,
+                status: res.statusCode,
                 message: "No se pueden mostrar los datos",
                 },
             });
@@ -81,6 +92,7 @@ const apiProductsController = {
           });
     
           if (product) {
+            product.coverImg = req.protocol + '://' + req.get('host') + product.coverImg
             return res.status(200).json({
               meta: {
                 status: res.statusCode,
