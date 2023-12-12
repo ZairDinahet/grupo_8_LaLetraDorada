@@ -1,11 +1,18 @@
 import React from "react";
 
 function GenresInDb({genres}) {
+  const miEstilo = {
+    color : "#272343",
+    backgroundColor:"#B9E7EF"
+  };
+  const miEstilo2 = {
+    backgroundColor:"#272343"
+  };
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
-        <div className="card-header py-3">
-          <h5 className="m-0 font-weight-bold text-gray-800">
+        <div style={miEstilo} className="card-header py-3">
+          <h5 className="m-0 font-weight-bold">
             Genres in Data Base
           </h5>
         </div>
@@ -14,7 +21,7 @@ function GenresInDb({genres}) {
             {genres?.map(genre => {
               return (
                 <div className="col-lg-6 mb-4" key={genre.genero}>
-                  <div className="card bg-dark text-white shadow">
+                  <div style={miEstilo2} className="card text-white shadow">
                     <div className="card-body">{genre.genero} - {genre.cantidad_De_Libros}</div>
                   </div>
                 </div>

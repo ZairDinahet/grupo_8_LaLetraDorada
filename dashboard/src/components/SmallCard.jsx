@@ -2,6 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 function SmallCard(props){
+    const miEstilo = {
+        color : "#272343"
+    };
     return(
         <div className="col-md-4 mb-4">
             <div className={`card border-left-${props.color} shadow h-100 py-2`}>
@@ -12,7 +15,7 @@ function SmallCard(props){
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{props.cuantity}</div>
                         </div>
                         <div className="col-auto">
-                            <i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
+                            <i style={miEstilo} className={`fas ${props.icon} fa-2x `}></i>
                         </div>
                     </div>
                 </div>
