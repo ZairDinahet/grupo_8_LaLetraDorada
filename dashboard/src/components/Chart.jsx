@@ -3,7 +3,9 @@ import ChartRow from './ChartRow';
 import { dataContext } from '../context/DataContext'
 
 function Chart (){
-    
+    const objStyle = {
+		backgroundColor:" #232343",	
+        }
     const { products } = useContext(dataContext)
 
     return (
