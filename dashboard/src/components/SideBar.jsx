@@ -2,10 +2,10 @@ import React from 'react';
 import image from '../assets/images/la-letra-dorada-icon.png'
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
-import LastBookInDb from './LastBookInDb';
 import ContentRowData from './ContentRowData';
 import NotFound from './NotFound';
 import {Link, Route, Routes} from 'react-router-dom';
+import Chart from './Chart';
 
 function SideBar(){
     const objStyle = {
@@ -41,58 +41,41 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/genres">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Genres</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastBookInDb">
+                    <Link className="nav-link" to="/tables">
                         <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Tables</span></Link>
+                </li>
+
+
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/charts">
+                        <i className="fas fa-fw fa-table"></i>
                         <span>Charts</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
-                </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
-            {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastMovieInDb">
-                <LastMovieInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Routes>
                 <Route exact path="/" element={<ContentWrapper />}/>
-                <Route path="/GenresInDb" element={<GenresInDb />}/>
-                <Route path="/LastBookInDb" element={<LastBookInDb/>}/>
-                <Route path="/ContentRowMovies" element={<ContentRowData />}/>
+                <Route path="/genres" element={<GenresInDb />}/>
+                <Route path="/tables" element={<ContentRowData />}/>
+                <Route path="/charts" element={<Chart/>}/>
                 <Route path="*" element={<NotFound/>} />
             </Routes>
+            {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- End Microdesafio 2 -->*/}
         </>
     )
 }

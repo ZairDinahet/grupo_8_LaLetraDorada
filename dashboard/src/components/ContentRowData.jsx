@@ -1,36 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SmallCard from './SmallCard';
+import { dataContext } from '../context/DataContext';
 
-/*  Cada set de datos es un objeto literal */
 
-function ContentRowData({totalProducts, totalGenres, totalUsers}){
-    
-        let booksInDB = {
+function ContentRowData(){
+
+    const {products, users } = useContext(dataContext) 
+
+    let cartProps = [ 
+        {
             title: 'Books in Data Base',
             color: 'primary', 
-            cuantity: totalProducts,
+            cuantity: products.meta ? products.meta.count : 0,
             icon: 'fa-clipboard-list'
-        }
-        
-        /* <!-- Total awards --> */
-        
-        let usersInDB = {
+        },
+        {
             title:' Total Users', 
             color:'success', 
-            cuantity: totalUsers,
+            cuantity:  users.meta ? users.meta.count : 0,
             icon:'fa-award'
-        }
-        
-        /* <!-- Actors quantity --> */
-        
-        let genresInDB = {
+        },
+        {
             title:'Total Genres' ,
             color:'warning',
-            cuantity: totalGenres,
+            cuantity: products.meta ? products.data.countByCategory.length : 0,
             icon:'fa-user-check'
         }
-        
-        let cartProps = [booksInDB, usersInDB, genresInDB];
+    ];
+    
     return (
         
         <div className="row">
