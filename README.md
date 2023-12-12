@@ -60,10 +60,6 @@ Tablero de trabajo La letra dorada: [Trello]()
 
 ¡Hola, soy Rocío Cala, estudiante de 19 años de la Facultad de Ingeniería! Me gusta  la programación, busco aprender más sobre este mundo interesante. Leer y bailar son mis pasatiempos favoritos, pero descubrir nuevas tecnologías y desafíos es lo que realmente me motiva.
 
-### Máximo Conde
-
-Conde, Máximo, 21 años: Desarrollador Web en formación. Proactivo, abierto al aprendizaje, interesado en desafíos durante esta parte de la formación.
-
 ### Nahuel Sanchez
 
 Hola, me llamo Nahuel Sanchez. Tengo 23 años y actualmente soy estudiante de diseño de videojuegos, en la facultad de ingenieria, y desarrollo web. Además, soy un amante de los videojuegos y la ciberseguridad.
