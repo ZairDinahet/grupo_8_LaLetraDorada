@@ -1,29 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ChartRow from './ChartRow';
+import { dataContext } from '../context/DataContext'
 
-// let tableRowsData = [
-//     {
-//         Title: 'Billy Elliot ',
-//         Length: '123',
-//         Rating: '5',
-//         Categories: ['Drama','Comedia'],
-//         Awards: 2
-//     },
-//     {
-//         Title: 'Alicia en el país de las maravillas',
-//         Length: '142',
-//         Rating: '4.8',
-//         Categories: ['Drama','Acción','Comedia'],
-//         Awards: 3
-//     },
+function Chart (){
     
-// ]
+    const { products } = useContext(dataContext)
 
-
-function Chart ({totalProducts}){
-    console.log(totalProducts);
     return (
-        /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
@@ -46,8 +29,7 @@ function Chart ({totalProducts}){
                         </tfoot>
                         <tbody>
                             {
-                                Array.isArray(totalProducts.data?.products) &&
-                                totalProducts.data?.products.map((row, i) => {
+                                products.data.products.map((row, i) => {
                                     return <ChartRow {...row} key={i} />
                                 })
                             }
