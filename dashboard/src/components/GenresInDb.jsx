@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import { dataContext } from '../context/DataContext';
 
-function GenresInDb({genres}) {
+function GenresInDb() {
+  const { products } = useContext(dataContext)
+
   const miEstilo = {
     color : "#272343",
     backgroundColor:"#B9E7EF"
@@ -8,6 +11,7 @@ function GenresInDb({genres}) {
   const miEstilo2 = {
     backgroundColor:"#272343"
   };
+  
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -18,15 +22,17 @@ function GenresInDb({genres}) {
         </div>
         <div className="card-body">
           <div className="row">
-            {genres?.map(genre => {
-              return (
-                <div className="col-lg-6 mb-4" key={genre.genero}>
-                  <div style={miEstilo2} className="card text-white shadow">
-                    <div className="card-body">{genre.genero} - {genre.cantidad_De_Libros}</div>
+            {
+              products.data.countByCategory.map(genre => {
+                return (
+                  <div className="col-lg-6 mb-4" key={genre.genero}>
+                    <div style={miEstilo2} className="card text-white shadow">
+                      <div className="card-body">{genre.genero} - {genre.cantidad_De_Libros}</div>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })
+            }
           </div>
         </div>
       </div>

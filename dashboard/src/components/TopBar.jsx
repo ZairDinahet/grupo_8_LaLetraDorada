@@ -1,7 +1,28 @@
-import React from 'react';
-import foto from '../assets/images/jordan-walke.png';
+import React, {useContext} from "react";
+import { dataContext } from '../context/DataContext';
 
 function TopBar(){
+
+	// const [name, setName] = useState("");
+	// const [book, setBook] = useState([])
+
+
+	// async function handleSearch(id){
+	// 	const data = await getOneProduct(id)
+	// 	setBook(data);
+	// }
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+	// 	handleSearch(name)
+  //   setName('')
+  // }
+
+  // function handleChange(e) {
+  //   setName(e.target.value)
+  // }
+
+	const { lastUser } = useContext(dataContext)
     return(
         <>
 				{/*<!-- Topbar -->*/}
@@ -11,6 +32,18 @@ function TopBar(){
 					<button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
 						<i className="fa fa-bars"></i>
 					</button>
+
+					{/* <div>
+						<form onSubmit={(e) => handleSubmit(e)}>
+							<input
+								type="text"
+								placeholder="Ingresa una pelicula"
+								value={name}
+								onChange={(e) => handleChange(e)}
+							/>
+							<button type="submit" disabled={name.trim() === ''}>Buscar</button>
+						</form>
+					</div> */}
 
 					{/*<!-- Topbar Navbar -->*/}
 					<ul className="navbar-nav ml-auto">
@@ -38,8 +71,8 @@ function TopBar(){
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
 							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
-								<img className="img-profile rounded-circle" src={foto} alt="Jordan Walke - Creador de React" width="60"/>
+								<span className="mr-2 d-none d-lg-inline text-gray-600 small">{`${lastUser.data.firstName} ${lastUser.data.lastName}` }</span>
+								<img className="img-profile rounded-circle" src={lastUser.data.profileImg} alt="Jordan Walke - Creador de React" width="60"/>
 							</a>
 						</li>
 
