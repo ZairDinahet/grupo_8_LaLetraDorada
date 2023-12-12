@@ -22,14 +22,17 @@ import ChartRow from './ChartRow';
 
 function Chart ({totalProducts}){
     console.log(totalProducts);
+    const objStyle = {
+		backgroundColor:" #232343",	
+        }
     return (
         /* <!-- DataTales Example --> */
-        <div className="card shadow mb-4">
+        <div  className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>
+                            <tr className='text-white' style= {objStyle}>
                                 <th>Título</th>
                                 <th>Autor</th>
                                 <th>Género</th>
@@ -44,7 +47,7 @@ function Chart ({totalProducts}){
                                 <th>Precio Tapa Dura</th>
                             </tr>
                         </tfoot>
-                        <tbody>
+                        <tbody className='bg-secondary text-white'>
                             {
                                 Array.isArray(totalProducts.data?.products) &&
                                 totalProducts.data?.products.map((row, i) => {

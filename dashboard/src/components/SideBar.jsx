@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/La_letra_dorada_200_69_px.svg'
+import image from '../assets/images/la-letra-dorada-icon.png'
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastBookInDb from './LastBookInDb';
@@ -8,10 +8,14 @@ import NotFound from './NotFound';
 import {Link, Route, Routes} from 'react-router-dom';
 
 function SideBar(){
+    const objStyle = {
+		backgroundColor:" #232343",	
+        }
+		
     return(
         <>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul style= {objStyle} className="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -27,7 +31,8 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - La Letra Dorada</span></Link>
+                        <span>Dashboard </span>
+                        <div>La Letra Dorada</div></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}

@@ -2,12 +2,13 @@ import React from 'react';
 
 
 function ChartRow({title, authors, genres, price}){
+   
     return (
                 <tr>
                     <td>{title}</td>
                     <td>{authors[0]}</td>
                     <td>
-                        <ul>
+                        <ul style={{ listStyleType: "none" }}>
                             {genres?.map( (genre,i) => 
                                 <li key={`category ${i}`}>{genre}</li>
                             )}
