@@ -20,7 +20,7 @@ function LastBookInDb(){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 25 +'rem'}} src={lastProduct ? lastProduct.data.coverImg : img} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 27 +'rem'}} src={lastProduct ? lastProduct.data.coverImg : img} alt=" Star Wars - Mandalorian "/>
                     </div>
                     <p>{lastProduct? lastProduct.data.description : ""}</p>
                     <a style={miEstilo2} className="btn " target="_blank" rel="nofollow" href="/">View movie detail</a>

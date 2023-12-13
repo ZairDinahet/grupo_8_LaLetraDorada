@@ -12,19 +12,19 @@ function ContentRowData(){
             title: 'Books in Data Base',
             color: 'primary', 
             cuantity: products.meta ? products.meta.count : 0,
-            icon: 'fa-clipboard-list'
+            icon: 'fa-solid fa-book'
         },
         {
             title:' Total Users', 
             color:'success', 
             cuantity:  users.meta ? users.meta.count : 0,
-            icon:'fa-award'
+            icon:'fa-user-check'
         },
         {
             title:'Total Genres' ,
             color:'warning',
             cuantity: products.meta ? products.data.countByCategory.length : 0,
-            icon:'fa-user-check'
+            icon:'fa-solid fa-star'
         }
     ];
     

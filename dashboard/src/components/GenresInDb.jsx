@@ -25,7 +25,7 @@ function GenresInDb() {
             {
               products.data.countByCategory.map(genre => {
                 return (
-                  <div className="col-lg-6 mb-4" key={genre.genero}>
+                  <div className="col-lg-6 mb-1" key={genre.genero}>
                     <div style={miEstilo2} className="card text-white shadow">
                       <div className="card-body">{genre.genero} - {genre.cantidad_De_Libros}</div>
                     </div>
