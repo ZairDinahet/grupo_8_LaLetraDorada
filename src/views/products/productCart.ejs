@@ -168,9 +168,36 @@
         <a href="#">
                 <i class="fa-solid fa-chevron-left"></i>
         </a>
-      
-        
-        <article class="book-01">
+        <% if (locals.books) { %>         
+          <% books.slice(6, 12).forEach((book, index) => { %>
+            <article class="book-0<%= index + 1%>">
+              <div class="book-info-container">
+                <a href="/products/<%= book.id %>">              
+                  <img src="<%= book.coverImg %>" alt="Libro">
+                </a>
+                <div class="info-title">
+                  <p><%= book.title %></p>
+                </div>
+                <div class="info-author">
+                  <p><%= book.authors[0].name %></p>
+                </div>
+                <div class="info-price">
+                  <p>$<%= book.priceHardCover  %></p>
+                </div>
+  
+                <a href="/products/cart/<%= book.id %>">
+                  <button class="button-add-product">
+                    Agregar
+                    <i class="fa-solid fa-cart-shopping">
+                    </i>
+                  </button>
+                </a>
+              </div>
+            </article>
+          <% }) %>
+        <% } %>
+
+        <!-- <article class="book-01">
           <div class="book-info-container">
             <img src="/img/productCart/el-hobbit.png" alt="Libro">
             <div class="info-title">
@@ -231,7 +258,7 @@
             </div>
             <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
           </div>
-        </article>
+        </article> -->
 
         <a href="#">
           <i class="fa-solid fa-chevron-right"></i>

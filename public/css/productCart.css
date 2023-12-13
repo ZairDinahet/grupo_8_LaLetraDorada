@@ -771,6 +771,14 @@ footer {
     .price-details {
         margin: 0;
     }
+    .books-container .book-05 {
+        display: block;
+        display: none;
+    }
+    .books-container .book-06 {
+        display: block;
+        display: none;
+    }
 }
 
 @media (max-width: 765px) {
@@ -842,6 +850,10 @@ footer {
         width: 90%;
     }
 
+    .books-container .book-03 {
+        display: block;
+        display: none;
+    }
     .books-container .book-04 {
         display: block;
         display: none;
@@ -881,16 +893,6 @@ footer {
 
     .checkout button {
         width: 60%;
-    }
-
-    .books-container .book-02 {
-        display: block;
-        display: none;
-    }
-
-    .books-container .book-03 {
-        display: block;
-        display: none;
     }
 
     .nav-footer-container {
