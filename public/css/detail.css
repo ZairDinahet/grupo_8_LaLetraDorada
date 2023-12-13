@@ -655,13 +655,14 @@ footer {
   }
 
   .books-container .book-05 {
+    display: block;
     display: none;
   }
 
-.books-container .book-04 {
+  .books-container .book-06 {
+    display: block;
     display: none;
   }
-
 }
 
 /* Styles for mobile (up to 480px) */
@@ -732,17 +733,15 @@ footer {
     text-align: center;
   }
 
-  .books-container .book-item-5 {
+  .books-container .book-03 {
+    display: block;
     display: none;
   }
 
-  .books-container .book-item-4 {
+  .books-container .book-04 {
+    display: block;
     display: none;
   }
-  .books-container .book-item-3 {
-    display: none;
-  }
-
 }
 
 @media (min-width:1024px){
