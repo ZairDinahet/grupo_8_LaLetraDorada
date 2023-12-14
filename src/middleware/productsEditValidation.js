@@ -7,10 +7,12 @@ const productsEditValidation = [
   body('genre').notEmpty().withMessage("Debe seleccionar el genero de su libro").bail(),
   body('description').notEmpty().withMessage("Debe completar la descripcion de su libro").bail().escape(),
   body('biography').notEmpty().withMessage("Debe completar la biografia del autor").bail().escape(),
-  body('priceHardCover').notEmpty().withMessage("Debe escribir un precio").bail(),
-  body('priceSoftCover').notEmpty().withMessage("Debe escribir un precio").bail(),
-  body('priceAudio').notEmpty().withMessage("Debe escribir un precio").bail(),
-  body('priceEpub').notEmpty().withMessage("Debe escribir un precio").bail(),
+  body(['priceHardCover', 'priceSoftCover', 'priceAudio', 'priceEpub']).custom((value, { req }) => {
+    if (!req.body.priceHardCover && !req.body.priceSoftCover && !req.body.priceAudio && !req.body.priceEpub) {
+      throw new Error('Debe especificar al menos un precio');
+    }
+    return true;
+  }),
 //   body('coverImg').custom((value, {req}) => {
 //     let file = req.file;
 //     let acceptedExtensions = [".jpg",".png", ".jpeg", ".gif"];

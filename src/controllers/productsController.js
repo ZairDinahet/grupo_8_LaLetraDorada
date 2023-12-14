@@ -24,6 +24,11 @@ const productsController = {
         throw new Error("¡Ups!, hubo un problema al cargar los datos");
       }
       
+      data = data.map(book => {
+        book.mainPrice = book.priceHardCover || book.priceSoftCover || book.priceAudio || book.priceEpub || 'No disponible';
+        return book;
+      });
+
       return res.render('products/index', {books: data})
 
     } catch (err) {
@@ -72,6 +77,17 @@ const productsController = {
 
   cart: async function (req,res) {
 
+    function getMainPrice(book) {
+      const prices = [book.priceHardCover, book.priceSoftCover, book.priceAudio, book.priceEpub];
+    
+      for (let i = 0; i < prices.length; i++) {
+        if (prices[i]) return prices[i];
+      }
+    
+      return;
+    }
+    
+
     const { id } = req.params
 
     try {
@@ -101,7 +117,7 @@ const productsController = {
   
         }
   
-        return res.render('products/productCart', { cart: [data], books});
+        return res.render('products/productCart', { cart: [data], books, getMainPrice });
       }
       
       return res.render('products/productCart', { cart: []});
@@ -135,8 +151,18 @@ const productsController = {
   },
 
   post: async function (req, res) {
+    
+    let {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
 
-    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+    let prices = [priceHardCover, priceSoftCover, priceAudio, priceEpub];
+
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] === '') {
+        prices[i] = null;
+      }
+    }
+
+    [priceHardCover, priceSoftCover, priceAudio, priceEpub] = prices;
 
     const file = req.file;
 
@@ -231,7 +257,18 @@ const productsController = {
 
   put: async function (req, res) {
 
-    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+    let { title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+
+    let prices = [priceHardCover, priceSoftCover, priceAudio, priceEpub];
+
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] === '') {
+        prices[i] = null;
+      }
+    }
+
+    [priceHardCover, priceSoftCover, priceAudio, priceEpub] = prices;
+
     const { id } = req.params;
 
     const file = req.file;

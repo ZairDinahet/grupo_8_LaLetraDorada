@@ -37,39 +37,46 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="description-container">
-                <p><%= book.description %>
-                </p>
+                <p><%= book.description %></p>
                 <a href="#">Seguir leyendo...</a>
               </div>
-  
+            
               <div class="buttons-price-container">
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceHardCover %>
-                  </button>
-                  <p>tapa dura</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceSoftCover %>
-                  </button>
-                  <p>tapa blanda</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceEpub %>
-                  </button>
-                  <p>e-pub</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceAudio %>
-                  </button>
-                  <p>audio libro</p>
-                </div>
+                <% if (book.priceHardCover) { %>
+                  <div class="button-item">
+                    <button>
+                      <%= "$" + book.priceHardCover %>
+                    </button>
+                    <p>Tapa Dura</p>
+                  </div>
+                <% } %>
+            
+                <% if (book.priceSoftCover) { %>
+                  <div class="button-item">
+                    <button>
+                      <%= "$" + book.priceSoftCover %>
+                    </button>
+                    <p>Tapa Blanda</p>
+                  </div>
+                <% } %>
+            
+                <% if (book.priceEpub) { %>
+                  <div class="button-item">
+                    <button>
+                      <%= "$" + book.priceEpub %>
+                    </button>
+                    <p>E-pub</p>
+                  </div>
+                <% } %>
+            
+                <% if (book.priceAudio) { %>
+                  <div class="button-item">
+                    <button>
+                      <%= "$" + book.priceAudio %>
+                    </button>
+                    <p>Audio Libro</p>
+                  </div>
+                <% } %>
                 <div class="button-item-cart">
                   <a href="/products/cart/<%=book.id%>">
                     <button class="button-cart">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
@@ -77,6 +84,7 @@
                 </div>
               </div>
             </div>
+            
             
             <% if (locals.isLogged) { %>
               <div class="button-container">
