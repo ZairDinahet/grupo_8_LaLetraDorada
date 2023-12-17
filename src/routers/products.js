@@ -11,17 +11,17 @@ const router = Router()
 
 router.get('/', productsController.index)
 
-router.get('/create',guest.auth, productsController.create)
+router.get('/create',guest.auth,guest.authAdmin, productsController.create)
 router.post('/create', upload.single("coverImg"), productsCreateValidation, productsController.post)
 
 router.get('/cart/:id?',guest.auth, productsController.cart);
 
-router.get('/edit/:id',guest.auth, productsController.edit)
+router.get('/edit/:id',guest.auth,guest.authAdmin, productsController.edit)
 router.put('/edit/:id',upload.single("coverImg"), productsEditValidation, productsController.put)
 
 router.get('/:id', productsController.detail)
 
-router.delete('/delete/:id',guest.auth, productsController.delete)
+router.delete('/delete/:id',guest.auth,guest.authAdmin, productsController.delete)
 
 router.post('/search', productsController.search)
 

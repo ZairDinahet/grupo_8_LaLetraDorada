@@ -52,7 +52,7 @@ const usersController = {
             age,
             email,
             child: age < 18 ? 1 : 0,
-            category: category,
+            category: 'guest',
             password: bcrypt.hashSync(password, 10),
             profileImg: `/img/users/${file.filename}`
           }

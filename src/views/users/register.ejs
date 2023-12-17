@@ -155,24 +155,6 @@
                 <div class="text-danger"> <p><%= errors.city.msg %> </p></div>
                <% } %>
             </div>
-
-            <div class="field-form">
-              <label for="category">Categoria</label>
-              <div class="input-with-icon">
-                <i class="fa-solid fa-user"></i>
-                <select name="category" id="category" class="form-control">
-                  <option value="administrator " <%= (locals.oldData && oldData.category === 'administrator') ? 'selected' : null %>>Administrador</option>
-                  <option value="guest" <%= (locals.oldData && oldData.category === 'guest') ? 'selected' : null %>>Invitado</option>
-                  <option value="collaborator" <%= (locals.oldData && oldData.category === 'collaborator') ? 'selected' : null %>>Colaborador</option>
-                </select>
-              </div>
-              <% if (locals.errors && errors.category) { %>
-                <div class="text-danger">
-                  <p><%= errors.category.msg %></p>
-                </div>
-              <% } %>
-            </div>
-
             <div class="field-form-button">
               <div id="errorMessages" class="text-danger"></div>
               <button class="form-button-creat" type="submit">Crear Cuenta</button>
