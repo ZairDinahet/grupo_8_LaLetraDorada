@@ -189,21 +189,7 @@
                                     </div>
                                     <% } %>
                             </div>
-                            <% if(locals.permiss) { %>
-                            <div class="field-form">
-                                <label for="category"> Categoria </label>
-                                <div class="input-with-icon">
-                                    <i class="fa-solid fa-dolly"></i>
-                                    <select name="category" id="category">
-                                        <option value="administrator" <%=(user.category==='administrator' ) ? 'selected'
-                                            : '' %>>Administrador</option>
-                                        <option value="guest" <%=(user.category==='guest' ) ? 'selected' : '' %>
-                                            >Usuario</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <% } %>
-
+                           
                             <div class="field-form-button">
                                 <div id="errorMessages" class="text-danger"></div>
                                 <button class="form-button-creat" type="submit">Guardar Cambios</button>
