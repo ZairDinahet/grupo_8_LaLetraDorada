@@ -80,6 +80,13 @@ const productsController = {
     const selectedPrice = req.query.price;
   
     try {
+      const books = await db.Book.findAll({
+        include:[{
+          model: db.Author,
+          as: 'authors',
+        }],
+      })
+
       if (id) {
         const data = await db.Book.findByPk(id, {
           include: [{
@@ -92,22 +99,16 @@ const productsController = {
           }],
         })
   
-        const books = await db.Book.findAll({
-          include: [{
-            model: db.Author,
-            as: 'authors',
-          }],
-        })
-  
-        if (!data) {
+
+        if(!data) {
           throw new Error('El libro no fue encontrado');
         }
   
         return res.render('products/productCart', { cart: [data], books, selectedPrice });
       }
-  
-      return res.render('products/productCart', { cart: [] });
-  
+      
+      return res.render('products/productCart', { cart: [], books});
+
     } catch (err) {
       return res.status(404).json({ message: 'Error en la búsqueda', err });
     }

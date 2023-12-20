@@ -10,7 +10,6 @@ const userRegisterValidation = [
     body("postalCode").notEmpty().withMessage("Debe llenar este campo").bail().escape(),
     body("number").notEmpty().withMessage("Debe llenar este campo").bail().escape().isNumeric().withMessage("Debe llenar este campo con un número"),
     body("city").notEmpty().withMessage("Debe llenar este campo").bail().escape(),
-    body("category").notEmpty().withMessage("Debe elegir una categoria").bail().escape(),
     body("profileImg").custom((value, {req})=>{
         let file = req.file;
         let acceptedExtensions = [".jpg",".png"];

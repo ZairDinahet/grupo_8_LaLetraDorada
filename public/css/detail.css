@@ -94,13 +94,6 @@ rgb(116,173,209)    rgb(69,117,180)
     width: 70%; 
   }
 
-  .createBook{
-    display:none;
-  }
-
-
-
-
 /* main */
 
 
@@ -700,13 +693,14 @@ footer {
   }
 
   .books-container .book-05 {
+    display: block;
     display: none;
   }
 
-.books-container .book-04 {
+  .books-container .book-06 {
+    display: block;
     display: none;
   }
-
 }
 
 /* Styles for mobile (up to 480px) */
@@ -777,14 +771,13 @@ footer {
     text-align: center;
   }
 
-  .books-container .book-item-5 {
+  .books-container .book-03 {
+    display: block;
     display: none;
   }
 
-  .books-container .book-item-4 {
-    display: none;
-  }
-  .books-container .book-item-3 {
+  .books-container .book-04 {
+    display: block;
     display: none;
   }
 
@@ -797,7 +790,6 @@ footer {
     width: 100%;
     margin-bottom: 10px;
   }
-
 
 }
 

@@ -5,6 +5,13 @@ const guest = {
     }else{
      next()
     }
+  },
+  authAdmin: (req,res,next) => {
+    if (!res.locals.permiss) {
+      return res.redirect('/products');
+  }else{
+    next()
+   }
   }
 }
 

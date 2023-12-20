@@ -90,8 +90,8 @@
               </div>
             </div>
             
-            
-            <% if (locals.isLogged) { %>
+
+            <% if (locals.permiss) { %>
               <div class="button-container">
                 <div class="options">
                   <form action="/products/delete/<%= book.id %>?_method=DELETE" method="POST">
@@ -129,8 +129,8 @@
 
               <div class="books-container-books">
 
-              <% books.slice(6, 12).forEach(book => { %>
-                <article class="book-item">
+              <% books.slice(6, 12).forEach((book, index) => { %>
+                <article class="book-0<%= index + 1 %>">
                   <div class="book-info-container">
                     <a href="/products/<%= book.id %>">              
                       <img src="<%= book.coverImg %>" alt="Libro">
