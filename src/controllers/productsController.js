@@ -75,59 +75,42 @@ const productsController = {
     }
   },
 
-  cart: async function (req,res) {
-
-    function getMainPrice(book) {
-      const prices = [book.priceHardCover, book.priceSoftCover, book.priceAudio, book.priceEpub];
-    
-      for (let i = 0; i < prices.length; i++) {
-        if (prices[i]) return prices[i];
-      }
-    
-      return;
-    }
-    
-
-    const { id } = req.params
-
+  cart: async function (req, res) {
+    const { id } = req.params;
+    const selectedPrice = req.query.price;
+  
     try {
-      if(id){
+      if (id) {
         const data = await db.Book.findByPk(id, {
-          include:[{
+          include: [{
             model: db.Author,
             as: 'authors',
           },
           {
             model: db.Genre,
             as: 'genres',
-          }
-        ],
+          }],
         })
   
         const books = await db.Book.findAll({
-          include:[{
+          include: [{
             model: db.Author,
             as: 'authors',
           }],
         })
   
-        if(!data) {
-  
+        if (!data) {
           throw new Error('El libro no fue encontrado');
-  
         }
   
-        return res.render('products/productCart', { cart: [data], books, getMainPrice });
+        return res.render('products/productCart', { cart: [data], books, selectedPrice });
       }
-      
-      return res.render('products/productCart', { cart: []});
-
+  
+      return res.render('products/productCart', { cart: [] });
+  
     } catch (err) {
-
-      return res.status(404).json({ message: 'Error en la busqueda', err });
-
+      return res.status(404).json({ message: 'Error en la búsqueda', err });
     }
-    
   },
 
   create: async function (req, res) {

@@ -50,7 +50,7 @@
                   <button>+</button>
                 </div>
                 <p class="product-price">
-                  <%= "$" + getMainPrice(product) %>
+                  <%= "$" + selectedPrice %>
                 </p>
               </div>
               <% }); %>
@@ -141,7 +141,7 @@
                   <h3>
                     <div>Subtotal</div>
                     <div>
-                      <%= "$" + getMainPrice(product) %>
+                      <%= "$" + selectedPrice %>
                     </div>
                   </h3>
                   <h3>
@@ -155,7 +155,7 @@
                   <h2>
                     <div>TOTAL</div>
                     <div>
-                      <%= "$" + (getMainPrice(product) - 500 + 1200) %>
+                      <%= "$" + (selectedPrice - 500 + 1200) %>
                     </div>
                   </h2>
                 </div>
