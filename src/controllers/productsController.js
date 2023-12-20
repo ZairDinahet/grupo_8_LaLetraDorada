@@ -24,6 +24,11 @@ const productsController = {
         throw new Error("¡Ups!, hubo un problema al cargar los datos");
       }
       
+      data = data.map(book => {
+        book.mainPrice = book.priceHardCover || book.priceSoftCover || book.priceAudio || book.priceEpub || 'No disponible';
+        return book;
+      });
+
       return res.render('products/index', {books: data})
 
     } catch (err) {
@@ -70,12 +75,11 @@ const productsController = {
     }
   },
 
-  cart: async function (req,res) {
-
-    const { id } = req.params
-
+  cart: async function (req, res) {
+    const { id } = req.params;
+    const selectedPrice = req.query.price;
+  
     try {
-
       const books = await db.Book.findAll({
         include:[{
           model: db.Author,
@@ -83,36 +87,31 @@ const productsController = {
         }],
       })
 
-      if(id){
+      if (id) {
         const data = await db.Book.findByPk(id, {
-          include:[{
+          include: [{
             model: db.Author,
             as: 'authors',
           },
           {
             model: db.Genre,
             as: 'genres',
-          }
-        ],
+          }],
         })
   
+
         if(!data) {
-  
           throw new Error('El libro no fue encontrado');
-  
         }
   
-        return res.render('products/productCart', { cart: [data], books});
+        return res.render('products/productCart', { cart: [data], books, selectedPrice });
       }
       
       return res.render('products/productCart', { cart: [], books});
 
     } catch (err) {
-
-      return res.status(404).json({ message: 'Error en la busqueda', err });
-
+      return res.status(404).json({ message: 'Error en la búsqueda', err });
     }
-    
   },
 
   create: async function (req, res) {
@@ -136,8 +135,18 @@ const productsController = {
   },
 
   post: async function (req, res) {
+    
+    let {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
 
-    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+    let prices = [priceHardCover, priceSoftCover, priceAudio, priceEpub];
+
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] === '') {
+        prices[i] = null;
+      }
+    }
+
+    [priceHardCover, priceSoftCover, priceAudio, priceEpub] = prices;
 
     const file = req.file;
 
@@ -232,7 +241,18 @@ const productsController = {
 
   put: async function (req, res) {
 
-    const {title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+    let { title, description, coverImg, priceHardCover, priceSoftCover, priceAudio, priceEpub, author, biography, genre } = req.body
+
+    let prices = [priceHardCover, priceSoftCover, priceAudio, priceEpub];
+
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] === '') {
+        prices[i] = null;
+      }
+    }
+
+    [priceHardCover, priceSoftCover, priceAudio, priceEpub] = prices;
+
     const { id } = req.params;
 
     const file = req.file;

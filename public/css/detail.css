@@ -141,6 +141,53 @@ rgb(116,173,209)    rgb(69,117,180)
   margin-bottom: 10px;
 }
 
+.radio-input {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.radio-input label {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.radio-input input[type="radio"] {
+  display: none;
+}
+
+.price-label {
+  display: block;
+  padding: 10px;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.price-label.selected {
+  background-color: #272343;
+  color: #fff;
+}
+
+.radio-input input[type="radio"]:checked + .price-label {
+  background-color: #272343;
+  color: #fff;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .button-container {
   position: absolute;
   top: 0;
@@ -179,7 +226,6 @@ rgb(116,173,209)    rgb(69,117,180)
   color: rgb(116, 116, 255);
 }
 
-
 .buttons-price-container {
   display: flex;
   justify-content: flex-start;
@@ -200,8 +246,7 @@ rgb(116,173,209)    rgb(69,117,180)
   border-radius: 10px;
   color: #ffffff;
   cursor: pointer;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   outline: none;
@@ -230,14 +275,14 @@ rgb(116,173,209)    rgb(69,117,180)
   transform: translateY(0);
 }
 
-
 .button-item-cart button{
   height: 40px;
   background: #fff;
   backface-visibility: hidden;
   border-radius: .375rem;
   border-style: solid;
-  border-width: .125rem;
+  border-width: .08rem;
+  border-color: #818080;
   box-sizing: border-box;
   color: #212121;
   cursor: pointer;
@@ -735,6 +780,17 @@ footer {
     display: block;
     display: none;
   }
+
+  .radio-input {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .radio-input label {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 }
 
 @media (min-width:1024px){

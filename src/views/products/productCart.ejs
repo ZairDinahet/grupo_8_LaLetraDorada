@@ -17,146 +17,161 @@
 
   <%- include('../partials/header.ejs') %>
 
-  <main>
+    <main>
 
-    <div class="main-1">
-      <section class="main-box-1">
-        <div class="main-product-title">
-          <h1>Tus Libros</h1>
-        </div>
-  
-        <% if (cart.length > 0) { %>
-          
-          <% cart.forEach(product => { %>
-            <div class="main-product">
-              <div class="product-description">
-                <img src="<%= product.coverImg %>">
-                <div>
-                  <h3 class="product-name"><%= product.title%></h3>
-                  <br>
-                  <p class="product-author"><%= product.authors[0].name %></p><br>
-                  <p class="genre"> <%= product.genres[0].name %></p>
+      <div class="main-1">
+        <section class="main-box-1">
+          <div class="main-product-title">
+            <h1>Tus Libros</h1>
+          </div>
+
+          <% if (cart.length> 0) { %>
+
+            <% cart.forEach(product=> { %>
+              <div class="main-product">
+                <div class="product-description">
+                  <img src="<%= product.coverImg %>">
+                  <div>
+                    <h3 class="product-name">
+                      <%= product.title%>
+                    </h3>
+                    <br>
+                    <p class="product-author">
+                      <%= product.authors[0].name %>
+                    </p><br>
+                    <p class="genre">
+                      <%= product.genres[0].name %>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="product-box-button-amount">
-                <button>-</button>
-                <input type="text" value="1">
-                <button>+</button>
-              </div>
-              <p class="product-price"><%= "$" + product.priceHardCover %></p>
-            </div>
-          <% }); %>
-
-        <% } else { %>
-
-          <div class="main-product-empty">
-            <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
-          </div>
-
-        <% } %>
-
-        <div class="main-discount-title">
-          <h1>Código de Descuento</h1>
-        </div>
-        
-        <div class="main-discount">
-          <div>
-            <input type="text" placeholder="Código de Descuento">
-            <button>Aplicar</button>
-          </div>
-        </div>
-  
-        <div class="main-shipping-title">
-          <h1>Envio</h1>
-        </div>
-  
-        <div class="main-shipping">
-          <div>
-            <input type="text" placeholder="Código Postal" class="shipping-input-button">
-            <button>Calcular Envío</button>
-          </div>
-
-          <div class="shipping-icons">
-            <i class="fa-solid fa-truck-fast"></i>
-            <label class="label-no-responsive"><input type="radio" id="shipping" name="shipping">Opción 1</label>
-            <label class="label-responsive"><input type="radio" id="responsive" name="responsive"></label>
-            <p>$1200</p>
-          </div>
-
-          <div class="shipping-icons">
-            <i class="fa-solid fa-truck-fast"></i>
-            <label class="label-no-responsive"><input type="radio" id="shipping" name="shipping">Opción 2</label>
-            <label class="label-responsive"><input type="radio" id="responsive" name="responsive"></label>
-            <p>$1500</p>
-          </div>
-        </div>
-  
-        <div class="main-payment-title">
-          <h1>Metodo de Pago</h1>
-        </div>
-  
-        <div class="main-payment">
-          <div class="payment-icons">
-            <i class="fa-solid fa-credit-card"></i>
-            <label>
-              <input type="radio" id="payment" name="payment">
-              Débito o Crédito
-            </label>
-          </div>
-          <div class="payment-icons">
-            <i class="fa-solid fa-building-columns"></i>
-            <label>
-              <input type="radio" id="payment" name="payment">
-              Transferencia o Deposito
-            </label>
-          </div>
-          <div class="payment-icons">
-            <i class="fa-solid fa-money-bill"></i>
-            <label>
-              <input type="radio" id="payment" name="payment">
-              Efectivo
-            </label>
-          </div>
-        </div>
-      </section>
-  
-      <section class="main-box-2">
-        <img src="/img/productCart/cart_logo_2.svg" alt="">  
-        <div>
-          <h1>Tu Pedido</h1>
-          <br>
-          <% if (cart.length > 0) { %>
-            <% cart.forEach(product => { %>
-              <div class="price-details">
-                <h3>
-                  <div>Subtotal</div>
-                  <div><%= "$" + product.priceHardCover %></div>
-                </h3>
-                <h3>
-                  <div>Cód. de Descuento</div>
-                  <div>-$500</div>
-                </h3>
-                <h3>
-                  <div>Envío</div>
-                  <div>$1200</div>
-                </h3>
-                <h2>
-                  <div>TOTAL</div>
-                  <div><%= "$" + (product.priceHardCover - 500 + 1200) %></div>
-                </h2>
+                <div class="product-box-button-amount">
+                  <button>-</button>
+                  <input type="text" value="1">
+                  <button>+</button>
+                </div>
+                <p class="product-price">
+                  <%= "$" + selectedPrice %>
+                </p>
               </div>
               <% }); %>
-            <% } else { %>
-              <div class="cart-empty">
-                <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
-              </div>
-            <% } %>
-        </div>
-        <br>
-        <div class="checkout">
-          <button>Finalizar Compra</button>
-        </div>
-      </section>
+
+                <% } else { %>
+
+                  <div class="main-product-empty">
+                    <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
+                  </div>
+
+                  <% } %>
+
+                    <div class="main-discount-title">
+                      <h1>Código de Descuento</h1>
+                    </div>
+
+                    <div class="main-discount">
+                      <div>
+                        <input type="text" placeholder="Código de Descuento">
+                        <button>Aplicar</button>
+                      </div>
+                    </div>
+
+                    <div class="main-shipping-title">
+                      <h1>Envio</h1>
+                    </div>
+
+                    <div class="main-shipping">
+                      <div>
+                        <input type="text" placeholder="Código Postal" class="shipping-input-button">
+                        <button>Calcular Envío</button>
+                      </div>
+
+                      <div class="shipping-icons">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <label class="label-no-responsive"><input type="radio" id="shipping" name="shipping">Opción
+                          1</label>
+                        <label class="label-responsive"><input type="radio" id="responsive" name="responsive"></label>
+                        <p>$1200</p>
+                      </div>
+
+                      <div class="shipping-icons">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <label class="label-no-responsive"><input type="radio" id="shipping" name="shipping">Opción
+                          2</label>
+                        <label class="label-responsive"><input type="radio" id="responsive" name="responsive"></label>
+                        <p>$1500</p>
+                      </div>
+                    </div>
+
+                    <div class="main-payment-title">
+                      <h1>Metodo de Pago</h1>
+                    </div>
+
+                    <div class="main-payment">
+                      <div class="payment-icons">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <label>
+                          <input type="radio" id="payment" name="payment">
+                          Débito o Crédito
+                        </label>
+                      </div>
+                      <div class="payment-icons">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <label>
+                          <input type="radio" id="payment" name="payment">
+                          Transferencia o Deposito
+                        </label>
+                      </div>
+                      <div class="payment-icons">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <label>
+                          <input type="radio" id="payment" name="payment">
+                          Efectivo
+                        </label>
+                      </div>
+                    </div>
+        </section>
+
+        <section class="main-box-2">
+          <img src="/img/productCart/cart_logo_2.svg" alt="">
+          <div>
+            <h1>Tu Pedido</h1>
+            <br>
+            <% if (cart.length> 0) { %>
+              <% cart.forEach(product=> { %>
+                <div class="price-details">
+                  <h3>
+                    <div>Subtotal</div>
+                    <div>
+                      <%= "$" + selectedPrice %>
+                    </div>
+                  </h3>
+                  <h3>
+                    <div>Cód. de Descuento</div>
+                    <div>-$500</div>
+                  </h3>
+                  <h3>
+                    <div>Envío</div>
+                    <div>$1200</div>
+                  </h3>
+                  <h2>
+                    <div>TOTAL</div>
+                    <div>
+                      <%= "$" + (selectedPrice - 500 + 1200) %>
+                    </div>
+                  </h2>
+                </div>
+                <% }); %>
+                  <% } else { %>
+                    <div class="cart-empty">
+                      <p>No hay productos en el carrito.¯\_(ツ)_/¯</p>
+                    </div>
+                    <% } %>
+          </div>
+          <br>
+          <div class="checkout">
+            <button>Finalizar Compra</button>
+          </div>
+        </section>
+      </div>
     </div>
 
     <section class="interested">
@@ -197,79 +212,16 @@
           <% }) %>
         <% } %>
 
-        <!-- <article class="book-01">
-          <div class="book-info-container">
-            <img src="/img/productCart/el-hobbit.png" alt="Libro">
-            <div class="info-title">
-              <p>El Hobbit</p>
-            </div>
-            <div class="info-author">
-              <p>J.R.R. Tolkien</p>
-            </div>
-            <div class="info-price">
-              <p>$7000</p>
-            </div>
-            <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
-          </div>
-        </article>
-        <article class="book-02">
-          <div class="book-info-container">
-            <img src="/img/productCart/cuentos-de-hadas.png" alt="Libro">
-            <div class="info-title">
-              <p>Cuento de hadas</p>
-            </div>
-            <div class="info-author">
-              <p>Stephen King</p>
-            </div>
-            <div class="info-price">
-              <p>$3100</p>
-            </div>
-            <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
-          </div>
-        </article>
-  
-        <article class="book-03">
-          <div class="book-info-container">
-            <img src="/img/productCart/el-lobo-estepario.png" alt="Libro">
-            <div class="info-title">
-              <p>El lobo estepario</p>
-            </div>
-            <div class="info-author">
-              <p>Hermann Hesse</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-            <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
-          </div>
-        </article>
+          <a href="#">
+            <i class="fa-solid fa-chevron-right"></i>
+          </a>
 
-        <article class="book-04">
-          <div class="book-info-container">
-            <img src="/img/productCart/dune.png"  alt="Libro">
-            <div class="info-title">
-              <p>Dune</p>
-            </div>
-            <div class="info-author">
-              <p>Frank Herbert</p>
-            </div>
-            <div class="info-price">
-              <p>$3000</p>
-            </div>
-            <button class="button-add-product">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
-          </div>
-        </article> -->
+        </div>
+      </section>
 
-        <a href="#">
-          <i class="fa-solid fa-chevron-right"></i>
-        </a>
+    </main>
 
-      </div>
-    </section>
-    
-  </main>
-
-  <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
 </body>
 

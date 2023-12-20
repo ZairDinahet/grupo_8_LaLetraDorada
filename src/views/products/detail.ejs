@@ -37,47 +37,60 @@
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="description-container">
-                <p><%= book.description %>
-                </p>
+                <p><%= book.description %></p>
                 <a href="#">Seguir leyendo...</a>
               </div>
-  
-              <div class="buttons-price-container">
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceHardCover %>
-                  </button>
-                  <p>tapa dura</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceSoftCover %>
-                  </button>
-                  <p>tapa blanda</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceEpub %>
-                  </button>
-                  <p>e-pub</p>
-                </div>
-  
-                <div class="button-item">
-                  <button>
-                    <%= "$" + book.priceAudio %>
-                  </button>
-                  <p>audio libro</p>
-                </div>
-                <div class="button-item-cart">
-                  <a href="/products/cart/<%=book.id%>">
-                    <button class="button-cart">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
-                  </a>
-                </div>
+            
+              <div class="radio-input">
+                <% if (book.priceHardCover) { %>
+                  <label for="hardcover" class="price-label">
+                    <span class="title">Tapa Dura</span>
+                    <input value="<%= book.priceHardCover %>" name="card" id="hardcover" type="radio" class="price-radio">
+                    <span class="price">$<%= book.priceHardCover %></span>
+                  </label>
+                <% } %>
+                
+                <% if (book.priceSoftCover) { %>
+                  <label for="softcover" class="price-label">
+                    <span class="title">Tapa Blanda</span>
+                    <input value="<%= book.priceSoftCover %>" name="card" id="softcover" type="radio" class="price-radio">
+                    <span class="price">$<%= book.priceSoftCover %></span>
+                  </label>
+                <% } %>
+                
+                <% if (book.priceEpub) { %>
+                  <label for="epub" class="price-label">
+                    <span class="title">Epub</span>
+                    <input value="<%= book.priceEpub %>" name="card" id="epub" type="radio" class="price-radio">
+                    <span class="price">$<%= book.priceEpub %></span>
+                  </label>
+                <% } %>
+                
+                <% if (book.priceAudio) { %>
+                  <label for="audio" class="price-label">
+                    <span class="title">Audiolibro</span>
+                    <input value="<%= book.priceAudio %>" name="card" id="audio" type="radio" class="price-radio">
+                    <span class="price">$<%= book.priceAudio %></span>
+                  </label>
+                <% } %>
+              </div>
+              
+              <script>
+                function addToCart() {
+                  const selectedPrice = document.querySelector('input[name="card"]:checked').value;
+                  const productId = '<%= book.id %>';
+                  window.location.href = `/products/cart/${productId}?price=${selectedPrice}`;
+                }
+              </script>
+              
+              <div class="button-item-cart">
+                <button class="button-cart" onclick="addToCart()">Agregar<i class="fa-solid fa-cart-shopping"></i></button>
+              </div>
+              
               </div>
             </div>
             
+
             <% if (locals.permiss) { %>
               <div class="button-container">
                 <div class="options">
@@ -171,6 +184,8 @@
       </main>
 
     <%- include('../partials/footer.ejs') %>
+
+    <script src="/js/productsPrices.js"></script>
 
 </body>
 </html>
