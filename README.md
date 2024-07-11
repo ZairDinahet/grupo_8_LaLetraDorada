@@ -1,5 +1,4 @@
-# La Letra Dorada - Proyecto integrador Digital House
-
+# La Letra Dorada 
 ## Temática del sitio
 ¡Bienvenidos a "La Letra Dorada", la mágica biblioteca digital que te guiará en un emocionante viaje por el mundo de la literatura!
 
@@ -17,44 +16,8 @@ Si eres estudiante, "La Letra Dorada" será tu compañero fiel. Nuestro catálog
 
 Así que, si estás listo para embarcarte en una emocionante travesía literaria, te invitamos a explorar nuestro catálogo y encontrar el libro perfecto que te llevará a mundos inimaginables y te llenará de conocimiento, emoción y entretenimiento. ¡Bienvenido a "La Letra Dorada", tu puerta de entrada al maravilloso universo de la lectura!
 
-## Sitios de referencia
 
-- BajaLibros: [bajalibros.com](https://www.bajalibros.com/AR).
-
-
-  Elegida por los clientes a quienes apunta, su estética es ágil e intuitiva.
-
-- Wattpad: [wattpad.com](https://www.wattpad.com/login?locale=es_ES)
-
-
-  Elegida por ser intuitiva, simple y estetica en el registro de usuarios.
-
-- CompraGamer: [compragamer.com](https://compragamer.com/ )
-
-
-  Elegido por tener un carrito bastante completo que proporciona la información necesaria para la compra siendo bastante amable con el usuario.
-
-- Goodreads: [goodreads.com](https://www.goodreads.com/book/show/1137215.Boneshaker)
-
-
-  Elegida por su layout amistoso y detallado. Interés a futuro en explorar comunidad de reseñas de usuarios.  
-
-- BuscaLibre: [buscalibre.com.ar](https://www.buscalibre.com.ar/libro-fiodor-dostoievski-obras-selectas/9788497941570/p/32246934)
-
-
-  Inspiración para simplificar la página, manteniendo estética.
-
-- Amazon: [amazon.com](https://www.amazon.com/-/es/Leo-Tolstoy/dp/0679405739/)
-
-
-  Inspiración e interes en la opción de e-book o pdf, layout de precios.
-
-## Tablero de trabajo
-
-Tablero de trabajo La letra dorada: [Trello]()
-
-
-## Integrantes del grupo
+## Desarrolladores
 
 ### Rocío Cala
 
